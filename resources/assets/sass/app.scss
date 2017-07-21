@@ -1,9 +1,23 @@
+//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap/scss/bootstrap";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+.container{
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
+  margin-bottom: 2rem;
+}
 
-// Variables
-@import "variables";
+main{
+  margin-top: 1rem;
+}
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+.sco-header{
+  img{
+    width:100%;
+    height:auto;
+  }
+}
+
+#navbar-brand-scologo{
+  width: 48px;
+  height: auto;
+}
