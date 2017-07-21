@@ -19,7 +19,7 @@
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </IfModule>
 
-AuthUserFile /kunden/homepages/30/d610791350/htdocs/scotest.coresimracing.com/.htpasswd
+AuthUserFile /homepages/30/d610791350/htdocs/scotest.coresimracing.com/public/.htpasswd
 AuthType Basic
 AuthName "Super Secret Site"
 Require valid-user
