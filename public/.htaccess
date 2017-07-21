@@ -18,8 +18,3 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </IfModule>
-
-AuthType Basic
-AuthName "Password Protected Area"
-AuthUserFile .htpasswd
-Require valid-user
