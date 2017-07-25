@@ -3,5 +3,5 @@
 <meta name="keywords" content="CoRe, Simracing, iRacing, Sports Car Open, endurance, race">
 <meta name="author" content="Ronald Großmann">
 
-<link rel="stylesheet" href="/css/app.css">
-<script type="text/javascript" src="/js/app.js"></script>
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
+<script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
