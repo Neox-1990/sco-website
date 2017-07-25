@@ -15,10 +15,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-//Route::get('/register', 'RegistrationController@create');
-Route::get('/register', function () {
-    return view('registration.create');
-});
+Route::get('/register', 'RegistrationController@create');
 Route::post('/register', 'RegistrationController@store');
 
 Route::get('/login', 'SessionsController@create');
