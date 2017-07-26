@@ -22,3 +22,9 @@ Route::get('/login', 'SessionsController@create');
 Route::post('/login', 'SessionsController@store');
 
 Route::post('/logout', 'SessionsController@destroy');
+
+Route::get('/myteams', 'MyteamController@show');
+Route::get('/myteams/create', 'MyteamController@create');
+Route::post('/myteams/create', 'MyteamController@store');
+Route::get('/myteams/edit/{team}', 'MyteamController@edit');
+Route::post('/myteams/edit/{team}', 'MyteamController@update');

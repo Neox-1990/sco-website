@@ -2,7 +2,7 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('img/SCO2K17_LOGO.png')}}" alt="" id="navbar-brand-scologo"></a>
+      <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('img/SCO2K17_LOGO.png')}}" alt="" id="navbar-brand-scologo">SCO</a>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -34,4 +34,7 @@
           @endif
         </ul>
       </div>
+      @if (auth()->check())
+        <span class="nav-link" style="color:#fff;">Welcome back {{ auth()->user()->name }}</span>
+      @endif
     </nav>
