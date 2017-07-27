@@ -9,6 +9,7 @@
       <div class="card">
         <div class="card-header">
           <h2>{{$team->name}} # {{$team->number}}</h2>
+          <p>{{config('constants.car_names')[$team->car]}}</p>
           <div class="btn-group">
             <a href="#" class="btn btn-outline-success">Edit</a>
             <a href="#" class="btn btn-outline-danger">Delete</a>
@@ -35,7 +36,7 @@
       </div>
       <hr>
     @endforeach
-    <a href="#" class="btn btn-primary">+ Create New Team</a>
+    <a href="{{url('myteams/create')}}" class="btn btn-primary">+ Create New Team</a>
   </div>
 </div>
 @endsection

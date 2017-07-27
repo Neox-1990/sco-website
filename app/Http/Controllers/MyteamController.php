@@ -21,6 +21,7 @@ class MyteamController extends Controller
     }
     public function create()
     {
+        return view('myteams.create');
     }
     public function store()
     {
