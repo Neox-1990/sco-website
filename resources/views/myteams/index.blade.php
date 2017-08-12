@@ -11,8 +11,8 @@
           <h2>{{$team->name}} # {{$team->number}}</h2>
           <p>{{config('constants.car_names')[$team->car]}}</p>
           <div class="btn-group">
-            <a href="#" class="btn btn-outline-success">Edit</a>
-            <a href="#" class="btn btn-outline-danger">Delete</a>
+            <a href="{{url('/myteams/edit/'.$team->id)}}" class="btn btn-outline-success">Edit</a>
+            <a href="{{url('/myteams/delete/'.$team->id)}}" class="btn btn-outline-danger">Delete</a>
           </div>
         </div>
         <div class="card-block">
@@ -25,8 +25,8 @@
             </tr>
             @foreach ($team->drivers as $driver)
               <tr>
-                <td>{{$driver->name}}</td>
-                <td>{{$driver->safetyrating}}</td>
+                <td><a href="http://members.iracing.com/membersite/member/CareerStats.do?custid={{$driver->iracing_id}}" target="_blank">{{$driver->name}}</a></td>
+                <td>{{strtoupper($driver->safetyrating)}}</td>
                 <td>{{$driver->irating}}</td>
               </tr>
             @endforeach

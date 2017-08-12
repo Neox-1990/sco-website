@@ -23,6 +23,7 @@ class CreateTeamsTable extends Migration
             $table->integer('status');
             $table->integer('preqtime')->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->unique(['season_id', 'name']);
             //$table->foreign('manager_id')->references('id')->on('managers');

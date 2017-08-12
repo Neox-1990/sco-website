@@ -13,12 +13,12 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
 Route::get('/register', 'RegistrationController@create');
 Route::post('/register', 'RegistrationController@store');
 
-Route::get('/login', 'SessionsController@create');
+Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
 
 Route::post('/logout', 'SessionsController@destroy');
@@ -28,3 +28,5 @@ Route::get('/myteams/create', 'MyteamController@create');
 Route::post('/myteams/create', 'MyteamController@store');
 Route::get('/myteams/edit/{team}', 'MyteamController@edit');
 Route::post('/myteams/edit/{team}', 'MyteamController@update');
+Route::get('/myteams/delete/{team}', 'MyteamController@delete');
+Route::post('/myteams/delete/{team}', 'MyteamController@destroy');

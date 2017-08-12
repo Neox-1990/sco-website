@@ -762,6 +762,14 @@ module.exports = __webpack_require__(35);
 
 __webpack_require__(9);
 
+$(document).ready(function () {
+  $('#flash_message').delay(200).fadeIn(500, function () {
+    $(this).delay(5000).fadeOut(500, function () {
+      $(this).remove();
+    });
+  });
+});
+
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {

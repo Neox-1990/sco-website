@@ -32,7 +32,7 @@ class RegistrationController extends Controller
         ]);
 
         auth()->login($user);
-
+        session()->flash('flash_message_success', 'Thank you for signing up. You are now logged in.');
         return redirect('/');
     }
 }

@@ -5,6 +5,7 @@
     @yield('additionalHeader')
   </head>
   <body>
+    @include('master.flash')
     <div class="container">
       @include('master.header')
       @include('master.nav')
