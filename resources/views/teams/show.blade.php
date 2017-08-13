@@ -3,7 +3,10 @@
 @section('main')
 <div class="row">
   <div class="col-12" style="padding-bottom:2rem;">
-    <h1>{{$team['name']}}</h1>
+    <h1 {{$team['deleted_at']!=null?'class=text-muted':''}}>{{$team['name']}}</h1>
+    @if ($team['deleted_at'] !== null)
+      <p class="text-muted">delted team</p>
+    @endif
     <table class="table">
       <tr>
         <td colspan="2">#{{$team['number']}}</td>
