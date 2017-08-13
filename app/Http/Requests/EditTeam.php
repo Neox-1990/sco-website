@@ -80,8 +80,19 @@ class EditTeam extends FormRequest
 
         if ($count >= 1 && $team->name != $this->input('teamname')) {
             $checkResult['legit'] = false;
-            $checkResult['errors']['noUniqueTeam'] = 'There is already a team with this name in the current season';
+            $checkResult['errors']['noUniqueTeam'] = 'There already is a team with this name in the current season';
         }
+
+        $count = App\Team::where([
+          ['number','=',$this->input('teamnumber')],
+          ['season_id','=',config('constants.curent_season')]
+        ])->count();
+
+        if ($count >= 1 && $team->number != $this->input('teamnumber')) {
+            $checkResult['legit'] = false;
+            $checkResult['errors']['noUniqueNumber'] = 'There already is a team with this number in the current season';
+        }
+
 
         if ($checkResult['legit']) {
             $team->name = $this->input('teamname');

@@ -4,7 +4,7 @@
 body{
   background-color: #fff;
   background-image: url('/img/sco2017bg.jpg');
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
 }
 
@@ -38,4 +38,23 @@ main{
   width: 100%;
   display: none;
   z-index: 10;
+}
+
+.badge-Prototyp{
+  background-color: #44C;
+  color: #fff;
+}
+.badge-GT{
+  background-color: #4C4;
+  color: #fff;
+}
+.badge-GTC{
+  background-color: #111;
+  color: #fff;
+}
+.team-overview-class{
+  margin: 2rem 0;
+}
+#driver-search-button{
+  cursor: pointer;
 }

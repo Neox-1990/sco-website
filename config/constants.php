@@ -8,4 +8,16 @@ return [
     4 => 'Audi R8 LMS',
   ],
   'curent_season' => env('SCO_SEASON', '1'),
+  'classes' => [
+    1 => [
+      'Prototyp' => [1],
+      'GT' => [2,3],
+      'GTC' => [4]
+    ]
+  ],
+  'status_names' => [
+    0 => 'pending',
+    1 => 'in waiting list',
+    2 => 'confirmed'
+  ]
 ];

@@ -4,4 +4,5 @@
 <meta name="author" content="Ronald Großmann">
 
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
+<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
 <script type="text/javascript" src="{{asset('/js/app.js')}}"></script>

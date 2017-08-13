@@ -30,3 +30,10 @@ Route::get('/myteams/edit/{team}', 'MyteamController@edit');
 Route::post('/myteams/edit/{team}', 'MyteamController@update');
 Route::get('/myteams/delete/{team}', 'MyteamController@delete');
 Route::post('/myteams/delete/{team}', 'MyteamController@destroy');
+
+Route::get('/teams', 'TeamController@index');
+Route::get('/teams/{team}', 'TeamController@show');
+
+Route::post('/driver', 'DriverController@search');
+Route::get('/driver', 'DriverController@index');
+Route::get('/driver/{driver}', 'DriverController@show');
