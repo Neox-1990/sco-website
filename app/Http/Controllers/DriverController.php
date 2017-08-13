@@ -36,7 +36,14 @@ class DriverController extends Controller
 
     public function show(Driver $driver)
     {
-        $teams_old = $driver->teams()->withTrashed()->where('season_id', '<>', config('constants.curent_season'))->get();
+        $teams_old = $driver
+          ->teams()
+          ->withTrashed()
+          ->whereNull('deleted_at')
+          ->orWhere('season_id', '<>', config('constants.curent_season'))
+          ->distinct()
+          ->get();
+          
         $team_current = $driver->teams()->where('season_id', '=', config('constants.curent_season'))->first();
         return view('driver.show', compact('driver', 'teams_old', 'team_current'));
     }

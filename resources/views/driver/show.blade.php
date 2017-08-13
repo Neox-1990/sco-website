@@ -31,7 +31,7 @@
     @else
       <p>not part of a team in the current season</p>
     @endif
-
+    
     <h2>Past/Former Teams</h2>
     @if (count($teams_old))
       <table class="table">
