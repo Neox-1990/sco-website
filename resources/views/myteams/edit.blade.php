@@ -1,27 +1,30 @@
 @extends('master.master')
 
 @section('main')
+  <script type="text/javascript">
+    var numbers = <?php echo json_encode($numbers); ?>;
+  </script>
 <div class="row">
   <div class="col-12" style="padding-bottom:2rem;">
     @if ($legit)
       <h1>Edit Team</h1>
       @include('master.formerrors')
-      @if ($team->status > 1)
+      @if ($team['status'] > 1)
         <table class="table">
           <tr>
             <td>Name</td>
-            <td>#{{$team->number}} {{$team->name}}</td>
+            <td>#{{$team['number']}} {{$team['name']}}</td>
           </tr>
           <tr>
             <td>Car</td>
-            <td>{{config('constants.car_names')[$team->car]}}</td>
+            <td>{{config('constants.car_names')[$team['car']]}}</td>
           </tr>
           <tr>
             <td>Status</td>
             <td>
-              @if ($team->status == 0)
+              @if ($team['status'] == 0)
                 <p class="text-danger">pending</p>
-              @elseif ($team->status == 1)
+              @elseif ($team['status'] == 1)
                 <p class="text-warning">on waitinglist</p>
               @else
                 <p class="text-success">confirmed</p>
@@ -37,8 +40,8 @@
               <td>Name</td>
               <td>#
               <select id="number" class="form-control" name="teamnumber" style="display: inline-block;width:auto;">
-                @for ($i=1; $i < 100; $i++)
-                  <option value="{{$i}}" {{old('teamnumber')!==null?(old('teamnumber') == $i ? 'selected' : ''):($team->number == $i ? 'selected' : '')}}>{{$i}}</option>
+                @for ($i=1; $i < 150; $i++)
+                  <option value="{{$i}}" {{old('teamnumber')!==null?(old('teamnumber') == $i ? 'selected' : ''):($team['number'] == $i ? 'selected' : '')}}>{{$i}}</option>
                 @endfor
               </select><input id="teamname" class="form-control" type="text" name="teamname" value="{{old('teamname')!==null?old('teamname'):$team->name}}" placeholder="Teamname" style="display: inline-block;width:auto;"></td>
             </tr>
@@ -47,9 +50,13 @@
               <td>
               <select id="car" class="form-control" name="teamcar" style="display: inline-block;width:auto;">
                 @foreach (config('constants.car_names') as $key => $value)
-                  <option value="{{$key}}" {{old('teamcar') !== null?(old('teamcar') == $key?'selected':''):($team->car == $key?'selected':'')}}>{{$value}}</option>
+                  <option value="{{$key}}" {{old('teamcar') !== null?(old('teamcar') == $key?'selected':''):($team['car'] == $key?'selected':'')}}>{{$value}}</option>
                 @endforeach
               </select></td>
+            </tr>
+            <tr>
+              <td>iRacing Team ID</td>
+              <td><input type="text" id="ir_teamid" class="form-control" name="iracing_teamid" value="{{old('iracing_teamid')!==null?old('iracing_teamid'):$team->ir_teamid}}" placeholder="iRacing Team ID"></td>
             </tr>
             <tr>
               <td>Status</td>

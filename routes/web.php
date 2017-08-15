@@ -1,4 +1,5 @@
 <?php
+use App\Team;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +33,13 @@ Route::get('/myteams/delete/{team}', 'MyteamController@delete');
 Route::post('/myteams/delete/{team}', 'MyteamController@destroy');
 
 Route::get('/teams', 'TeamController@index');
+Route::post('/teams', 'TeamController@search');
 Route::get('/teams/{team}', 'TeamController@show');
 
 Route::post('/driver', 'DriverController@search');
 Route::get('/driver', 'DriverController@index');
 Route::get('/driver/{driver}', 'DriverController@show');
+
+Route::get('/test', function () {
+    Team::getClassNumbers();
+});

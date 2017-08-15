@@ -10,9 +10,25 @@ return [
   'curent_season' => env('SCO_SEASON', '1'),
   'classes' => [
     1 => [
-      'Prototyp' => [1],
+      'Prototype' => [1],
       'GT' => [2,3],
       'GTC' => [4]
+    ]
+  ],
+  'classNumbers' => [
+    1 => [
+      'Prototype' => [
+        'min' => 1,
+        'max' => 50
+      ],
+      'GT' => [
+        'min' => 51,
+        'max' => 99
+      ],
+      'GTC' => [
+        'min' => 100,
+        'max' => 150
+      ],
     ]
   ],
   'status_names' => [

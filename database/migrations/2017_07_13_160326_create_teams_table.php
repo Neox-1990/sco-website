@@ -21,11 +21,12 @@ class CreateTeamsTable extends Migration
             $table->integer('number');
             $table->integer('car');
             $table->integer('status');
+            $table->integer('ir_teamid');
             $table->integer('preqtime')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
-            $table->unique(['season_id', 'name']);
+            $table->unique(['season_id', 'name', 'deleted_at']);
             //$table->foreign('manager_id')->references('id')->on('managers');
             //$table->foreign('season_id')->references('id')->on('seasons');
         });

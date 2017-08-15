@@ -3,7 +3,7 @@
 
 body{
   background-color: #fff;
-  background-image: url('/img/sco2017bg.jpg');
+  background-image: url('/img/sco2017bg2.jpg');
   background-position: center top;
   background-repeat: no-repeat;
 }
@@ -40,7 +40,7 @@ main{
   z-index: 10;
 }
 
-.badge-Prototyp{
+.badge-Prototype{
   background-color: #44C;
   color: #fff;
 }
@@ -57,4 +57,8 @@ main{
 }
 #driver-search-button{
   cursor: pointer;
+}
+.search-group-title{
+  width: 20%;
+  min-width: 150px
 }

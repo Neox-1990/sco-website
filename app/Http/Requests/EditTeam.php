@@ -27,9 +27,10 @@ class EditTeam extends FormRequest
     public function rules()
     {
         return [
-        'teamname' => 'nullable|required_with_all:teamcar,teamnumber|required_with:updateTeamdata',
-        'teamcar' => 'nullable|required_with_all:teamname,teamnumber|integer|required_with:updateTeamdata',
-        'teamnumber' => 'nullable|required_with_all:teamname,teamcar|integer|required_with:updateTeamdata',
+        'teamname' => 'nullable|required_with_all:teamcar,teamnumber,iracing_teamid|required_with:updateTeamdata',
+        'teamcar' => 'nullable|required_with_all:teamname,teamnumber,iracing_teamid|integer|required_with:updateTeamdata',
+        'teamnumber' => 'nullable|required_with_all:teamname,teamcar,iracing_teamid|integer|required_with:updateTeamdata',
+        'iracing_teamid' => 'nullable|required_with_all:teamname,teamcar,teamnumber|integer|required_with:updateTeamdata',
 
         'driver.name' => 'nullable|required_with:driver.iracingid|required_with:addDriver',
         'driver.iracingid' => 'nullable|required_with:driver.name|numeric|required_with:addDriver',
@@ -88,9 +89,33 @@ class EditTeam extends FormRequest
           ['season_id','=',config('constants.curent_season')]
         ])->count();
 
+        $carToClass = [];
+        foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
+            foreach ($cars as $value) {
+                $carToClass[$value] = $class;
+            }
+        }
+        $min = config('constants.classNumbers')[config('constants.curent_season')][$carToClass[$this->input('teamcar')]]['min'];
+        $max = config('constants.classNumbers')[config('constants.curent_season')][$carToClass[$this->input('teamcar')]]['max'];
+        if (!($this->input('teamnumber')<=$max && $this->input('teamnumber')>=$min)) {
+            $checkResult['legit'] = false;
+            $checkResult['errors']['numberOutOfRange'] = 'You choose a number that is outside of the numberrange for the car';
+        }
+
+
         if ($count >= 1 && $team->number != $this->input('teamnumber')) {
             $checkResult['legit'] = false;
             $checkResult['errors']['noUniqueNumber'] = 'There already is a team with this number in the current season';
+        }
+
+        $count = App\Team::where([
+          ['ir_teamid','=',$this->input('iracing_teamid')],
+          ['season_id','=',config('constants.curent_season')]
+        ])->count();
+
+        if ($count >= 1 && $team->ir_teamid != $this->input('iracing_teamid')) {
+            $checkResult['legit'] = false;
+            $checkResult['errors']['noUniqueTeamID'] = 'There already is a team with this iRacing Team ID in the current season';
         }
 
 
@@ -98,6 +123,7 @@ class EditTeam extends FormRequest
             $team->name = $this->input('teamname');
             $team->number = $this->input('teamnumber');
             $team->car = $this->input('teamcar');
+            $team->ir_teamid = $this->input('iracing_teamid');
             $team->save();
             $checkResult['flash'] = 'You successfully updated the data of '.$team->name;
         } else {

@@ -42,4 +42,42 @@ class TeamController extends Controller
         }
         return view('teams.show', compact('team', 'className'));
     }
+
+    public function search(Request $request)
+    {
+        $this->validate($request, [
+        'searchinput' => 'required|max:255|min:3'
+      ], [
+        'searchinput.required' => 'Please enter a name or iRacing ID into the searchfield.',
+        'searchinput.max' => 'Please enter 255 characters maximum to be searched.',
+        'searchinput.min' => 'Please enter 3 characters minimum to be searched.'
+      ]);
+        $search = $request->input('searchinput');
+        $teams;
+        if (is_numeric($search)) {
+            $teams = Team::withTrashed()->where('ir_teamid', '=', intval($search))
+              ->with('user')
+              ->get();
+        } else {
+            $searchterms = explode(' ', preg_replace('!\s+!', ' ', $search));
+            $teams = Team::query();
+            $teams->withTrashed();
+            foreach ($searchterms as $term) {
+                $teams->orWhere('name', 'LIKE', '%'.$term.'%');
+            }
+            $teams = $teams->with('user')->get();
+        }
+        $currentTeams = clone($teams);
+        $oldTeams = clone($teams);
+
+        $currentTeams=$currentTeams->filter(function (Team $team, $key) {
+            //dd($team->deleted_at);
+            return ($team->season_id == config('constants.curent_season') && $team->deleted_at === null);
+        });
+        $oldTeams=$oldTeams->filter(function (Team $team, $key) {
+            return ($team->season_id != config('constants.curent_season') || $team->deleted_at !== null);
+        });
+
+        return view('teams.searchresult', compact('currentTeams', 'oldTeams', 'search'));
+    }
 }

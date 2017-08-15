@@ -1,6 +1,9 @@
 @extends('master.master')
 
 @section('main')
+<script type="text/javascript">
+  var numbers = <?php echo json_encode($numbers); ?>
+</script>
 <div class="row">
   <div class="col-12" style="padding-bottom:2rem;">
     <h1>Create New Team</h1>
@@ -22,10 +25,14 @@
       <div class="form-group">
         <label for="number">Number</label>
         <select id="number" class="form-control" name="teamnumber">
-          @for ($i=1; $i < 100; $i++)
+          @for ($i=1; $i < 150; $i++)
             <option value="{{$i}}" {{old('teamnumber') == $i ? 'selected' : ''}}>{{$i}}</option>
           @endfor
         </select>
+      </div>
+      <div class="form-group">
+        <label for="ir_teamid">iRacing Team ID</label>
+        <input type="text" id="ir_teamid" class="form-control" name="iracing_teamid" value="{{old('iracing_teamid')}}" placeholder="iRacing Team ID">
       </div>
       <hr>
       <div class="row" style="padding:1rem;">

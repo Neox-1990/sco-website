@@ -28,7 +28,8 @@ class MyteamController extends Controller
     }
     public function create()
     {
-        return view('myteams.create');
+        $numbers = Team::getClassNumbers();
+        return view('myteams.create', compact('numbers'));
     }
     public function store(CreateTeam $request)
     {
@@ -55,7 +56,9 @@ class MyteamController extends Controller
         if (!$legit) {
             session()->flash('flash_message_alert', 'An error occured');
         }
-        return view('myteams.edit', compact('legit', 'team'));
+        $numbers = Team::getClassNumbers();
+        $numbers[$team->car][$team->number] = $team->number;
+        return view('myteams.edit', compact('legit', 'team', 'numbers'));
     }
     public function update(EditTeam $request, Team $team)
     {

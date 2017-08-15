@@ -5,7 +5,7 @@
   <div class="col-12" style="padding-bottom:2rem;">
     <h1 {{$team['deleted_at']!=null?'class=text-muted':''}}>{{$team['name']}}</h1>
     @if ($team['deleted_at'] !== null)
-      <p class="text-muted">delted team</p>
+      <p class="text-muted">deleted team</p>
     @endif
     <table class="table">
       <tr>
@@ -21,7 +21,7 @@
       </tr>
       <tr>
         <td>Status</td>
-        <td class="text-{{$team['status']==0?'danger':($team['status']==1?'warning':'confirmed')}}">{{config('constants.status_names')[$team['status']]}}</td>
+        <td class="text-{{$team['status']==0?'danger':($team['status']==1?'warning':'success')}}">{{config('constants.status_names')[$team['status']]}}</td>
       </tr>
       <tr>
         <td>Season</td>

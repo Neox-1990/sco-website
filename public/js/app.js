@@ -768,7 +768,25 @@ $(document).ready(function () {
       $(this).remove();
     });
   });
+  if (typeof numbers !== 'undefined') {
+    updateNumbers();
+    $('#car').on('change', updateNumbers);
+  }
 });
+
+function updateNumbers() {
+  var selOption = $('#number').val();
+  var car = $('#car').val();
+  var oldCheck = false;
+  $('#number').empty();
+  for (var key in numbers[car]) {
+    if (numbers[car].hasOwnProperty(key)) {
+      if (numbers[car][key] == selOption) oldCheck = true;
+      $('#number').append('<option value="' + numbers[car][key] + '">' + numbers[car][key] + '</option>');
+    }
+  }
+  if (oldCheck) $('#number').val(selOption);
+}
 
 /***/ }),
 /* 9 */

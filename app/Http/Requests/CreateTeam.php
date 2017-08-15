@@ -29,6 +29,7 @@ class CreateTeam extends FormRequest
           'teamname' => 'required',
           'teamcar' => 'required|integer',
           'teamnumber' => 'required|integer',
+          'iracing_teamid' => 'required|integer',
 
           'driver1.name' => 'required',
           'driver1.iracingid' => 'required|numeric',
@@ -120,6 +121,27 @@ class CreateTeam extends FormRequest
             $error_list['teamnumber'] = 'A team with the same number is already registered for this season';
         }
 
+        $count = App\Team::where([
+          ['ir_teamid','=',$this->input('iracing_teamid')],
+          ['season_id','=',config('constants.curent_season')]
+        ])->count();
+
+        if ($count>0) {
+            $error_list['iracing_teamid'] = 'A team with the same iRacing Team ID is already registered for this season';
+        }
+
+        $carToClass = [];
+        foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
+            foreach ($cars as $value) {
+                $carToClass[$value] = $class;
+            }
+        }
+        $min = config('constants.classNumbers')[config('constants.curent_season')][$carToClass[$this->input('teamcar')]]['min'];
+        $max = config('constants.classNumbers')[config('constants.curent_season')][$carToClass[$this->input('teamcar')]]['max'];
+        if (!($this->input('teamnumber')<=$max && $this->input('teamnumber')>=$min)) {
+            $error_list['teamnumber_invalid'] = 'Your choosen number is not in the numberrange for your choosen car';
+        }
+
         return $error_list;
     }
 
@@ -153,6 +175,7 @@ class CreateTeam extends FormRequest
         $team->number = $this->input('teamnumber');
         $team->car = $this->input('teamcar');
         $team->status = 0;
+        $team->ir_teamid = $this->input('iracing_teamid');
         $team->preqtime = 0;
         $team->save();
         $team->drivers()->attach($driverIds);
