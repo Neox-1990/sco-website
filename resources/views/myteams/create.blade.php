@@ -37,8 +37,8 @@
       <hr>
       <div class="row" style="padding:1rem;">
         @for ($n=1; $n < 7; $n++)
-          <div class="col-lg-6 col-sm-12">
-            <fieldset id="driver{{$n}}" style="border: 1px solid #aaa; padding: 1rem;">
+          <div class="col-lg-6 col-sm-12 add-driver-form {{$n<3?'add-driver-form-active':''}}">
+            <fieldset class="" id="driver{{$n}}" style="border: 1px solid #aaa; padding: 1rem;">
               <legend style="padding: 0 5px; width: inherit;">Driver {{$n}}{{$n<3?'*':''}}</legend>
               <div class="form-group">
                 <label for="driver{{$n}}name">Name</label>
@@ -70,6 +70,9 @@
         @endfor
 
 
+      </div>
+      <div class="form-group">
+        <button type="button" id="add-driver-form" value="another driver" class="btn btn-success">+ another driver</button>
       </div>
       <div class="form-group">
         <input type="submit" name="create" value="Create Team" class="btn btn-primary">

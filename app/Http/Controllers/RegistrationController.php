@@ -28,7 +28,8 @@ class RegistrationController extends Controller
         $user = User::create([
           'email' => request('email'),
           'name' => request('name'),
-          'password' => bcrypt(request('password'))
+          'password' => bcrypt(request('password')),
+          'isAdmin' => 0
         ]);
 
         auth()->login($user);

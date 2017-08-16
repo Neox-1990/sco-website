@@ -38,7 +38,7 @@ class Team extends Model
         foreach (config('constants.classNumbers')[config('constants.curent_season')] as $className => $value) {
             $classNumbers[$className] = [];
             for ($i=$value['min']; $i <= $value['max'] ; $i++) {
-                array_push($classNumbers[$className], $i);
+                $classNumbers[$className][$i] = $i;
             }
         }
         $teams = Team::where('season_id', config('constants.curent_season'))->get();

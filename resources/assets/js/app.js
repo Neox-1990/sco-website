@@ -18,6 +18,7 @@ $(document).ready(function(){
     $('#car').on('change', updateNumbers);
   }
 
+  $('#add-driver-form').on('click',addDriverForm);
 });
 
 function updateNumbers(){
@@ -32,4 +33,9 @@ function updateNumbers(){
     }
   }
   if(oldCheck) $('#number').val(selOption);
+}
+
+function addDriverForm(){
+  var active = $('div.add-driver-form-active').length;
+  if(active<6) $('#driver'+(active+1)).parent().addClass('add-driver-form-active');
 }
