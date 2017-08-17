@@ -71,3 +71,47 @@ main{
 .add-driver-form-active{
   display:block;
 }
+/*.nav-item-fullwidth{
+  width: 100%;
+}*/
+.round-tabs .nav-item .nav-link{
+  border: 1px solid rgba(240,240,240,1);
+}
+.round-tabs a.nav-link.active, .round-tabs a.nav-link:hover {
+  background-color: $brand-primary !important;
+  color: #fff !important;
+}
+#round-sessions-table th,
+#round-sessions-table td{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.jumbotron.round-frame{
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  padding-top: 2rem;
+}
+#rulebook{
+  h3{
+    margin-top:2rem;
+  }
+  table{
+    margin-top:1rem;
+    margin-bottom:1rem;
+  }
+}
+ol.rulebook-section{
+ list-style-type: lower-alpha;
+ counter-reset: item;
+ >li{
+   padding-left:1rem;
+   counter-increment: item;
+   >ol{
+     counter-reset: item2;
+     >li::before {
+         content: counter(item, lower-alpha) ". " counter(item2) ". ";
+         counter-increment: item2;
+       }
+   }
+ }
+}

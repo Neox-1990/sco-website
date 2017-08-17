@@ -41,5 +41,13 @@ Route::get('/driver', 'DriverController@index');
 Route::get('/driver/{driver}', 'DriverController@show');
 
 Route::get('/test', function () {
-    Team::getClassNumbers();
+    //Team::getClassNumbers();
+});
+
+Route::get('/rounds/{round}', 'RoundController@show');
+
+Route::get('/season', 'SeasonController@index');
+
+Route::get('/rules', function () {
+    return view('rules.show');
 });

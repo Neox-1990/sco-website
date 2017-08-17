@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use App;
 use App\Team;
 use App\Driver;
+use App\Events\TeamEditEvent;
 use Illuminate\Foundation\Http\FormRequest;
 
 class EditTeam extends FormRequest
@@ -126,6 +127,7 @@ class EditTeam extends FormRequest
             $team->ir_teamid = $this->input('iracing_teamid');
             $team->save();
             $checkResult['flash'] = 'You successfully updated the data of '.$team->name;
+            event(new TeamEditEvent($team, 'Team data updated'));
         } else {
             $checkResult['flash'] = 'An error occurred';
         }
@@ -158,6 +160,7 @@ class EditTeam extends FormRequest
             $driver = Driver::where('id', $this->input('driverID'))->first();
             $team->drivers()->detach($driver->id);
             $checkResult['flash'] = 'You removed the driver '.$driver->name.' from '.$team->name;
+            event(new TeamEditEvent($team, 'Team driver removed'));
         } else {
             $checkResult['flash'] = 'An error occurred';
         }
@@ -198,6 +201,7 @@ class EditTeam extends FormRequest
             $driver->save();
             $team->drivers()->attach($driver->id);
             $checkResult['flash'] = 'You successfully added '.$driver->name.' to '.$team->name;
+            event(new TeamEditEvent($team, 'Team driver added'));
         }
 
         return $checkResult;

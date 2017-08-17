@@ -6,10 +6,10 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Schedule & Results</a>
+            <a class="nav-link" href="{{url('/season')}}">Schedule & Results</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Rules</a>
+            <a class="nav-link" href="{{url('/rules')}}">Rules</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{url('teams')}}">Teams</a>

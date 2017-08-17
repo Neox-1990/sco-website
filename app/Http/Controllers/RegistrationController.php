@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Events\SignUpEvent;
 use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
@@ -34,6 +35,7 @@ class RegistrationController extends Controller
 
         auth()->login($user);
         session()->flash('flash_message_success', 'Thank you for signing up. You are now logged in.');
+        event(new SignUpEvent($user));
         return redirect('/');
     }
 }

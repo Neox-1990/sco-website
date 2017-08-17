@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App;
 use App\Team;
+use App\Events\TeamCreateEvent;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateTeam extends FormRequest
@@ -179,5 +180,7 @@ class CreateTeam extends FormRequest
         $team->preqtime = 0;
         $team->save();
         $team->drivers()->attach($driverIds);
+
+        event(new TeamCreateEvent($team));
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Team;
+use App\Events\TeamDeleteEvent;
 use App\Http\Requests\EditTeam;
 use App\Http\Requests\CreateTeam;
 use Illuminate\Http\Request;
@@ -96,8 +97,10 @@ class MyteamController extends Controller
         } else {
             if ($request->input('delete') == 'Yes') {
                 $team->delete();
+                event(new TeamDeleteEvent($team));
             }
         }
+        session()->flash('flash_message_success', 'You successfully delted the team from this season.');
         return redirect('/myteams/');
     }
 }

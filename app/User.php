@@ -14,6 +14,11 @@ class User extends Authenticatable
         return $this->hasMany(Team::class);
     }
 
+    public function logentries()
+    {
+        return $this->hasMany(LogEntry::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
