@@ -5,7 +5,9 @@
 <div class="row">
   <div class="col-12">
     <div class="p-2" id="rulebook">
-      <h2>Rulebook</h2>
+      <h1>Rulebook</h1>
+      <a class="btn btn-secondary m-1" id="openAllRules"><i class="fa fa-list-ol" aria-hidden="true"> Open all rules</i></a>
+      <a class="btn btn-secondary m-1" href="{{asset('/assets/SCO2K17_RuleBook_Final_V5.pdf')}}" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"> Download as PDF</i></a>
       <hr>
       <h3>0. Introduction</h3>
       <ol class="rulebook-section">
@@ -617,4 +619,20 @@ so that they can be closed and corrected respectively.</li>
   </div>
 </div>
 
+@endsection
+@section('additionalFooter')
+<script type="text/javascript">
+  $(function(){
+    $('.rulebook-section').prev().append('<i class="fa fa-caret-square-o-down ml-3" aria-hidden="true"></i>').on('click', toggleRule);
+    $('#openAllRules').on('click', openAllRules);
+  });
+
+  function toggleRule(){
+    $(this).next().slideToggle();
+    $(this).find('i').first().toggleClass('fa-caret-square-o-down').toggleClass('fa-caret-square-o-up');
+  }
+  function openAllRules(){
+    $('.rulebook-section').slideDown().prev().find('i').removeClass('fa-caret-square-o-down').addClass('fa-caret-square-o-up');
+  }
+</script>
 @endsection

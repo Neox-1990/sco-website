@@ -2,39 +2,13 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('img/SCO2K17_LOGO.png')}}" alt="" id="navbar-brand-scologo">SCO</a>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{{url('/season')}}">Schedule & Results</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{url('/rules')}}">Rules</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{url('teams')}}">Teams</a>
-          </li>
-          @if (Auth::guest())
-            <li class="nav-item">
-              <a class="nav-link" href="{{url('login')}}">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url('register')}}">Register</a>
-            </li>
-          @else
-            <li class="nav-item">
-              <a class="nav-link" href="{{url('myteams')}}">My Teams</a>
-            </li>
-            <li class="nav-item">
-              <form class="" action="{{url('logout')}}" method="post">
-                {{csrf_field()}}
-                <button class="btn btn-secondary" type="submit" name="button">Logout</button>
-              </form>
-            </li>
+      <a class="navbar-brand text-uppercase" href="{{url('/')}}"><img src="{{asset('img/SCO2K17_LOGO.png')}}" alt="" id="navbar-brand-scologo">Home</a>
+      <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+            <a class="nav-link text-uppercase sco-nav-link" href="{{url('/season')}}">Schedule & Results</a>
+            <a class="nav-link text-uppercase sco-nav-link" href="{{url('/rules')}}">Rules</a>
+            <a class="nav-link text-uppercase sco-nav-link" href="{{url('teams')}}">Teams</a>
+          @if (auth()->check())
+              <a class="nav-link text-uppercase sco-nav-link" href="{{url('myteams')}}">My Teams</a>
           @endif
-        </ul>
       </div>
-      @if (auth()->check())
-        <span class="nav-link" style="color:#fff;">Welcome back {{ auth()->user()->name }}</span>
-      @endif
     </nav>

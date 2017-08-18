@@ -25,7 +25,7 @@ use Carbon\Carbon;
       <h5 class="ml-5">{{$title[1][0]}} <small class="text-muted ml-2">{{$title[1][1]}}</small></h5>
       <h6 class="ml-5 text-muted">Time: {{$title[2]}}</h6>
       <hr>
-      <table class="table table-inverse table-bordered table-striped table-hover" id="round-sessions-table">
+      <table class="table table-bordered table-striped table-hover" id="round-sessions-table">
         <tr>
           <th>Free practice 1</th>
           <td><i class="fa fa-calendar mr-3" aria-hidden="true"></i> {{$times['fp1']->format('l jS \\of F Y H:i:s-e')}}</td>

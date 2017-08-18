@@ -7,6 +7,7 @@
   <body>
     @include('master.flash')
     <div class="container">
+      @include('user.bar')
       @include('master.header')
       @include('master.nav')
 

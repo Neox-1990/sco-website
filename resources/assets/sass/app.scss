@@ -1,24 +1,29 @@
 //@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 body{
   background-color: #fff;
   background-image: url('/img/sco2017bg2.jpg');
   background-position: center top;
   background-repeat: no-repeat;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .container{
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.75);
   margin-bottom: 2rem;
-  background-color: #fff;
+  padding:0;
 }
 
 main{
-  margin-top: 1rem;
+  margin-top: 0;
+  padding: 1rem;
+  background-color: #fff;
 }
 
 .sco-header{
+  padding: 2rem 10%;
+  background-color: rgba(255,255,255,0.7);
   img{
     width:100%;
     height:auto;
@@ -26,10 +31,18 @@ main{
 }
 
 #navbar-brand-scologo{
-  width: 48px;
+  width: 32px;
   height: auto;
 }
-
+a.sco-nav-link{
+  border-radius: 5px;
+  color: #fff;
+  &:hover{
+    background-color: #eee !important;
+    color: #000 !important;
+    border-radius: 5px;
+  }
+}
 #flash_message{
   font-size: 1.5rem;
   position:absolute;
@@ -94,24 +107,47 @@ main{
 #rulebook{
   h3{
     margin-top:2rem;
+    cursor: pointer;
   }
   table{
     margin-top:1rem;
     margin-bottom:1rem;
   }
 }
+#openAllRules{
+  cursor: pointer;
+}
 ol.rulebook-section{
- list-style-type: lower-alpha;
+ list-style-type: none;
  counter-reset: item;
- >li{
-   padding-left:1rem;
-   counter-increment: item;
-   >ol{
-     counter-reset: item2;
-     >li::before {
-         content: counter(item, lower-alpha) ". " counter(item2) ". ";
-         counter-increment: item2;
-       }
+ display: none;
+ li{
+   padding-left: 1rem;
+   margin-top: 0.5rem;
+
+   pre{
+     display: block;
+     padding: 1rem 2rem;
+     text-align: center;
+     background-color: #eee;
+     border: 1px solid #444;
+     margin: 1rem 3rem;
    }
  }
+ >li::before{
+   content: counter(item, lower-alpha) ". ";
+   counter-increment: item;
+ }
+ ol{
+   list-style-type: none;
+   counter-reset: item2;
+   >li::before{
+     content: counter(item, lower-alpha) ". " counter(item2, decimal) ". ";
+     counter-increment: item2;
+   }
+ }
+}
+
+#sco-user-bar{
+  background-color: #222;
 }

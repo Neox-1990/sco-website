@@ -1,4 +1,4 @@
-/*!
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);/*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.
@@ -10206,17 +10206,23 @@ body {
   background-image: url("/img/sco2017bg2.jpg");
   background-position: center top;
   background-repeat: no-repeat;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .container {
-  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.75);
   margin-bottom: 2rem;
-  background-color: #fff;
+  padding: 0;
 }
 
 main {
-  margin-top: 1rem;
+  margin-top: 0;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.sco-header {
+  padding: 2rem 10%;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .sco-header img {
@@ -10225,8 +10231,19 @@ main {
 }
 
 #navbar-brand-scologo {
-  width: 48px;
+  width: 32px;
   height: auto;
+}
+
+a.sco-nav-link {
+  border-radius: 5px;
+  color: #fff;
+}
+
+a.sco-nav-link:hover {
+  background-color: #eee !important;
+  color: #000 !important;
+  border-radius: 5px;
 }
 
 #flash_message {
@@ -10307,6 +10324,7 @@ main {
 
 #rulebook h3 {
   margin-top: 2rem;
+  cursor: pointer;
 }
 
 #rulebook table {
@@ -10314,22 +10332,46 @@ main {
   margin-bottom: 1rem;
 }
 
-ol.rulebook-section {
-  list-style-type: lower-alpha;
-  counter-reset: item;
+#openAllRules {
+  cursor: pointer;
 }
 
-ol.rulebook-section > li {
+ol.rulebook-section {
+  list-style-type: none;
+  counter-reset: item;
+  display: none;
+}
+
+ol.rulebook-section li {
   padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+ol.rulebook-section li pre {
+  display: block;
+  padding: 1rem 2rem;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #444;
+  margin: 1rem 3rem;
+}
+
+ol.rulebook-section > li::before {
+  content: counter(item, lower-alpha) ". ";
   counter-increment: item;
 }
 
-ol.rulebook-section > li > ol {
+ol.rulebook-section ol {
+  list-style-type: none;
   counter-reset: item2;
 }
 
-ol.rulebook-section > li > ol > li::before {
-  content: counter(item, lower-alpha) ". " counter(item2) ". ";
+ol.rulebook-section ol > li::before {
+  content: counter(item, lower-alpha) ". " counter(item2, decimal) ". ";
   counter-increment: item2;
+}
+
+#sco-user-bar {
+  background-color: #222;
 }
 
