@@ -2,6 +2,8 @@
 
 namespace App\Social;
 
+use \Facebook\Facebook;
+
 /**
  *
  */
@@ -24,7 +26,7 @@ class FacebookHelper
 
     public function getTextFeedElements($limit = 10)
     {
-        $fb = new \Facebook\Facebook([
+        $fb = new Facebook([
           'app_id' => $this->app_id,
           'app_secret' => $this->app_secret,
           'default_graph_version' => $this->default_graph_version,
