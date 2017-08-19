@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import "node_modules/bootstrap/scss/bootstrap";
 html{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif !important;
 }
 body{
   background-color: #fff;
