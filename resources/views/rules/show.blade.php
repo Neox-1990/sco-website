@@ -6,8 +6,8 @@
   <div class="col-12">
     <div class="p-2" id="rulebook">
       <h1>Rulebook</h1>
-      <a class="btn btn-secondary m-1" id="openAllRules"><i class="fa fa-list-ol" aria-hidden="true"> Open all rules</i></a>
-      <a class="btn btn-secondary m-1" href="{{asset('/assets/SCO2K17_RuleBook_Final_V5.pdf')}}" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"> Download as PDF</i></a>
+      <a data-status="closed" class="btn btn-secondary m-1" id="openAllRules"><i class="fa fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
+      <a class="btn btn-secondary m-1" href="{{asset('/assets/SCO2K17_RuleBook_Final_V5.pdf')}}" target="_blank"><i class="fa fa-file-pdf-o mr-2" aria-hidden="true"></i>Download as PDF</a>
       <hr>
       <h3>0. Introduction</h3>
       <ol class="rulebook-section">
@@ -36,19 +36,19 @@ class will include the following car models:
             </tr>
             <tr>
               <td>Prototype</td>
-              <td>P</td>
+              <td class="badge-Prototype">P</td>
               <td>HPD ARX-01c</td>
               <td>0 kg / 100% (60kg)</td>
             </tr>
             <tr>
               <td>Grand Touring</td>
-              <td>GT</td>
+              <td class="badge-GT">GT</td>
               <td>Ferrari 488 GTE<br>Ford GT GTE</td>
               <td>0 kg / 100% (90l)<br>0 kg / 100% (98l)</td>
             </tr>
             <tr>
               <td>Grand Touring Challenge</td>
-              <td>GTC</td>
+              <td class="badge-GTC">GTC</td>
               <td>Audi R8 LMS</td>
               <td>0 kg / 75% (90l)</td>
             </tr>
@@ -108,7 +108,7 @@ will be 4 hours long. The calendar looks as follows:
               <td>5</td>
               <td>AUTODROMO JOSE CARLOS PACE <br>Grand Prix</td>
               <td>Morning</td>
-              <td>Late Afternoon: 25.01.2018 <br>FP2: 26.01.2018 <br><strong>Race Day: 28.01.2018</strong></td>
+              <td>FP1: 25.01.2018 <br>FP2: 26.01.2018 <br><strong>Race Day: 28.01.2018</strong></td>
             </tr>
           </table>
         </li>
@@ -632,7 +632,16 @@ so that they can be closed and corrected respectively.</li>
     $(this).find('i').first().toggleClass('fa-caret-square-o-down').toggleClass('fa-caret-square-o-up');
   }
   function openAllRules(){
-    $('.rulebook-section').slideDown().prev().find('i').removeClass('fa-caret-square-o-down').addClass('fa-caret-square-o-up');
+    if($(this).attr('data-status')=='closed'){
+      $('.rulebook-section').slideDown().prev().find('i').removeClass('fa-caret-square-o-down').addClass('fa-caret-square-o-up');
+      $(this).attr('data-status', 'open');
+      $(this).find('span').first().html('Close all rules');
+    }else{
+      $('.rulebook-section').slideUp().prev().find('i').addClass('fa-caret-square-o-down').removeClass('fa-caret-square-o-up');
+      $(this).attr('data-status', 'closed');
+      $(this).find('span').first().html('Open all rules');
+    }
+
   }
 </script>
 @endsection

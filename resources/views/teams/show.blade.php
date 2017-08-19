@@ -13,7 +13,7 @@
       </tr>
       <tr>
         <td>Car</td>
-        <td><span class="mr-5 badge badge-pill badge-default badge-{{$className}}">{{$className}}</span>{{config('constants.car_names')[$team['car']]}}</td>
+        <td><span class="badge badge-pill badge-{{$className}} badge-normal">{{config('constants.car_names')[$team['car']]}}</span></td>
       </tr>
       <tr>
         <td>Manager</td>

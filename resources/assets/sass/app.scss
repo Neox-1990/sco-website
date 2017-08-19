@@ -1,6 +1,16 @@
 //@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import "node_modules/bootstrap/scss/bootstrap";
+
+$brand-primary: #01256a;
+$darkborder: #222;
+$lightborder: #ddd;
+$sco-dark: #222;
+
+$sco-p: #275296;
+$sco-gt: #1da35c;
+$sco-gtc: #1c1c1c;
+
 html{
   font-family: 'Ubuntu', sans-serif !important;
 }
@@ -58,18 +68,20 @@ a.sco-nav-link{
   display: none;
   z-index: 10;
 }
-
+.badge-normal{
+  font-size: 100%;
+}
 .badge-Prototype{
-  background-color: #44C;
-  color: #fff;
+  background-color: $sco-p !important;
+  color: #fff !important;
 }
 .badge-GT{
-  background-color: #4C4;
-  color: #fff;
+  background-color: $sco-gt !important;
+  color: #fff !important;
 }
 .badge-GTC{
-  background-color: #111;
-  color: #fff;
+  background-color: $sco-gtc !important;
+  color: #fff !important;
 }
 .team-overview-class{
   margin: 2rem 0;
@@ -169,4 +181,43 @@ ol.rulebook-section{
 
 #sco-user-bar{
   background-color: #222;
+}
+
+.facebook-feed-element{
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid $lightborder;
+
+  .facebook-feed-element-header{
+    font-size: 0.8rem;
+  }
+  .facebook-feed-element-body{
+    padding: 0 5rem;
+    margin-top:1rem;
+  }
+  .facebook-feed-element-link{
+    text-align: center;
+    margin-top:1rem;
+    a{
+      max-width:80%;
+      overflow-x: hidden;
+    }
+  }
+  .facebook-feed-element-picture{
+    padding: 0 5rem;
+    margin-top:1rem;
+    img{
+      display:block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height:auto;
+    }
+  }
+}
+#twitter-module{
+  overflow-y: scroll;
+  height: 20rem;
+  border: 1px solid $lightborder;
+  border-radius: $border-radius;
 }

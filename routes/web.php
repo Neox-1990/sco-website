@@ -1,5 +1,7 @@
 <?php
 use App\Team;
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,9 +14,7 @@ use App\Team;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/register', 'RegistrationController@create');
 Route::post('/register', 'RegistrationController@store');
@@ -41,7 +41,7 @@ Route::get('/driver', 'DriverController@index');
 Route::get('/driver/{driver}', 'DriverController@show');
 
 Route::get('/test', function () {
-    //Team::getClassNumbers();
+    dd(Mail::to('info@sco.coresimracing.com')->send(new TestMail()));
 });
 
 Route::get('/rounds/{round}', 'RoundController@show');

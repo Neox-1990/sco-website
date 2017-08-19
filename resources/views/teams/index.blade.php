@@ -28,11 +28,11 @@
           <table class="table table-hover table-bordered">
             <thead class="thead-default">
               <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Car</th>
-                <th>Manager</th>
-                <th>Status</th>
+                <th class="badge-{{$classname}}">#</th>
+                <th class="badge-{{$classname}}">Name</th>
+                <th class="badge-{{$classname}}">Car</th>
+                <th class="badge-{{$classname}}">Manager</th>
+                <th class="badge-{{$classname}}">Status</th>
               </tr>
             </thead>
             <tbody>
