@@ -1,24 +1,30 @@
 //@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "node_modules/bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
-
+html{
+  font-family: 'Ubuntu', sans-serif;
+}
 body{
   background-color: #fff;
   background-image: url('/img/sco2017bg2.jpg');
   background-position: center top;
   background-repeat: no-repeat;
-  font-family: 'Ubuntu', sans-serif;
 }
 
 .container{
   margin-bottom: 2rem;
   padding:0;
 }
-
+nav{
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
 main{
   margin-top: 0;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #fff;
+  //border: 1px solid #222;
+  //border-top-width: 0;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
 .sco-header{
@@ -106,8 +112,15 @@ a.sco-nav-link{
 }
 #rulebook{
   h3{
+    width: auto;
     margin-top:2rem;
+    padding: 0.5rem;
     cursor: pointer;
+    &:hover{
+      i{
+        color: $brand-primary;
+      }
+    }
   }
   table{
     margin-top:1rem;
@@ -135,15 +148,21 @@ ol.rulebook-section{
    }
  }
  >li::before{
-   content: counter(item, lower-alpha) ". ";
+   content: counter(item, lower-alpha) ") ";
    counter-increment: item;
+   font-weight: bold;
+   position: absolute;
+   left:56px;
  }
  ol{
    list-style-type: none;
    counter-reset: item2;
    >li::before{
-     content: counter(item, lower-alpha) ". " counter(item2, decimal) ". ";
+     content: counter(item, lower-alpha) "." counter(item2, decimal) ") ";
      counter-increment: item2;
+     font-weight: bold;
+     position: absolute;
+     left:96px;
    }
  }
 }

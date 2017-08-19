@@ -10201,12 +10201,15 @@ a.text-gray-dark:hover {
   }
 }
 
+html {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 body {
   background-color: #fff;
   background-image: url("/img/sco2017bg2.jpg");
   background-position: center top;
   background-repeat: no-repeat;
-  font-family: 'Ubuntu', sans-serif;
 }
 
 .container {
@@ -10214,10 +10217,17 @@ body {
   padding: 0;
 }
 
+nav {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
 main {
   margin-top: 0;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #fff;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .sco-header {
@@ -10323,8 +10333,14 @@ a.sco-nav-link:hover {
 }
 
 #rulebook h3 {
+  width: auto;
   margin-top: 2rem;
+  padding: 0.5rem;
   cursor: pointer;
+}
+
+#rulebook h3:hover i {
+  color: #0275d8;
 }
 
 #rulebook table {
@@ -10357,8 +10373,11 @@ ol.rulebook-section li pre {
 }
 
 ol.rulebook-section > li::before {
-  content: counter(item, lower-alpha) ". ";
+  content: counter(item, lower-alpha) ") ";
   counter-increment: item;
+  font-weight: bold;
+  position: absolute;
+  left: 56px;
 }
 
 ol.rulebook-section ol {
@@ -10367,8 +10386,11 @@ ol.rulebook-section ol {
 }
 
 ol.rulebook-section ol > li::before {
-  content: counter(item, lower-alpha) ". " counter(item2, decimal) ". ";
+  content: counter(item, lower-alpha) "." counter(item2, decimal) ") ";
   counter-increment: item2;
+  font-weight: bold;
+  position: absolute;
+  left: 96px;
 }
 
 #sco-user-bar {
