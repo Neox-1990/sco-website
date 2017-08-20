@@ -1,8 +1,8 @@
-Welcome {{$user->name}},
+Welcome {{$user->name}}
 
-thank you for your registration on the SCO site. You can now manage your teams in the 'MY TEAMS' menu.
-Please be sure we can reach you on this email address, since we going to send status updates of your teams, server passwords and other important information to this mail.
-If you have any questions feel free to contact us.
+Thank you for your registration on the SCO website. You can now create and manage your teams on the 'MY TEAMS' page.
+As you're a team manager now, we're going to inform you about your teams' status updates, session passwords, race briefings and other important information via e-mail.
+Should you have any questions, then feel free to contact us.
 
-Kind regards
-The SCO team
+Kind regards,
+Your SCO Administration
