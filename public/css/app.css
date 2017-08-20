@@ -10245,15 +10245,36 @@ main {
   height: auto;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-md-only {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  #nav-list {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
 a.sco-nav-link {
   border-radius: 5px;
-  color: #fff;
+  color: #fff !important;
 }
 
 a.sco-nav-link:hover {
   background-color: #eee !important;
   color: #000 !important;
-  border-radius: 5px;
+  border-radius: 0.25rem;
 }
 
 #flash_message {

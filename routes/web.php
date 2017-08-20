@@ -40,6 +40,8 @@ Route::post('/driver', 'DriverController@search');
 Route::get('/driver', 'DriverController@index');
 Route::get('/driver/{driver}', 'DriverController@show');
 
+Route::get('/results', 'ResultController@index');
+
 Route::get('/test', function () {
     dd(Mail::to('info@sco.coresimracing.com')->send(new TestMail()));
 });
