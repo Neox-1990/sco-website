@@ -5,6 +5,7 @@
 <div class="row">
   <div class="col-sm-12 col-lg-6">
     <h1>Registration</h1>
+    @include('master.formerrors')
     <form class="" action="/register" method="post">
       {{csrf_field()}}
       <div class="form-group">
@@ -27,7 +28,6 @@
         <button type="submit" class="btn btn-primary" name="button">Register</button>
       </div>
     </form>
-    @include('master.formerrors')
   </div>
 </div>
 

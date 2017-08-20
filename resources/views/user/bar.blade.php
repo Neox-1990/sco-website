@@ -5,7 +5,7 @@
         {{auth()->user()->name}}
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="{{url('/user/edit')}}">Settings</a>
+        <a class="dropdown-item" href="{{url('/user')}}">Settings</a>
       </div>
     </div>
     <div class="form-inline ml-auto">

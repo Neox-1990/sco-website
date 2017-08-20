@@ -24,9 +24,9 @@ class SessionsController extends Controller
             'password' => request('password')
           ])) {
             session()->flash('flash_message_alert', 'An error occured');
-            return back()->withErrors([
+            return redirect('/login')->withErrors([
             'message' => 'Please check your credentials and try again'
-          ]);
+          ])->withInput();
         }
         session()->flash('flash_message_success', 'You successfully logged in. Welcome back');
         return redirect('/');

@@ -1,6 +1,7 @@
 <?php
 use App\Team;
 use App\Mail\TestMail;
+use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Mail;
 
 /*
@@ -40,10 +41,13 @@ Route::post('/driver', 'DriverController@search');
 Route::get('/driver', 'DriverController@index');
 Route::get('/driver/{driver}', 'DriverController@show');
 
+Route::get('/user', 'UserController@edit');
+Route::post('/user', 'UserController@update');
+
 Route::get('/results', 'ResultController@index');
 
 Route::get('/test', function () {
-    dd(Mail::to('info@sco.coresimracing.com')->send(new TestMail()));
+    dd(Mail::to(auth()->user()->email)->send(new WelcomeMail(auth()->user())));
 });
 
 Route::get('/rounds/{round}', 'RoundController@show');

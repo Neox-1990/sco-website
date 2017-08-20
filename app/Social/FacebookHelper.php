@@ -20,7 +20,7 @@ class FacebookHelper
         $this->app_id = config('services.facebook')['app_id'];
         $this->app_secret = config('services.facebook')['app_secret'];
         $this->default_graph_version = 'v2.10';
-        $this->default_access_token = config('services.facebook')['app_access_token'];
+        $this->default_access_token = config('services.facebook')['app_id'].'|'.config('services.facebook')['app_secret'];
         $this->pageid = 497184450327846;
     }
 
@@ -37,6 +37,6 @@ class FacebookHelper
         $filteredData = array_filter($responseData, function ($data) {
             return !array_key_exists('story', $data) && array_key_exists('message', $data);
         });
-        return array_slice($filteredData, 0, $limit);
+        return array_slice($filteredData, 0, min($limit, sizeof($filteredData)));
     }
 }

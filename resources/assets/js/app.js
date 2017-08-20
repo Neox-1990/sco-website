@@ -9,10 +9,16 @@ require('./bootstrap');
 
 $(document).ready(function(){
   $('#flash_message').delay(200).fadeIn(500,function(){
-    $(this).delay(5000).fadeOut(500,function(){
+    /*$(this).delay(5000).fadeOut(500,function(){
+      $(this).remove();
+    });*/
+  });
+  $('#flash_message>button.close').on('click', function(){
+    $(this).parent().fadeOut(500,function(){
       $(this).remove();
     });
-  });
+  })
+
   if(typeof(numbers) !== 'undefined'){
     updateNumbers();
     $('#car').on('change', updateNumbers);

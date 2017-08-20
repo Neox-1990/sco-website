@@ -10278,13 +10278,21 @@ a.sco-nav-link:hover {
 }
 
 #flash_message {
-  font-size: 1.5rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  font-size: 1rem;
+  position: fixed;
+  padding-right: 2rem;
+  top: 1rem;
+  left: 1rem;
+  max-width: 50%;
   display: none;
-  z-index: 10;
+  z-index: 5000;
+  border: 2px solid #01256a;
+}
+
+#flash_message button.close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 .badge-normal {
@@ -10465,5 +10473,24 @@ ol.rulebook-section ol > li::before {
   height: 20rem;
   border: 1px solid #ddd;
   border-radius: 0.25rem;
+}
+
+footer {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: #01256a;
+  color: #fff;
+}
+
+footer a {
+  color: #fff !important;
+}
+
+footer a:hover {
+  color: #d00505 !important;
+}
+
+nav {
+  background-color: #222 !important;
 }
 
