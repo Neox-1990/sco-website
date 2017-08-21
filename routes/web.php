@@ -57,3 +57,8 @@ Route::get('/season', 'SeasonController@index');
 Route::get('/rules', function () {
     return view('rules.show');
 });
+
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/manager', 'AdminController@managerIndex');
+Route::get('/admin/manager/{user}', 'AdminController@managerEdit');
+Route::get('/admin/log', 'AdminController@logIndex');

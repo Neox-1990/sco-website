@@ -50,7 +50,7 @@
               </div>
               <div class="form-group">
                 <label for="driver{{$n}}irating">iRating</label>
-                <input class="form-control" type="number" min="2000" max="9999" step="1" value="{{old('driver'.$n.'.ir',2000)}}" name="driver{{$n}}[ir]" id="driver{{$n}}irating">
+                <input class="form-control" type="number" min="2000" max="12000" step="1" value="{{old('driver'.$n.'.ir',2000)}}" name="driver{{$n}}[ir]" id="driver{{$n}}irating">
               </div>
               <div class="form-group">
                 <label for="driver{{$n}}sr1">License & SR</label>

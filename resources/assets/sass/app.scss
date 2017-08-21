@@ -259,3 +259,25 @@ footer{
 nav{
   background-color: $sco-dark !important;
 }
+
+body#admin-dashbord{
+  background: 0;
+  background-color: #fff;
+
+  nav{
+    box-shadow: none;
+    background-color: #fff !important;
+  }
+
+  .dashbord-modul{
+    display:block;
+    width: auto;
+    overflow: hidden;
+    float:left;
+    margin: 0.5rem;
+  }
+  .dashbord-log-table{
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+}
