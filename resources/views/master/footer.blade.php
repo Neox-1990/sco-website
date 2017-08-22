@@ -1,7 +1,7 @@
 <footer class="col-lg-12">
   <div class="d-flex justify-content-between flex-wrap pt-3 pb-2">
     <div class="m-2">
-      Sports Car Open is a series by <a href="http://www.coresimracing.com">CoRe Simracing</a>
+      Sports Car Open is a series by <a href="http://www.coresimracing.com">CoRe SimRacing</a>
     </div>
     <div class="m-2">
       Visit us on:

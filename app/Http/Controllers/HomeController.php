@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $feedData = (new FacebookHelper())->getTextFeedElements(5);
+        $feedData = (new FacebookHelper())->getTextFeedElements(3);
         //dd($feedData);
         $now = new Carbon();
         $now = $now->subHours(5);

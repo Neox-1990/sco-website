@@ -28,18 +28,18 @@ class EditTeam extends FormRequest
     public function rules()
     {
         return [
-        'teamname' => 'nullable|required_with_all:teamcar,teamnumber,iracing_teamid|required_with:updateTeamdata',
-        'teamcar' => 'nullable|required_with_all:teamname,teamnumber,iracing_teamid|integer|required_with:updateTeamdata',
-        'teamnumber' => 'nullable|required_with_all:teamname,teamcar,iracing_teamid|integer|required_with:updateTeamdata',
-        'iracing_teamid' => 'nullable|required_with_all:teamname,teamcar,teamnumber|integer|required_with:updateTeamdata',
+        'teamname' => 'nullable|required_with_all:teamcar,teamnumber,iracing_teamid|required_with:updateTeamdata|max:255',
+        'teamcar' => 'nullable|required_with_all:teamname,teamnumber,iracing_teamid|integer|required_with:updateTeamdata|max:4',
+        'teamnumber' => 'nullable|required_with_all:teamname,teamcar,iracing_teamid|integer|required_with:updateTeamdata|max:150',
+        'iracing_teamid' => 'nullable|required_with_all:teamname,teamcar,teamnumber|integer|required_with:updateTeamdata|max:9999999',
 
-        'driver.name' => 'nullable|required_with:driver.iracingid|required_with:addDriver',
-        'driver.iracingid' => 'nullable|required_with:driver.name|numeric|required_with:addDriver',
-        'driver.ir' => 'nullable|required_with_all:driver.iracingid,driver.name|numeric|min:2000|required_with:addDriver',
+        'driver.name' => 'nullable|required_with:driver.iracingid|required_with:addDriver|max:255',
+        'driver.iracingid' => 'nullable|required_with:driver.name|numeric|required_with:addDriver|max:9999999',
+        'driver.ir' => 'nullable|required_with_all:driver.iracingid,driver.name|numeric|min:2000|required_with:addDriver|max:12000',
         'driver.sr1' => 'nullable|required_with_all:driver.iracingid,driver.name|in:c,b,a,p|required_with:addDriver',
-        'driver.sr2' => 'nullable|required_with_all:driver.iracingid,driver.name|numeric|required_with:addDriver',
+        'driver.sr2' => 'nullable|required_with_all:driver.iracingid,driver.name|numeric|required_with:addDriver|max:128',
 
-        'driverID' => 'nullable|numeric|required_with:removeDriver'
+        'driverID' => 'nullable|numeric|required_with:removeDriver|max:9999999'
     ];
     }
     public function check(Team $team)
