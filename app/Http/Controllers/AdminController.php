@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Team;
 use App\LogEntry;
+use App\Events\TeamEditEvent;
+use App\Events\UserUpdateEvent;
+use App\Events\TeamStatusChangeEvent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -41,6 +45,39 @@ class AdminController extends Controller
         $users = User::all();
         return view('admin.manager.index', compact('users'));
     }
+    public function managerEdit(User $user)
+    {
+        return view('admin.manager.edit', compact('user'));
+    }
+    public function managerUpdate(Request $request, User $user)
+    {
+        $this->validate($request, [
+        'manager_email' => 'email|unique:users,email',
+      ]);
+
+        if ($request->has('managerNameChange')) {
+            $user->name = $request->input('manager_name');
+            $user->save();
+            session()->flash('flash_message_success', 'Manager name changed.');
+            event(new UserUpdateEvent($user, 'Name changed'));
+            return redirect('admin/manager/'.$user->id);
+        } elseif ($request->has('managerEmailChange')) {
+            $user->email = $request->input('manager_email');
+            $user->save();
+            session()->flash('flash_message_success', 'Manager email changed.');
+            event(new UserUpdateEvent($user, 'Email changed'));
+            return redirect('admin/manager/'.$user->id);
+        } elseif ($request->has('managerSetPass')) {
+            $user->password = Hash::make($request->input('manager_pass'));
+            $user->save();
+            session()->flash('flash_message_success', 'Manager password changed.');
+            event(new UserUpdateEvent($user, 'Password changed'));
+            return redirect('admin/manager/'.$user->id);
+        } else {
+            session()->flash('flash_message_alert', 'Unknown error.');
+            return redirect('admin/manager/'.$user->id);
+        }
+    }
     public function logIndex(Request $request)
     {
         $log = LogEntry::query();
@@ -67,8 +104,58 @@ class AdminController extends Controller
             if ($request->has('filteraction.driverremove')) {
                 $log->orWhere('title', 'like', '%driver removed%');
             }
+            if ($request->has('filteraction.statusset')) {
+                $log->orWhere('title', 'like', '%Status set%');
+            }
         }
         $log = $log->with('user')->orderBy('created_at', 'desc')->get();
         return view('admin.log.index', compact('log'));
+    }
+
+    public function teamIndex()
+    {
+        $teams = [
+      'P' => [
+        'pending' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 0], ['car','=',1]])->get(),
+        'waitinglist' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 1], ['car','=',1]])->get(),
+        'confirmed' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',1]])->get(),
+      ],
+      'GT' => [
+        'pending' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 0]])->whereIn('car', [2,3])->get(),
+        'waitinglist' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 1]])->whereIn('car', [2,3])->get(),
+        'confirmed' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [2,3])->get(),
+      ],
+      'GTC' => [
+        'pending' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 0]])->whereIn('car', [4])->get(),
+        'waitinglist' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 1]])->whereIn('car', [4])->get(),
+        'confirmed' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [4])->get(),
+      ],
+    ];
+        return view('admin.team.index', compact('teams'));
+    }
+    public function teamUpdate(Request $request, Team $team)
+    {
+        if ($request->has('confirm')) {
+            $team->status = 2;
+            $team->save();
+            session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: confirmed');
+            event(new TeamStatusChangeEvent($team));
+            event(new TeamEditEvent($team, 'Status set confirmed'));
+            return redirect('admin/teams/');
+        } elseif ($request->has('waiting')) {
+            $team->status = 1;
+            $team->save();
+            session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: waitinglist');
+            event(new TeamStatusChangeEvent($team));
+            event(new TeamEditEvent($team, 'Status set waitinglist'));
+            return redirect('admin/teams/');
+        } elseif ($request->has('pending')) {
+            $team->status = 0;
+            $team->save();
+            session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: pending');
+            event(new TeamStatusChangeEvent($team));
+            event(new TeamEditEvent($team, 'Status set pending'));
+            return redirect('admin/teams/');
+        }
     }
 }

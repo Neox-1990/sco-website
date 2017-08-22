@@ -28,7 +28,7 @@ class UserUpdateEventListener
     public function handle(UserUpdateEvent $event)
     {
         $logEntry = new LogEntry;
-        $logEntry->user_id = $event->user->id;
+        $logEntry->user_id = auth()->id();
         $logEntry->title = 'Manager data updated.';
         $logEntry->action = 'Manager data updated: '.$event->title.'. Name: '.$event->user->name.' | Email: '.$event->user->email;
         $logEntry->save();

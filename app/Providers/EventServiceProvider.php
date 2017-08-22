@@ -28,6 +28,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\UserUpdateEvent' => [
             'App\Listeners\UserUpdateEventListener',
         ],
+        'App\Events\TeamStatusChangeEvent' => [
+            'App\Listeners\TeamStatusChangeEventListener',
+        ],
     ];
 
     /**

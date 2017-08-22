@@ -61,4 +61,8 @@ Route::get('/rules', function () {
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/manager', 'AdminController@managerIndex');
 Route::get('/admin/manager/{user}', 'AdminController@managerEdit');
+Route::post('/admin/manager/{user}', 'AdminController@managerUpdate');
 Route::get('/admin/log', 'AdminController@logIndex');
+Route::get('/admin/teams', 'AdminController@teamIndex');
+Route::get('/admin/teams/{team}', 'AdminController@teamEdit');
+Route::post('/admin/teams/{team}', 'AdminController@teamUpdate');

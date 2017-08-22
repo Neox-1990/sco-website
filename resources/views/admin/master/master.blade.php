@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
   </head>
   <body id="admin-dashbord">
+    @include('master.flash')
     <div class="container-fluid">
       <div class="row p-2">
         <div class="col-2">
@@ -17,5 +18,6 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
   </body>
 </html>

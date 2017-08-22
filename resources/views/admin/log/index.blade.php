@@ -58,9 +58,13 @@
                <input type="checkbox" name="filteraction[driverremove]" class="form-check-input">
                driver removed
              </label>
+             <label class="form-check-label d-block">
+               <input type="checkbox" name="filteraction[statusset]" class="form-check-input">
+               status set
+             </label>
            </div>
           <div class="form-group">
-            <input class="form-control btn-primary" type="submit" name="action_" value="filter by team">
+            <input class="form-control btn-primary" type="submit" name="action_" value="filter by action">
           </div>
         </form>
       </div>
