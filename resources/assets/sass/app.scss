@@ -12,6 +12,10 @@ $sco-p: #275296;
 $sco-gt: #1da35c;
 $sco-gtc: #1c1c1c;
 
+$facebookblue: #3b5998;
+$twitterblue: #4099FF;
+$youtubered: #e52d27;
+
 html{
   font-family: 'Ubuntu', sans-serif !important;
 }
@@ -259,6 +263,15 @@ footer{
     &:hover{
       color: $sco-red !important;
     }
+  }
+  a.fblink:hover{
+    color: $facebookblue !important;
+  }
+  a.twlink:hover{
+    color: $twitterblue !important;
+  }
+  a.ytlink:hover{
+    color: $youtubered !important;
   }
 }
 nav{

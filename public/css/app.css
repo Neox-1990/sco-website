@@ -10497,6 +10497,18 @@ footer a:hover {
   color: #d00505 !important;
 }
 
+footer a.fblink:hover {
+  color: #3b5998 !important;
+}
+
+footer a.twlink:hover {
+  color: #4099FF !important;
+}
+
+footer a.ytlink:hover {
+  color: #e52d27 !important;
+}
+
 nav {
   background-color: #222 !important;
 }
