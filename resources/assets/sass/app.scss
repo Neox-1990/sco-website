@@ -248,6 +248,7 @@ ol.rulebook-section{
   height: 30rem;
   border: 1px solid $lightborder;
   border-radius: $border-radius;
+  flex-grow: 1;
 }
 footer{
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);

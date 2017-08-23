@@ -58,7 +58,7 @@
           </form>
       </div>
     </div>
-    <div id="twitter-module" class="mt-md-auto mt-sm-3">
+    <div id="twitter-module" class="mt-3">
       <a class="twitter-timeline" href="https://twitter.com/CoReSimRacing">Tweets by CoReSimRacing</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </aside>

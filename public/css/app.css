@@ -10477,6 +10477,9 @@ ol.rulebook-section ol > li::before {
   height: 30rem;
   border: 1px solid #ddd;
   border-radius: 0.25rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 footer {
