@@ -223,7 +223,7 @@ promoted to the “Confirmed” status and will take up the vacant spot on the g
 Should this happen during an ongoing event, then their slot will remain empty until
 the following round.</li>
         <li>The application deadline for the opening round of the season will be on September
-25th, 2017 at 17:00 UTC. Teams may still register after this point, but will only the
+25th, 2017 at 17:00 UTC. Teams may still register after this point, but will only the have 
 “On Waiting List” status and will join the end of the waiting list of the class they
 entered, behind all teams that failed to make it through pre-qualifying (should it
 have taken place).</li>
