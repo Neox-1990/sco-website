@@ -212,6 +212,10 @@ ol.rulebook-section{
   background-color: #fff;
   border: 1px solid $lightborder;
 
+  &:last-child{
+    margin-bottom: 0;
+  }
+
   .facebook-feed-element-header{
     font-size: 0.8rem;
   }
@@ -241,7 +245,7 @@ ol.rulebook-section{
 }
 #twitter-module{
   overflow-y: scroll;
-  height: 20rem;
+  height: 30rem;
   border: 1px solid $lightborder;
   border-radius: $border-radius;
 }

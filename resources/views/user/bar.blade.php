@@ -8,6 +8,9 @@
         <a class="dropdown-item" href="{{url('/user')}}">Settings</a>
       </div>
     </div>
+    @if(auth()->user()->isAdmin)
+      <a class="btn btn-outline-info ml-3" href="{{url('admin/')}}">Admin</a>
+    @endif
     <div class="form-inline ml-auto">
       <form class="" action="{{url('logout')}}" method="post">
         {{csrf_field()}}

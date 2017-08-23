@@ -55,6 +55,13 @@ class RegistrationController extends Controller
           'password' => 'required|string|min:6|max:255|confirmed|not_in:'.implode(',', $forbiddenPW)
         ]);
 
+        $settings = \App\Setting::getSetup();
+        if ($settings['registration']=='closed') {
+            $error = 'Registration is closed!';
+            session()->flash('flash_message_alert', 'An error occurred.');
+            return back()->withInput()->withErrors($error);
+        }
+
         $user = User::create([
           'email' => request('email'),
           'name' => request('name'),

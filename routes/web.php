@@ -47,7 +47,6 @@ Route::post('/user', 'UserController@update');
 Route::get('/results', 'ResultController@index');
 
 Route::get('/test', function () {
-    dd(Mail::to(auth()->user()->email)->send(new WelcomeMail(auth()->user())));
 });
 
 Route::get('/rounds/{round}', 'RoundController@show');
@@ -66,3 +65,5 @@ Route::get('/admin/log', 'AdminController@logIndex');
 Route::get('/admin/teams', 'AdminController@teamIndex');
 Route::get('/admin/teams/{team}', 'AdminController@teamEdit');
 Route::post('/admin/teams/{team}', 'AdminController@teamUpdate');
+Route::get('/admin/settings', 'AdminController@settingsEdit');
+Route::post('/admin/settings', 'AdminController@settingsUpdate');

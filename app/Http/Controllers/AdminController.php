@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Team;
 use App\LogEntry;
+use App\Setting;
 use App\Events\TeamEditEvent;
 use App\Events\UserUpdateEvent;
 use App\Events\TeamStatusChangeEvent;
@@ -156,6 +157,33 @@ class AdminController extends Controller
             event(new TeamStatusChangeEvent($team));
             event(new TeamEditEvent($team, 'Status set pending'));
             return redirect('admin/teams/');
+        } else {
+            session()->flash('flash_message_alert', 'Unknown Error');
+            return redirect('admin/teams/');
+        }
+    }
+    public function settingsEdit()
+    {
+        $settings = Setting::all();
+        $setup = [];
+        foreach ($settings as $setting) {
+            $setup[$setting['key']] = $setting['value'];
+        }
+        return view('admin.settings.edit', compact('setup'));
+    }
+    public function settingsUpdate(Request $request)
+    {
+        if ($request->has('simpleSubmit')) {
+            foreach ($request->except(['_token','simpleSubmit']) as $key => $value) {
+                $setting = Setting::where('key', '=', $key)->first();
+                $setting->value = $value;
+                $setting->save();
+            }
+            session()->flash('flash_message_success', 'Settings adjusted');
+            return redirect('admin/settings/');
+        } else {
+            session()->flash('flash_message_alert', 'Unknown Error');
+            return redirect('admin/settings/');
         }
     }
 }

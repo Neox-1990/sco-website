@@ -10436,6 +10436,10 @@ ol.rulebook-section ol > li::before {
   border: 1px solid #ddd;
 }
 
+.facebook-feed-element:last-child {
+  margin-bottom: 0;
+}
+
 .facebook-feed-element .facebook-feed-element-header {
   font-size: 0.8rem;
 }
@@ -10470,7 +10474,7 @@ ol.rulebook-section ol > li::before {
 
 #twitter-module {
   overflow-y: scroll;
-  height: 20rem;
+  height: 30rem;
   border: 1px solid #ddd;
   border-radius: 0.25rem;
 }
