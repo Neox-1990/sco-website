@@ -32,10 +32,10 @@
       </div>
       <div class="card-block">
         @if ($season['curent']!==null)
-          <p class="text-center"><strong>Current:</strong><br>{{$season['curent']}}</p>
+          <p class="text-center"><strong>Current:</strong><br><a href="{{url('/rounds/'.$roundid)}}">{{$season['curent']}}</a></p>
           <hr>
         @endif
-        <p class="text-center"><strong>Next:</strong><br>{{$season['next']['session']}}<br><small class="text-muted font-italic">in {{$season['next']['time']}}</small></p>
+        <p class="text-center"><strong>Next:</strong><br><a href="{{url('/rounds/'.$roundid)}}">{{$season['next']['session']}}</a><br><small class="text-muted font-italic">in {{$season['next']['time']}}</small></p>
       </div>
     </div>
     <div class="card mt-3">
@@ -59,7 +59,7 @@
       </div>
     </div>
     <div id="twitter-module" class="mt-3">
-      <a class="twitter-timeline" href="https://twitter.com/CoReSimRacing">Tweets by CoReSimRacing</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a class="twitter-timeline" href="{{$sco_settings['twitteraccount']}}">Tweets by Sports Car Open</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </aside>
 </div>

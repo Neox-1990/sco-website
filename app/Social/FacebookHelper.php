@@ -21,7 +21,6 @@ class FacebookHelper
         $this->app_secret = config('services.facebook')['app_secret'];
         $this->default_graph_version = 'v2.10';
         $this->default_access_token = config('services.facebook')['app_id'].'|'.config('services.facebook')['app_secret'];
-        $this->pageid = 497184450327846;
     }
 
     public function getTextFeedElements($limit = 10)
@@ -32,7 +31,8 @@ class FacebookHelper
           'default_graph_version' => $this->default_graph_version,
           'default_access_token' => $this->default_access_token, // optional
         ]);
-        $response = $fb->get('/497184450327846/posts?fields=id,message,story,created_time,full_picture,link');
+        $pageid = \App\Setting::getSetup()['facebookpageid'];
+        $response = $fb->get('/'.$pageid.'/posts?fields=id,message,story,created_time,full_picture,link');
         $responseData = ($response->getDecodedBody())['data'];
         $filteredData = array_filter($responseData, function ($data) {
             return !array_key_exists('story', $data) && array_key_exists('message', $data);

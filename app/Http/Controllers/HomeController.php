@@ -30,6 +30,7 @@ class HomeController extends Controller
         $now = new Carbon();
         $now = $now->subHours(5);
         $round = Round::where([['race_start', '>', $now->toDateTimeString()],['season_id',config('constants.curent_season')]])->orderBy('race_start', 'asc')->first();
+        $roundid = $round->id;
         $fp1_start = new Carbon($round->fp1_start);
         $fp1_end = $fp1_start->addMinutes($round->fp1_minutes);
         $fp2_start = new Carbon($round->fp2_start);
@@ -40,7 +41,6 @@ class HomeController extends Controller
         $qual_end = $qual_start->addMinutes($round->qual_minutes);
         $race_start = new Carbon($round->race_start);
         $race_end = $race_start->addMinutes($round->race_minutes);
-
         $season = [
           'curent' => null,
           'next' => null,
@@ -112,6 +112,6 @@ class HomeController extends Controller
 
         //dd($season);
 
-        return view('index', compact('feedData', 'season'));
+        return view('index', compact('feedData', 'season', 'roundid'));
     }
 }

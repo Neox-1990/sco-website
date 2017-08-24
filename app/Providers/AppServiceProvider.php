@@ -16,6 +16,9 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('registration.create', function ($view) {
             $view->with('sco_settings', \App\Setting::getSetup());
         });
+        view()->composer('index', function ($view) {
+            $view->with('sco_settings', \App\Setting::getSetup());
+        });
     }
 
     /**
