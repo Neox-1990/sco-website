@@ -9,13 +9,23 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function teams()
+    {
+        return $this->hasMany(Team::class);
+    }
+
+    public function logentries()
+    {
+        return $this->hasMany(LogEntry::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'isAdmin'
     ];
 
     /**

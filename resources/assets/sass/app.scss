@@ -1,9 +1,301 @@
+//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import "node_modules/bootstrap/scss/bootstrap";
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+$brand-primary: #01256a;
+$sco-red: #d00505;
+$darkborder: #222;
+$lightborder: #ddd;
+$sco-dark: #222;
 
-// Variables
-@import "variables";
+$sco-p: #275296;
+$sco-gt: #1da35c;
+$sco-gtc: #1c1c1c;
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+$facebookblue: #3b5998;
+$twitterblue: #4099FF;
+$youtubered: #e52d27;
+
+html{
+  font-family: 'Ubuntu', sans-serif !important;
+}
+body{
+  background-color: #fff;
+  background-image: url('/img/sco2017bg2.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.container{
+  margin-bottom: 2rem;
+  padding:0;
+}
+nav{
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+main{
+  margin-top: 0;
+  padding: 1.5rem;
+  background-color: #fff;
+  //border: 1px solid #222;
+  //border-top-width: 0;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.sco-header{
+  padding: 2rem 10%;
+  background-color: rgba(255,255,255,0.7);
+  img{
+    width:100%;
+    height:auto;
+  }
+}
+
+#navbar-brand-scologo{
+  width: 32px;
+  height: auto;
+}
+@include media-breakpoint-only(md){
+  .hidden-md-only{
+    display:none;
+  }
+}
+@include media-breakpoint-up(md){
+  #nav-list{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    >li{
+
+    }
+  }
+}
+a.sco-nav-link{
+  border-radius: 5px;
+  color: #fff !important;
+  &:hover{
+    background-color: #eee !important;
+    color: #000 !important;
+    border-radius: $border-radius;
+  }
+}
+#flash_message{
+  font-size: 1rem;
+  position:fixed;
+  padding-right: 2rem;
+  top:1rem;
+  left:1rem;
+  max-width: 50%;
+  display: none;
+  z-index: 5000;
+  border: 2px solid $brand-primary;
+  button.close{
+    position:absolute;
+    right:5px;
+    top:5px;
+  }
+}
+.badge-normal{
+  font-size: 100%;
+}
+.badge-Prototype{
+  background-color: $sco-p !important;
+  color: #fff !important;
+}
+.badge-GT{
+  background-color: $sco-gt !important;
+  color: #fff !important;
+}
+.badge-GTC{
+  background-color: $sco-gtc !important;
+  color: #fff !important;
+}
+.team-overview-class{
+  margin: 2rem 0;
+}
+#driver-search-button{
+  cursor: pointer;
+}
+.search-group-title{
+  width: 20%;
+  min-width: 150px
+}
+#add-driver-form{
+  float:right;
+}
+.add-driver-form{
+  display:none;
+}
+.add-driver-form-active{
+  display:block;
+}
+/*.nav-item-fullwidth{
+  width: 100%;
+}*/
+.round-tabs .nav-item .nav-link{
+  border: 1px solid rgba(240,240,240,1);
+}
+.round-tabs a.nav-link.active, .round-tabs a.nav-link:hover {
+  background-color: $brand-primary !important;
+  color: #fff !important;
+}
+#round-sessions-table th,
+#round-sessions-table td{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.jumbotron.round-frame{
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  padding-top: 2rem;
+}
+#rulebook{
+  h3{
+    width: auto;
+    margin-top:2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    &:hover{
+      i{
+        color: $brand-primary;
+      }
+    }
+  }
+  table{
+    margin-top:1rem;
+    margin-bottom:1rem;
+  }
+}
+#openAllRules{
+  cursor: pointer;
+}
+ol.rulebook-section{
+ list-style-type: none;
+ counter-reset: item;
+ display: none;
+ li{
+   padding-left: 1rem;
+   margin-top: 0.5rem;
+
+   pre{
+     display: block;
+     padding: 1rem 2rem;
+     text-align: center;
+     background-color: #eee;
+     border: 1px solid #444;
+     margin: 1rem 3rem;
+   }
+ }
+ >li::before{
+   content: counter(item, lower-alpha) ") ";
+   counter-increment: item;
+   font-weight: bold;
+   position: absolute;
+   left:56px;
+ }
+ ol{
+   list-style-type: none;
+   counter-reset: item2;
+   >li::before{
+     content: counter(item, lower-alpha) "." counter(item2, decimal) ") ";
+     counter-increment: item2;
+     font-weight: bold;
+     position: absolute;
+     left:96px;
+   }
+ }
+}
+
+#sco-user-bar{
+  background-color: $sco-dark;
+}
+
+.facebook-feed-element{
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid $lightborder;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+
+  .facebook-feed-element-header{
+    font-size: 0.8rem;
+  }
+  .facebook-feed-element-body{
+    padding: 0 5rem;
+    margin-top:1rem;
+  }
+  .facebook-feed-element-link{
+    text-align: center;
+    margin-top:1rem;
+    a{
+      max-width:80%;
+      overflow-x: hidden;
+    }
+  }
+  .facebook-feed-element-picture{
+    padding: 0 5rem;
+    margin-top:1rem;
+    img{
+      display:block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height:auto;
+    }
+  }
+}
+#twitter-module{
+  overflow-y: scroll;
+  height: 30rem;
+  border: 1px solid $lightborder;
+  border-radius: $border-radius;
+  flex-grow: 1;
+}
+footer{
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  background-color: $brand-primary;
+  color: #fff;
+  a{
+    color: #fff !important;
+    &:hover{
+      color: $sco-red !important;
+    }
+  }
+  a.fblink:hover{
+    color: $facebookblue !important;
+  }
+  a.twlink:hover{
+    color: $twitterblue !important;
+  }
+  a.ytlink:hover{
+    color: $youtubered !important;
+  }
+}
+nav{
+  background-color: $sco-dark !important;
+}
+
+body#admin-dashbord{
+  background: 0;
+  background-color: #fff;
+
+  nav{
+    box-shadow: none;
+    background-color: #fff !important;
+  }
+
+  .dashbord-modul{
+    display:block;
+    width: auto;
+    overflow: hidden;
+    float:left;
+    margin: 0.5rem;
+  }
+  .dashbord-log-table{
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+}

@@ -4,6 +4,7 @@
     </IfModule>
 
     RewriteEngine On
+    RewriteBase /
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
@@ -18,3 +19,8 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 </IfModule>
+
+AuthUserFile /homepages/30/d610791350/htdocs/scotest.coresimracing.com/public/.htpasswd
+AuthType Basic
+AuthName "Super Secret Site"
+Require valid-user

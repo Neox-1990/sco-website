@@ -15,16 +15,18 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('manager_id');
+            $table->integer('user_id');
             $table->integer('season_id');
             $table->string('name');
             $table->integer('number');
             $table->integer('car');
             $table->integer('status');
+            $table->integer('ir_teamid');
             $table->integer('preqtime')->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
-            $table->unique(['season_id', 'name']);
+            $table->unique(['season_id', 'name', 'deleted_at']);
             //$table->foreign('manager_id')->references('id')->on('managers');
             //$table->foreign('season_id')->references('id')->on('seasons');
         });
