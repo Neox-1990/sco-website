@@ -20,6 +20,7 @@ html{
   font-family: 'Ubuntu', sans-serif !important;
 }
 body{
+  font-size: 18px;
   background-color: #fff;
   background-image: url('/img/sco2017bg2.jpg');
   background-position: center top;
@@ -60,7 +61,7 @@ main{
     display:none;
   }
 }
-@include media-breakpoint-up(md){
+@include media-breakpoint-up(lg){
   #nav-list{
     width:100%;
     display:flex;

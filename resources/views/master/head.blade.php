@@ -8,6 +8,7 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/favicon_ms.png">
 <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/favicon_apple.png">
+<meta name=viewport content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
 <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">

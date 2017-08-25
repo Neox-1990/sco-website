@@ -43,6 +43,8 @@
         <a href="https://www.coresimracing.com/"><img src="{{asset('img/core-logo.png')}}" alt="" class="img-fluid"></a>
         <hr>
         <a href="http://racespot.tv/"><img src="{{asset('img/racespot-logo.png')}}" alt="" class="img-fluid"></a>
+        <hr>
+        <a href="https://discord.gg/ShfkyTe"><img src="{{asset('img/discord.png')}}" alt="" class="img-fluid"></a>
       </div>
     </div>
     <div class="card mt-3">
