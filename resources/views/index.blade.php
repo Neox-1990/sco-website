@@ -2,7 +2,7 @@
 
 @section('main')
 
-<div class="row">
+<div class="row d-flex align-items-stretch">
   <div class="col-lg-9 col-sm-12" id="facebookfeed">
     @foreach ($feedData as $feedElement)
       <div class="jumbotron facebook-feed-element">
@@ -25,7 +25,7 @@
       </div>
     @endforeach
   </div>
-  <aside class="col-lg-3 col-sm-12">
+  <div class="col-lg-3 col-sm-12 d-flex flex-column align-items-start align-items-stretch">
     <div class="card sco-status mt-sm-3 mt-md-0">
       <div class="card-header text-center">
         <h3>Season Status</h3>
@@ -63,7 +63,7 @@
     <div id="twitter-module" class="mt-3">
       <a class="twitter-timeline" href="{{$sco_settings['twitteraccount']}}">Tweets by Sports Car Open</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-  </aside>
+  </div>
 </div>
 
 @endsection
