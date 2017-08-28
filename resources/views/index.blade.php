@@ -3,7 +3,7 @@
 @section('main')
 
 <div class="row d-flex align-items-stretch">
-  <div class="col-lg-9 col-sm-12" id="facebookfeed">
+  <div class="col-lg-9 col-md-12" id="facebookfeed">
     @foreach ($feedData as $feedElement)
       <div class="jumbotron facebook-feed-element">
         <div class="facebook-feed-element-header">
@@ -25,8 +25,8 @@
       </div>
     @endforeach
   </div>
-  <div class="col-lg-3 col-sm-12 d-flex flex-column align-items-start align-items-stretch">
-    <div class="card sco-status mt-sm-3 mt-md-0">
+  <div class="col-lg-3 col-md-12 d-flex flex-column align-items-start align-items-stretch">
+    <div class="card sco-status mt-md-3 mt-lg-0">
       <div class="card-header text-center">
         <h3>Season Status</h3>
       </div>
