@@ -6,8 +6,8 @@
   <div class="col-12">
     <div class="p-2" id="rulebook">
       <h1>Rulebook</h1>
-      <a data-status="closed" class="btn btn-secondary m-1" id="openAllRules"><i class="fa fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
-      <a class="btn btn-secondary m-1" href="{{asset('/assets/SCO2K17_RuleBook_Final_V5.pdf')}}" target="_blank"><i class="fa fa-file-pdf-o mr-2" aria-hidden="true"></i>Download as PDF</a>
+      <a data-status="closed" class="btn btn-outline-dark m-1" id="openAllRules"><i class="fa fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
+      <a class="btn btn-outline-dark m-1" href="{{asset('/assets/SCO2K17_RuleBook_Final_V5.pdf')}}" target="_blank"><i class="fa fa-file-pdf-o mr-2" aria-hidden="true"></i>Download as PDF</a>
       <hr>
       <h3>0. Introduction</h3>
       <ol class="rulebook-section">
@@ -223,7 +223,7 @@ promoted to the “Confirmed” status and will take up the vacant spot on the g
 Should this happen during an ongoing event, then their slot will remain empty until
 the following round.</li>
         <li>The application deadline for the opening round of the season will be on September
-25th, 2017 at 17:00 UTC. Teams may still register after this point, but will only the have 
+25th, 2017 at 17:00 UTC. Teams may still register after this point, but will only the have
 “On Waiting List” status and will join the end of the waiting list of the class they
 entered, behind all teams that failed to make it through pre-qualifying (should it
 have taken place).</li>

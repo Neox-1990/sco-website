@@ -9208,6 +9208,10 @@ nav {
           box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+nav .bg-sco-dark {
+  background-color: #222 !important;
+}
+
 main {
   margin-top: 0;
   padding: 1.5rem;
@@ -9431,7 +9435,7 @@ ol.rulebook-section ol > li::before {
 }
 
 .facebook-feed-element .facebook-feed-element-body {
-  padding: 0 5rem;
+  padding: 0 5%;
   margin-top: 1rem;
 }
 
@@ -9446,7 +9450,7 @@ ol.rulebook-section ol > li::before {
 }
 
 .facebook-feed-element .facebook-feed-element-picture {
-  padding: 0 5rem;
+  padding: 0 5%;
   margin-top: 1rem;
 }
 
@@ -9456,6 +9460,10 @@ ol.rulebook-section ol > li::before {
   margin-right: auto;
   max-width: 100%;
   height: auto;
+}
+
+.btn-outline-dark:hover {
+  color: #fff !important;
 }
 
 #twitter-module {

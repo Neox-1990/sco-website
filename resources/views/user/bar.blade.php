@@ -1,7 +1,7 @@
-<div id="sco-user-bar" class="col-12 d-flex justify-content-start p-1">
+<div id="sco-user-bar" class="d-flex justify-content-start p-1">
   @if(auth()->check())
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {{auth()->user()->name}}
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
