@@ -16,7 +16,7 @@ use Carbon\Carbon;
     <ul class="nav nav-tabs round-tabs nav-justified">
       @foreach ($all as $roundElement)
         <li class="nav-item nav-item-fullwidth">
-          <a class="nav-link {{$roundElement->id==$round->id?'active':''}}" href="{{url('/rounds/'.$roundElement->id)}}">Round {{$roundElement->number}}</a>
+          <a class="nav-link {{$roundElement->id==$round->id?'active':''}}" href="{{url('/rounds/'.$roundElement->id)}}">R<span class="d-none d-md-inline">ound</span> {{$roundElement->number}}</a>
         </li>
       @endforeach
     </ul>

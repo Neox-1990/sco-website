@@ -29,7 +29,7 @@ class EditTeam extends FormRequest
     {
         return [
         'teamname' => 'nullable|required_with_all:teamcar,teamnumber,iracing_teamid|required_with:updateTeamdata|max:255',
-        'teamcar' => 'nullable|required_with_all:teamname,teamnumber,iracing_teamid|integer|required_with:updateTeamdata|max:4',
+        'teamcar' => 'nullable|required_with_all:teamname,teamnumber,iracing_teamid|integer|required_with:updateTeamdata|max:6',
         'teamnumber' => 'nullable|required_with_all:teamname,teamcar,iracing_teamid|integer|required_with:updateTeamdata|max:150',
         'iracing_teamid' => 'nullable|required_with_all:teamname,teamcar,teamnumber|integer|required_with:updateTeamdata|max:9999999',
 

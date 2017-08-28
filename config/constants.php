@@ -6,13 +6,15 @@ return [
     2 => 'Ferrari 488 GTE',
     3 => 'Ford GT 2017',
     4 => 'Audi R8 LMS',
+    5 => 'Mercedes-AMG GT3',
+    6 => 'Ferrari 488 GT3',
   ],
   'curent_season' => env('SCO_SEASON', '1'),
   'classes' => [
     1 => [
       'Prototype' => [1],
       'GT' => [2,3],
-      'GTC' => [4]
+      'GTC' => [4,5,6]
     ]
   ],
   'classNumbers' => [

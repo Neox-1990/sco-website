@@ -49,7 +49,7 @@ class will include the following car models:
             <tr>
               <td>Grand Touring Challenge</td>
               <td class="badge-GTC">GTC</td>
-              <td>Audi R8 LMS</td>
+              <td>Audi R8 LMS<br>Mercedes-AMG GT3<br>Ferrari 488 GT3</td>
               <td>0 kg / 75% (90l)</td>
             </tr>
           </table>
@@ -58,9 +58,6 @@ class will include the following car models:
 characteristics to the current P class car, then the series administration can
 replace the old car with the new car if at least 66% of all teams in the class
 agree to the change.</li>
-            <li>Should iRacing release new GTE or GT3 specification cars, then they will
-be added to the GT and GTC classes respectively, meaning that both classes
-would have at least 2 cars to choose from.</li>
           </ol>
       </li>
       <li>The series administration reserves itself the right to add ballast or limit the fuel

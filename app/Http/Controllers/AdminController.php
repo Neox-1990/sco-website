@@ -32,9 +32,9 @@ class AdminController extends Controller
           'confirmed' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [2,3])->get(),
         ],
         'GTC' => [
-          'pending' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 0]])->whereIn('car', [4])->get(),
-          'waitinglist' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 1]])->whereIn('car', [4])->get(),
-          'confirmed' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [4])->get(),
+          'pending' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 0]])->whereIn('car', [4,5,6])->get(),
+          'waitinglist' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 1]])->whereIn('car', [4,5,6])->get(),
+          'confirmed' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [4,5,6])->get(),
         ],
       ];
         $log = LogEntry::with('user')->orderBy('created_at', 'desc')->get();
@@ -127,9 +127,9 @@ class AdminController extends Controller
         'confirmed' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [2,3])->get(),
       ],
       'GTC' => [
-        'pending' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 0]])->whereIn('car', [4])->get(),
-        'waitinglist' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 1]])->whereIn('car', [4])->get(),
-        'confirmed' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [4])->get(),
+        'pending' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 0]])->whereIn('car', [4,5,6])->get(),
+        'waitinglist' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 1]])->whereIn('car', [4,5,6])->get(),
+        'confirmed' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [4,5,6])->get(),
       ],
     ];
         return view('admin.team.index', compact('teams'));
