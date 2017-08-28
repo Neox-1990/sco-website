@@ -10,7 +10,7 @@ use Carbon\Carbon;
     <div class="card-header">
       <h3><a href="{{url('/admin/teams')}}">Teams</a></h3>
     </div>
-    <div class="card-block">
+    <div class="card-body">
       <table class="table">
         <tr>
           <th>class</th>
@@ -43,7 +43,7 @@ use Carbon\Carbon;
     <div class="card-header">
       <h3><a href="{{url('/admin/log')}}">Actionlog</a></h3>
     </div>
-    <div class="card-block dashbord-log-table">
+    <div class="card-body dashbord-log-table">
       <table class="table table-bordered">
         @foreach ($log as $entry)
           <tr>

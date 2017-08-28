@@ -24,7 +24,7 @@
             </tr>
           </table>
         </div>
-        <div class="card-block">
+        <div class="card-body">
           <h3>Drivers</h3>
           <table class="table">
             <tr>

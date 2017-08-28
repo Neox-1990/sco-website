@@ -5,7 +5,7 @@
   <div class="m-2 p-2">
     <h3>Filter</h3>
     <div class="card dashbord-modul">
-      <div class="card-block">
+      <div class="card-body">
         <form class="" action="{{url('admin/log')}}" method="get">
           <div class="form-group">
             <label for="managerID">Manager ID</label>
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="card dashbord-modul">
-      <div class="card-block">
+      <div class="card-body">
         <form class="" action="{{url('admin/log')}}" method="get">
           <div class="form-group">
             <label for="teamID">Team ID</label>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="card dashbord-modul">
-      <div class="card-block">
+      <div class="card-body">
         <form class="" action="{{url('admin/log')}}" method="get">
           <div class="form-check">
              <label class="form-check-label d-block">

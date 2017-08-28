@@ -7,7 +7,7 @@
     <div class="card-header">
       <h3>Registration</h3>
     </div>
-    <div class="card-block">
+    <div class="card-body">
       <form class="" action="{{url('admin/settings')}}" method="post">
         {{csrf_field()}}
         <div class="form-group">
@@ -34,7 +34,7 @@
     <div class="card-header">
       <h3>Facebookpage ID</h3>
     </div>
-    <div class="card-block">
+    <div class="card-body">
       <form class="" action="{{url('admin/settings')}}" method="post">
         {{csrf_field()}}
         <div class="form-group">
@@ -51,7 +51,7 @@
     <div class="card-header">
       <h3>Twitter modul</h3>
     </div>
-    <div class="card-block">
+    <div class="card-body">
       <form class="" action="{{url('admin/settings')}}" method="post">
         {{csrf_field()}}
         <div class="form-group">

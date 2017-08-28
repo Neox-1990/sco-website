@@ -10,7 +10,7 @@
   </div>
   <div class="col-sm-12 col-lg-4">
     <div class="card mb-3">
-      <div class="card-block">
+      <div class="card-body">
         <h3>Change Password</h3>
         <hr>
         <form action="{{url('/user')}}" method="post">
@@ -36,7 +36,7 @@
   </div>
   <div class="col-sm-12 col-lg-4">
     <div class="card mb-3">
-      <div class="card-block">
+      <div class="card-body">
         <h3>Change Name</h3>
         <hr>
         <form action="{{url('/user')}}" method="post">
@@ -58,7 +58,7 @@
   </div>
   <div class="col-sm-12 col-lg-4">
     <div class="card mb-3">
-      <div class="card-block">
+      <div class="card-body">
         <h3>Change Email</h3>
         <hr>
         <form action="{{url('/user')}}" method="post">

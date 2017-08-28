@@ -5,7 +5,7 @@
   @include('master.formerrors')
   <hr>
   <div class="card dashbord-modul">
-    <div class="card-block">
+    <div class="card-body">
       <form class="" action="{{url('admin/manager/'.$user->id)}}" method="post">
         {{csrf_field()}}
         <div class="form-group">
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="card dashbord-modul">
-    <div class="card-block">
+    <div class="card-body">
       <form class="" action="{{url('admin/manager/'.$user->id)}}" method="post">
         {{csrf_field()}}
         <div class="form-group">
@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="card dashbord-modul">
-    <div class="card-block">
+    <div class="card-body">
       <form class="" action="{{url('admin/manager/'.$user->id)}}" method="post">
         {{csrf_field()}}
         <div class="form-group">

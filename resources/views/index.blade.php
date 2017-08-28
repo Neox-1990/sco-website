@@ -30,7 +30,7 @@
       <div class="card-header text-center">
         <h3>Season Status</h3>
       </div>
-      <div class="card-block">
+      <div class="card-body">
         @if ($season['curent']!==null)
           <p class="text-center"><strong>Current:</strong><br><a href="{{url('/rounds/'.$roundid)}}">{{$season['curent']}}</a></p>
           <hr>
@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="card mt-3">
-      <div class="card-block">
+      <div class="card-body">
         <a href="https://www.coresimracing.com/"><img src="{{asset('img/core-logo.png')}}" alt="" class="img-fluid"></a>
         <hr>
         <a href="http://racespot.tv/"><img src="{{asset('img/racespot-logo.png')}}" alt="" class="img-fluid"></a>
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="card mt-3">
-      <div class="card-block">
+      <div class="card-body">
         <h4>Donation</h4>
         <p>You like our series and want to support us? Feel free to send a donation via PayPal.</p>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="d-flex flex-column ">
