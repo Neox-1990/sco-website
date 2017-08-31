@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Team;
+use App\LogEntry;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -17,15 +19,37 @@ class TeamController extends Controller
         foreach ($classes as $classname => $cararray) {
             $teams[$classname]['confirmed'] = Team::where([['season_id','=',config('constants.curent_season')],['status','=',2]])
               ->whereIn('car', $cararray)
-              ->with(['user'])->get();
+              ->with(['user'])
+              ->orderBy('created_at', 'asc')
+              ->get();
             $teams[$classname]['waiting'] = Team::where([['season_id','=',config('constants.curent_season')],['status','=',1]])
               ->whereIn('car', $cararray)
-              ->with(['user'])->get();
+              ->with(['user'])
+              ->orderBy('created_at', 'asc')
+              ->get();
             $teams[$classname]['pending'] = Team::where([['season_id','=',config('constants.curent_season')],['status','=',0]])
               ->whereIn('car', $cararray)
-              ->with(['user'])->get();
+              ->with(['user'])
+              ->orderBy('created_at', 'asc')
+              ->get();
+              
+            $teams[$classname]['waiting'] = $teams[$classname]['waiting']->sort(function ($team1, $team2) {
+                $date1;
+                $date2;
+                if (LogEntry::where([['title','like','%car class changed%'],['action','like','%| Teamid: '.$team1['id'].' |%']])->count() != 0) {
+                    $date1 = new Carbon((LogEntry::where([['title','like','%car class changed%'],['action','like','%| Teamid: '.$team1['id'].' |%']])->orderBy('created_at', 'desc')->first())['created_at']);
+                } else {
+                    $date1 = new Carbon($team1['created_at']);
+                }
+                if (LogEntry::where([['title','like','%car class changed%'],['action','like','%| Teamid: '.$team2['id'].' |%']])->count() != 0) {
+                    $date2 = new Carbon((LogEntry::where([['title','like','%car class changed%'],['action','like','%| Teamid: '.$team2['id'].' |%']])->orderBy('created_at', 'desc')->first())['created_at']);
+                } else {
+                    $date2 = new Carbon($team2['created_at']);
+                }
+                return ($date1->eq($date2)?0:($date1->lt($date2)?-1:1));
+            });
         }
-        //dd($teams);
+        //dd($teams_backup, $teams);
         return view('teams.index', compact('teams'));
     }
 

@@ -2,6 +2,7 @@
 
 @section('content')
   <h1>Settings</h1>
+  @include('master.formerrors')
   <hr>
   <div class="card dashbord-modul">
     <div class="card-header">
@@ -57,6 +58,23 @@
         <div class="form-group">
           <label for="twitter_account">Twitter Account URL</label>
           <input id="twitter_account" class="form-control" type="text" name="twitteraccount" value="{{old('twitteraccount')!=null?old('twitteraccount'):$setup['twitteraccount']}}">
+        </div>
+        <div class="form-group">
+          <input class="btn btn-primary form-control" type="submit" name="simpleSubmit" value="Set">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="card dashbord-modul">
+    <div class="card-header">
+      <h3>Confirmed carchange deadline</h3>
+    </div>
+    <div class="card-body">
+      <form class="" action="{{url('admin/settings')}}" method="post">
+        {{csrf_field()}}
+        <div class="form-group">
+          <label for="ccdeadline">Deadline</label>
+          <input id="ccdeadline" class="form-control" type="datetime-local" name="confirmed_carchange" value="{{old('confirmed_carchange')!=null?old('confirmed_carchange'):$setup['confirmed_carchange']}}">
         </div>
         <div class="form-group">
           <input class="btn btn-primary form-control" type="submit" name="simpleSubmit" value="Set">

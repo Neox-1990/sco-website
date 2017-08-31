@@ -26,6 +26,9 @@
     @endforeach
   </div>
   <aside class="col-lg-3 d-flex flex-column align-items-start align-items-stretch">
+    @if (app('request')->has('useless'))
+      @include('master.useless')
+    @endif
     <div class="card sco-status mt-md-3 mt-lg-0">
       <div class="card-header text-center">
         <h3>Season Status</h3>

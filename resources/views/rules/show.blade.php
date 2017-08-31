@@ -193,10 +193,7 @@ team must remove him their line-up before he can be added to his new team’s li
         <li>No team will be allowed to have more than 2 entries in any class. The series
 administration reserves itself the right to waive this rule should the level of interest
 in a class be too low to fulfil the minimum car count.</li>
-        <li>A team’s chosen car number, class and car model will be locked for the entire
-season as soon as their team is given the “Confirmed” status. The only scenarios
-under which a team would be allowed to change their car selection within a class
-are described in rules 1.a.1 and 1.a.2 of this document.</li>
+        <li>A team’s chosen name, team ID, car number and class will be locked for the entire season as soon as a team is given the “Confirmed” status. Confirmed teams may still edit their car selection within their class (in GT and GTC) until the sign-up deadline on September 25th, 2017 at 17:00 UTC. The only scenario under which a car change in the Prototype class would take place is described in rule 1.a.1 of this document.</li>
         <li>The total car count will be limited to 50 cars. While there are no strict limits on
 how big each class can be, no class will be allowed to have fewer than 12 entrants
 with the maximum car count per class being capped at 24.

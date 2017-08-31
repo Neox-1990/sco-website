@@ -9,15 +9,38 @@
     @if ($legit)
       <h1>Edit Team</h1>
       @include('master.formerrors')
-      @if ($team['status'] > 1)
+      @if ($team['status'] == 2)
+        @if ($deadline)
+          <form class="" action="{{url('/myteams/edit/'.$team->id)}}" method="post">
+            {{csrf_field()}}
+            <input type="hidden" name="teamname" value="{{$team['name']}}">
+            <input type="hidden" name="teamnumber" value="{{$team['number']}}">
+            <input type="hidden" name="iracing_teamid" value="{{$team['ir_teamid']}}">
+        @endif
         <table class="table">
           <tr>
             <td>Name</td>
             <td>#{{$team['number']}} {{$team['name']}}</td>
           </tr>
+          @if ($deadline)
+            <tr>
+              <td>Car</td>
+              <td>
+              <select id="car" class="form-control" name="teamcar" style="display: inline-block;width:auto;">
+                @foreach ($classcars as $value)
+                  <option value="{{$value}}" {{old('teamcar') !== null?(old('teamcar') == $value?'selected':''):($team['car'] == $value?'selected':'')}}>{{config('constants.car_names')[$value]}}</option>
+                @endforeach
+              </select></td>
+            </tr>
+          @else
+            <tr>
+              <td>Car</td>
+              <td>{{config('constants.car_names')[$team['car']]}}</td>
+            </tr>
+          @endif
           <tr>
-            <td>Car</td>
-            <td>{{config('constants.car_names')[$team['car']]}}</td>
+            <td>iRacing Team ID</td>
+            <td>{{$team['ir_teamid']}}</td>
           </tr>
           <tr>
             <td>Status</td>
@@ -31,7 +54,15 @@
               @endif
             </td>
           </tr>
+          @if ($deadline)
+            <tr>
+              <td colspan="2"><input type="submit" name="updateTeamdata" value="Update teamdata" class="btn btn-primary"></td>
+            </tr>
+          @endif
         </table>
+        @if ($deadline)
+        </form>
+        @endif
       @else
         <form class="" action="{{url('/myteams/edit/'.$team->id)}}" method="post">
           {{csrf_field()}}

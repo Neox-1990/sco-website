@@ -20,23 +20,7 @@ class AdminController extends Controller
     }
     public function index()
     {
-        $teams = [
-        'P' => [
-          'pending' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 0], ['car','=',1]])->get(),
-          'waitinglist' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 1], ['car','=',1]])->get(),
-          'confirmed' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',1]])->get(),
-        ],
-        'GT' => [
-          'pending' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 0]])->whereIn('car', [2,3])->get(),
-          'waitinglist' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 1]])->whereIn('car', [2,3])->get(),
-          'confirmed' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [2,3])->get(),
-        ],
-        'GTC' => [
-          'pending' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 0]])->whereIn('car', [4,5,6])->get(),
-          'waitinglist' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 1]])->whereIn('car', [4,5,6])->get(),
-          'confirmed' => Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [4,5,6])->get(),
-        ],
-      ];
+        $teams = Team::getSortedTeams();
         $log = LogEntry::with('user')->orderBy('created_at', 'desc')->get();
         //dd($log);
         return view('admin.index', compact('teams', 'log'));
@@ -108,6 +92,9 @@ class AdminController extends Controller
             if ($request->has('filteraction.statusset')) {
                 $log->orWhere('title', 'like', '%Status set%');
             }
+            if ($request->has('filteraction.carchange')) {
+                $log->orWhere('title', 'like', '%car class changed%');
+            }
         }
         $log = $log->with('user')->orderBy('created_at', 'desc')->get();
         return view('admin.log.index', compact('log'));
@@ -115,23 +102,7 @@ class AdminController extends Controller
 
     public function teamIndex()
     {
-        $teams = [
-      'P' => [
-        'pending' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 0], ['car','=',1]])->get(),
-        'waitinglist' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 1], ['car','=',1]])->get(),
-        'confirmed' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',1]])->get(),
-      ],
-      'GT' => [
-        'pending' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 0]])->whereIn('car', [2,3])->get(),
-        'waitinglist' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 1]])->whereIn('car', [2,3])->get(),
-        'confirmed' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [2,3])->get(),
-      ],
-      'GTC' => [
-        'pending' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 0]])->whereIn('car', [4,5,6])->get(),
-        'waitinglist' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 1]])->whereIn('car', [4,5,6])->get(),
-        'confirmed' => Team::with('user')->where([['season_id','=',config('constants.curent_season')], ['status', '=', 2]])->whereIn('car', [4,5,6])->get(),
-      ],
-    ];
+        $teams = Team::getSortedTeams();
         return view('admin.team.index', compact('teams'));
     }
     public function teamUpdate(Request $request, Team $team)
@@ -173,6 +144,9 @@ class AdminController extends Controller
     }
     public function settingsUpdate(Request $request)
     {
+        $this->validate($request, [
+        'confirmed_carchange' => 'nullable|string|regex:/[\d]{4}-[\d]{2}-[\d]{2}T[\d]{2}:[\d]{2}(:[\d]{2})?/',
+      ]);
         if ($request->has('simpleSubmit')) {
             foreach ($request->except(['_token','simpleSubmit']) as $key => $value) {
                 $setting = Setting::where('key', '=', $key)->first();

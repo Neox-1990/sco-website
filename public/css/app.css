@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);/*!
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);@import url(https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer);/*!
  * Bootstrap v4.0.0-beta (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.
@@ -9500,7 +9500,7 @@ footer a.twlink:hover {
 }
 
 footer a.ytlink:hover {
-  color: #e52d27 !important;
+  color: #ff0000 !important;
 }
 
 nav {
@@ -9529,5 +9529,18 @@ body#admin-dashbord .dashbord-modul {
 body#admin-dashbord .dashbord-log-table {
   max-height: 500px;
   overflow-y: scroll;
+}
+
+.sco-table-sort {
+  cursor: pointer;
+}
+
+.sco-table-sort :hover {
+  text-decoration: underline;
+}
+
+.useless-card-body {
+  font-family: 'IM Fell Great Primer', serif;
+  color: #444;
 }
 

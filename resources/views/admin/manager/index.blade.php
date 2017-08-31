@@ -2,6 +2,7 @@
 
 @section('content')
   <h1>Managerlist</h1>
+  <hr>
   <table class="table table-bordered table-hover">
     <tr>
       <th>Edit</th>

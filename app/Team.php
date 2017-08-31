@@ -2,8 +2,10 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Collection;
 
 class Team extends Model
 {
@@ -63,5 +65,51 @@ class Team extends Model
             $carNumbers[$key] = $classNumbers[$value];
         }
         return $carNumbers;
+    }
+    public static function getSortedTeams()
+    {
+        $teams = [];
+        $classes = config('constants.classes')[config('constants.curent_season')];
+        foreach ($classes as $name => $cararray) {
+            $teams[$name] = [
+            'pending' => new Collection,
+            'waitinglist' => new Collection,
+            'confirmed' => new Collection
+          ];
+            foreach ($cararray as $value) {
+                $teams[$name]['pending'] = $teams[$name]['pending']->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 0], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
+                $waitinglist = Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 1], ['car','=',$value]])->orderBy('created_at', 'asc')->get();
+                $teams[$name]['waitinglist'] = $teams[$name]['waitinglist']->merge($waitinglist);
+                $teams[$name]['confirmed'] = $teams[$name]['confirmed']->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
+            }
+            $waitinglist = ($teams[$name]['waitinglist'])->sort(function ($team1, $team2) {
+                $date1;
+                $date2;
+                if (LogEntry::where([['title','like','%car class changed%'],['action','like','%| Teamid: '.$team1['id'].' |%']])->count() != 0) {
+                    $date1 = new Carbon((LogEntry::where([['title','like','%car class changed%'],['action','like','%| Teamid: '.$team1['id'].' |%']])->orderBy('created_at', 'desc')->first())['created_at']);
+                } else {
+                    $date1 = new Carbon($team1['created_at']);
+                }
+                if (LogEntry::where([['title','like','%car class changed%'],['action','like','%| Teamid: '.$team2['id'].' |%']])->count() != 0) {
+                    $date2 = new Carbon((LogEntry::where([['title','like','%car class changed%'],['action','like','%| Teamid: '.$team2['id'].' |%']])->orderBy('created_at', 'desc')->first())['created_at']);
+                } else {
+                    $date2 = new Carbon($team2['created_at']);
+                }
+                return ($date1->eq($date2)?0:($date1->lt($date2)?-1:1));
+            });
+            $teams[$name]['waitinglist'] = $waitinglist;
+        }
+
+        return $teams;
+    }
+    public static function getCarToClassArray()
+    {
+        $result = [];
+        foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
+            foreach ($cars as $value) {
+                $result[$value] = $class;
+            }
+        }
+        return $result;
     }
 }

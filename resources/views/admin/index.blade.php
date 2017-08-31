@@ -18,24 +18,14 @@ use Carbon\Carbon;
           <th>waitinglist</th>
           <th>confirmed</th>
         </tr>
-        <tr>
-          <td>P</td>
-          <td>{{$teams['P']['pending']->count()}}</td>
-          <td>{{$teams['P']['waitinglist']->count()}}</td>
-          <td>{{$teams['P']['confirmed']->count()}}</td>
-        </tr>
-        <tr>
-          <td>GT</td>
-          <td>{{$teams['GT']['pending']->count()}}</td>
-          <td>{{$teams['GT']['waitinglist']->count()}}</td>
-          <td>{{$teams['GT']['confirmed']->count()}}</td>
-        </tr>
-        <tr>
-          <td>GTC</td>
-          <td>{{$teams['GTC']['pending']->count()}}</td>
-          <td>{{$teams['GTC']['waitinglist']->count()}}</td>
-          <td>{{$teams['GTC']['confirmed']->count()}}</td>
-        </tr>
+        @foreach ($teams as $name => $list)
+          <tr>
+            <td>{{$name}}</td>
+            <td>{{$list['pending']->count()}}</td>
+            <td>{{$list['waitinglist']->count()}}</td>
+            <td>{{$list['confirmed']->count()}}</td>
+          </tr>
+        @endforeach
       </table>
     </div>
   </div>

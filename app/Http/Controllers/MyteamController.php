@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Team;
+use App\Setting;
 use App\Events\TeamDeleteEvent;
 use App\Http\Requests\EditTeam;
 use App\Http\Requests\CreateTeam;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 //use Illuminate\Http\Request;
@@ -59,7 +61,12 @@ class MyteamController extends Controller
         }
         $numbers = Team::getClassNumbers();
         $numbers[$team->car][$team->number] = $team->number;
-        return view('myteams.edit', compact('legit', 'team', 'numbers'));
+        $deadline = new Carbon((Setting::getSetup())['confirmed_carchange']);
+        $deadline = $deadline->gt(new Carbon);
+        $classcars = Team::getCarToClassArray();
+        $classcars = config('constants.classes')[config('constants.curent_season')][$classcars[$team->car]];
+
+        return view('myteams.edit', compact('legit', 'team', 'numbers', 'deadline', 'classcars'));
     }
     public function update(EditTeam $request, Team $team)
     {

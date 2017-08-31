@@ -5,7 +5,10 @@ namespace App\Http\Requests;
 use App;
 use App\Team;
 use App\Driver;
+use App\Setting;
 use App\Events\TeamEditEvent;
+use App\Events\TeamCarChangeEvent;
+use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
 class EditTeam extends FormRequest
@@ -119,15 +122,39 @@ class EditTeam extends FormRequest
             $checkResult['errors']['noUniqueTeamID'] = 'There already is a team with this iRacing Team ID in the current season';
         }
 
+        if ($team->status == 2) {
+            $deadline = new Carbon((Setting::getSetup())['confirmed_carchange']);
+            $deadline = $deadline->gt(new Carbon);
+            if ($deadline &&
+              $team->name == $this->input('teamname') &&
+              $team->number == $this->input('teamnumber') &&
+              $team->ir_teamid == $this->input('iracing_teamid')) {
+                $carToClass = Team::getCarToClassArray();
+                if ($carToClass[$team->car] != $carToClass[$this->input('teamcar')]) {
+                    $checkResult['legit'] = false;
+                    $checkResult['errors']['carNotInClass'] = 'A confirmed team can only change car within its class.';
+                }
+            } else {
+                $checkResult['legit'] = false;
+                $checkResult['errors']['confirmedTeamEdit'] = 'Confirmed teams can\'t change teamdata.';
+            }
+        }
+
 
         if ($checkResult['legit']) {
+            $carToClass = Team::getCarToClassArray();
+            $carClassUpdate = $carToClass[$team->car] != $carToClass[$this->input('teamcar')];
             $team->name = $this->input('teamname');
             $team->number = $this->input('teamnumber');
             $team->car = $this->input('teamcar');
             $team->ir_teamid = $this->input('iracing_teamid');
             $team->save();
             $checkResult['flash'] = 'You successfully updated the data of '.$team->name;
-            event(new TeamEditEvent($team, 'Team data updated'));
+            if ($carClassUpdate) {
+                event(new TeamCarChangeEvent($team));
+            } else {
+                event(new TeamEditEvent($team, 'Team data updated'));
+            }
         } else {
             $checkResult['flash'] = 'An error occurred';
         }
