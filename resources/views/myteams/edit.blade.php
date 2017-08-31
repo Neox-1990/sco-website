@@ -2,6 +2,7 @@
 
 @section('main')
   <script type="text/javascript">
+    var selOption = {{$team['number']}}
     var numbers = <?php echo json_encode($numbers); ?>;
   </script>
 <div class="row">

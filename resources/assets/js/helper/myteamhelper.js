@@ -1,5 +1,4 @@
 export const updateNumbers = function(){
-  var selOption = $('#number').val();
   var car = $('#car').val();
   var oldCheck = false;
   $('#number').empty();
@@ -9,7 +8,6 @@ export const updateNumbers = function(){
       $('#number').append('<option value="'+numbers[car][key]+'">'+numbers[car][key]+'</option>');
     }
   }
-  console.log(selOption);
   if(oldCheck) $('#number').val(selOption);
 }
 

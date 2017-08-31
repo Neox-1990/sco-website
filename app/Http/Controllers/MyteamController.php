@@ -60,11 +60,14 @@ class MyteamController extends Controller
             session()->flash('flash_message_alert', 'An error occured');
         }
         $numbers = Team::getClassNumbers();
-        $numbers[$team->car][$team->number] = $team->number;
+        $classcars = Team::getCarToClassArray();
+        $carClass = $classcars[$team->car];
+        foreach (config('constants.classes')[config('constants.curent_season')][$carClass] as $value) {
+            $numbers[$value][$team->number] = $team->number;
+        }
         $deadline = new Carbon((Setting::getSetup())['confirmed_carchange']);
         $deadline = $deadline->gt(new Carbon);
-        $classcars = Team::getCarToClassArray();
-        $classcars = config('constants.classes')[config('constants.curent_season')][$classcars[$team->car]];
+        $classcars = config('constants.classes')[config('constants.curent_season')][$carClass];
 
         return view('myteams.edit', compact('legit', 'team', 'numbers', 'deadline', 'classcars'));
     }
