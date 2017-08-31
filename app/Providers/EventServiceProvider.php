@@ -31,6 +31,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\TeamStatusChangeEvent' => [
             'App\Listeners\TeamStatusChangeEventListener',
         ],
+        'App\Events\TeamCarChangeEvent' => [
+            'App\Listeners\TeamCarChangeEventListener',
+        ],
     ];
 
     /**

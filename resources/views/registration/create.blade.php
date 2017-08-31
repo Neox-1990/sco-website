@@ -31,6 +31,7 @@
         <button type="submit" class="btn btn-primary" name="button" {{$sco_settings['registration']=='closed'?'disabled':''}}>Register</button>
       </div>
     </form>
+    
   </div>
 </div>
 

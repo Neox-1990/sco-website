@@ -2,6 +2,7 @@
 
 @section('content')
   <h1>Complete Log</h1>
+  <hr>
   <div class="m-2 p-2">
     <h3>Filter</h3>
     <div class="card dashbord-modul">
@@ -61,6 +62,10 @@
              <label class="form-check-label d-block">
                <input type="checkbox" name="filteraction[statusset]" class="form-check-input">
                status set
+             </label>
+             <label class="form-check-label d-block">
+               <input type="checkbox" name="filteraction[carchange]" class="form-check-input">
+               car class changed
              </label>
            </div>
           <div class="form-group">

@@ -5,7 +5,7 @@
         {{auth()->user()->name}}
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="{{url('/user')}}">Settings</a>
+        <a class="dropdown-item" href="{{url('/user')}}"><i class="fa fa-cog mr-3" aria-hidden="true"></i>Settings</a>
       </div>
     </div>
     @if(auth()->user()->isAdmin)

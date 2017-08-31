@@ -1,5 +1,6 @@
 //@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer');
 @import "node_modules/bootstrap/scss/bootstrap";
 
 $brand-primary: #01256a;
@@ -14,7 +15,8 @@ $sco-gtc: #1c1c1c;
 
 $facebookblue: #3b5998;
 $twitterblue: #4099FF;
-$youtubered: #e52d27;
+//$youtubered: #e52d27;
+$youtubered: #ff0000;
 
 html{
   font-family: 'Ubuntu', sans-serif !important;
@@ -306,4 +308,15 @@ body#admin-dashbord{
     max-height: 500px;
     overflow-y: scroll;
   }
+}
+
+.sco-table-sort{
+  cursor: pointer;
+  :hover{
+    text-decoration: underline;
+  }
+}
+.useless-card-body{
+  font-family: 'IM Fell Great Primer', serif;
+  color: #444;
 }
