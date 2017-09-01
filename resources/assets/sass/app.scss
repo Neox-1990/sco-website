@@ -320,3 +320,24 @@ body#admin-dashbord{
   font-family: 'IM Fell Great Primer', serif;
   color: #444;
 }
+
+#teams-table{
+  th{
+    box-sizing: border-box;
+    &:nth-child(1){
+      width:7%;
+    }
+    &:nth-child(2){
+      width:auto;
+    }
+    &:nth-child(3){
+      width:18%;
+    }
+    &:nth-child(4){
+      width:20%;
+    }
+    &:nth-child(5){
+      width:13%;
+    }
+  }
+}

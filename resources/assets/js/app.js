@@ -6,7 +6,7 @@
  */
 window.Popper=require('./../../../node_modules/popper.js/dist/umd/popper.js');
 require('./bootstrap');
-
+window.easteregg = '********************\nActivate epic for epicness\n********************\nActivate useless for useless information @ home\n********************';
 import {updateNumbers, addDriverForm} from './helper/myteamhelper.js';
 import {tablesorterInit, tablesorter} from './helper/tablesorter.js';
 
