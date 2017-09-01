@@ -6,6 +6,7 @@ use App\User;
 use App\Team;
 use App\LogEntry;
 use App\Setting;
+use App\Driver;
 use App\Events\TeamEditEvent;
 use App\Events\UserUpdateEvent;
 use App\Events\TeamStatusChangeEvent;
@@ -128,6 +129,21 @@ class AdminController extends Controller
             event(new TeamStatusChangeEvent($team));
             event(new TeamEditEvent($team, 'Status set pending'));
             return redirect('admin/teams/');
+        } elseif ($request->has('teamdataupdate')) {
+            $team->name = $request->input('teamname');
+            $team->number = $request->input('teamnumber');
+            $team->car = $request->input('teamcar');
+            $team->ir_teamid = $request->input('teamiracingid');
+            $team->save();
+            session()->flash('flash_message_success', 'Data of '.$team->name.' updated');
+            event(new TeamEditEvent($team, 'Team data updated'));
+            return redirect('admin/teams/'.$team['id']);
+        } elseif ($request->has('driverremove')) {
+            $team->drivers()->detach($request->input('driverid'));
+            $team->save();
+            session()->flash('flash_message_success', 'You removed the driver from '.$team->name);
+            event(new TeamEditEvent($team, 'Team driver removed'));
+            return redirect('admin/teams/'.$team['id']);
         } else {
             session()->flash('flash_message_alert', 'Unknown Error');
             return redirect('admin/teams/');
@@ -159,5 +175,33 @@ class AdminController extends Controller
             session()->flash('flash_message_alert', 'Unknown Error');
             return redirect('admin/settings/');
         }
+    }
+    public function teamEdit(Team $team)
+    {
+        $drivers = $team->drivers()->get();
+        $cars = config('constants.car_names');
+        return view('admin.team.edit', compact('team', 'cars', 'drivers'));
+    }
+
+    public function driverIndex()
+    {
+        $drivers = Driver::all();
+        return view('admin.drivers.index', compact('drivers'));
+    }
+
+    public function driverEdit(Driver $driver)
+    {
+        return view('admin.drivers.edit', compact('driver'));
+    }
+
+    public function driverUpdate(Request $request, Driver $driver)
+    {
+        $driver->name = $request->input('drivername');
+        $driver->iracing_id = $request->input('driveririd');
+        $driver->irating = $request->input('driverirating');
+        $driver->safetyrating = $request->input('driversafetyrating');
+        $driver->save();
+        session()->flash('flash_message_success', 'Data of '.$driver->name.' updated');
+        return redirect('admin/drivers/'.$driver['id']);
     }
 }

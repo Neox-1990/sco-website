@@ -76,17 +76,21 @@
     </div>
   </div>
   <table class="table table-bordered table-hover">
-    <tr>
-      <th>date</th>
-      <th>user</th>
-      <th>action</th>
-    </tr>
-    @foreach ($log as $entry)
+    <thead>
       <tr>
-        <td>{{$entry->created_at->format('d.m.Y - H:i:s')}}</td>
-        <td><a href="{{url('admin/manager/'.$entry['user']['id'])}}">{{$entry['user']['name']}}</a></td>
-        <td>{{$entry->action}}</td>
+        <th>date</th>
+        <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">user</th>
+        <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">action</th>
       </tr>
-    @endforeach
+    </thead>
+    <tbody>
+      @foreach ($log as $entry)
+        <tr>
+          <td>{{$entry->created_at->format('d.m.Y - H:i:s')}}</td>
+          <td><a href="{{url('admin/manager/'.$entry['user']['id'])}}">{{$entry['user']['name']}}</a></td>
+          <td>{{$entry->action}}</td>
+        </tr>
+      @endforeach
+    </tbody>
   </table>
 @endsection
