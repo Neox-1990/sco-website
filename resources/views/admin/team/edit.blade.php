@@ -44,7 +44,7 @@
     <tbody>
       @foreach ($drivers as $driver)
         <tr>
-          <td><a href="{{url('/admin/users/'.$driver['id'])}}">{{$driver['name']}}</a></td>
+          <td><a href="{{url('/admin/drivers/'.$driver['id'])}}">{{$driver['name']}}</a></td>
           <td><a href="http://members.iracing.com/membersite/member/CareerStats.do?custid={{$driver['iracing_id']}}">{{$driver['iracing_id']}}</a></td>
           <td>{{$driver['irating']}}</td>
           <td>{{$driver['safetyrating']}}</td>
