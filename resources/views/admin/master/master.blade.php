@@ -10,10 +10,10 @@
     @include('master.flash')
     <div class="container-fluid">
       <div class="row p-2">
-        <div class="col-2">
+        <div class="col-1">
           @include('admin.master.nav')
         </div>
-        <div class="col-10 p-2">
+        <div class="col-11 p-2">
           @yield('content')
         </div>
       </div>
