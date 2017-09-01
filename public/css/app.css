@@ -9544,3 +9544,28 @@ body#admin-dashbord .dashbord-log-table {
   color: #444;
 }
 
+#teams-table th {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#teams-table th:nth-child(1) {
+  width: 7%;
+}
+
+#teams-table th:nth-child(2) {
+  width: auto;
+}
+
+#teams-table th:nth-child(3) {
+  width: 18%;
+}
+
+#teams-table th:nth-child(4) {
+  width: 20%;
+}
+
+#teams-table th:nth-child(5) {
+  width: 13%;
+}
+

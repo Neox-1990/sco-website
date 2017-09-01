@@ -25,11 +25,11 @@
       <div class="team-overview-class">
         <h2><span class="badge badge-pill badge-default badge-{{$classname}}">{{$classname}}</span></h2>
         <div class="table-responsive">
-          <table class="table table-hover table-bordered">
+          <table id="teams-table" class="table table-hover table-bordered">
             <thead class="thead-default">
               <tr>
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">#</th>
-                <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc" data-inner-sort="a">Name</th>
+                <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Name</th>
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Car</th>
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Manager</th>
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Status</th>
@@ -38,7 +38,7 @@
             <tbody>
               @foreach ($class['confirmed'] as $team)
                 <tr>
-                  <td>{{$team['number']}}</td>
+                  <td class="text-center">{{$team['number']}}</td>
                   <td><a href="/teams/{{$team['id']}}">{{$team['name']}}</a></td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
                   <td>{{$team['user']['name']}}</td>
@@ -47,7 +47,7 @@
               @endforeach
               @foreach ($class['waiting'] as $team)
                 <tr>
-                  <td>{{$team['number']}}</td>
+                  <td class="text-center">{{$team['number']}}</td>
                   <td><a href="/teams/{{$team['id']}}">{{$team['name']}}</a></td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
                   <td>{{$team['user']['name']}}</td>
@@ -56,7 +56,7 @@
               @endforeach
               @foreach ($class['pending'] as $team)
                 <tr>
-                  <td>{{$team['number']}}</td>
+                  <td class="text-center">{{$team['number']}}</td>
                   <td><a href="/teams/{{$team['id']}}">{{$team['name']}}</a></td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
                   <td>{{$team['user']['name']}}</td>

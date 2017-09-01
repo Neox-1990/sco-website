@@ -3,8 +3,7 @@
 @section('main')
 <div class="row">
   <div class="col-12" style="padding-bottom:2rem;">
-    <h1>Driver searchresult</h1>
-    <p>for "{{$search}}"</p>
+    <h1>All known SCO drivers</h1>
     <hr>
     @if (count($drivers))
       <table class="table">

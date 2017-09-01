@@ -792,7 +792,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 window.Popper = __webpack_require__(10);
 __webpack_require__(11);
-
+window.easteregg = '********************\nActivate epic for epicness\n********************\nActivate useless for useless information @ home\n********************';
 
 
 

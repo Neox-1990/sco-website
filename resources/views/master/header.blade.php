@@ -1,3 +1,3 @@
 <div class="sco-header">
-  <img src="{{asset('img/sco2k17_alternatelogo_website_1080.png')}}" alt="">
+  <a href="{{url('/')}}"><img src="{{asset('img/sco2k17_alternatelogo_website_1080.png')}}" alt=""></a>
 </div>
