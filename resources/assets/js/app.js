@@ -9,6 +9,7 @@ require('./bootstrap');
 window.easteregg = '********************\nActivate epic for epicness\n********************\nActivate useless for useless information @ home\n********************';
 import {updateNumbers, addDriverForm} from './helper/myteamhelper.js';
 import {tablesorterInit, tablesorter} from './helper/tablesorter.js';
+import {toggleTeamTables, toggleTeamTablesInit} from './helper/adminhelper.js';
 
 $(document).ready(function(){
   $('#flash_message').delay(200).fadeIn(500,function(){
@@ -22,6 +23,7 @@ $(document).ready(function(){
     });
   })
   tablesorterInit();
+  toggleTeamTablesInit();
   if(typeof(numbers) !== 'undefined'){
     updateNumbers();
     $('#car').on('change', updateNumbers);

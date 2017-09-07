@@ -28,7 +28,7 @@
           <table id="teams-table" class="table table-hover table-bordered">
             <thead class="thead-default">
               <tr>
-                <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">#</th>
+                <th class="badge-{{$classname}} sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">#</th>
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Name</th>
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Car</th>
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Manager</th>

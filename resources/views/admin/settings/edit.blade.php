@@ -82,4 +82,21 @@
       </form>
     </div>
   </div>
+  <div class="card dashbord-modul">
+    <div class="card-header">
+      <h3>Facebookentries on Homepage</h3>
+    </div>
+    <div class="card-body">
+      <form class="" action="{{url('admin/settings')}}" method="post">
+        {{csrf_field()}}
+        <div class="form-group">
+          <label for="facebook_entries">amount of Facebookentries</label>
+          <input id="facebook_entries" class="form-control" type="text" name="facebookentries" value="{{old('facebookentries')!=null?old('facebookentries'):$setup['facebookentries']}}">
+        </div>
+        <div class="form-group">
+          <input class="btn btn-primary form-control" type="submit" name="simpleSubmit" value="Set">
+        </div>
+      </form>
+    </div>
+  </div>
 @endsection

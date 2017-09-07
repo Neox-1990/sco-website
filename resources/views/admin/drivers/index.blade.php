@@ -8,8 +8,8 @@
       <tr>
         <th>action</th>
         <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">name</th>
-        <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">iracing id</th>
-        <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">irating</th>
+        <th class="sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">iracing id</th>
+        <th class="sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">irating</th>
         <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">safetyrating</th>
       </tr>
     </thead>

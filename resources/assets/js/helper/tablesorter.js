@@ -25,6 +25,9 @@ export const tablesorter = function(){
     }else if (sort_content == 'date') {
       aVal = $(a).find('td:nth-child('+(column+1)+')').attr('data-sort-date');
       bVal = $(b).find('td:nth-child('+(column+1)+')').attr('data-sort-date');
+    }else if(sort_content == 'numeric'){
+      aVal = parseFloat($(a).find('td:nth-child('+(column+1)+')').text());
+      bVal = parseFloat($(b).find('td:nth-child('+(column+1)+')').text());
     }
 
     return (aVal>bVal?dir:(aVal==bVal?0:-dir));

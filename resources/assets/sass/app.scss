@@ -251,6 +251,7 @@ ol.rulebook-section{
       margin-right: auto;
       max-width: 100%;
       height:auto;
+      border-radius: 0.2rem;
     }
   }
 }
@@ -338,6 +339,22 @@ body#admin-dashbord{
     }
     &:nth-child(5){
       width:13%;
+    }
+  }
+}
+
+.teamtabletoggle{
+  cursor: pointer;
+
+  .toggle-icon{
+    i{
+      transition: transform .5s cubic-bezier(1,0,.5,1.76);
+    }
+    i.closed{
+      transform: rotate(0deg);
+    }
+    i.open{
+      transform: rotate(180deg);
     }
   }
 }

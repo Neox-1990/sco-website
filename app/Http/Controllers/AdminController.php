@@ -22,7 +22,7 @@ class AdminController extends Controller
     public function index()
     {
         $teams = Team::getSortedTeams();
-        $log = LogEntry::with('user')->orderBy('created_at', 'desc')->get();
+        $log = LogEntry::with('user')->orderBy('created_at', 'desc')->take(25)->get();
         //dd($log);
         return view('admin.index', compact('teams', 'log'));
     }

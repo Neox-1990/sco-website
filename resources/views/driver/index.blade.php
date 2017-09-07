@@ -10,8 +10,8 @@
         <thead>
           <tr>
             <th class=" sco-table-sort" data-sort-content="text" data-sort-dir="asc">Name</th>
-            <th class=" sco-table-sort" data-sort-content="text" data-sort-dir="asc">iRacing ID</th>
-            <th class=" sco-table-sort" data-sort-content="text" data-sort-dir="asc">iRating</th>
+            <th class=" sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">iRacing ID</th>
+            <th class=" sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">iRating</th>
             <th class=" sco-table-sort" data-sort-content="text" data-sort-dir="asc">Safetyrating</th>
           </tr>
         </thead>

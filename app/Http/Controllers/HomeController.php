@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Round;
+use App\Setting;
 use App\Social\FacebookHelper;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $feedData = (new FacebookHelper())->getTextFeedElements(3);
+        $feedData = (new FacebookHelper())->getTextFeedElements(intval((Setting::where('key', '=', 'facebookentries')->first())->value));
         //dd($feedData);
         $now = new Carbon();
         $now = $now->subHours(5);
