@@ -201,9 +201,7 @@ with the maximum car count per class being capped at 24.
   <li>The exact allocation of car slots will be determined by the number of
 teams signing up for each class, but it will always follow the minimum and
 maximum car counts as described above.</li>
-  <li>Should more than 65 teams want to enter in total, a pre-qualifying session
-will be held for each category that requires it. The number of available slots
-in each car class will be announced ahead of said pre-qualifying session.</li>
+  <li>Should more than 65 teams want to enter in total, 2 pre-qualifying sessions will be held for all categories that require it. The number of available slots in each car class will be announced ahead of said pre-qualifying session.</li>
   <li>Should fewer than 65 teams wish to take part by the time the sign-up
 deadline (September 25th, 2017 at 17:00 UTC) has passed, then all slots will
 be allocated on a “first-come, first-served” basis.</li>
@@ -253,21 +251,15 @@ included in any kind of skin pack.</li>
       </ol>
       <h3>6. Pre-Qualifying</h3>
       <ol class="rulebook-section">
-        <li>If required, pre-qualifying will take place on Wednesday, September 27th, 2017
-at 17:00 UTC.</li>
-        <li>Every category that requires a pre-qualifying to take place will have their own
-separate session. The session will use the same circuit, track layout and time of day
-as the opening round of the season. The track state will be set to “automatically
-generated” and marbles will not be cleaned.</li>
-        <li>The session will begin with a 45 minute long practice session in which ever team’s
-pre-qualifying driver can join with the correct team, team name, car number and
-car model.</li>
-        <li>The 3 hour long open qualifying session at begin at roughly 17:45 UTC. Every team
-will be allowed to turn as many laps as desired in order to get the fastest possible
-lap time.</li>
-        <li>Each team’s fastest qualifying time in that session will be their pre-qualifying
-time. The driver who set the lap time will be locked into that team’s driver line-up
-for the opening round of the season.</li>
+        <li>If required, 2 pre-qualifying sessions will take place on Wednesday, September 27th, 2017. The first session will begin at 17:00 UTC with the second session beginning at 22:00 UTC.
+          <ol>
+            <li>Every team can choose which session they will take part in, but they can only take part in one of them, with all rules below applying.</li>
+          </ol>
+        </li>
+        <li>The sessions will use the same circuit, track layout and time of day as the opening round of the season. The track state will be set to “automatically generated” and marbles will not be cleaned.</li>
+        <li>Both sessions will begin with a 45 minute long practice session in which every team’s pre-qualifying driver can join with the correct team, team name, car number and car model.</li>
+        <li>The 3 hour long open qualifying sessions at begin at roughly 17:45 UTC and 22:45 UTC respectively. Every team will be allowed to turn as many laps as desired in order to get the fastest possible lap time.</li>
+        <li>Each team’s fastest qualifying time in that session will be their pre-qualifying time. The driver who set the lap time will be locked into that team’s driver line-up for the opening round of the season.</li>
       </ol>
       <h3>7. Warm-up</h3>
       <ol class="rulebook-section">
