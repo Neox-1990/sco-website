@@ -50,7 +50,7 @@ class will include the following car models:
               <td>Grand Touring Challenge</td>
               <td class="badge-GTC">GTC</td>
               <td>Audi R8 LMS<br>Mercedes-AMG GT3<br>Ferrari 488 GT3</td>
-              <td>0 kg / 75% (90l)</td>
+              <td>0 kg / 75% (90l)<br>0 kg / 75% (90l)<br>0 kg / 75% (82.5l)</td>
             </tr>
           </table>
           <ol>

@@ -38,7 +38,12 @@
           <p class="text-center"><strong>Current:</strong><br><a href="{{url('/rounds/'.$roundid)}}">{{$season['curent']}}</a></p>
           <hr>
         @endif
-        <p class="text-center"><strong>Next:</strong><br><a href="{{url('/rounds/'.$roundid)}}">{{$season['next']['session']}}</a><br><small class="text-muted font-italic">in {{$season['next']['time']}}</small></p>
+        @if ($roundid != null)
+          <p class="text-center"><strong>Next:</strong><br><a href="{{url('/rounds/'.$roundid)}}">{{$season['next']['session']}}</a><br><small class="text-muted font-italic">in {{$season['next']['time']}}</small></p>
+        @else
+          <p class="text-center"><strong>Season over</strong></p>
+        @endif
+
       </div>
     </div>
     <div class="card mt-3">
