@@ -204,4 +204,12 @@ class AdminController extends Controller
         session()->flash('flash_message_success', 'Data of '.$driver->name.' updated');
         return redirect('admin/drivers/'.$driver['id']);
     }
+
+    public function showEmails()
+    {
+        $manager = User::whereHas('teams', function ($query) {
+            $query->where('status', '=', '2');
+        })->pluck('email');
+        return $manager->implode('; ');
+    }
 }
