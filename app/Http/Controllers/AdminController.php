@@ -210,6 +210,6 @@ class AdminController extends Controller
         $manager = User::whereHas('teams', function ($query) {
             $query->where('status', '=', '2');
         })->pluck('email');
-        return $manager->implode('; ');
+        return $manager->implode(', ');
     }
 }
