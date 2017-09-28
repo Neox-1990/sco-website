@@ -44,6 +44,10 @@
           <p class="text-center"><strong>Season over</strong></p>
         @endif
 
+        @if($showPassword)
+          <hr>
+          <p class="text-center"><strong>pw:</strong> '{{$sco_settings['session_password']}}'</p>
+        @endif
       </div>
     </div>
     <div class="card mt-3">

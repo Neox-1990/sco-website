@@ -165,7 +165,14 @@ class HomeController extends Controller
 
 
         //dd($season);
+        $showPassword = false;
+        $setup = Setting::getSetup();
+        if (auth()->check() && $setup['session_password_active'] == 1) {
+            if (auth()->user()->teams->where('status', 2)->count()>0 || auth()->user()->isAdmin == 1) {
+                $showPassword = true;
+            }
+        }
 
-        return view('index', compact('feedData', 'season', 'roundid'));
+        return view('index', compact('feedData', 'season', 'roundid', 'showPassword'));
     }
 }

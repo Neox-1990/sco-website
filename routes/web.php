@@ -70,3 +70,5 @@ Route::get('/admin/drivers/{driver}', 'AdminController@driverEdit');
 Route::post('/admin/drivers/{driver}', 'AdminController@driverUpdate');
 Route::get('/admin/settings', 'AdminController@settingsEdit');
 Route::post('/admin/settings', 'AdminController@settingsUpdate');
+Route::get('/admin/settings', 'AdminController@settingsEdit');
+Route::get('/admin/settings/emails', 'AdminController@showEmails');

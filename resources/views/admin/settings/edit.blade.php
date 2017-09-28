@@ -99,4 +99,64 @@
       </form>
     </div>
   </div>
+  <div class="card dashbord-modul">
+    <div class="card-header">
+      <h3>Show session password</h3>
+    </div>
+    <div class="card-body">
+      <form class="" action="{{url('admin/settings')}}" method="post">
+        {{csrf_field()}}
+        <div class="form-group">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="session_password_active" id="show_pass1" value="1" {{$setup['session_password_active']=='1'?'checked':''}}>
+              show
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="session_password_active" id="show_pass2" value="0" {{$setup['session_password_active']=='0'?'checked':''}}>
+              hide
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <input class="btn btn-primary form-control" type="submit" name="simpleSubmit" value="Set">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="card dashbord-modul">
+    <div class="card-header">
+      <h3>Session Password</h3>
+    </div>
+    <div class="card-body">
+      <form class="" action="{{url('admin/settings')}}" method="post">
+        {{csrf_field()}}
+        <div class="form-group">
+          <label for="sessionpassword">password</label>
+          <input id="sessionpassword" class="form-control" type="text" name="session_password" value="{{old('session_password')!=null?old('session_password'):$setup['session_password']}}">
+        </div>
+        <div class="form-group">
+          <input class="btn btn-primary form-control" type="submit" name="simpleSubmit" value="Set">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="card dashbord-modul">
+    <div class="card-header">
+      <h3>Confirmed Team Mangers</h3>
+    </div>
+    <div class="card-body">
+      <form class="">
+        {{csrf_field()}}
+        <div class="form-group">
+          <label>Email list for bcc</label>          
+        </div>
+        <div class="form-group">
+          <a class="btn btn-primary form-control" href="{{url('/admin/settings/emails')}}">show</a>
+        </div>
+      </form>
+    </div>
+  </div>
 @endsection
