@@ -13,6 +13,7 @@
           <th class="sco-table-sort" data-sort-content="date" data-sort-dir="asc">created</th>
           <th class="sco-table-sort" data-sort-content="date" data-sort-dir="asc">last edit</th>
           <th class="sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">id</th>
+          <th class="sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">team id</th>
           <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">name</th>
           <th class="sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">number</th>
           <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">manager</th>
@@ -28,6 +29,7 @@
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td data-sort-date="{{$team['updated_at']->format('YmdHis')}}">{{$team['updated_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['id']}}</td>
+            <td>{{$team['ir_teamid']}}</td>
             <td>{{$team['name']}}</td>
             <td>{{$team['number']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
@@ -52,6 +54,7 @@
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td data-sort-date="{{$team['updated_at']->format('YmdHis')}}">{{$team['updated_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['id']}}</td>
+            <td>{{$team['ir_teamid']}}</td>
             <td>{{$team['name']}}</td>
             <td>{{$team['number']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
@@ -76,6 +79,7 @@
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td data-sort-date="{{$team['updated_at']->format('YmdHis')}}">{{$team['updated_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['id']}}</td>
+            <td>{{$team['ir_teamid']}}</td>
             <td>{{$team['name']}}</td>
             <td>{{$team['number']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
