@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Team;
+use App\Round;
 use App\Setting;
 use App\Events\TeamDeleteEvent;
 use App\Http\Requests\EditTeam;
@@ -69,7 +70,14 @@ class MyteamController extends Controller
         $deadline = $deadline->gt(new Carbon);
         $classcars = config('constants.classes')[config('constants.curent_season')][$carClass];
 
-        return view('myteams.edit', compact('legit', 'team', 'numbers', 'deadline', 'classcars'));
+        $now = Carbon::now('UTC');
+        //$now = new Carbon('2017-10-05 16:59:59', 'UTC');
+        $end = (clone($now))->addDays(3)->subHours(2);
+        $now->subHours(4);
+        $race = Round::whereBetween('race_start', [$now->format('Y-m-d H:i:s'),$end->format('Y-m-d H:i:s')])->get();
+        $driverChangeLimit = $team->status == 2 && $race->count()>0;
+
+        return view('myteams.edit', compact('legit', 'team', 'numbers', 'deadline', 'classcars', 'driverChangeLimit'));
     }
     public function update(EditTeam $request, Team $team)
     {
