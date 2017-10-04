@@ -72,3 +72,6 @@ Route::get('/admin/settings', 'AdminController@settingsEdit');
 Route::post('/admin/settings', 'AdminController@settingsUpdate');
 Route::get('/admin/settings', 'AdminController@settingsEdit');
 Route::get('/admin/settings/emails', 'AdminController@showEmails');
+Route::get('/admin/results', 'AdminController@resultIndex');
+Route::get('/admin/results/create/{round}', 'AdminController@resultCreate');
+Route::post('/admin/results/create/{round}', 'AdminController@resultStore');

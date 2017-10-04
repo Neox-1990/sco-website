@@ -11,9 +11,9 @@
       <h1>Edit Team</h1>
       @if ($driverChangeLimit)
         <div class="bg-danger p-3 rounded text-light">
-          <strong>Warning:</strong> Changing the driverlineup between 24 h before
-          the first practice and the end of the race is not allowed. If you change
-          the driverlineup now, the team will receive a penalty in the race.
+          <strong>Warning:</strong> The driverlineup is fixed between 24 h before
+          the first practice and the end of the race. If you add another driver,
+          he is not allowed to drive in the race.
         </div>
       @endif
       @include('master.formerrors')

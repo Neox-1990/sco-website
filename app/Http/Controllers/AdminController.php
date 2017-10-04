@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Team;
+use App\Round;
 use App\LogEntry;
 use App\Setting;
 use App\Driver;
@@ -12,6 +13,7 @@ use App\Events\UserUpdateEvent;
 use App\Events\TeamStatusChangeEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -211,5 +213,38 @@ class AdminController extends Controller
             $query->where('status', '=', '2');
         })->pluck('email');
         return $manager->implode(', ');
+    }
+
+    public function resultIndex()
+    {
+        $rounds = Round::where('season_id', '=', config('constants.curent_season'))->get();
+        //dd($rounds);
+        return view('admin.results.index', compact('rounds'));
+    }
+
+    public function resultCreate(Round $round)
+    {
+        //dd($round);
+        return view('admin.results.create', compact('round'));
+    }
+
+    public function resultStore(Request $request, Round $round)
+    {
+        $path = $request->file('result_csv')->storeAs('results', 'result_round_'.$round->id.'.csv');
+        $file = Storage::get($path);
+        $raw = array_slice(explode("\n", str_replace('"', '', $file)), 4);
+        foreach ($raw as $key => $value) {
+            $raw[$key] = explode(',', $value);
+        }
+        $reducedRaw = array();
+        $lastP = 0;
+        foreach ($raw as $value) {
+            if (intval($value[0]) != $lastP) {
+                $reducedRaw[] = $value;
+                $lastP = intval($value[0]);
+            }
+        }
+        $reducedRaw = array_slice($reducedRaw, 0, -1);
+        dd($reducedRaw);
     }
 }
