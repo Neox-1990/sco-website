@@ -13,7 +13,8 @@
         <div class="bg-danger p-3 rounded text-light">
           <strong>Warning:</strong> The driverlineup is fixed between 24 h before
           the first practice and the end of the race. If you add another driver,
-          he is not allowed to drive in the race.
+          he is not allowed to drive in the race. If he drives in the race, the
+          team receives a 30 second stop and go penalty.
         </div>
       @endif
       @include('master.formerrors')

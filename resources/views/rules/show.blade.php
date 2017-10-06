@@ -221,7 +221,11 @@ entered, behind all teams that failed to make it through pre-qualifying (should 
 have taken place).</li>
         <li>Teams that have the “Confirmed” status and are part of the grid will only be able
 to edit their team’s driver line-up up until 24 hours before the start of a rounds’ first
-free practice session (Wednesday at 17:00 UTC).</li>
+free practice session (Wednesday at 17:00 UTC).
+<ol>
+  <li>Should a new driver take part in the race having been added after the deadline, the team will receive a 30 second stop-hold penalty once said driver has taken over the car.</li>
+</ol>
+</li>
         <li>Any team that misses 2 rounds without notifying the series administration of their
 absence before the event will be withdrawn from the series.</li>
       </ol>
@@ -336,9 +340,9 @@ limits, especially at more modern circuits with multiple tarmac run-off zones, a
 formula will be used to calculate a team's maximum number of incident points.
 <ol>
   <li>This formula will take both, the number of turns on the circuit as well as
-the number of laps driven by the team's car into account and looks as follows:<br><pre>Formula: (corners per lap * number of laps by car) * 0.03 = team's incident limit</pre></li>
+the number of laps driven by the team's car into account and looks as follows:<br><pre>Formula: (corners per lap * number of laps by car) / 25 = team's incident limit</pre></li>
   <li>Using this formula, a team that's driven 100 laps on a circuit with 21
-corners would be able to get up to 63 incident points before exceeding the
+corners would be able to get up to 84 incident points before exceeding the
 limit. Fractional amounts will always be rounded up to the closest full number.</li>
   <li>Exceeding the incident limit will result in the car being disqualified from
 the race.</li>
