@@ -8,6 +8,7 @@ use App\Round;
 use App\LogEntry;
 use App\Setting;
 use App\Driver;
+use App\ResultHelper\GridResult;
 use App\Events\TeamEditEvent;
 use App\Events\UserUpdateEvent;
 use App\Events\TeamStatusChangeEvent;
@@ -245,6 +246,9 @@ class AdminController extends Controller
             }
         }
         $reducedRaw = array_slice($reducedRaw, 0, -1);
-        dd($reducedRaw);
+        $grid = new GridResult();
+        $grid->createFromArray($reducedRaw);
+        $grid->sortByClass();
+        dd($grid);
     }
 }
