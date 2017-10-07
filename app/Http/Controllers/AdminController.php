@@ -109,6 +109,12 @@ class AdminController extends Controller
         $teams = Team::getSortedTeams();
         return view('admin.team.index', compact('teams'));
     }
+    public function teamList()
+    {
+        $teams = Team::getConfirmedTeams();
+        //dd($teams);
+        return view('admin.team.list', compact('teams'));
+    }
     public function teamUpdate(Request $request, Team $team)
     {
         if ($request->has('confirm')) {

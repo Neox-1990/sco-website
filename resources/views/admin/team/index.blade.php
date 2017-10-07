@@ -3,6 +3,8 @@
 @section('content')
   <h1>Team list</h1>
   <hr>
+  <a href="{{url('admin/entrylist')}}">Entrylist</a>
+  <hr>
   @foreach ($teams as $name => $list)
   <h3 class="mt-5 teamtabletoggle">{{$name}} ({{sizeof($list['pending'])}}/{{sizeof($list['waitinglist'])}}/{{sizeof($list['confirmed'])}})<span class="ml-3 toggle-icon"><i class="fa fa-chevron-circle-down closed" aria-hidden="true"></i></span></h3>
   <div class="">

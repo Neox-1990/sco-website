@@ -160,6 +160,50 @@
         </form>
       </div>
     </div>
+    <div class="card dashbord-modul">
+      <div class="card-header">
+        <h3>Show Youtube Header</h3>
+      </div>
+      <div class="card-body">
+        <form class="" action="{{url('admin/settings')}}" method="post">
+          {{csrf_field()}}
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="show_youtube_header" id="show_youtube_header" value="1" {{$setup['show_youtube_header']=='1'?'checked':''}}>
+                show
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="show_youtube_header" id="show_youtube_header" value="0" {{$setup['show_youtube_header']=='0'?'checked':''}}>
+                hide
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input class="btn btn-primary form-control" type="submit" name="simpleSubmit" value="Set">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card dashbord-modul">
+      <div class="card-header">
+        <h3>Youtube Header Video ID</h3>
+      </div>
+      <div class="card-body">
+        <form class="" action="{{url('admin/settings')}}" method="post">
+          {{csrf_field()}}
+          <div class="form-group">
+            <label for="youtube_header_videoid">ID (watch?v=xxx)</label>
+            <input id="youtube_header_videoid" class="form-control" type="text" name="youtube_header_videoid" value="{{old('youtube_header_videoid')!=null?old('youtube_header_videoid'):$setup['youtube_header_videoid']}}">
+          </div>
+          <div class="form-group">
+            <input class="btn btn-primary form-control" type="submit" name="simpleSubmit" value="Set">
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 
 @endsection
