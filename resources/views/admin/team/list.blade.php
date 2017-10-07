@@ -4,7 +4,7 @@
   <table>
   @foreach ($class as $team)
     <tr>
-      <th>#{{$team->number}} {{$team->name}}</th>
+      <td><b>#{{$team->number}} {{$team->name}}</b></td>
     </tr>
     @foreach ($team->drivers as $driver)
       <tr>
