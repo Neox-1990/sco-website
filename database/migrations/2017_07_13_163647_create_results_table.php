@@ -16,12 +16,13 @@ class CreateResultsTable extends Migration
         Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('position');
-            $table->timestamp('time')->nullable();
+            $table->integer('laps');
+            $table->integer('incs');
             $table->integer('finish_status');
             $table->integer('team_id');
             $table->integer('season_id');
             $table->integer('round_id');
-            $table->float('points')->nullable();
+            $table->float('points');
             $table->timestamps();
 
             $table->unique(['team_id', 'season_id', 'round_id']);

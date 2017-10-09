@@ -2,6 +2,8 @@
 
 namespace App\ResultHelper;
 
+use App\Team;
+
 /**
  *
  */
@@ -11,9 +13,12 @@ class SingleResult
     private $classPos;
     private $car;
     private $carclass;
-    private $team;
+    private $teamid;
+    private $team = null;
     private $points;
     private $out;
+    private $laps;
+    private $incs;
 
     public function __construct()
     {
@@ -24,9 +29,12 @@ class SingleResult
         $this->classPos = 0;
         $this->car = $input[1];
         $this->carclass = '';
-        $this->team = intval($input[5])*-1;
+        $this->teamid = intval($input[5])*-1;
+        $this->team = Team::where([['ir_teamid','=',$this->teamid],['season_id','=',config('constants.curent_season')]])->withTrashed()->first();
         $this->points = 0.0;
         $this->out = $input[10];
+        $this->laps = intval($input[18]);
+        $this->incs = intval($input[19]);
     }
 
     public function setCar(int $car)
@@ -63,5 +71,25 @@ class SingleResult
     public function getPoints()
     {
         return $this->points;
+    }
+
+    public function getTeam()
+    {
+        return $this->team;
+    }
+
+    public function getOut()
+    {
+        return $this->out;
+    }
+
+    public function getLaps()
+    {
+        return $this->laps;
+    }
+
+    public function getIncs()
+    {
+        return $this->incs;
     }
 }

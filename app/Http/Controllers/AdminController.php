@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Team;
 use App\Round;
+use App\Result;
 use App\LogEntry;
 use App\Setting;
 use App\Driver;
@@ -237,24 +238,52 @@ class AdminController extends Controller
 
     public function resultStore(Request $request, Round $round)
     {
-        $path = $request->file('result_csv')->storeAs('results', 'result_round_'.$round->id.'.csv');
-        $file = Storage::get($path);
-        $raw = array_slice(explode("\n", str_replace('"', '', $file)), 4);
-        foreach ($raw as $key => $value) {
-            $raw[$key] = explode(',', $value);
-        }
-        $reducedRaw = array();
-        $lastP = 0;
-        foreach ($raw as $value) {
-            if (intval($value[0]) != $lastP) {
-                $reducedRaw[] = $value;
-                $lastP = intval($value[0]);
+        if ($request->has('csvresult')) {
+            $path = $request->file('result_csv')->storeAs('results', 'result_round_'.$round->id.'.csv');
+            $file = Storage::get($path);
+            $raw = array_slice(explode("\n", str_replace('"', '', $file)), 4);
+            foreach ($raw as $key => $value) {
+                $raw[$key] = explode(',', $value);
             }
+            $reducedRaw = array();
+            $lastP = 0;
+            foreach ($raw as $value) {
+                if (intval($value[0]) != $lastP) {
+                    $reducedRaw[] = $value;
+                    $lastP = intval($value[0]);
+                }
+            }
+            $reducedRaw = array_slice($reducedRaw, 0, -1);
+            $grid = new GridResult();
+            $grid->createFromArray($reducedRaw);
+            $grid->sortByClass();
+        //dd($grid);
+        $teams = Team::getConfirmedTeams(true);
+
+            return view('admin.results.store1', compact('grid', 'round', 'teams'));
+        } elseif ($request->has('editedResults')) {
+            foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
+                for ($i=0; $i < sizeof($request->request->all()[$class]['number']); $i++) {
+                    $classList = $request->request->all()[$class];
+                    if ($classList['team'][$i] != 0) {
+                        $newResult = new Result;
+                        $newResult->position = $classList['number'][$i];
+                        $newResult->laps = $classList['laps'][$i];
+                        $newResult->incs = $classList['incs'][$i];
+                        $newResult->finish_status = $classList['finish'][$i];
+                        $newResult->team_id = $classList['team'][$i];
+                        $newResult->season_id = config('constants.curent_season');
+                        $newResult->round_id = $round->id;
+                        if ($classList['finish'][$i] != 32) {
+                            $newResult->points = config('constants.points')[$classList['number'][$i]];
+                        } else {
+                            $newResult->points = 0;
+                        }
+                        $newResult->save();
+                    }
+                }
+            }
+            dd($request->request->all());
         }
-        $reducedRaw = array_slice($reducedRaw, 0, -1);
-        $grid = new GridResult();
-        $grid->createFromArray($reducedRaw);
-        $grid->sortByClass();
-        dd($grid);
     }
 }

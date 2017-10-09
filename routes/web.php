@@ -45,6 +45,7 @@ Route::get('/user', 'UserController@edit');
 Route::post('/user', 'UserController@update');
 
 Route::get('/results', 'ResultController@index');
+Route::get('/results/{round}', 'ResultController@show');
 
 Route::get('/test', function () {
 });
