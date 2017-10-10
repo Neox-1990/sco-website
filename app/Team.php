@@ -102,14 +102,18 @@ class Team extends Model
 
         return $teams;
     }
-    public static function getConfirmedTeams()
+    public static function getConfirmedTeams($withTrashed = false)
     {
         $teams = [];
         $classes = config('constants.classes')[config('constants.curent_season')];
         foreach ($classes as $name => $cararray) {
             $teams[$name] = new Collection;
             foreach ($cararray as $value) {
-                $teams[$name] = $teams[$name]->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',$value]])->with('drivers')->get());
+                if ($withTrashed) {
+                    $teams[$name] = $teams[$name]->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',$value]])->with('drivers')->withTrashed()->get());
+                } else {
+                    $teams[$name] = $teams[$name]->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',$value]])->with('drivers')->get());
+                }
             }
             $teams[$name] = $teams[$name]->sortBy(function (Team $team) {
                 return $team->number;

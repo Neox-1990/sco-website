@@ -10,7 +10,7 @@ use App\ResultHelper\SingleResult;
 class GridResult
 {
     private $grid;
-    private $gridClasses;
+    public $gridClasses;
 
 
     public function createFromArray(array $input)
