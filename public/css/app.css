@@ -9527,6 +9527,66 @@ nav {
   background-color: #222 !important;
 }
 
+.btn-Prototype {
+  background-color: #275296;
+  color: #fff;
+}
+
+.btn-Prototype:hover {
+  background-color: #1c3c6e;
+}
+
+.btn-GT {
+  background-color: #1da35c;
+  color: #fff;
+}
+
+.btn-GT:hover {
+  background-color: #157844;
+}
+
+.btn-GTC {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.btn-GTC:hover {
+  background-color: #030303;
+}
+
+.btn-outline-Prototype {
+  background-color: #fff;
+  border-color: #275296;
+  color: #275296;
+}
+
+.btn-outline-Prototype:hover {
+  background-color: #275296;
+  color: #fff;
+}
+
+.btn-outline-GT {
+  background-color: #fff;
+  border-color: #1da35c;
+  color: #1da35c;
+}
+
+.btn-outline-GT:hover {
+  background-color: #1da35c;
+  color: #fff;
+}
+
+.btn-outline-GTC {
+  background-color: #fff;
+  border-color: #1c1c1c;
+  color: #1c1c1c;
+}
+
+.btn-outline-GTC:hover {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
 body#admin-dashbord {
   background: 0;
   background-color: #fff;

@@ -35,11 +35,28 @@ class ResultController extends Controller
             $resultsSorted[$class] = $resultsSorted[$class]->values();
         }
 
-        return view('results.index', compact('resultsSorted'));
+        $rounds = Round::where('season_id', config('constants.curent_season'))->get();
+        $first = array_keys($resultsSorted)[0];
+        //dd($resultsSorted);
+        return view('results.index', compact('resultsSorted', 'rounds', 'first'));
     }
 
     public function show(Round $round)
     {
-        dd($round);
+        $results = Result::where('round_id', $round->id)->with('team')->get();
+        $resultsSorted = array();
+        foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
+            $resultsSorted[$class] = $results->filter(function ($result, $key) use ($cars) {
+                $team = $result->team;
+                return in_array($team->car, $cars);
+            });
+
+            $resultsSorted[$class] = $resultsSorted[$class]->sortBy(function ($result, $key) {
+                return $result->position;
+            });
+        }
+        $rounds = Round::where('season_id', config('constants.curent_season'))->get();
+        $first = array_keys($resultsSorted)[0];
+        return view('results.show', compact('resultsSorted', 'rounds', 'round', 'first'));
     }
 }

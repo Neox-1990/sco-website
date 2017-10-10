@@ -10,6 +10,7 @@ window.easteregg = '********************\nActivate epic for epicness\n**********
 import {updateNumbers, addDriverForm} from './helper/myteamhelper.js';
 import {tablesorterInit, tablesorter} from './helper/tablesorter.js';
 import {toggleTeamTables, toggleTeamTablesInit} from './helper/adminhelper.js';
+import {resultToggleInit, resultToggle} from './helper/resulthelper.js';
 
 $(document).ready(function(){
   $('#flash_message').delay(200).fadeIn(500,function(){
@@ -24,6 +25,7 @@ $(document).ready(function(){
   })
   tablesorterInit();
   toggleTeamTablesInit();
+  resultToggleInit();
   if(typeof(numbers) !== 'undefined'){
     updateNumbers();
     $('#car').on('change', updateNumbers);

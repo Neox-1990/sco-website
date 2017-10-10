@@ -785,6 +785,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helper_tablesorter_js__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper_adminhelper_js__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helper_resulthelper_js__ = __webpack_require__(44);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -794,6 +795,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 window.Popper = __webpack_require__(10);
 __webpack_require__(11);
 window.easteregg = '********************\nActivate epic for epicness\n********************\nActivate useless for useless information @ home\n********************';
+
 
 
 
@@ -811,6 +813,7 @@ $(document).ready(function () {
   });
   Object(__WEBPACK_IMPORTED_MODULE_1__helper_tablesorter_js__["a" /* tablesorterInit */])();
   Object(__WEBPACK_IMPORTED_MODULE_2__helper_adminhelper_js__["a" /* toggleTeamTablesInit */])();
+  Object(__WEBPACK_IMPORTED_MODULE_3__helper_resulthelper_js__["a" /* resultToggleInit */])();
   if (typeof numbers !== 'undefined') {
     Object(__WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["b" /* updateNumbers */])();
     $('#car').on('change', __WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["b" /* updateNumbers */]);
@@ -35705,6 +35708,33 @@ var toggleTeamTables = function toggleTeamTables() {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return resultToggleInit; });
+/* unused harmony export resultToggle */
+var resultToggleInit = function resultToggleInit() {
+  $('#results_controlbox_class>button').on('click', resultToggle);
+};
+
+var resultToggle = function resultToggle() {
+  var carClass = $(this).attr('data-class');
+  $('#results_controlbox_class>button').each(function () {
+    var subClass = $(this).attr('data-class');
+    $(this).removeClass('btn-' + subClass);
+    $(this).addClass('btn-outline-' + subClass);
+  });
+  $(this).removeClass('btn-outline-' + carClass).addClass('btn-' + carClass);
+  $('table.result-table').addClass('d-none');
+  $('table#' + carClass + '-result').removeClass('d-none');
+};
 
 /***/ })
 /******/ ]);

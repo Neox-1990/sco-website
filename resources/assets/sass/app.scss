@@ -305,6 +305,56 @@ nav{
   background-color: $sco-dark !important;
 }
 
+.btn-Prototype{
+  background-color: $sco-p;
+  color: #fff;
+  &:hover{
+    background-color: darken($sco-p, 10%);
+  }
+}
+.btn-GT{
+  background-color: $sco-gt;
+  color: #fff;
+  &:hover{
+    background-color: darken($sco-gt, 10%);
+  }
+}
+.btn-GTC{
+  background-color: $sco-gtc;
+  color: #fff;
+  &:hover{
+    background-color: darken($sco-gtc, 10%);
+  }
+}
+
+.btn-outline-Prototype{
+  background-color: #fff;
+  border-color: $sco-p;
+  color: $sco-p;
+  &:hover{
+    background-color: $sco-p;
+    color: #fff;
+  }
+}
+.btn-outline-GT{
+  background-color: #fff;
+  border-color: $sco-gt;
+  color: $sco-gt;
+  &:hover{
+    background-color: $sco-gt;
+    color: #fff;
+  }
+}
+.btn-outline-GTC{
+  background-color: #fff;
+  border-color: $sco-gtc;
+  color: $sco-gtc;
+  &:hover{
+    background-color: $sco-gtc;
+    color: #fff;
+  }
+}
+
 body#admin-dashbord{
   background: 0;
   background-color: #fff;
