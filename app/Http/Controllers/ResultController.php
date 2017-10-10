@@ -29,7 +29,7 @@ class ResultController extends Controller
             });
 
             $resultsSorted[$class] = $resultsSorted[$class]->sortByDesc(function ($result, $key) {
-                return $result->points;
+                return floatval($result->points);
             });
 
             $resultsSorted[$class] = $resultsSorted[$class]->values();
