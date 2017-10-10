@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col-12" style="padding-bottom:2rem;">
     <div class="mb-3 d-flex flex-wrap" id="results_controlbox_rounds">
-      <a href="{{url('/result')}}" class="btn btn-primary">Championship</a>
+      <a href="{{url('/results')}}" class="btn btn-primary">Championship</a>
       @foreach ($rounds as $round)
         <a href="{{url('/results/'.$round->id)}}" class="btn btn-outline-primary ml-3 mt-1">Round {{$round->number}}</a>
       @endforeach
