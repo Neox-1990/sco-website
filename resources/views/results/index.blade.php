@@ -18,17 +18,17 @@
       <p>No results yet.</p>
     @else
       @foreach ($resultsSorted as $class => $results)
-        <table id="{{$class}}-result" class="table result-table {{$class!=$first?'d-none':''}}">
+        <table id="{{$class}}-result" class="table table-hover result-table {{$class!=$first?'d-none':''}}">
           <tr>
-            <th>Pos</th>
+            <th class="text-center">Pos</th>
             <th>Team</th>
-            <th>Points</th>
+            <th class="text-center">Pts</th>
           </tr>
           @foreach ($results as $key => $result)
             <tr>
-              <td>{{$key+1}}</td>
+              <td class="text-center">{{$key+1}}</td>
               <td><a href="{{url('teams/'.$result->team->id)}}">{{$result->team->name}}</a></td>
-              <td>{{floor($result->points)}}</td>
+              <td class="text-center">{{floor($result->points)}}</td>
             </tr>
           @endforeach
         </table>
