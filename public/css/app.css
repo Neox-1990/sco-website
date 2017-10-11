@@ -9587,6 +9587,28 @@ nav {
   color: #fff;
 }
 
+table.result-table th {
+  width: auto;
+}
+
+table.result-table th:nth-child(1) {
+  width: 4rem;
+}
+
+table.result-table th:nth-child(3),
+table.result-table th:nth-child(4),
+table.result-table th:nth-child(6) {
+  width: 5rem;
+}
+
+table.result-table th:nth-child(5) {
+  width: 8rem;
+}
+
+#results_controlbox_class button {
+  cursor: pointer;
+}
+
 body#admin-dashbord {
   background: 0;
   background-color: #fff;

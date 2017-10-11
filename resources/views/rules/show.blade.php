@@ -326,8 +326,8 @@ of 2 drivers and a maximum of 6 drivers being able to drive the car.
 <ol>
   <li>As per iRacing rules, a “fair share” is defined as a quarter of an equal
 share.<br>
-<pre>Example: 2 drivers with a total of 110 laps driven
-→ 110 laps / 2 drivers = 65 laps per driver on an equal share
+<pre>Example: 2 drivers with a total of 130 laps driven
+→ 130 laps / 2 drivers = 65 laps per driver on an equal share
 → → 65 laps / 4 = 16.25 laps as 16 laps minimum per driver</pre>
 </li>
   <li>The minimum “fair share” lap count only applies to the number of drivers

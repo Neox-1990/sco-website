@@ -18,23 +18,23 @@
       <p>No results yet.</p>
     @else
       @foreach ($resultsSorted as $class => $results)
-        <table id="{{$class}}-result" class="table result-table {{$class!=$first?'d-none':''}}">
+        <table id="{{$class}}-result" class="table table-hover result-table {{$class!=$first?'d-none':''}}">
           <tr>
-            <th>Pos</th>
+            <th class="text-center">Pos</th>
             <th>Team</th>
-            <th>Laps</th>
-            <th>Inc</th>
-            <th>Out</th>
-            <th>Points</th>
+            <th class="text-center">Laps</th>
+            <th class="text-center">Inc</th>
+            <th class="text-center">Out</th>
+            <th class="text-center">Pts</th>
           </tr>
           @foreach ($results as $key => $result)
             <tr>
-              <td>{{$result->position}}</td>
+              <td class="text-center">{{$result->position}}</td>
               <td><a href="{{url('teams/'.$result->team->id)}}">{{$result->team->name}}</a></td>
-              <td>{{$result->laps}}</td>
-              <td>{{$result->incs}}</td>
-              <td>{{config('constants.out_status')[$result->finish_status]}}</td>
-              <td>{{floor($result->points)}}</td>
+              <td class="text-center">{{$result->laps}}</td>
+              <td class="text-center">{{$result->incs}}</td>
+              <td class="text-center">{{config('constants.out_status')[$result->finish_status]}}</td>
+              <td class="text-center">{{floor($result->points)}}</td>
             </tr>
           @endforeach
         </table>

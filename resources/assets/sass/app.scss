@@ -354,6 +354,25 @@ nav{
     color: #fff;
   }
 }
+table.result-table{
+  th{
+    width: auto;
+    &:nth-child(1){
+      width: 4rem;
+    }
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(6){
+      width: 5rem;
+    }
+    &:nth-child(5){
+      width: 8rem;
+    }
+  }
+}
+#results_controlbox_class button{
+  cursor:pointer;
+}
 
 body#admin-dashbord{
   background: 0;

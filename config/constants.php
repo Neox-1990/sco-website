@@ -85,6 +85,6 @@ return [
   'out_status' => [
     0 => 'running',
     29 => 'dq',
-    32 => 'disconnected'
+    32 => 'discon.'
   ]
 ];
