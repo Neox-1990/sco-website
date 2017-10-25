@@ -125,11 +125,11 @@ will be 4 hours long. The calendar looks as follows:
             </tr>
             <tr>
               <td>Sunday at <strong>13:00 UTC</strong></td>
-              <td>Start of Warm Up <br><i>(105 minute duration)</i></td>
+              <td>Start of Warm Up <br><i>(100 minute duration)</i></td>
             </tr>
             <tr>
-              <td>Sunday at <strong>14:45 UTC</strong></td>
-              <td>Start of Qualifying <br><i>(15 minute duration)</i></td>
+              <td>Sunday at <strong>14:40 UTC</strong></td>
+              <td>Start of Qualifying <br><i>(20 minute duration)</i></td>
             </tr>
             <tr>
               <td>Sunday at <strong>15:00 UTC</strong></td>
@@ -227,7 +227,11 @@ free practice session (Wednesday at 17:00 UTC).
 </ol>
 </li>
         <li>Any team that misses 2 rounds without notifying the series administration of their
-absence before the event will be withdrawn from the series.</li>
+absence before the event will be withdrawn from the series.
+<ol>
+  <li>The same will be the case for any team that misses 3 rounds, whether their absence was excused or not.</li>
+</ol>
+</li>
       </ol>
       <h3>5. Paint Schemes</h3>
       <ol class="rulebook-section">
@@ -287,16 +291,15 @@ race sessions.</li>
       </ol>
       <h3>8. Qualifying</h3>
       <ol class="rulebook-section">
-        <li>All qualifying sessions will be 15 minute long single car sessions with a maximum
-of 3 timed laps available to each car.</li>
+        <li>All qualifying sessions will be 20 minute long single car sessions with a maximum
+of 4 timed laps available to each car.</li>
         <li>As per iRacing lone qualifier rules, any member registered for the team will be
 allowed to qualify the car.</li>
         <li>The qualifying driver is not required to start the race, but they will be required to
 drive the car for at least 1 full lap (meaning it can’t be an out or in lap) during the
 race.</li>
-        <li>Every car will be required to set a qualifying time to be allowed to take the start
-of the race. For P and GT class cars, the time set must also be quicker than the
-fastest time set by the GT and GTC pole sitters respectively.</li>
+        <li>Every car will be required to set a qualifying time. Teams who do not set a qualifying time or
+are slower than the fastest car of the class behind them will have to start from pit lane.</li>
         <li>The series administration may not allow a team to take the start, if they’re
 deemed to be a potential danger to other cars on-track during the race or if they
 haven’t set a fast enough lap time in qualifying (see rule 8.d).</li>
@@ -319,6 +322,10 @@ race. The same procedure applies to the GTC class pole sitter and field.</li>
   <li>Images of the exact beginning and end points of this “starting zone” will
 be part of the drivers’ briefing, which will be published before the first free
 practice session.</li>
+  <li>Teams that start from pit lane must line up at pit exit in a line. They will not be
+allowed to leave the lane until the race administration declares the pit exit open
+once the last GTC car has passed the first turn. Leaving the pit lane early will
+result in a 30 second stop-hold penalty.</li>
 </ol>
 </li>
         <li>During the race itself, the fair share driving rule will be enabled with a minimum
@@ -540,15 +547,11 @@ using the following scale:
   </tr>
 </table>
 </li>
-        <li>Teams that haven’t scored points will be ranked based on their best finish outside
-the points. Should multiple teams have the same position as their best race result,
-then the higher position will go to the team that achieved the result earlier in the
-season.</li>
-        <li>In the event of a tie in points standings, the position in question will go to the
-team with the most race victories. If neither team has a win or not more than the
-other, the position goes to the team with the most second place finishes. If the same
-applies there, the procedure is continued until the tie can be broken. Should this not
-be possible, both teams will be declared champions.</li>
+        <li>In the event of a tie in points standings, the position in question will go to the team with the
+most race victories. If neither team has a win or not more than the other, the position goes to
+the team with the most second place finishes. If the same applies there, the procedure is
+continued until the tie can be broken. Should this not be possible, both teams will be
+declared champions.</li>
       </ol>
       <h3>15. In-Game Session Settings</h3>
       <ol class="rulebook-section">
