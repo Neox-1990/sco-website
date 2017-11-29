@@ -108,7 +108,9 @@ class AdminController extends Controller
     public function teamIndex()
     {
         $teams = Team::getSortedTeams();
-        return view('admin.team.index', compact('teams'));
+        $deletedTeams = Team::onlyTrashed()->where([['season_id','=',config('constants.curent_season')]])->get();
+        //dd($deletedTeams);
+        return view('admin.team.index', compact('teams', 'deletedTeams'));
     }
     public function teamList()
     {
