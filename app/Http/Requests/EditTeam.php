@@ -217,6 +217,7 @@ class EditTeam extends FormRequest
                 $driver->save();
                 $team->drivers()->attach($driver->id);
                 $checkResult['flash'] = 'You successfully added '.$driver->name.' to '.$team->name;
+                event(new TeamEditEvent($team, 'Team driver added'));
             }
         } else {
             $driver = new Driver;
