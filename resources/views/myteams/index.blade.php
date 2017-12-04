@@ -13,7 +13,7 @@
           <h2>{{$team->name}} # {{$team->number}}
           <div class="btn-group ml-5">
             <a href="{{url('/myteams/edit/'.$team->id)}}" class="btn btn-outline-success">Edit</a>
-            <a href="{{url('/myteams/delete/'.$team->id)}}" class="btn btn-outline-danger">Delete</a>
+            <a href="{{url('/myteams/delete/'.$team->id)}}" class="btn btn-outline-danger">Withdraw / Delete</a>
           </div>
           </h2>
           <table class="table">

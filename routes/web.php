@@ -65,6 +65,8 @@ Route::post('/admin/manager/{user}', 'AdminController@managerUpdate');
 Route::get('/admin/log', 'AdminController@logIndex');
 Route::get('/admin/teams', 'AdminController@teamIndex');
 Route::get('/admin/teams/{team}', 'AdminController@teamEdit');
+Route::get('/admin/teams/delete/{team}', 'AdminController@teamDelete');
+Route::get('/admin/teams/restore/{team}', 'AdminController@teamRestore');
 Route::post('/admin/teams/{team}', 'AdminController@teamUpdate');
 Route::get('/admin/entrylist', 'AdminController@teamList');
 Route::get('/admin/drivers', 'AdminController@driverIndex');

@@ -9,6 +9,7 @@ use App\Result;
 use App\LogEntry;
 use App\Setting;
 use App\Driver;
+use App\Events\TeamDeleteEvent;
 use App\ResultHelper\GridResult;
 use App\Events\TeamEditEvent;
 use App\Events\UserUpdateEvent;
@@ -161,6 +162,29 @@ class AdminController extends Controller
             return redirect('admin/teams/');
         }
     }
+
+    public function teamDelete(Team $team)
+    {
+        if ($team->delete()) {
+            session()->flash('flash_message_success', 'Team #'.$team->number.' '.$team->name.' (id:'.$team->id.') deleted');
+            event(new TeamDeleteEvent($team));
+        } else {
+            session()->flash('flash_message_success', 'An error occurred');
+        }
+        return redirect('admin/teams/');
+    }
+
+    public function teamRestore(Team $team)
+    {
+        if ($team->restore()) {
+            session()->flash('flash_message_success', 'Team #'.$team->number.' '.$team->name.' (id:'.$team->id.') restored');
+            event(new TeamEditEvent($team, 'Team restored'));
+        } else {
+            session()->flash('flash_message_success', 'An error occurred');
+        }
+        return redirect('admin/teams/');
+    }
+
     public function settingsEdit()
     {
         $settings = Setting::all();
@@ -276,7 +300,7 @@ class AdminController extends Controller
                         $newResult->team_id = $classList['team'][$i];
                         $newResult->season_id = config('constants.curent_season');
                         $newResult->round_id = $round->id;
-                        if ($classList['finish'][$i] != 32) {
+                        if ($classList['finish'][$i] != 29) {
                             $newResult->points = config('constants.points')[$classList['number'][$i]];
                         } else {
                             $newResult->points = 0;
