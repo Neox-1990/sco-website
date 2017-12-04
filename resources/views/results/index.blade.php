@@ -27,7 +27,7 @@
           @foreach ($results as $key => $result)
             <tr>
               <td class="text-center">{{$key+1}}</td>
-              <td><a href="{{url('teams/'.$result->team->id)}}">{{$result->team->name}}</a></td>
+              <td><a href="{{url('teams/'.$result->team->id)}}" class="{{$result->team->trashed()?'text-muted':''}}">{{$result->team->name}}</a></td>
               <td class="text-center">{{floor($result->points)}}</td>
             </tr>
           @endforeach

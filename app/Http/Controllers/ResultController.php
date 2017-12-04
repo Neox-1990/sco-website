@@ -17,14 +17,14 @@ class ResultController extends Controller
         $results = DB::table('results')->select(DB::raw('team_id, SUM(points) as points '))->where('season_id', config('constants.curent_season'))->groupBy('team_id')->get();
         $results = $results->map(function ($array, $key) {
             $array = (array)$array;
-            $array['team'] = Team::where('id', $array['team_id'])->first();
+            $array['team'] = Team::withTrashed()->where('id', $array['team_id'])->first();
             $array = (object)$array;
             return $array;
         });
         $resultsSorted = array();
         foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
             $resultsSorted[$class] = $results->filter(function ($result, $key) use ($cars) {
-                $team = Team::where('id', $result->team_id)->first();
+                $team = Team::withTrashed()->where('id', $result->team_id)->first();
                 return in_array($team->car, $cars);
             });
 
