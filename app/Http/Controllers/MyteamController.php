@@ -118,7 +118,7 @@ class MyteamController extends Controller
                 event(new TeamDeleteEvent($team));
             }
         }
-        session()->flash('flash_message_success', 'You successfully delted the team from this season.');
+        session()->flash('flash_message_success', 'You successfully deleted the team from this season.');
         return redirect('/myteams/');
     }
 }

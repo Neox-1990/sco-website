@@ -13,10 +13,10 @@ import {toggleTeamTables, toggleTeamTablesInit} from './helper/adminhelper.js';
 import {resultToggleInit, resultToggle} from './helper/resulthelper.js';
 
 $(document).ready(function(){
-  $('#flash_message').delay(200).fadeIn(500,function(){
-    /*$(this).delay(5000).fadeOut(500,function(){
+  $('#flash_message').slideDown(150,function(){
+    $(this).delay(10000).slideUp(150,function(){
       $(this).remove();
-    });*/
+    });
   });
   $('#flash_message>button.close').on('click', function(){
     $(this).parent().fadeOut(500,function(){

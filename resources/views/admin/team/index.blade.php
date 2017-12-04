@@ -27,7 +27,10 @@
       </thead>
         @foreach ($list['confirmed'] as $team)
           <tr>
-            <td class="bg-success"><a class="btn btn-primary" href="{{url('admin/teams/'.$team['id'])}}">edit</a></td>
+            <td class="bg-success">
+              <a class="btn btn-primary d-block" href="{{url('admin/teams/'.$team['id'])}}">edit</a>
+              <a class="btn btn-danger d-block mt-1" href="{{url('admin/teams/delete/'.$team['id'])}}">delete</a>
+            </td>
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td data-sort-date="{{$team['updated_at']->format('YmdHis')}}">{{$team['updated_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['id']}}</td>
@@ -52,7 +55,10 @@
         @endforeach
         @foreach ($list['waitinglist'] as $team)
           <tr>
-            <td class="bg-warning"><a class="btn btn-primary" href="{{url('admin/teams/'.$team['id'])}}">edit</a></td>
+            <td class="bg-warning">
+              <a class="btn btn-primary d-block" href="{{url('admin/teams/'.$team['id'])}}">edit</a>
+              <a class="btn btn-danger d-block mt-1" href="{{url('admin/teams/delete/'.$team['id'])}}">delete</a>
+            </td>
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td data-sort-date="{{$team['updated_at']->format('YmdHis')}}">{{$team['updated_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['id']}}</td>
@@ -77,7 +83,10 @@
         @endforeach
         @foreach ($list['pending'] as $team)
           <tr>
-            <td class="bg-danger"><a class="btn btn-primary" href="{{url('admin/teams/'.$team['id'])}}">edit</a></td>
+            <td class="bg-danger">
+              <a class="btn btn-primary d-block" href="{{url('admin/teams/'.$team['id'])}}">edit</a>
+              <a class="btn btn-danger d-block mt-1" href="{{url('admin/teams/delete/'.$team['id'])}}">delete</a>
+            </td>
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td data-sort-date="{{$team['updated_at']->format('YmdHis')}}">{{$team['updated_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['id']}}</td>
@@ -122,7 +131,9 @@
       </thead>
         @foreach ($deletedTeams as $team)
           <tr>
-            <td class="bg-success"><a class="btn btn-primary" href="{{url('admin/teams/'.$team['id'])}}">edit</a></td>
+            <td class="bg-success">
+              <a class="btn btn-info d-block" href="{{url('admin/teams/restore/'.$team['id'])}}">restore</a>
+            </td>
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td data-sort-date="{{$team['updated_at']->format('YmdHis')}}">{{$team['updated_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['id']}}</td>
