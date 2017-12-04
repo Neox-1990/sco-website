@@ -300,7 +300,7 @@ class AdminController extends Controller
                         $newResult->team_id = $classList['team'][$i];
                         $newResult->season_id = config('constants.curent_season');
                         $newResult->round_id = $round->id;
-                        if ($classList['finish'][$i] != 32) {
+                        if ($classList['finish'][$i] != 29) {
                             $newResult->points = config('constants.points')[$classList['number'][$i]];
                         } else {
                             $newResult->points = 0;
