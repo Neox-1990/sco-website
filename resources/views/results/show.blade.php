@@ -30,7 +30,7 @@
           @foreach ($results as $key => $result)
             <tr>
               <td class="text-center">{{$result->position}}</td>
-              <td><a href="{{url('teams/'.$result->team->id)}}">{{$result->team->name}}</a></td>
+              <td><a href="{{url('teams/'.$result->team->id)}}" class="{{$result->team->trashed()?'text-muted':''}}">{{$result->team->name}}</a></td>
               <td class="text-center">{{$result->laps}}</td>
               <td class="text-center">{{$result->incs}}</td>
               <td class="text-center">{{config('constants.out_status')[$result->finish_status]}}</td>

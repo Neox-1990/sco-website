@@ -12,7 +12,7 @@ class Result extends Model
     }
     public function team()
     {
-        return $this->belongsTo(Team::class);
+        return $this->belongsTo(Team::class)->withTrashed();
     }
     public function round()
     {
