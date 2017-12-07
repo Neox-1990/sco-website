@@ -34,11 +34,23 @@ class ResultController extends Controller
 
             $resultsSorted[$class] = $resultsSorted[$class]->values();
         }
-
+        $teamResults = array();
         $rounds = Round::where('season_id', config('constants.curent_season'))->get();
+        $teams = Team::withTrashed()->where('season_id', config('constants.curent_season'))->has('results')->with('results')->get();
+        foreach ($teams as $team) {
+            $roundresults = [];
+            foreach ($rounds as $round) {
+                $roundresult = '-';
+                if ($team->results->contains('round_id', $round->id)) {
+                    $roundresult = floor($team->results->where('round_id', $round->id)->first()->points);
+                }
+                $roundresults[$round->number] = $roundresult;
+            }
+            $teamResults[$team->id] = $roundresults;
+        }
         $first = array_keys($resultsSorted)[0];
         //dd($resultsSorted);
-        return view('results.index', compact('resultsSorted', 'rounds', 'first'));
+        return view('results.index', compact('resultsSorted', 'rounds', 'first', 'teamResults'));
     }
 
     public function show(Round $round)

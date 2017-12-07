@@ -22,12 +22,18 @@
           <tr>
             <th class="text-center">Pos</th>
             <th>Team</th>
+            @foreach ($rounds as $round)
+              <th class="text-center small-result d-none d-sm-table-cell">R{{$round->number}}</th>
+            @endforeach
             <th class="text-center">Pts</th>
           </tr>
           @foreach ($results as $key => $result)
             <tr>
               <td class="text-center">{{$key+1}}</td>
               <td><a href="{{url('teams/'.$result->team->id)}}" class="{{$result->team->trashed()?'text-muted':''}}">{{$result->team->name}}</a></td>
+              @foreach ($rounds as $round)
+                <td class="small-result text-center d-none d-sm-table-cell {{$result->team->trashed()?'text-muted':''}}">{{$teamResults[$result->team->id][$round->number]}}</td>
+              @endforeach
               <td class="text-center">{{floor($result->points)}}</td>
             </tr>
           @endforeach
