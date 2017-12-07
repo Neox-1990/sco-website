@@ -355,6 +355,7 @@ nav{
   }
 }
 table.result-table{
+  table-layout: auto;
   th{
     width: auto;
     &:nth-child(1){
@@ -362,12 +363,18 @@ table.result-table{
     }
     &:nth-child(3),
     &:nth-child(4),
-    &:nth-child(6){
+    &:nth-child(6),
+    &:last-child{
       width: 5rem;
     }
     &:nth-child(5){
       width: 8rem;
     }
+  }
+  .small-result{
+    font-size: 0.8rem;
+    padding: 1rem 0.1rem !important;
+    width: auto !important;
   }
 }
 #results_controlbox_class button{

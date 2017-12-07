@@ -9587,6 +9587,10 @@ nav {
   color: #fff;
 }
 
+table.result-table {
+  table-layout: auto;
+}
+
 table.result-table th {
   width: auto;
 }
@@ -9597,12 +9601,19 @@ table.result-table th:nth-child(1) {
 
 table.result-table th:nth-child(3),
 table.result-table th:nth-child(4),
-table.result-table th:nth-child(6) {
+table.result-table th:nth-child(6),
+table.result-table th:last-child {
   width: 5rem;
 }
 
 table.result-table th:nth-child(5) {
   width: 8rem;
+}
+
+table.result-table .small-result {
+  font-size: 0.8rem;
+  padding: 1rem 0.1rem !important;
+  width: auto !important;
 }
 
 #results_controlbox_class button {

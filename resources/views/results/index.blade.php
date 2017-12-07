@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col-12" style="padding-bottom:2rem;">
     <div class="mb-3 d-flex flex-wrap" id="results_controlbox_rounds">
-      <a href="{{url('/result')}}" class="btn btn-primary">Championship</a>
+      <a href="{{url('/results')}}" class="btn btn-primary">Championship</a>
       @foreach ($rounds as $round)
         <a href="{{url('/results/'.$round->id)}}" class="btn btn-outline-primary ml-3 mt-1">Round {{$round->number}}</a>
       @endforeach
@@ -22,12 +22,18 @@
           <tr>
             <th class="text-center">Pos</th>
             <th>Team</th>
+            @foreach ($rounds as $round)
+              <th class="text-center small-result d-none d-sm-table-cell">R{{$round->number}}</th>
+            @endforeach
             <th class="text-center">Pts</th>
           </tr>
           @foreach ($results as $key => $result)
             <tr>
               <td class="text-center">{{$key+1}}</td>
               <td><a href="{{url('teams/'.$result->team->id)}}" class="{{$result->team->trashed()?'text-muted':''}}">{{$result->team->name}}</a></td>
+              @foreach ($rounds as $round)
+                <td class="small-result text-center d-none d-sm-table-cell {{$result->team->trashed()?'text-muted':''}}">{{$teamResults[$result->team->id][$round->number]}}</td>
+              @endforeach
               <td class="text-center">{{floor($result->points)}}</td>
             </tr>
           @endforeach

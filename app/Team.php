@@ -31,7 +31,7 @@ class Team extends Model
     }
     public function results()
     {
-        return $this->hasMany(Result::class)->withTrashed();
+        return $this->hasMany(Result::class);
     }
     public static function getClassNumbers()
     {
