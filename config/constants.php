@@ -9,7 +9,7 @@ return [
     5 => 'Mercedes-AMG GT3',
     6 => 'Ferrari 488 GT3',
   ],
-  'curent_season' => env('SCO_SEASON', '1'),
+  'curent_season' => env('SCO_SEASON', '3'),
   'classes' => [
     1 => [
       'Prototype' => [1],
