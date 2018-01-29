@@ -21,8 +21,8 @@
             <td><a href="{{url('teams/'.$team['id'])}}">{{$team['name']}}</a></td>
             <td>{{$team['user']['name']}}</td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
-            <td><span class="text-{{$team['status']==0?'danger':($team['status']==1?'warning':'success')}}">{{config('constants.status_names')[$team['status']]}}</span></td>
-            <td>Season {{$team['season_id']}}</td>
+            <td><span class="text-{{$team['status']==0?'danger':($team['status']==1?'warning':($team['status']==2?'success':'info'))}}">{{config('constants.status_names')[$team['status']]}}</span></td>
+            <td>Season: {{$team['season_id']}}</td>
           </tr>
         @endforeach
       </table>
@@ -49,8 +49,8 @@
             </td>
             <td>{{$team['user']['name']}}</td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
-            <td><span class="text-{{$team['status']==0?'danger':($team['status']==1?'warning':'success')}}">{{config('constants.status_names')[$team['status']]}}</span></td>
-            <td>Season {{$team['season_id']}}</td>
+            <td><span class="text-{{$team['status']==0?'danger':($team['status']==1?'warning':($team['status']==2?'success':'info'))}}">{{config('constants.status_names')[$team['status']]}}</span></td>
+            <td>Season: {{$team['season_id']}}</td>
           </tr>
         @endforeach
       </table>

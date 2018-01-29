@@ -22,6 +22,11 @@ class TeamController extends Controller
               ->with(['user'])
               ->orderBy('created_at', 'asc')
               ->get();
+            $teams[$classname]['reviewed'] = Team::where([['season_id','=',config('constants.curent_season')],['status','=',3]])
+              ->whereIn('car', $cararray)
+              ->with(['user'])
+              ->orderBy('created_at', 'asc')
+              ->get();
             $teams[$classname]['waiting'] = Team::where([['season_id','=',config('constants.curent_season')],['status','=',1]])
               ->whereIn('car', $cararray)
               ->with(['user'])
@@ -32,7 +37,7 @@ class TeamController extends Controller
               ->with(['user'])
               ->orderBy('created_at', 'asc')
               ->get();
-              
+
             $teams[$classname]['waiting'] = $teams[$classname]['waiting']->sort(function ($team1, $team2) {
                 $date1;
                 $date2;

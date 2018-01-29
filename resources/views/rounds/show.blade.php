@@ -10,7 +10,7 @@ use Carbon\Carbon;
 <div class="row">
   <div class="col-12">
     <div class="p-3">
-      <h1>Season  {{$season->id}}</h1>
+      <h1>{{$season->name}}</h1>
       <h5><small class="text-muted ml-2">{{(new Carbon($season->start))->format('d/m/Y')}} - {{(new Carbon($season->end))->format('d/m/Y')}}</small></h5>
     </div>
     <ul class="nav nav-tabs round-tabs nav-justified">
@@ -26,16 +26,27 @@ use Carbon\Carbon;
       <h6 class="ml-5 text-muted">Time: {{$title[2]}}</h6>
       <hr>
       <table class="table table-bordered table-striped table-hover" id="round-sessions-table">
-        <tr>
-          <th>Free practice 1</th>
-          <td><i class="fa fa-calendar mr-3" aria-hidden="true"></i> {{$times['fp1']->format('l jS \\of F Y H:i:s-e')}}</td>
-          <td><i class="fa fa-clock-o mr-3" aria-hidden="true"></i> {{$round->fp1_minutes}} min</td>
-        </tr>
-        <tr>
-          <th>Free practice 2</th>
-          <td><i class="fa fa-calendar mr-3" aria-hidden="true"></i> {{$times['fp2']->format('l jS \\of F Y H:i:s-e')}}</td>
-          <td><i class="fa fa-clock-o mr-3" aria-hidden="true"></i> {{$round->fp2_minutes}} min</td>
-        </tr>
+        @if (!is_null($times['fp1']))
+          <tr>
+            <th>Free practice 1</th>
+            <td><i class="fa fa-calendar mr-3" aria-hidden="true"></i> {{$times['fp1']->format('l jS \\of F Y H:i:s-e')}}</td>
+            <td><i class="fa fa-clock-o mr-3" aria-hidden="true"></i> {{$round->fp1_minutes}} min</td>
+          </tr>
+        @endif
+        @if (!is_null($times['fp2']))
+          <tr>
+            <th>Free practice 2</th>
+            <td><i class="fa fa-calendar mr-3" aria-hidden="true"></i> {{$times['fp2']->format('l jS \\of F Y H:i:s-e')}}</td>
+            <td><i class="fa fa-clock-o mr-3" aria-hidden="true"></i> {{$round->fp2_minutes}} min</td>
+          </tr>
+        @endif
+        @if (!is_null($times['fp3']))
+          <tr>
+            <th>Free practice 3</th>
+            <td><i class="fa fa-calendar mr-3" aria-hidden="true"></i> {{$times['fp3']->format('l jS \\of F Y H:i:s-e')}}</td>
+            <td><i class="fa fa-clock-o mr-3" aria-hidden="true"></i> {{$round->fp3_minutes}} min</td>
+          </tr>
+        @endif
         <tr>
           <th>Warm up</th>
           <td><i class="fa fa-calendar mr-3" aria-hidden="true"></i> {{$times['wup']->format('l jS \\of F Y H:i:s-e')}}</td>

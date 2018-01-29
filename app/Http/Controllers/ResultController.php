@@ -22,18 +22,61 @@ class ResultController extends Controller
             return $array;
         });
         $resultsSorted = array();
+        //dd($results);
         foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
             $resultsSorted[$class] = $results->filter(function ($result, $key) use ($cars) {
                 $team = Team::withTrashed()->where('id', $result->team_id)->first();
                 return in_array($team->car, $cars);
             });
 
-            $resultsSorted[$class] = $resultsSorted[$class]->sortByDesc(function ($result, $key) {
-                return floatval($result->points);
+            /*$resultsSorted[$class] = $resultsSorted[$class]->sortByDesc(function ($result, $key) {
+                return $result->points;
+            });*/
+
+            $resultsSorted[$class] = $resultsSorted[$class]->sort(function ($a, $b) {
+                if (floor($a->points) == floor($b->points)) {
+                    /*if(floor($a->points) == 0 && $a->points != $b->points){
+                      return ($a->points > $b->points) ? -1 : 1;
+                    }else{*/
+                    $minPos = 0;
+                    $abort = false;
+                    while (!$abort) {
+                        $minA = $a->team->results()->where([['season_id','=',config('constants.curent_season')],['position','>',$minPos]])->min('position');
+                        $minB = $b->team->results()->where([['season_id','=',config('constants.curent_season')],['position','>',$minPos]])->min('position');
+
+                        if ($minA === null && $minB === null) {
+                            $abort = true;
+                            continue;
+                        }
+                        if ($minA === null && $minB !== null) {
+                            return 1;
+                        } elseif ($minA ==! null && $minB === null) {
+                            return -1;
+                        }
+
+                        if ($minA != $minB) {
+                            return ($minA < $minB) ? -1 : 1;
+                        } else {
+                            $countA = $a->team->results()->where([['season_id','=',config('constants.curent_season')],['position','=',$minA]])->count();
+                            $countB = $b->team->results()->where([['season_id','=',config('constants.curent_season')],['position','=',$minB]])->count();
+
+                            if ($countA != $countB) {
+                                return ($countA > $countB) ? -1 : 1;
+                            } else {
+                                $minPos = $minA;
+                            }
+                        }
+                    }
+                    //}
+                    return 0;
+                } else {
+                    return ($a->points > $b->points) ? -1 : 1;
+                }
             });
 
             $resultsSorted[$class] = $resultsSorted[$class]->values();
         }
+        //dd($resultsSorted);
         $teamResults = array();
         $rounds = Round::where('season_id', config('constants.curent_season'))->get();
         $teams = Team::withTrashed()->where('season_id', config('constants.curent_season'))->has('results')->with('results')->get();

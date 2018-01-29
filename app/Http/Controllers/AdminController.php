@@ -6,6 +6,7 @@ use App\User;
 use App\Team;
 use App\Round;
 use App\Result;
+use App\Season;
 use App\LogEntry;
 use App\Setting;
 use App\Driver;
@@ -128,12 +129,19 @@ class AdminController extends Controller
             event(new TeamStatusChangeEvent($team));
             event(new TeamEditEvent($team, 'Status set confirmed'));
             return redirect('admin/teams/');
+        } elseif ($request->has('review')) {
+            $team->status = 3;
+            $team->save();
+            session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: reviewed');
+            event(new TeamStatusChangeEvent($team));
+            event(new TeamEditEvent($team, 'Status set reviewed'));
+            return redirect('admin/teams/');
         } elseif ($request->has('waiting')) {
             $team->status = 1;
             $team->save();
-            session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: waitinglist');
+            session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: reserve');
             event(new TeamStatusChangeEvent($team));
-            event(new TeamEditEvent($team, 'Status set waitinglist'));
+            event(new TeamEditEvent($team, 'Status set reserve'));
             return redirect('admin/teams/');
         } elseif ($request->has('pending')) {
             $team->status = 0;
@@ -283,8 +291,8 @@ class AdminController extends Controller
             $grid = new GridResult();
             $grid->createFromArray($reducedRaw);
             $grid->sortByClass();
-        //dd($grid);
-        $teams = Team::getConfirmedTeams(true);
+            //dd($grid);
+            $teams = Team::getConfirmedTeams(true);
 
             return view('admin.results.store1', compact('grid', 'round', 'teams'));
         } elseif ($request->has('editedResults')) {
@@ -310,6 +318,115 @@ class AdminController extends Controller
                 }
             }
             dd($request->request->all());
+        }
+    }
+
+    public function seasonIndex()
+    {
+        $seasons = Season::get();
+        return view('admin.seasons.index', compact('seasons'));
+    }
+    public function seasonEdit(Season $season)
+    {
+        $rounds = Round::where('season_id', $season->id)->get()->sortBy('number');
+        return view('admin.seasons.edit', compact('season', 'rounds'));
+    }
+    public function seasonUpdate(Request $request, Season $season)
+    {
+        $season->name = $request->input('season_name');
+        $season->start = $request->input('season_start');
+        $season->end = $request->input('season_end');
+        if ($season->save()) {
+            session()->flash('flash_message_success', 'Season updated');
+            return redirect('admin/season/edit/'.$season->id);
+        } else {
+            session()->flash('flash_message_alert', 'Season update failed');
+            return redirect('admin/season/edit/'.$season->id);
+        }
+    }
+    public function seasonCreate()
+    {
+        return view('admin.seasons.create');
+    }
+    public function seasonStore(Request $request)
+    {
+        $season = new Season;
+        $season->name = $request->input('season_name');
+        $season->start = $request->input('season_start');
+        $season->end = $request->input('season_end');
+        if ($season->save()) {
+            session()->flash('flash_message_success', 'Season updated');
+            return redirect('admin/season/');
+        } else {
+            session()->flash('flash_message_alert', 'Season update failed');
+            return redirect('admin/season/');
+        }
+    }
+    public function roundEdit(Season $season, Round $round)
+    {
+        return view('admin.seasons.editRound', compact('season', 'round'));
+    }
+
+    public function roundUpdate(Request $request, Season $season, Round $round)
+    {
+        $round->number = $request->input('round_number');
+        $round->combo = implode('#', [
+        $request->input('round_name'),
+        $request->input('round_track'),
+        $request->input('round_time')
+      ]);
+        $round->fp1_start = $request->input('round_fp1_start');
+        $round->fp1_minutes = $request->input('round_fp1_min');
+        $round->fp2_start = $request->input('round_fp2_start');
+        $round->fp2_minutes = $request->input('round_fp2_min');
+        $round->warmup_start = $request->input('round_warmup_start');
+        $round->warmup_minutes = $request->input('round_warmup_min');
+        $round->qual_start = $request->input('round_qual_start');
+        $round->qual_minutes = $request->input('round_qual_min');
+        $round->race_start = $request->input('round_race_start');
+        $round->race_minutes = $request->input('round_race_min');
+
+        if ($round->save()) {
+            session()->flash('flash_message_success', 'Round updated');
+            return redirect('admin/season/edit/'.$season->id);
+        } else {
+            session()->flash('flash_message_alert', 'Round update failed');
+            return redirect('admin/season/edit/'.$season->id.'/editRound/'.$round->id);
+        }
+    }
+
+    public function roundCreate(Season $season)
+    {
+        return view('admin.seasons.createRound', compact('season'));
+    }
+
+    public function roundStore(Request $request, Season $season)
+    {
+        $round = new Round;
+        $round->season_id = $season->id;
+        $round->number = $request->input('round_number');
+        $round->combo = implode('#', [
+      $request->input('round_name'),
+      $request->input('round_track'),
+      $request->input('round_time')
+    ]);
+        $round->fp1_start = $request->input('round_fp1_start');
+        $round->fp1_minutes = $request->input('round_fp1_min');
+        $round->fp2_start = $request->input('round_fp2_start');
+        $round->fp2_minutes = $request->input('round_fp2_min');
+        $round->warmup_start = $request->input('round_warmup_start');
+        $round->warmup_minutes = $request->input('round_warmup_min');
+        $round->qual_start = $request->input('round_qual_start');
+        $round->qual_minutes = $request->input('round_qual_min');
+        $round->race_start = $request->input('round_race_start');
+        $round->race_minutes = $request->input('round_race_min');
+
+        if ($round->save()) {
+            session()->flash('flash_message_success', 'Round created');
+            return redirect('admin/season/edit/'.$season->id);
+        } else {
+            session()->flash('flash_message_alert', 'Round creation failed');
+            return redirect('admin/season/edit/'.$season->id);
         }
     }
 }

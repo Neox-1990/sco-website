@@ -41,12 +41,21 @@ class HomeController extends Controller
         $round = Round::where([['race_start', '>', $now->toDateTimeString()],['season_id',config('constants.curent_season')]])->orderBy('race_start', 'asc')->first();
         if ($round != null) {
             $roundid = $round->id;
-            $fp1_start = new Carbon($round->fp1_start);
-            $fp1_end = new Carbon($round->fp1_start);
-            $fp1_end->addMinutes($round->fp1_minutes);
-            $fp2_start = new Carbon($round->fp2_start);
-            $fp2_end = new Carbon($round->fp2_start);
-            $fp2_end->addMinutes($round->fp2_minutes);
+            $fp1_start = is_null($round->fp1_start)?null:new Carbon($round->fp1_start);
+            $fp1_end = is_null($round->fp1_start)?null:new Carbon($round->fp1_start);
+            if (!is_null($round->fp1_start)) {
+                $fp1_end->addMinutes($round->fp1_minutes);
+            }
+            $fp2_start = is_null($round->fp2_start)?null:new Carbon($round->fp2_start);
+            $fp2_end = is_null($round->fp2_start)?null:new Carbon($round->fp2_start);
+            if (!is_null($round->fp2_start)) {
+                $fp2_end->addMinutes($round->fp2_minutes);
+            }
+            $fp3_start = is_null($round->fp3_start)?null:new Carbon($round->fp3_start);
+            $fp3_end = is_null($round->fp3_start)?null:new Carbon($round->fp3_start);
+            if (!is_null($round->fp3_start)) {
+                $fp3_end->addMinutes($round->fp3_minutes);
+            }
             $warmup_start = new Carbon($round->warmup_start);
             $warmup_end = new Carbon($round->warmup_start);
             $warmup_end->addMinutes($round->warmup_minutes);
@@ -76,24 +85,35 @@ class HomeController extends Controller
             $now = new Carbon();
             //$now = Carbon::parse($testdate);
 
-            if ($now->lt($fp1_start)) {
+            if (!is_null($fp1_start) && $now->lt($fp1_start)) {
                 $season['next']=[
                 'session' => 'Round '.$round->number.' - FP1',
                 'time' => $now->diffForHumans($fp1_start, true)
               ];
-            } elseif ($now->between($fp1_start, $fp1_end)) {
+            } elseif (!is_null($fp1_start) && $now->between($fp1_start, $fp1_end)) {
                 $season['curent'] = 'Round '.$round->number.' - FP1';
                 $season['next']=[
                 'session' => 'Round '.$round->number.' - FP2',
                 'time' => $now->diffForHumans($fp2_start, true)
               ];
-            } elseif ($now->lt($fp2_start)) {
+            } elseif (!is_null($fp2_start) && $now->lt($fp2_start)) {
                 $season['next']=[
                 'session' => 'Round '.$round->number.' - FP2',
                 'time' => $now->diffForHumans($fp2_start, true)
               ];
-            } elseif ($now->between($fp2_start, $fp2_end)) {
+            } elseif (!is_null($fp2_start) && $now->between($fp2_start, $fp2_end)) {
                 $season['curent'] = 'Round '.$round->number.' - FP2';
+                $season['next']=[
+                'session' => 'Round '.$round->number.' - FP3',
+                'time' => $now->diffForHumans($fp3_start, true)
+              ];
+            } elseif (!is_null($fp3_start) && $now->lt($fp3_start)) {
+                $season['next']=[
+                'session' => 'Round '.$round->number.' - FP3',
+                'time' => $now->diffForHumans($fp3_start, true)
+              ];
+            } elseif (!is_null($fp3_start) && $now->between($fp3_start, $fp3_end)) {
+                $season['curent'] = 'Round '.$round->number.' - FP3';
                 $season['next']=[
                 'session' => 'Round '.$round->number.' - Warmup',
                 'time' => $now->diffForHumans($warmup_start, true)
