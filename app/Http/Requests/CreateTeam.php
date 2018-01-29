@@ -28,8 +28,8 @@ class CreateTeam extends FormRequest
     {
         return [
           'teamname' => 'required|max:255',
-          'teamcar' => 'required|integer|max:6',
-          'teamnumber' => 'required|integer|max:150',
+          'teamcar' => 'required|integer',
+          'teamnumber' => 'required|integer|max:199',
           'iracing_teamid' => 'required|integer|max:9999999',
 
           'driver1.name' => 'required|max:255',

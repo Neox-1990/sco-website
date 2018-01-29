@@ -18,8 +18,10 @@
       <div class="form-group">
         <label for="car">Car</label>
         <select id="car" class="form-control" name="teamcar">
-          @foreach (config('constants.car_names') as $key => $value)
-            <option value="{{$key}}" {{old('teamcar') == $key?'selected':''}}>{{$value}}</option>
+          @foreach (config('constants.classes')[config('constants.curent_season')] as $class)
+            @foreach ($class as $id)
+              <option value="{{$id}}" {{old('teamcar') == $id?'selected':''}}>{{config('constants.car_names')[$id]}}</option>              
+            @endforeach
           @endforeach
         </select>
       </div>

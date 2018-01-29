@@ -8,6 +8,9 @@ return [
     4 => 'Audi R8 LMS',
     5 => 'Mercedes-AMG GT3',
     6 => 'Ferrari 488 GT3',
+    7 => 'Aston Martin',
+    8 => 'Corvette C7.R',
+    9 => 'BMW Z4 GT3'
   ],
   'curent_season' => '3',
   'classes' => [
@@ -67,8 +70,9 @@ return [
   ],
   'status_names' => [
     0 => 'pending',
-    1 => 'in waiting list',
-    2 => 'confirmed'
+    1 => 'reserve',
+    2 => 'confirmed',
+    3 => 'reviewed'
   ],
   'points' => [
     1 => 25,
@@ -102,7 +106,10 @@ return [
     92 => 3,
     73 => 4,
     72 => 5,
-    94 => 6
+    94 => 6,
+    64 => 7,
+    26 => 8,
+    55 => 9
   ],
   'out_status' => [
     0 => 'running',

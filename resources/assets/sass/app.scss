@@ -12,6 +12,8 @@ $sco-dark: #222;
 $sco-p: #275296;
 $sco-gt: #1da35c;
 $sco-gtc: #1c1c1c;
+$sco-gt3: #1c1c1c;
+$sco-gt1: #c1c1c1;
 
 $facebookblue: #3b5998;
 $twitterblue: #4099FF;
@@ -132,6 +134,14 @@ a.sco-nav-link{
 }
 .badge-GTC{
   background-color: $sco-gtc !important;
+  color: #fff !important;
+}
+.badge-GT1{
+  background-color: $sco-gt1 !important;
+  color: #000 !important;
+}
+.badge-GT3{
+  background-color: $sco-gt3 !important;
   color: #fff !important;
 }
 .team-overview-class{
