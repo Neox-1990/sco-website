@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Team;
 use App\Round;
+use App\Season;
 use App\Setting;
 use App\Events\TeamDeleteEvent;
 use App\Http\Requests\EditTeam;
@@ -24,19 +25,30 @@ class MyteamController extends Controller
     public function show()
     {
         $user = auth()->user();
+        $season = Season::where('id', config('constants.curent_season'))->first();
         $teams = Team::with('drivers')
           ->where('user_id', $user->id)
           ->where('season_id', config('constants.curent_season'))
           ->get();
-        return view('myteams.index', compact('teams'));
+        return view('myteams.index', compact('teams', 'season'));
     }
     public function create()
     {
+        $setting = Setting::getSetup();
+        if (boolval($setting['freeze_teams'])) {
+            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t add teams.');
+            return redirect('/myteams/');
+        }
         $numbers = Team::getClassNumbers();
         return view('myteams.create', compact('numbers'));
     }
     public function store(CreateTeam $request)
     {
+        $setting = Setting::getSetup();
+        if (boolval($setting['freeze_teams'])) {
+            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t add teams.');
+            return redirect('/myteams/');
+        }
         $drivercheck = $request->checkDrivers();
         $teamcheck = $request->checkTeam();
 
@@ -53,6 +65,11 @@ class MyteamController extends Controller
     }
     public function edit(Team $team)
     {
+        $setting = Setting::getSetup();
+        if (boolval($setting['freeze_teams'])) {
+            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t edit teams.');
+            return redirect('/myteams/');
+        }
         $legit = false;
         if ($team->user()->first()->id == auth()->id() && $team->season()->first()->id == config('constants.curent_season')) {
             $legit = true;
@@ -75,12 +92,17 @@ class MyteamController extends Controller
         $end = (clone($now))->addDays(3)->subHours(2);
         $now->subHours(4);
         $race = Round::whereBetween('race_start', [$now->format('Y-m-d H:i:s'),$end->format('Y-m-d H:i:s')])->get();
-        $driverChangeLimit = $team->status == 2 && $race->count()>0;
+        $driverChangeLimit = $team->status != 0 && $race->count()>0;
 
         return view('myteams.edit', compact('legit', 'team', 'numbers', 'deadline', 'classcars', 'driverChangeLimit'));
     }
     public function update(EditTeam $request, Team $team)
     {
+        $setting = Setting::getSetup();
+        if (boolval($setting['freeze_teams'])) {
+            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t edit teams.');
+            return redirect('/myteams/');
+        }
         $legit = false;
         if ($team->user()->first()->id != auth()->id() || $team->season()->first()->id != config('constants.curent_season')) {
             session()->flash('flash_message_alert', 'An error occured');
@@ -101,6 +123,11 @@ class MyteamController extends Controller
     }
     public function delete(Team $team)
     {
+        $setting = Setting::getSetup();
+        if (boolval($setting['freeze_teams'])) {
+            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t delete teams.');
+            return redirect('/myteams/');
+        }
         $legit = false;
         if ($team->user()->first()->id == auth()->id()) {
             $legit = true;
@@ -109,6 +136,11 @@ class MyteamController extends Controller
     }
     public function destroy(Request $request, Team $team)
     {
+        $setting = Setting::getSetup();
+        if (boolval($setting['freeze_teams'])) {
+            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t delete teams.');
+            return redirect('/myteams/');
+        }
         if ($team->user()->first()->id != auth()->id()) {
             $legit = false;
             return view('myteams.delete', compact('legit', 'team'));

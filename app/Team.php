@@ -74,12 +74,14 @@ class Team extends Model
             $teams[$name] = [
             'pending' => new Collection,
             'waitinglist' => new Collection,
+            'reviewed' => new Collection,
             'confirmed' => new Collection
           ];
             foreach ($cararray as $value) {
                 $teams[$name]['pending'] = $teams[$name]['pending']->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 0], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
                 $waitinglist = Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 1], ['car','=',$value]])->orderBy('created_at', 'asc')->get();
                 $teams[$name]['waitinglist'] = $teams[$name]['waitinglist']->merge($waitinglist);
+                $teams[$name]['reviewed'] = $teams[$name]['reviewed']->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 3], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
                 $teams[$name]['confirmed'] = $teams[$name]['confirmed']->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
             }
             $waitinglist = ($teams[$name]['waitinglist'])->sort(function ($team1, $team2) {

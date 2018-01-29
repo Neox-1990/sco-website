@@ -18,7 +18,7 @@
         </div>
       @endif
       @include('master.formerrors')
-      @if ($team['status'] == 2)
+      @if ($team['status'] != 0)
         @if ($deadline)
           <form class="" action="{{url('/myteams/edit/'.$team->id)}}" method="post">
             {{csrf_field()}}
@@ -55,11 +55,13 @@
             <td>Status</td>
             <td>
               @if ($team['status'] == 0)
-                <p class="text-danger">pending</p>
+                <p class="text-danger">{{config('constants.status_names')[$team['status']]}}</p>
               @elseif ($team['status'] == 1)
-                <p class="text-warning">on waitinglist</p>
+                <p class="text-warning">{{config('constants.status_names')[$team['status']]}}</p>
+              @elseif($team['status'] == 2)
+                <p class="text-success">{{config('constants.status_names')[$team['status']]}}</p>
               @else
-                <p class="text-success">confirmed</p>
+                <p class="text-info">{{config('constants.status_names')[$team['status']]}}</p>
               @endif
             </td>
           </tr>
@@ -101,12 +103,14 @@
             <tr>
               <td>Status</td>
               <td>
-                @if ($team->status == 0)
-                  <p class="text-danger">pending</p>
-                @elseif ($team->status == 1)
-                  <p class="text-warning">on waitinglist</p>
+                @if ($team['status'] == 0)
+                  <p class="text-danger">{{config('constants.status_names')[$team['status']]}}</p>
+                @elseif ($team['status'] == 1)
+                  <p class="text-warning">{{config('constants.status_names')[$team['status']]}}</p>
+                @elseif($team['status'] == 2)
+                  <p class="text-success">{{config('constants.status_names')[$team['status']]}}</p>
                 @else
-                  <p class="text-success">confirmed</p>
+                  <p class="text-info">{{config('constants.status_names')[$team['status']]}}</p>
                 @endif
               </td>
             </tr>

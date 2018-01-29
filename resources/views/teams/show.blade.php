@@ -21,7 +21,7 @@
       </tr>
       <tr>
         <td>Status</td>
-        <td class="text-{{$team['status']==0?'danger':($team['status']==1?'warning':'success')}}">{{config('constants.status_names')[$team['status']]}}</td>
+        <td class="text-{{$team['status']==0?'danger':($team['status']==1?'warning':($team['status']==2?'success':'info'))}}">{{config('constants.status_names')[$team['status']]}}</td>
       </tr>
       <tr>
         <td>Season</td>

@@ -6,7 +6,7 @@
     <a href="{{url('admin/drivers')}}" class="list-group-item list-group-item-action">Drivers</a>
     <a href="{{url('admin/log')}}" class="list-group-item list-group-item-action">Log</a>
     <a href="{{url('admin/results')}}" class="list-group-item list-group-item-action">Results</a>
-    <a href="#" class="list-group-item list-group-item-action">Season</a>
+    <a href="{{url('admin/season')}}" class="list-group-item list-group-item-action">Season</a>
     <a href="{{url('admin/settings')}}" class="list-group-item list-group-item-action">Settings</a>
     <a href="{{url('/')}}" class="list-group-item list-group-item-action bg-info">Page</a>
   </div>

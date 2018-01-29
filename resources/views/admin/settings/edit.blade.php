@@ -34,6 +34,33 @@
     </div>
     <div class="card dashbord-modul">
       <div class="card-header">
+        <h3>Teams</h3>
+      </div>
+      <div class="card-body">
+        <form class="" action="{{url('admin/settings')}}" method="post">
+          {{csrf_field()}}
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="freeze_teams" id="freeze_teams1" value="0" {{$setup['freeze_teams']=='0'?'checked':''}}>
+                Open
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="freeze_teams" id="freeze_teams2" value="1" {{$setup['freeze_teams']=='1'?'checked':''}}>
+                Freeze
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input class="btn btn-primary form-control" type="submit" name="simpleSubmit" value="Set">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card dashbord-modul">
+      <div class="card-header">
         <h3>Facebookpage ID</h3>
       </div>
       <div class="card-body">

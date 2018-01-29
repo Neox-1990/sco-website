@@ -45,6 +45,15 @@
                   <td class="text-success">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
+              @foreach ($class['reviewed'] as $team)
+                <tr>
+                  <td class="text-center">{{$team['number']}}</td>
+                  <td><a href="/teams/{{$team['id']}}">{{$team['name']}}</a></td>
+                  <td>{{config('constants.car_names')[$team['car']]}}</td>
+                  <td>{{$team['user']['name']}}</td>
+                  <td class="text-info">{{config('constants.status_names')[$team['status']]}}</td>
+                </tr>
+              @endforeach
               @foreach ($class['waiting'] as $team)
                 <tr>
                   <td class="text-center">{{$team['number']}}</td>

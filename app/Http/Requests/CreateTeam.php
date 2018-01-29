@@ -44,11 +44,11 @@ class CreateTeam extends FormRequest
           'driver2.sr1' => 'required|in:c,b,a,p',
           'driver2.sr2' => 'required|numeric|max:128',
 
-          'driver3.name' => 'nullable|required_with:driver3.iracingid|max:255',
-          'driver3.iracingid' => 'nullable|required_with:driver3.name|numeric|max:9999999',
-          'driver3.ir' => 'nullable|required_with_all:driver3.iracingid,driver3.name|numeric|min:2000|max:12000',
-          'driver3.sr1' => 'nullable|required_with_all:driver3.iracingid,driver3.name|in:c,b,a,p',
-          'driver3.sr2' => 'nullable|required_with_all:driver3.iracingid,driver3.name|numeric|max:128',
+          'driver3.name' => 'required|max:255',
+          'driver3.iracingid' => 'required|numeric|max:9999999',
+          'driver3.ir' => 'required|numeric|min:2000|max:12000',
+          'driver3.sr1' => 'required|in:c,b,a,p',
+          'driver3.sr2' => 'required|numeric|max:128',
 
           'driver4.name' => 'nullable|required_with:driver4.iracingid|max:255',
           'driver4.iracingid' => 'nullable|required_with:driver4.name|numeric|max:9999999',
@@ -71,7 +71,7 @@ class CreateTeam extends FormRequest
           '*.iracingid' => 'distinct'
       ];
 
-      //return [];
+        //return [];
     }
 
     /**
@@ -149,6 +149,7 @@ class CreateTeam extends FormRequest
     public function enterTeam()
     {
         $driverIds = [];
+        //Add Drivers in DB and store in Array
         for ($i=1; $i < 7; $i++) {
             if ($this->input('driver'.$i.'.iracingid') != null || $this->input('driver'.$i.'.iracingid') != '') {
                 $count = App\Driver::where('iracing_id', intval($this->input('driver'.$i.'.iracingid')))->count();
@@ -169,6 +170,7 @@ class CreateTeam extends FormRequest
                 }
             }
         }
+        //Create Team
         $team = new App\Team;
         $team->user_id = $this->user()->id;
         $team->season_id = config('constants.curent_season');
@@ -179,7 +181,7 @@ class CreateTeam extends FormRequest
         $team->ir_teamid = $this->input('iracing_teamid');
         $team->preqtime = 0;
         $team->save();
-        $team->drivers()->attach($driverIds);
+        $team->drivers()->attach($driverIds); //Add drivers
 
         event(new TeamCreateEvent($team));
     }
