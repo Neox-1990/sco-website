@@ -379,6 +379,8 @@ class AdminController extends Controller
         $round->fp1_minutes = $request->input('round_fp1_min');
         $round->fp2_start = $request->input('round_fp2_start');
         $round->fp2_minutes = $request->input('round_fp2_min');
+        $round->fp3_start = $request->input('round_fp3_start');
+        $round->fp3_minutes = $request->input('round_fp3_min');
         $round->warmup_start = $request->input('round_warmup_start');
         $round->warmup_minutes = $request->input('round_warmup_min');
         $round->qual_start = $request->input('round_qual_start');
@@ -414,6 +416,8 @@ class AdminController extends Controller
         $round->fp1_minutes = $request->input('round_fp1_min');
         $round->fp2_start = $request->input('round_fp2_start');
         $round->fp2_minutes = $request->input('round_fp2_min');
+        $round->fp3_start = $request->input('round_fp3_start');
+        $round->fp3_minutes = $request->input('round_fp3_min');
         $round->warmup_start = $request->input('round_warmup_start');
         $round->warmup_minutes = $request->input('round_warmup_min');
         $round->qual_start = $request->input('round_qual_start');

@@ -45,6 +45,15 @@
     </div>
     <hr>
     <div class="form-group">
+      <label for="round_fp3_start">FP3 Start</label>
+      <input type="text" class="form-control" name="round_fp3_start" value="{{$round['fp3_start']}}" id="round_fp3_start">
+    </div>
+    <div class="form-group">
+      <label for="round_fp3_min">FP3 Minutes</label>
+      <input type="text" class="form-control" name="round_fp3_min" value="{{$round['fp3_minutes']}}" id="round_fp3_min">
+    </div>
+    <hr>
+    <div class="form-group">
       <label for="round_warmup_start">Warmup Start</label>
       <input type="text" class="form-control" name="round_warmup_start" value="{{$round['warmup_start']}}" id="round_warmup_start">
     </div>

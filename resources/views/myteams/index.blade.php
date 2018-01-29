@@ -6,10 +6,10 @@
     <h1>Your Teams </h1>
     <p>for {{$season['name']}}</p>
     @if (boolval($sco_settings['freeze_teams']))
-      <p class="text-danger">Teams are froozen!</p>
+      <p class="text-danger">Teams are frozen!</p>
     @endif
     @if (boolval($sco_settings['freeze_teams']))
-      <span class="btn btn-secondary" title="Teams are froozen. You can't add a team right now">+ Create New Team</span>
+      <span class="btn btn-secondary" title="Teams are frozen. You can't add a team right now">+ Create New Team</span>
     @else
       <a href="{{url('myteams/create')}}" class="btn btn-primary">+ Create New Team</a>
     @endif
@@ -20,8 +20,8 @@
           <h2>{{$team->name}} # {{$team->number}}
           <div class="btn-group ml-5">
             @if (boolval($sco_settings['freeze_teams']))
-              <span class="btn btn-outline-secondary" title="Teams are froozen. You can't edit your team right now">Edit</span>
-              <span class="btn btn-outline-secondary" title="Teams are froozen. You can't delete your team right now">Withdraw / Delete</span>
+              <span class="btn btn-outline-secondary" title="Teams are frozen. You can't edit your team right now">Edit</span>
+              <span class="btn btn-outline-secondary" title="Teams are frozen. You can't delete your team right now">Withdraw / Delete</span>
             @else
               <a href="{{url('/myteams/edit/'.$team->id)}}" class="btn btn-outline-success">Edit</a>
               <a href="{{url('/myteams/delete/'.$team->id)}}" class="btn btn-outline-danger">Withdraw / Delete</a>

@@ -36,7 +36,7 @@ class MyteamController extends Controller
     {
         $setting = Setting::getSetup();
         if (boolval($setting['freeze_teams'])) {
-            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t add teams.');
+            session()->flash('flash_message_alert', 'Teams are frozen right now. You can\'t add teams.');
             return redirect('/myteams/');
         }
         $numbers = Team::getClassNumbers();
@@ -46,7 +46,7 @@ class MyteamController extends Controller
     {
         $setting = Setting::getSetup();
         if (boolval($setting['freeze_teams'])) {
-            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t add teams.');
+            session()->flash('flash_message_alert', 'Teams are frozen right now. You can\'t add teams.');
             return redirect('/myteams/');
         }
         $drivercheck = $request->checkDrivers();
@@ -67,7 +67,7 @@ class MyteamController extends Controller
     {
         $setting = Setting::getSetup();
         if (boolval($setting['freeze_teams'])) {
-            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t edit teams.');
+            session()->flash('flash_message_alert', 'Teams are frozen right now. You can\'t edit teams.');
             return redirect('/myteams/');
         }
         $legit = false;
@@ -100,7 +100,7 @@ class MyteamController extends Controller
     {
         $setting = Setting::getSetup();
         if (boolval($setting['freeze_teams'])) {
-            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t edit teams.');
+            session()->flash('flash_message_alert', 'Teams are frozen right now. You can\'t edit teams.');
             return redirect('/myteams/');
         }
         $legit = false;
@@ -125,7 +125,7 @@ class MyteamController extends Controller
     {
         $setting = Setting::getSetup();
         if (boolval($setting['freeze_teams'])) {
-            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t delete teams.');
+            session()->flash('flash_message_alert', 'Teams are frozen right now. You can\'t delete teams.');
             return redirect('/myteams/');
         }
         $legit = false;
@@ -138,7 +138,7 @@ class MyteamController extends Controller
     {
         $setting = Setting::getSetup();
         if (boolval($setting['freeze_teams'])) {
-            session()->flash('flash_message_alert', 'Teams are froozen right now. You can\'t delete teams.');
+            session()->flash('flash_message_alert', 'Teams are frozen right now. You can\'t delete teams.');
             return redirect('/myteams/');
         }
         if ($team->user()->first()->id != auth()->id()) {
