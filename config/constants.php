@@ -8,20 +8,13 @@ return [
     4 => 'Audi R8 LMS',
     5 => 'Mercedes-AMG GT3',
     6 => 'Ferrari 488 GT3',
-    7 => 'Aston Martin DBR9 GT1',
-    8 => 'Chrevrolet Corvette C6.R GT1',
-    9 => 'BMW Z4 GT3'
   ],
-  'curent_season' => '1',
+  'curent_season' => env('SCO_SEASON', '1'),
   'classes' => [
     1 => [
       'Prototype' => [1],
       'GT' => [2,3],
       'GTC' => [4,5,6]
-    ],
-    2 => [
-      'GT1' => [7,8],
-      'GT3' => [4,5,6,9]
     ]
   ],
   'cars_to_classes' => [
@@ -32,14 +25,6 @@ return [
       4 => 'GTC',
       5 => 'GTC',
       6 => 'GTC'
-    ],
-    2 => [
-      4 => 'GT3',
-      5 => 'GT3',
-      6 => 'GT3',
-      9 => 'GT3',
-      7 => 'GT1',
-      8 => 'GT1'
     ]
   ],
   'classNumbers' => [
@@ -56,23 +41,12 @@ return [
         'min' => 100,
         'max' => 150
       ],
-    ],
-    2 => [
-      'GT1' => [
-        'min' => 1,
-        'max' => 99
-      ],
-      'Gt3' => [
-        'min' => 100,
-        'max' => 199
-      ]
     ]
   ],
   'status_names' => [
-    0 => 'Pending',
-    1 => 'Reserve',
-    2 => 'Confirmed',
-    3 => 'Reviewed'
+    0 => 'pending',
+    1 => 'in waiting list',
+    2 => 'confirmed'
   ],
   'points' => [
     1 => 25,
@@ -106,10 +80,7 @@ return [
     92 => 3,
     73 => 4,
     72 => 5,
-    94 => 6,
-    64 => 7,
-    26 => 8,
-    55 => 9
+    94 => 6
   ],
   'out_status' => [
     0 => 'running',
