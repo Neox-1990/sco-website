@@ -8,8 +8,8 @@ return [
     4 => 'Audi R8 LMS',
     5 => 'Mercedes-AMG GT3',
     6 => 'Ferrari 488 GT3',
-    7 => 'Aston Martin',
-    8 => 'Corvette C7.R',
+    7 => 'Aston Martin DBR9',
+    8 => 'Chevrolet Corvette C6.R',
     9 => 'BMW Z4 GT3'
   ],
   'curent_season' => '1',
