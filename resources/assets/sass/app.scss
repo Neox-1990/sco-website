@@ -336,6 +336,20 @@ nav{
     background-color: darken($sco-gtc, 10%);
   }
 }
+.btn-GT1{
+  background-color: $sco-gt1;
+  color: #fff;
+  &:hover{
+    background-color: darken($sco-gt1, 10%);
+  }
+}
+.btn-GT3{
+  background-color: $sco-gt3;
+  color: #fff;
+  &:hover{
+    background-color: darken($sco-gt3, 10%);
+  }
+}
 
 .btn-outline-Prototype{
   background-color: #fff;
@@ -361,6 +375,24 @@ nav{
   color: $sco-gtc;
   &:hover{
     background-color: $sco-gtc;
+    color: #fff;
+  }
+}
+.btn-outline-GT1{
+  background-color: #fff;
+  border-color: $sco-gt1;
+  color: $sco-gt1;
+  &:hover{
+    background-color: $sco-gt1;
+    color: #fff;
+  }
+}
+.btn-outline-GT3{
+  background-color: #fff;
+  border-color: $sco-gt3;
+  color: $sco-gt3;
+  &:hover{
+    background-color: $sco-gt3;
     color: #fff;
   }
 }

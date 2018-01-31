@@ -8,11 +8,11 @@
       <li class="nav-item"><a class="nav-link text-uppercase sco-nav-link" href="{{url('/season')}}">Schedule</a></li>
       <li class="nav-item"><a class="nav-link text-uppercase sco-nav-link" href="{{url('/results')}}">Standings & Results</a></li>
       <li class="nav-item"><a class="nav-link text-uppercase sco-nav-link" href="{{url('/rules')}}">Rules</a></li>
-      <li class="nav-item"><a class="nav-link text-uppercase sco-nav-link" href="{{url('teams')}}">Teams</a></li>
+      <li class="nav-item"><a class="nav-link text-uppercase sco-nav-link" href="{{url('/teams')}}">Teams</a></li>
         @if (auth()->check())
-          <li class="nav-item"><a class="nav-link text-uppercase sco-nav-link" href="{{url('myteams')}}">My Teams</a></li>
+          <li class="nav-item"><a class="nav-link text-uppercase sco-nav-link" href="{{url('/myteams')}}">My Teams</a></li>
         @endif
-      <li class="nav-item"><a class="nav-link text-uppercase sco-nav-link" href="{{url('/')}}">Archive</a></li>
+      <li class="nav-item"><a class="nav-link text-uppercase sco-nav-link" href="{{url('/archive')}}">Archive</a></li>
     </ul>
   </div>
 </nav>

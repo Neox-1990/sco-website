@@ -12,7 +12,7 @@ return [
     8 => 'Chevrolet Corvette C6.R',
     9 => 'BMW Z4 GT3'
   ],
-  'curent_season' => '1',
+  'curent_season' => '3',
   'classes' => [
     1 => [
       'Prototype' => [1],

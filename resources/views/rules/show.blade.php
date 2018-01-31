@@ -17,7 +17,7 @@
       </ol>
       <h3>2. Cars and Class Structure</h3>
       <ol class="rulebook-section">
-        <li>All Sports Car Open events will feature three different classes of cars. Each car class will include the following car models:
+        <li>This event will feature two different classes of cars. Each car class will include the following car models:
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -135,7 +135,7 @@
           <li>Should a driver be added after the deadline and take part in the race, the team will have to serve a 30 second stop and hold penalty.</li></ol>
         </li>
         <li>No team will be allowed to field more than 2 entries in any class. The event administration reserves itself the right to waive this rule should the level of interest in a class be too low to fulfil the minimum car count.</li>
-        <li>The total car count will be limited to 50 cars across both categories. While there are no strict limits on how big each class can be, no class will be allowed to have fewer than 18 entrants with the maximum car count per class being capped at 3.
+        <li>The total car count will be limited to 50 cars across both categories. While there are no strict limits on how big each class can be, no class will be allowed to have fewer than 18 entrants with the maximum car count per class being capped at 32.
           <ol><li>The exact allocation of car slots will be determined by the number of teams signing up for each class, but it will always follow the minimum and maximum car counts as described above.</li>
           <li>Slots will be assigned on a 'first to come means first to be served' basis.</li>
           <li>Should fewer than 40 teams want to enter within 7 days of the race, the event will be cancelled with all entry fees being refunded.</li></ol>
@@ -184,11 +184,11 @@
           <li>Images of the exact beginning and end points of this “starting zone” will be part of the drivers’ briefing, which will be published before the first free practice session.</li>
           <li>Teams that start from pit lane must line up at pit exit in a line. They will not be allowed to leave the lane until the race administration declares the pit exit open once the last GT3 car has passed the first turn. Leaving the pit lane early will result in a 30 second stop-hold penalty.</li></ol>
         </li>
-        <li>During the race itself, the fair share driving rule will be enabled with a minimum of 2 drivers and a maximum of 6 drivers being able to drive the car.
+        <li>During the race itself, the fair share driving rule will be enabled with a minimum of 3 drivers and a maximum of 6 drivers being able to drive the car.
           <ol><li>As per iRacing rules, a “fair share” is defined as a quarter of an equal share.<br>Example:
             <pre>2 drivers with a total of 110 laps driven<br>→ 110 laps / 2 drivers = 65 laps per driver on an equal share<br>→ 65 laps / 4 = 16.25 laps → 16 laps minimum per driver</pre>
           </li>
-          <li>The minimum “fair share” lap count only applies to the number of drivers defined as the minimum required drivers, meaning only 2 drivers have to fulfil it in this event.</li></ol>
+          <li>The minimum “fair share” lap count only applies to the number of drivers defined as the minimum required drivers, meaning only 3 drivers have to fulfil it in this event.</li></ol>
         </li>
         <li>Additionally, to make sure people don't take too many liberties with the track limits, especially at more modern circuits with multiple tarmac run-off zones, a formula will be used to calculate a team's maximum number of incident points.
           <ol><li>This formula will take both, the number of turns on the circuit as well as the number of laps driven by the team's car into account and looks as follows:

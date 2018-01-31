@@ -53,10 +53,14 @@ Route::get('/test', function () {
 Route::get('/rounds/{round}', 'RoundController@show');
 
 Route::get('/season', 'SeasonController@index');
+Route::get('/archive', 'SeasonController@archiveIndex');
+Route::get('/archive/{season}', 'SeasonController@archiveShow');
+Route::get('/archive/{season}/{round}', 'SeasonController@archiveShowRound');
 
 Route::get('/rules', function () {
     return view('rules.show');
 });
+
 
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/manager', 'AdminController@managerIndex');
