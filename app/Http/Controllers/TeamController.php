@@ -64,12 +64,13 @@ class TeamController extends Controller
         ->withTrashed()
         ->with(['user','drivers'])->first();
         $className;
-        foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cararray) {
+        foreach (config('constants.classes')[$team['season_id']] as $class => $cararray) {
             if (in_array($team->car, $cararray)) {
                 $className = $class;
             }
         }
-        return view('teams.show', compact('team', 'className'));
+        $season = $team->season;
+        return view('teams.show', compact('team', 'className', 'season'));
     }
 
     public function search(Request $request)

@@ -39,11 +39,14 @@ class DriverController extends Controller
         $teams_old = $driver
           ->teams()
           ->withTrashed()
-          ->whereNotNull('deleted_at')
-          ->orWhere('season_id', '<>', config('constants.curent_season'))
-          ->distinct()
+          ->where('season_id', '<>', config('constants.curent_season'))
           ->get();
-
+        $teams_old2 = $driver
+            ->teams()
+            ->withTrashed()
+            ->where([['season_id', '=', config('constants.curent_season')],['deleted_at','<>', null]])
+            ->get();
+        $teams_old->concat($teams_old2);
         $team_current = $driver->teams()->where('season_id', '=', config('constants.curent_season'))->first();
         return view('driver.show', compact('driver', 'teams_old', 'team_current'));
     }

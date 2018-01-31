@@ -25,7 +25,7 @@
       </tr>
       <tr>
         <td>Season</td>
-        <td>{{$team['season_id']}}</td>
+        <td>{{$season['name']}}</td>
       </tr>
     </table>
     <h2>Drivers</h2>
