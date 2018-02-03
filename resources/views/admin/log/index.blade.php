@@ -88,7 +88,7 @@
         <tr>
           <td>{{$entry->created_at->format('d.m.Y - H:i:s')}}</td>
           <td><a href="{{url('admin/manager/'.$entry['user']['id'])}}">{{$entry['user']['name']}}</a></td>
-          <td>{{$entry->action}}</td>
+          <td>{!!$entry->action!!}</td>
         </tr>
       @endforeach
     </tbody>

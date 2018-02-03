@@ -74,6 +74,7 @@ Route::get('/admin/teams/restore/{team}', 'AdminController@teamRestore');
 Route::post('/admin/teams/{team}', 'AdminController@teamUpdate');
 Route::get('/admin/entrylist', 'AdminController@teamList');
 Route::get('/admin/drivers', 'AdminController@driverIndex');
+Route::get('/admin/drivers/all', 'AdminController@driverIndexAll');
 Route::get('/admin/drivers/{driver}', 'AdminController@driverEdit');
 Route::post('/admin/drivers/{driver}', 'AdminController@driverUpdate');
 Route::get('/admin/settings', 'AdminController@settingsEdit');

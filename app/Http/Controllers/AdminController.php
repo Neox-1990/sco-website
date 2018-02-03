@@ -229,6 +229,14 @@ class AdminController extends Controller
 
     public function driverIndex()
     {
+        $drivers = Driver::whereHas('teams', function ($query) {
+            $query->where('season_id', '=', config('constants.curent_season'));
+        })->get();
+        return view('admin.drivers.index', compact('drivers'));
+    }
+
+    public function driverIndexAll()
+    {
         $drivers = Driver::all();
         return view('admin.drivers.index', compact('drivers'));
     }

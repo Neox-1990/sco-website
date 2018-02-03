@@ -32,10 +32,14 @@ class TeamEditEventListener
             array_push($driverids, $driver->id);
         }
 
+        $driverids = array_map(function ($id) {
+            return '<a href="'.url('/admin/drivers/'.$id).'">'.$id.'</a>';
+        }, $driverids);
+
         $action = $event->title.'. Teamname: '.$event->team->name.
       ' | Teamid: '.$event->team->id.
       ' | Teamnumber: '.$event->team->number.
-      ' | iRacing Team ID: '.$event->team->ir_teamid.
+      ' | iRacing Team ID: <a href="'.url('/admin/teams/'.$event->team->ir_teamid).'">'.$event->team->ir_teamid.'</a>'.
       ' | Car: '.config('constants.car_names')[$event->team->car].
       ' | Drivers (ids): '.implode(',', $driverids);
 
