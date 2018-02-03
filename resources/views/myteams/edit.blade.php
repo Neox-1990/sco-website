@@ -148,31 +148,31 @@
         {{csrf_field()}}
         <div class="form-group">
           <label for="drivername">Name</label>
-          <input class="form-control" type="text" name="driver[name]" id="drivername" value="{{old('driver.name')}}" placeholder="Name of Driver">
+          <input class="form-control" type="text" name="driver[name]" id="drivername" value="{{old('driver.name')}}" placeholder="Name of Driver" {{$driverLimitReached?'disabled':''}}>
         </div>
         <div class="form-group">
           <label for="driveriracingid">iRacing ID</label>
-          <input class="form-control" type="text" name="driver[iracingid]" id="driveriracingid" value="{{old('driver.iracingid')}}" placeholder="iRacing ID of Driver">
+          <input class="form-control" type="text" name="driver[iracingid]" id="driveriracingid" value="{{old('driver.iracingid')}}" placeholder="iRacing ID of Driver" {{$driverLimitReached?'disabled':''}}>
         </div>
         <div class="form-group">
           <label for="driverirating">iRating</label>
-          <input class="form-control" type="number" min="2000" max="12000" step="1" value="{{old('driver.ir',2000)}}" name="driver[ir]" id="driverirating">
+          <input class="form-control" type="number" min="2000" max="12000" step="1" value="{{old('driver.ir',2000)}}" name="driver[ir]" id="driverirating" {{$driverLimitReached?'disabled':''}}>
         </div>
         <div class="form-group">
           <label for="driversr1">License & SR</label>
           <div class="form-group input-group">
-            <select class="form-control" name="driver[sr1]" id="driversr1" title="License">
+            <select class="form-control" name="driver[sr1]" id="driversr1" title="License" {{$driverLimitReached?'disabled':''}}>
               <option value="c" {{old('driver.sr1') == 'c' ? 'selected' : ''}}>C</option>
               <option value="b" {{old('driver.sr1') == 'b' ? 'selected' : ''}}>B</option>
               <option value="a" {{old('driver.sr1') == 'a' ? 'selected' : ''}}>A</option>
               <option value="p" {{old('driver.sr1') == 'p' ? 'selected' : ''}}>P</option>
             </select>
             <span class="input-group-addon">@</span>
-            <input class="form-control" type="number" min="0.00" max="5.00" step="0.01" value="{{old('driver.sr2',3.00)}}" name="driver[sr2]" id="driversr2" title="Safetyrating">
+            <input class="form-control" type="number" min="0.00" max="5.00" step="0.01" value="{{old('driver.sr2',3.00)}}" name="driver[sr2]" id="driversr2" title="Safetyrating" {{$driverLimitReached?'disabled':''}}>
           </div>
         </div>
         <div class="form-group">
-          <input type="submit" name="addDriver" value="Add Driver" class="btn btn-primary">
+          <input type="submit" name="addDriver" value="Add Driver" class="btn btn-primary" {{$driverLimitReached?'disabled':''}}>
         </div>
       </form>
     </div>

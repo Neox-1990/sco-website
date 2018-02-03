@@ -108,7 +108,7 @@
       </ol>
       <h3>4. Entry Conditions and Requirements</h3>
       <ol class="rulebook-section">
-        <li>To be able to enter, every team must have a team manager as well as a driver line-up consisting of at least 2 but no more than 6 drivers. Team managers as well as other non-driving team representatives don't have to fulfil any of the driver requirements.</li>
+        <li>To be able to enter, every team must have a team manager as well as a driver line-up consisting of at least 3 but no more than 6 drivers. Team managers as well as other non-driving team representatives don't have to fulfil any of the driver requirements.</li>
         <li>All driving team members, meaning everyone listed on a team's driver line-up, must meet the following minimum requirements at the point of sign-up:
           <ul class="list-group">
             <li class="list-group-item">Road Licence Class and Safety Rating: C2.00 or higher</li>
@@ -173,7 +173,7 @@
         <li>As per iRacing lone qualifier rules, any member registered for the team will be allowed to qualify the car.</li>
         <li>The qualifying driver is not required to start the race, but they will be required to drive the car for at least 1 full lap (meaning it can’t be an out or in lap) during the race.</li>
         <li>Every car will be required to set a qualifying time. Teams who do not set a qualifying time or are slower than the fastest car of the class behind them will have to start from pit lane.</li>
-        <li>The event administration may not allow a team to take the start, if they’re deemed to be a potential danger to other cars on-track during the race or if they haven’t set a fast enough lap time in qualifying (see Rule IX.d).</li>
+        <li>The event administration may not allow a team to take the start, if they’re deemed to be a potential danger to other cars on-track during the race or if they haven’t set a fast enough lap time in qualifying (see Rule 9.d).</li>
       </ol>
       <h3>10. Race</h3>
       <ol class="rulebook-section">
@@ -212,7 +212,7 @@
       <h3>12. Red Flags</h3>
       <ol class="rulebook-section">
         <li>If the iRacing service fails during a race resulting in drivers being unable to join or stay connected to the server or if the server becomes unstable enough to potentially cause problems for drivers, the event may be stopped or even postponed or cancelled. When this happens the event administration will announce the “red flag” status of the session both in-game (if the session is still accessible) and on the SCO Discord.</li>
-        <li>The full red flag procedure can be found in Section XIX of this document.</li>
+        <li>The full red flag procedure can be found in Section 19 of this document.</li>
         <li>For races that have been red flagged, the race administration will decide on how races are scored on an individual basis.
           <ol><li>For example, if a race was interrupted at about the half-way mark of that race and a new session was required, the race administration may score both halves separately from each other, awarding half points for each.</li></ol>
         </li>
@@ -304,7 +304,7 @@
           <li>One by one, all cars will be called out in order of their overall position. They must also go around the track and park up their car behind the car in front of them in the queue that's been started by the overall race leader.</li>
           <li>Drivers should not park their cars bumper to bumper when forming the queue. It's advised to leave a gap of two car lengths to the car ahead.</li>
           <li>Cars that have lost laps due to the mass disconnect will be instructed to do an extra lap before parking up at the end of the queue.</li>
-          <li>The procedure described in XIX.a.4 to XIX.a.6 will happen with all classes: First GT1, then GT3.</li>
+          <li>The procedure described in 19.a.4 to 19.a.6 will happen with all classes: First GT1, then GT3.</li>
           <li>Once all cars are back out on-track and formed up in the queue, all drivers must enable their pit speed limiters before slowly driving away from their parked positions. When driving away, they must remain in single file formation and in to one another.</li>
           <li>The leader of the GT3 class should leave a gap of about 5 seconds to the last car of the class ahead of them.</li>
           <li>Once all queued up cars are back rolling, the '10 seconds to green' warning will be given through the race control text chat.</li>
@@ -317,7 +317,7 @@
           <li>Once the race starts, race control will instruct the overall leader to do a lap and stop just shy of the timing line to not start a new lap.</li>
           <li>One by one, all cars will be called out in order of their overall position. They must also go around the track and park up their car behind the car in front of them in the queue that's been started by the overall race leader.</li>
           <li>Drivers should not park their cars bumper to bumper when forming the queue. It's advised to leave a gap of two car lengths to the car ahead.</li>
-          <li>The procedure described in XIX.b.5 and XIX.b.6 will happen with all classes: First GT1, then GT3.</li>
+          <li>The procedure described in 19.b.5 and 19.b.6 will happen with all classes: First GT1, then GT3.</li>
           <li>Once all cars are back out on-track and formed up in the queue, all drivers must enable their pit speed limiters before slowly driving away from their parked positions. When driving away, they must remain in single file formation and in to one another.</li>
           <li>The leader of the GT3 class should leave a gap of about 5 seconds to the last car of the class ahead of them.</li>
           <li>Once all queued up cars are back rolling, the '10 seconds to green' warning will be given through the race control text chat.</li>

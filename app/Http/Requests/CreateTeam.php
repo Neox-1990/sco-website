@@ -88,7 +88,7 @@ class CreateTeam extends FormRequest
                     $driver = App\Driver::where('iracing_id', intval($iracingid))->with('teams')->first();
                     foreach ($driver->teams as $team) {
                         if ($team['season_id'] == config('constants.curent_season')) {
-                            $error_list ['driver'.$i] = "Driver $i is already registered with another team this seaon";
+                            $error_list ['driver'.$i] = "Driver $i is already registered with another team.";
                         }
                     };
                 }

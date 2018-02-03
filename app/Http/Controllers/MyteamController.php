@@ -94,7 +94,9 @@ class MyteamController extends Controller
         $race = Round::whereBetween('race_start', [$now->format('Y-m-d H:i:s'),$end->format('Y-m-d H:i:s')])->get();
         $driverChangeLimit = $team->status != 0 && $race->count()>0;
 
-        return view('myteams.edit', compact('legit', 'team', 'numbers', 'deadline', 'classcars', 'driverChangeLimit'));
+        $driverLimitReached = $team->drivers()->count() >= 6;
+
+        return view('myteams.edit', compact('legit', 'team', 'numbers', 'deadline', 'classcars', 'driverChangeLimit', 'driverLimitReached'));
     }
     public function update(EditTeam $request, Team $team)
     {

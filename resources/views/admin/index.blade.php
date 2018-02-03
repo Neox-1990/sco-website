@@ -15,7 +15,8 @@ use Carbon\Carbon;
         <tr>
           <th>class</th>
           <th>pending</th>
-          <th>waitinglist</th>
+          <th>reserve</th>
+          <th>reviewed</th>
           <th>confirmed</th>
         </tr>
         @foreach ($teams as $name => $list)
@@ -23,6 +24,7 @@ use Carbon\Carbon;
             <td>{{$name}}</td>
             <td>{{$list['pending']->count()}}</td>
             <td>{{$list['waitinglist']->count()}}</td>
+            <td>{{$list['reviewed']->count()}}</td>
             <td>{{$list['confirmed']->count()}}</td>
           </tr>
         @endforeach

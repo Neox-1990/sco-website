@@ -122,22 +122,9 @@ class EditTeam extends FormRequest
             $checkResult['errors']['noUniqueTeamID'] = 'There already is a team with this iRacing Team ID in the current season';
         }
 
-        if ($team->status == 2) {
-            $deadline = new Carbon((Setting::getSetup())['confirmed_carchange']);
-            $deadline = $deadline->gt(new Carbon);
-            if ($deadline &&
-              $team->name == $this->input('teamname') &&
-              $team->number == $this->input('teamnumber') &&
-              $team->ir_teamid == $this->input('iracing_teamid')) {
-                $carToClass = Team::getCarToClassArray();
-                if ($carToClass[$team->car] != $carToClass[$this->input('teamcar')]) {
-                    $checkResult['legit'] = false;
-                    $checkResult['errors']['carNotInClass'] = 'A confirmed team can only change car within its class.';
-                }
-            } else {
-                $checkResult['legit'] = false;
-                $checkResult['errors']['confirmedTeamEdit'] = 'Confirmed teams can\'t change teamdata.';
-            }
+        if ($team->status != 0) {
+            $checkResult['legit'] = false;
+            $checkResult['errors']['confirmedTeamEdit'] = 'Only pending teams can change teamdata.';
         }
 
 
@@ -178,13 +165,14 @@ class EditTeam extends FormRequest
         }
 
         $count = $team->drivers()->count();
-        if ($count <= 2) {
+        if ($count <= 3) {
             $checkResult['legit'] = false;
-            $checkResult['errors']['driverTeamAmountError'] = 'Your team need at least two drivers. Add a new driver first or delete the team alltogether.';
+            $checkResult['errors']['driverTeamAmountError'] = 'Your team need at least three drivers. Add a new driver first or delete the team alltogether.';
         }
 
         if ($checkResult['legit']) {
             $driver = Driver::where('id', $this->input('driverID'))->first();
+            //dd($driver->id);
             $team->drivers()->detach($driver->id);
             $checkResult['flash'] = 'You removed the driver '.$driver->name.' from '.$team->name;
             event(new TeamEditEvent($team, 'Team driver removed'));
@@ -202,34 +190,39 @@ class EditTeam extends FormRequest
           'errors' => [],
           'flash' => ''
         ];
-
-        $count = Driver::where('iracing_id', $this->input('driver.iracingid'))->count();
-        if ($count>0) {
-            $driver = Driver::where('iracing_id', $this->input('driver.iracingid'))->first();
-            $count = $driver->teams()->where('season_id', config('constants.curent_season'))->count();
+        if ($team->drivers()->count()>=6) {
+            $checkResult['legit'] = false;
+            $checkResult['errors']['maxDriverLimit'] = 'There are already 6 drivers in this team.';
+            $checkResult['flash'] = 'An error occurred';
+        } else {
+            $count = Driver::where('iracing_id', $this->input('driver.iracingid'))->count();
             if ($count>0) {
-                $checkResult['legit'] = false;
-                $checkResult['errors']['driverTakenError'] = 'The driver is already part of another team in this season.';
-                $checkResult['flash'] = 'An error occurred';
+                $driver = Driver::where('iracing_id', $this->input('driver.iracingid'))->first();
+                $count = $driver->teams()->where('season_id', config('constants.curent_season'))->count();
+                if ($count>0) {
+                    $checkResult['legit'] = false;
+                    $checkResult['errors']['driverTakenError'] = 'The driver is already part of another team in this season.';
+                    $checkResult['flash'] = 'An error occurred';
+                } else {
+                    $driver->irating = $this->input('driver.ir');
+                    $driver->safetyrating = strtoupper($this->input('driver.sr1')).'@'.number_format(floatval($this->input('driver.sr2')), 2);
+                    $driver->save();
+                    $team->drivers()->attach($driver->id);
+                    $checkResult['flash'] = 'You successfully added '.$driver->name.' to '.$team->name;
+                    event(new TeamEditEvent($team, 'Team driver added'));
+                }
             } else {
+                $driver = new Driver;
+                $driver->name = $this->input('driver.name');
+                $driver->iracing_id = $this->input('driver.iracingid');
                 $driver->irating = $this->input('driver.ir');
+                $driver->name = $this->input('driver.name');
                 $driver->safetyrating = strtoupper($this->input('driver.sr1')).'@'.number_format(floatval($this->input('driver.sr2')), 2);
                 $driver->save();
                 $team->drivers()->attach($driver->id);
                 $checkResult['flash'] = 'You successfully added '.$driver->name.' to '.$team->name;
                 event(new TeamEditEvent($team, 'Team driver added'));
             }
-        } else {
-            $driver = new Driver;
-            $driver->name = $this->input('driver.name');
-            $driver->iracing_id = $this->input('driver.iracingid');
-            $driver->irating = $this->input('driver.ir');
-            $driver->name = $this->input('driver.name');
-            $driver->safetyrating = strtoupper($this->input('driver.sr1')).'@'.number_format(floatval($this->input('driver.sr2')), 2);
-            $driver->save();
-            $team->drivers()->attach($driver->id);
-            $checkResult['flash'] = 'You successfully added '.$driver->name.' to '.$team->name;
-            event(new TeamEditEvent($team, 'Team driver added'));
         }
 
         return $checkResult;
