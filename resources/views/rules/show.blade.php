@@ -123,7 +123,7 @@
           <ol><li>The team's status will only be set to 'Confirmed' once it has been reviewed by the event administration, made it through pre-qualifying and has paid their entry fee of $8.00 in its entirety.</li></ol>
         </li>
         <li>Teams must pay their entry fees through PayPal no later than 7 days from the start of the race to be allowed to race.
-          <ol><li>The e-mail address that all payments must be sent to is info@sco.coresimracing.com. Each payment must include a note, clearly indicating which entry or entries the transferred money is intended for.</li>
+          <ol><li>The e-mail address that all payments must be sent to is <a target="_blank" href="https://www.paypal.me/sportscaropen/8usd">info@sco.coresimracing.com</a>. Each payment must include a note, clearly indicating which entry or entries the transferred money is intended for. Each payment must be in USD and through the Paypal "send money to friends and family"-option.</li>
           <li>Should this not be the case, the payment will be considered a donation, as will sums exceeding the required entry fee. The same is the case for not paying the entry fee in full if the remaining amount is not transferred in due course.</li></ol>
         </li>
         <li>A team's status determines what about a team can be edited. When set to 'Pending', everything about a team can be edited, including the name, car number, category and car, whereas all other statuses only allow for driver line-up changes.
