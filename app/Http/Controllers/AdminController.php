@@ -260,7 +260,7 @@ class AdminController extends Controller
     public function showEmails()
     {
         $manager = User::whereHas('teams', function ($query) {
-            $query->where('status', '=', '2');
+            $query->where([['status', '=', '2'],['season_id', '=', config('constants.curent_season')]]);
         })->pluck('email');
         return $manager->implode(', ');
     }
