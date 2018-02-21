@@ -89,7 +89,7 @@ class MyteamController extends Controller
 
         $now = Carbon::now('UTC');
         //$now = new Carbon('2017-10-05 16:59:59', 'UTC');
-        $end = (clone($now))->addDays(3)->subHours(2);
+        $end = (clone($now))->addDays(4)->subHours(2);
         $now->subHours(4);
         $race = Round::whereBetween('race_start', [$now->format('Y-m-d H:i:s'),$end->format('Y-m-d H:i:s')])->get();
         $driverChangeLimit = $team->status != 0 && $race->count()>0;
