@@ -64,7 +64,11 @@ class HomeController extends Controller
             $qual_end->addMinutes($round->qual_minutes);
             $race_start = new Carbon($round->race_start);
             $race_end = new Carbon($round->race_start);
-            $race_end->addMinutes($round->race_minutes);
+            if (!empty($round->race_minutes)) {
+                $race_end->addMinutes($round->race_minutes);
+            } else {
+                $race_end->addMinutes($round->race_laps);
+            }
             /*dd(
               $fp1_start,
               $fp1_end,

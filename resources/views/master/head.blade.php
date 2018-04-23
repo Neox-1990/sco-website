@@ -9,5 +9,5 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/favicon_ms.png">
 
-<link rel="stylesheet" href="{{asset('css/app.css')}}">
+<link rel="stylesheet" href="{{asset('css/app.css')}}?date=20180423">
 <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">

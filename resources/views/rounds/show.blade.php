@@ -60,7 +60,11 @@ use Carbon\Carbon;
         <tr>
           <th>Race</th>
           <td><i class="fa fa-calendar mr-3" aria-hidden="true"></i> {{$times['r']->format('l jS \\of F Y H:i:s-e')}}</td>
-          <td><i class="fa fa-clock-o mr-3" aria-hidden="true"></i> {{$round->race_minutes}} min</td>
+          @if (!empty($round->race_minutes))
+            <td><i class="fa fa-clock-o mr-3" aria-hidden="true"></i> {{$round->race_minutes}} min</td>
+          @else
+            <td><i class="fa fa-circle-o-notch mr-3" aria-hidden="true"></i> {{$round->race_laps}} laps</td>
+          @endif
         </tr>
       </table>
     </div>

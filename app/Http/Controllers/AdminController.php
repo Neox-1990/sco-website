@@ -394,7 +394,8 @@ class AdminController extends Controller
         $round->qual_start = $request->input('round_qual_start');
         $round->qual_minutes = $request->input('round_qual_min');
         $round->race_start = $request->input('round_race_start');
-        $round->race_minutes = $request->input('round_race_min');
+        $round->race_minutes = empty($request->input('round_race_min'))?null:$request->input('round_race_min');
+        $round->race_laps = empty($request->input('round_race_laps'))?null:$request->input('round_race_laps');
 
         if ($round->save()) {
             session()->flash('flash_message_success', 'Round updated');
@@ -431,7 +432,8 @@ class AdminController extends Controller
         $round->qual_start = $request->input('round_qual_start');
         $round->qual_minutes = $request->input('round_qual_min');
         $round->race_start = $request->input('round_race_start');
-        $round->race_minutes = $request->input('round_race_min');
+        $round->race_minutes = empty($request->input('round_race_min'))?null:$request->input('round_race_min');
+        $round->race_laps = empty($request->input('round_race_laps'))?null:$request->input('round_race_laps');
 
         if ($round->save()) {
             session()->flash('flash_message_success', 'Round created');

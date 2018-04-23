@@ -10,14 +10,14 @@
       <hr>
       <h3>1. Introduction</h3>
       <ol class="rulebook-section">
-        <li>The SCO Suzuka 10 hour Endurance Race is an endurance racing event, which organised and run by CoRe SimRacing on the iRacing.com Motorsports Simulation service. The event will utilise a selection of grand touring cars in a team-based, multiclass race running at the Grand Prix layout of the Suzuka International Racing Course.</li>
+        <li>The Sports Car Open Road America 500 is an endurance racing event, which organised and run by CoRe SimRacing on the iRacing.com Motorsports Simulation service. The event will utilise a selection of prototype and grand touring cars in a team-based, multiclass race running on the Full Course layout of Road America.</li>
         <li>While racing is obviously about competition and trying to achieve the best possible results, we would like to not lose the fun factor, since at the end of the day, it’s still the top priority.</li>
         <li>We also expect all drivers and team representatives to treat each other as well as members of the event administration with respect at all times.</li>
         <li>We are open to suggestions and constructive criticism as well as ideas and other things that contribute to improving our events in general.</li>
       </ol>
       <h3>2. Cars and Class Structure</h3>
       <ol class="rulebook-section">
-        <li>This event will feature two different classes of cars. Each car class will include the following car models:
+        <li>The event will feature three different classes of cars. Each car class will include the following car models:
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -29,16 +29,22 @@
             </thead>
             <tbody>
               <tr>
-                <td>Grand Touring  1</td>
-                <td class="badge-GT1">GT1</td>
-                <td>Aston Martin DBR9<br>Chevrolet Corvette C6.R</td>
+                <td>Daytona Prototype</td>
+                <td class="badge-DP">DP</td>
+                <td>Corvette C7 DP</td>
                 <td>0 kg / 100%<br>0 kg / 100%</td>
               </tr>
               <tr>
-                <td>Grand Touring 3</td>
-                <td class="badge-GT3">GT3</td>
+                <td>Grand Touring</td>
+                <td class="badge-GT">GT</td>
                 <td>Audi R8 LMS	GT3<br>BMW Z4 GT3<br>Ferrari 488 GT3<br>Mercedes-Benz AMG GT3</td>
                 <td>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%</td>
+              </tr>
+              <tr>
+                <td>Cup Challenge</td>
+                <td class="badge-CC">CC</td>
+                <td>Porsche 911 GT3 C up</td>
+                <td>0 kg / 75%</td>
               </tr>
             </tbody>
           </table>
@@ -60,10 +66,10 @@
             </thead>
             <tbody>
               <tr>
-                <td>SCO Suzuka 10 hour Endurance Race</td>
-                <td>Suzuka International Racing Course <br>Grand Prix</td>
+                <td>Sports Car Open Road America 500</td>
+                <td>Road America <br>Full Course</td>
                 <td>Afternoon</td>
-                <td>FP1: 21.02.2018 <br>FP2: 22.02.2018 <br>FP3: 23.02.2018 <br><strong>Main Event: 24.02.2018</strong></td>
+                <td>FP1: 23.05.2018 <br>FP2: 24.05.2018 <br>FP3: 25.05.2018 <br><strong>Main Event: 26.05.2018</strong></td>
               </tr>
             </tbody>
           </table>
@@ -90,16 +96,16 @@
                 <td>Start of Free Practice 3 <br><i>(360 minute duration)</i></td>
               </tr>
               <tr>
-                <td>Saturday at <strong>10:00 UTC</strong></td>
-                <td>Start of Warm Up <br><i>(100 minute duration)</i></td>
+                <td>Saturday at <strong>13:00 UTC</strong></td>
+                <td>Start of Warm Up <br><i>(70 minute duration)</i></td>
               </tr>
               <tr>
-                <td>Saturday at <strong>11:40 UTC</strong></td>
+                <td>Saturday at <strong>14:10 UTC</strong></td>
                 <td>Start of Qualifying <br><i>(20 minute duration)</i></td>
               </tr>
               <tr>
-                <td>Saturday at <strong>12:00 UTC</strong></td>
-                <td>Start of the Race <br><i>(600 minute duration)</i></td>
+                <td>Saturday at <strong>14:30 UTC</strong></td>
+                <td>Start of the Race <br><i>(124 laps or 270 minute duration)</i></td>
               </tr>
             </tbody>
           </table>
@@ -120,25 +126,26 @@
       <ol class="rulebook-section">
         <li>To enter the event, each team manager wishing to field one or multiple teams must register an account to be able to create these teams. For each team, all information must be filled in as required by the form on the website.</li>
         <li>Once a team has been created, the team’s status will automatically be set to 'Pending' until it’s been reviewed by the event administration. Once this has happened, the team’s status will be changed to 'Reviewed'.
-          <ol><li>The team's status will only be set to 'Confirmed' once it has been reviewed by the event administration, made it through pre-qualifying and has paid their entry fee of $8.00 in its entirety.</li></ol>
+          <ol><li>The team's status will only be set to 'Confirmed' once it has been reviewed by the event administration and has paid their entry fee of $5.00 in its entirety.</li></ol>
         </li>
-        <li>Teams must pay their entry fees through PayPal no later than 7 days from the start of the race to be allowed to race.
-          <ol><li>The e-mail address that all payments must be sent to is <a target="_blank" href="https://www.paypal.me/sportscaropen/8usd">info@sco.coresimracing.com</a>. Each payment must include a note, clearly indicating which entry or entries the transferred money is intended for. Each payment must be in USD and through the Paypal "send money to friends and family"-option.</li>
-          <li>Should this not be the case, the payment will be considered a donation, as will sums exceeding the required entry fee. The same is the case for not paying the entry fee in full if the remaining amount is not transferred in due course.</li></ol>
+        <li>Teams must pay their entry fees through PayPal no later than Monday, May 21st 2018 at 23:59 UTC to be allowed to race.
+          <ol><li>The payment details will be sent to a team's manager once the team has been reviewed. Included in this e-mail will be a direct link to PayPal through which the entry fee can be paid.</li>
+            <li>Should the link not work, please send the entry fee to info@sco.coresimracing.com and include a note that clearly indicates which entry or entries the transferred money is intended for. </li>
+            <li>Please note that the teams must cover all transaction fees. Any amount of money that exceeds what teams must pay will be considered a donation. The same applies to any monetary sum that does not come with a payment note.</li></ol>
         </li>
         <li>A team's status determines what about a team can be edited. When set to 'Pending', everything about a team can be edited, including the name, car number, category and car, whereas all other statuses only allow for driver line-up changes.
           <ol><li>Should a team wish to change their name for example, the team manager must send a request to the event administration.</li>
-          <li>Before the start of the season, team's will be allowed to change their cars until 24 hours before the start of the first free practice session.</li></ol>
+          <li>Before the start of the event, team's will be allowed to change their cars until 24 hours before the start of the first free practice session.</li></ol>
         </li>
         <li>Every team’s driver line-up must be unique. No driver may be listed on more than a single car’s driver line-up. Should he wish to drive for another team, his previous team must remove him their line-up before he can be added to his new team’s line-up.
           <ol><li>The deadline for driver line-up changes ahead of each round will be 24 hours before the start of the first free practice session.</li>
           <li>Should a driver be added after the deadline and take part in the race, the team will have to serve a 30 second stop and hold penalty.</li></ol>
         </li>
         <li>No team will be allowed to field more than 2 entries in any class. The event administration reserves itself the right to waive this rule should the level of interest in a class be too low to fulfil the minimum car count.</li>
-        <li>The total car count will be limited to 50 cars across both categories. While there are no strict limits on how big each class can be, no class will be allowed to have fewer than 18 entrants with the maximum car count per class being capped at 32.
+        <li>The total car count will be limited to 54 cars across all 3 categories. While there are no strict limits on how big each class can be, no class will be allowed to have fewer than 12 entrants with the maximum car count per class being capped at 24.
           <ol><li>The exact allocation of car slots will be determined by the number of teams signing up for each class, but it will always follow the minimum and maximum car counts as described above.</li>
           <li>Slots will be assigned on a 'first to come means first to be served' basis.</li>
-          <li>Should fewer than 40 teams want to enter within 7 days of the race, the event will be cancelled with all entry fees being refunded.</li></ol>
+          <li>Should fewer than 40 confirmed teams by Monday, May 21st 2018 at 23:59 UTC, the event will be cancelled with all entry fees being refunded.</li></ol>
         </li>
         <li>Should a confirmed team withdraw, resulting in a free spot within a class on on the grid in general, then the first on that classes' waiting list will be called up fill the spot.
           <ol><li>Substitute teams that replace previously confirmed teams will not have to pay the entry fee.</li>
@@ -179,14 +186,14 @@
       <ol class="rulebook-section">
         <li>All races will utilise the standard rolling start procedure the iRacing software provides with the following alterations:
           <ol><li>The class leaders of all supporting classes should keep a 10 second gap to the last car of the class ahead on the pace lap.</li>
-          <li>All cars and classes, meaning GT1 and GT3 must ignore the "green flag" as displayed by iRacing and must remain in their grid formation while also keeping to the pace car speed.</li>
+          <li>All cars and classes, meaning DP, GT and CC must ignore the "green flag" as displayed by iRacing and must remain in their grid formation while also keeping to the pace car speed.</li>
           <li>Only the leader of each class will be allowed to initiate the start of their categories’ race by starting to accelerate away from the field in the “starting zone”. Once he has done so, all cars of that class will be free to race. All classes will be subject to this procedure.</li>
           <li>Images of the exact beginning and end points of this “starting zone” will be part of the drivers’ briefing, which will be published before the first free practice session.</li>
-          <li>Teams that start from pit lane must line up at pit exit in a line. They will not be allowed to leave the lane until the race administration declares the pit exit open once the last GT3 car has passed the first turn. Leaving the pit lane early will result in a 30 second stop-hold penalty.</li></ol>
+          <li>Teams that start from pit lane must line up at pit exit in a line. They will not be allowed to leave the lane until the race administration declares the pit exit open once the last CC car has passed the first turn. Leaving the pit lane early will result in a 30 second stop-hold penalty.</li></ol>
         </li>
-        <li>During the race itself, the fair share driving rule will be enabled with a minimum of 3 drivers and a maximum of 6 drivers being able to drive the car.
+        <li>During the race itself, the fair share driving rule will be enabled with a minimum of 2 drivers and a maximum of 6 drivers being able to drive the car.
           <ol><li>As per iRacing rules, a “fair share” is defined as a quarter of an equal share.<br>Example:
-            <pre>2 drivers with a total of 110 laps driven<br>→ 110 laps / 2 drivers = 65 laps per driver on an equal share<br>→ 65 laps / 4 = 16.25 laps → 16 laps minimum per driver</pre>
+            <pre>2 drivers with a total of 124 laps driven<br>→ 124 laps / 2 drivers = 62 laps per driver on an equal share<br>→ 62 laps / 4 = 15.5 laps → 15 laps minimum per driver</pre>
           </li>
           <li>The minimum “fair share” lap count only applies to the number of drivers defined as the minimum required drivers, meaning only 3 drivers have to fulfil it in this event.</li></ol>
         </li>
@@ -194,7 +201,7 @@
           <ol><li>This formula will take both, the number of turns on the circuit as well as the number of laps driven by the team's car into account and looks as follows:
             <pre>Formula: (corners per lap * number of laps by car) / 25 = team's incident limit</pre>
           </li>
-          <li>Using this formula, a team that's driven 100 laps on a circuit with 21 corners would be able to get up to 84 incident points before exceeding the limit. Fractional amounts will always be rounded up to the closest full number.</li>
+          <li>Using this formula, a team that's driven 124 laps on a circuit with 14 corners would be able to get up to 70 incident points before exceeding the limit. Fractional amounts will always be rounded up to the closest full number.</li>
           <li>Exceeding the incident limit will result in the car being disqualified from the race.</li></ol>
         </li>
       </ol>
@@ -246,7 +253,11 @@
           </ul>
         </li>
         <li>Unlike stop-hold penalties, drive-through penalties cannot be combined with pit stops. Violations of this rule will in a further drive-through penalty.</li>
-        <li>Drive-through penalties must be served within 3 laps of being issued. Black flags (meaning stop-go or stop-hold penalties) should be served at the earliest opportunity that's available to the driver currently in the car.</li>
+        <li>Once a team has received a driver-through penalty, they must not cross the timing line on the home straight more than 3 times before entering the pit lane to serve their penalty. Black flags (meaning stop-go or stop-hold penalties) should be served at the earliest opportunity that's available to the driver currently in the car.
+          <ol>
+            <li>Failure to serve a drive-through penalty within the prescribed amount of laps will result in the team receiving a 15 second stop-hold penalty.</li>
+          </ol>
+        </li>
         <li>Repeat offenders will receive harsher penalties, should they be penalised for the same type of misbehaviour multiple times.</li>
         <li>Penalties can affect teams as well as drivers individually, meaning a team can just as easily be excluded from competition as individual drivers, depending on the severity of the rule violations they committed.</li>
         <li>Should any warnings or penalties be assigned during or after the race, then they will always be announced on the Sports Car Open Discord before being applied in the game or the race results.  </li>
@@ -304,9 +315,9 @@
           <li>One by one, all cars will be called out in order of their overall position. They must also go around the track and park up their car behind the car in front of them in the queue that's been started by the overall race leader.</li>
           <li>Drivers should not park their cars bumper to bumper when forming the queue. It's advised to leave a gap of two car lengths to the car ahead.</li>
           <li>Cars that have lost laps due to the mass disconnect will be instructed to do an extra lap before parking up at the end of the queue.</li>
-          <li>The procedure described in 19.a.4 to 19.a.6 will happen with all classes: First GT1, then GT3.</li>
+          <li>The procedure described in19.a.4 to 19.a.6 will happen with all classes: First DP, then GT and then CC.</li>
           <li>Once all cars are back out on-track and formed up in the queue, all drivers must enable their pit speed limiters before slowly driving away from their parked positions. When driving away, they must remain in single file formation and in to one another.</li>
-          <li>The leader of the GT3 class should leave a gap of about 5 seconds to the last car of the class ahead of them.</li>
+          <li>The leaders of the GT and CC classes respectively should leave a gap of about 5 seconds to the last car of the class ahead of them.</li>
           <li>Once all queued up cars are back rolling, the '10 seconds to green' warning will be given through the race control text chat.</li>
           <li>Once those 10 seconds have passed, the 'GREEN FLAG' message will appear in text chat, meaning that the race is back underway and that all cars are allowed to race each other again.</li></ol>
         </li>
@@ -317,9 +328,9 @@
           <li>Once the race starts, race control will instruct the overall leader to do a lap and stop just shy of the timing line to not start a new lap.</li>
           <li>One by one, all cars will be called out in order of their overall position. They must also go around the track and park up their car behind the car in front of them in the queue that's been started by the overall race leader.</li>
           <li>Drivers should not park their cars bumper to bumper when forming the queue. It's advised to leave a gap of two car lengths to the car ahead.</li>
-          <li>The procedure described in 19.b.5 and 19.b.6 will happen with all classes: First GT1, then GT3.</li>
+          <li>The procedure described in 19.b.5 and 19.b.6 will happen with all classes: First DP, then GT and then CC.</li>
           <li>Once all cars are back out on-track and formed up in the queue, all drivers must enable their pit speed limiters before slowly driving away from their parked positions. When driving away, they must remain in single file formation and in to one another.</li>
-          <li>The leader of the GT3 class should leave a gap of about 5 seconds to the last car of the class ahead of them.</li>
+          <li>The leaders of the GT and CC classes respectively should leave a gap of about 5 seconds to the last car of the class ahead of them.</li>
           <li>Once all queued up cars are back rolling, the '10 seconds to green' warning will be given through the race control text chat.</li>
           <li>Once those 10 seconds have passed, the 'GREEN FLAG' message will appear in text chat, meaning that the race is back underway and that all cars are allowed to race each other again.</li></ol>
         </li>

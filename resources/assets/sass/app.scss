@@ -15,6 +15,10 @@ $sco-gtc: #1c1c1c;
 $sco-gt3: #1c1c1c;
 $sco-gt1: #1da35c;
 
+$sco-dp: #d1291d;
+$sco-gt-ra: #ffe41c;
+$sco-cc: #f4f4f4;
+
 $facebookblue: #3b5998;
 $twitterblue: #4099FF;
 //$youtubered: #e52d27;
@@ -26,7 +30,7 @@ html{
 body{
   font-size: 18px;
   background-color: #fff;
-  background-image: url('/img/sco2018bg3.jpg');
+  background-image: url('/img/scora500_2k18_bg.jpg');
   background-position: center top;
   background-repeat: no-repeat;
 }
@@ -124,13 +128,21 @@ a.sco-nav-link{
 .badge-normal{
   font-size: 100%;
 }
+.badge-DP{
+  background-color: $sco-dp !important;
+  color: #fff !important;
+}
 .badge-Prototype{
   background-color: $sco-p !important;
   color: #fff !important;
 }
 .badge-GT{
-  background-color: $sco-gt !important;
-  color: #fff !important;
+  background-color: $sco-gt-ra !important;
+  color: #000 !important;
+}
+.badge-CC{
+  background-color: $sco-cc !important;
+  color: #000 !important;
 }
 .badge-GTC{
   background-color: $sco-gtc !important;
@@ -314,7 +326,13 @@ footer{
 nav{
   background-color: $sco-dark !important;
 }
-
+.btn-DP{
+  background-color: $sco-dp;
+  color: #fff;
+  &:hover{
+    background-color: darken($sco-dp, 10%);
+  }
+}
 .btn-Prototype{
   background-color: $sco-p;
   color: #fff;
@@ -323,10 +341,17 @@ nav{
   }
 }
 .btn-GT{
-  background-color: $sco-gt;
-  color: #fff;
+  background-color: $sco-gt-ra;
+  color: #000;
   &:hover{
-    background-color: darken($sco-gt, 10%);
+    background-color: darken($sco-gt-ra, 10%);
+  }
+}
+.btn-CC{
+  background-color: $sco-cc;
+  color: #000;
+  &:hover{
+    background-color: darken($sco-cc, 10%);
   }
 }
 .btn-GTC{
@@ -360,13 +385,31 @@ nav{
     color: #fff;
   }
 }
+.btn-outline-DP{
+  background-color: #fff;
+  border-color: $sco-dp;
+  color: $sco-dp;
+  &:hover{
+    background-color: $sco-dp;
+    color: #fff;
+  }
+}
 .btn-outline-GT{
   background-color: #fff;
-  border-color: $sco-gt;
-  color: $sco-gt;
+  border-color: $sco-gt-ra;
+  color: $sco-gt-ra;
   &:hover{
-    background-color: $sco-gt;
-    color: #fff;
+    background-color: $sco-gt-ra;
+    color: #000;
+  }
+}
+.btn-outline-GTC{
+  background-color: #000;
+  border-color: $sco-cc;
+  color: $sco-cc;
+  &:hover{
+    background-color: $sco-cc;
+    color: #000;
   }
 }
 .btn-outline-GTC{

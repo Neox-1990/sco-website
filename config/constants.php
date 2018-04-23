@@ -10,7 +10,9 @@ return [
     6 => 'Ferrari 488 GT3',
     7 => 'Aston Martin DBR9',
     8 => 'Chevrolet Corvette C6.R',
-    9 => 'BMW Z4 GT3'
+    9 => 'BMW Z4 GT3',
+    10=> 'Porsche 911 GT3 Cup',
+    11=> 'Chevrolet Corvette C7 Daytona Prototype'
   ],
   'curent_season' => '3',
   'classes' => [
@@ -22,6 +24,11 @@ return [
     3 => [
       'GT1' => [7,8],
       'GT3' => [4,5,6,9]
+    ],
+    4 => [
+      'DP' => [11],
+      'GT' => [4,9,6,5],
+      'CC' => [10]
     ]
   ],
   'cars_to_classes' => [
@@ -40,6 +47,14 @@ return [
       9 => 'GT3',
       7 => 'GT1',
       8 => 'GT1'
+    ],
+    4 => [
+      11 => 'DP',
+      4 => 'GT',
+      9 => 'GT',
+      6 => 'GT',
+      5 => 'GT',
+      10 => 'CC'
     ]
   ],
   'classNumbers' => [
@@ -66,6 +81,20 @@ return [
         'min' => 100,
         'max' => 199
       ]
+    ],
+    4 => [
+      'DP' => [
+        'min' => 1,
+        'max' => 99
+      ],
+      'GT' => [
+        'min' => 100,
+        'max' => 199
+      ],
+      'CC' => [
+        'min' => 200,
+        'max' => 299
+      ],
     ]
   ],
   'status_names' => [
@@ -109,7 +138,9 @@ return [
     94 => 6,
     64 => 7,
     26 => 8,
-    55 => 9
+    55 => 9,
+    88 => 10,
+    70 => 11
   ],
   'out_status' => [
     0 => 'running',

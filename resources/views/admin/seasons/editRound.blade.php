@@ -80,6 +80,10 @@
       <input type="text" class="form-control" name="round_race_min" value="{{$round['race_minutes']}}" id="round_race_min">
     </div>
     <div class="form-group">
+      <label for="round_race_laps">Race Laps</label>
+      <input type="text" class="form-control" name="round_race_laps" value="{{$round['race_laps']}}" id="round_race_laps">
+    </div>
+    <div class="form-group">
       <input class="btn btn-primary" type="submit" name="round_edit" value="update">
     </div>
   </form>

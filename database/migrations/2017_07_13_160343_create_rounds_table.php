@@ -28,6 +28,7 @@ class CreateRoundsTable extends Migration
             $table->integer('qual_minutes')->nullable();
             $table->dateTime('race_start')->nullable();
             $table->integer('race_minutes')->nullable();
+            $table->integer('race_laps')->nullable();
             $table->timestamps();
 
             $table->unique(['number', 'season_id']);

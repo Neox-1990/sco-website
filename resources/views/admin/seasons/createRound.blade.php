@@ -77,6 +77,10 @@
       <input type="text" class="form-control" name="round_race_min" placeholder="number" id="round_race_min">
     </div>
     <div class="form-group">
+      <label for="round_race_laps">Race Laps</label>
+      <input type="text" class="form-control" name="round_race_laps" placeholder="number" id="round_race_laps">
+    </div>
+    <div class="form-group">
       <input class="btn btn-primary" type="submit" name="round_edit" value="create">
     </div>
   </form>
