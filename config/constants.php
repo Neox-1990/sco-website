@@ -14,7 +14,7 @@ return [
     10=> 'Porsche 911 GT3 Cup',
     11=> 'Chevrolet Corvette C7 Daytona Prototype'
   ],
-  'curent_season' => '3',
+  'curent_season' => '4',
   'classes' => [
     1 => [
       'Prototype' => [1],
