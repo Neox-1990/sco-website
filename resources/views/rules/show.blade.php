@@ -43,7 +43,7 @@
               <tr>
                 <td>Cup Challenge</td>
                 <td class="badge-CC">CC</td>
-                <td>Porsche 911 GT3 C up</td>
+                <td>Porsche 911 GT3 Cup</td>
                 <td>0 kg / 75%</td>
               </tr>
             </tbody>
