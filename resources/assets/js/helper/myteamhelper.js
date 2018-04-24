@@ -1,5 +1,6 @@
 export const updateNumbers = function(){
   var car = $('#car').val();
+  var selOption = $('#number').val();
   var oldCheck = false;
   $('#number').empty();
   for (var key in numbers[car]) {

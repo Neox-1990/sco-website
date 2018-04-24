@@ -28,7 +28,7 @@
       <div class="form-group">
         <label for="number">Number</label>
         <select id="number" class="form-control" name="teamnumber">
-          @for ($i=1; $i < 150; $i++)
+          @for ($i=1; $i < 1000; $i++)
             <option value="{{$i}}" {{old('teamnumber') == $i ? 'selected' : ''}}>{{$i}}</option>
           @endfor
         </select>
