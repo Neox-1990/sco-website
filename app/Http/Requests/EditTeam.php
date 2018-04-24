@@ -165,9 +165,9 @@ class EditTeam extends FormRequest
         }
 
         $count = $team->drivers()->count();
-        if ($count <= 3) {
+        if ($count <= 2) {
             $checkResult['legit'] = false;
-            $checkResult['errors']['driverTeamAmountError'] = 'Your team need at least three drivers. Add a new driver first or delete the team alltogether.';
+            $checkResult['errors']['driverTeamAmountError'] = 'Your team need at least two drivers. Add a new driver first or delete the team alltogether.';
         }
 
         if ($checkResult['legit']) {

@@ -16,8 +16,8 @@ $sco-gt3: #1c1c1c;
 $sco-gt1: #1da35c;
 
 $sco-dp: #d1291d;
-$sco-gt-ra: #ffe41c;
-$sco-cc: #f4f4f4;
+$sco-gt-ra: #f4f4f4;
+$sco-cc: #0160c2;
 
 $facebookblue: #3b5998;
 $twitterblue: #4099FF;
@@ -142,7 +142,7 @@ a.sco-nav-link{
 }
 .badge-CC{
   background-color: $sco-cc !important;
-  color: #000 !important;
+  color: #fff !important;
 }
 .badge-GTC{
   background-color: $sco-gtc !important;
@@ -349,7 +349,7 @@ nav{
 }
 .btn-CC{
   background-color: $sco-cc;
-  color: #000;
+  color: #fff;
   &:hover{
     background-color: darken($sco-cc, 10%);
   }
@@ -395,7 +395,7 @@ nav{
   }
 }
 .btn-outline-GT{
-  background-color: #fff;
+  background-color: #000;
   border-color: $sco-gt-ra;
   color: $sco-gt-ra;
   &:hover{
@@ -403,13 +403,13 @@ nav{
     color: #000;
   }
 }
-.btn-outline-GTC{
-  background-color: #000;
+.btn-outline-CC{
+  background-color: #fff;
   border-color: $sco-cc;
   color: $sco-cc;
   &:hover{
     background-color: $sco-cc;
-    color: #000;
+    color: #fff;
   }
 }
 .btn-outline-GTC{
