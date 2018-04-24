@@ -44,11 +44,11 @@ class CreateTeam extends FormRequest
           'driver2.sr1' => 'required|in:c,b,a,p',
           'driver2.sr2' => 'required|numeric|max:128',
 
-          'driver3.name' => 'max:255',
-          'driver3.iracingid' => 'numeric|max:9999999',
-          'driver3.ir' => 'numeric|min:2000|max:12000',
-          'driver3.sr1' => 'in:c,b,a,p',
-          'driver3.sr2' => 'numeric|max:128',
+          'driver3.name' => 'nullable|required_with:driver3.iracingid|max:255',
+          'driver3.iracingid' => 'nullable|required_with:driver3.name|numeric|max:9999999',
+          'driver3.ir' => 'nullable|required_with_all:driver3.iracingid,driver3.name|numeric|min:2000|max:12000',
+          'driver3.sr1' => 'nullable|required_with_all:driver3.iracingid,driver3.name|in:c,b,a,p',
+          'driver3.sr2' => 'nullable|required_with_all:driver3.iracingid,driver3.name|numeric|max:128',
 
           'driver4.name' => 'nullable|required_with:driver4.iracingid|max:255',
           'driver4.iracingid' => 'nullable|required_with:driver4.name|numeric|max:9999999',
