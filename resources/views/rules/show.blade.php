@@ -84,15 +84,15 @@
             </thead>
             <tbody>
               <tr>
-                <td>Wednesday at <strong>19:00 UTC</strong></td>
+                <td>Wednesday at <strong>18:00 UTC</strong></td>
                 <td>Start of Free Practice 1 <br><i>(360 minute duration)</i></td>
               </tr>
               <tr>
-                <td>Thursday at <strong>19:00 UTC</strong></td>
+                <td>Thursday at <strong>18:00 UTC</strong></td>
                 <td>Start of Free Practice 2 <br><i>(360 minute duration)</i></td>
               </tr>
               <tr>
-                <td>Friday at <strong>19:00 UTC</strong></td>
+                <td>Friday at <strong>18:00 UTC</strong></td>
                 <td>Start of Free Practice 3 <br><i>(360 minute duration)</i></td>
               </tr>
               <tr>
