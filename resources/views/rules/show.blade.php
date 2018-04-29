@@ -114,7 +114,7 @@
       </ol>
       <h3>4. Entry Conditions and Requirements</h3>
       <ol class="rulebook-section">
-        <li>To be able to enter, every team must have a team manager as well as a driver line-up consisting of at least 3 but no more than 6 drivers. Team managers as well as other non-driving team representatives don't have to fulfil any of the driver requirements.</li>
+        <li>To be able to enter, every team must have a team manager as well as a driver line-up consisting of at least 2 but no more than 6 drivers. Team managers as well as other non-driving team representatives don't have to fulfil any of the driver requirements.</li>
         <li>All driving team members, meaning everyone listed on a team's driver line-up, must meet the following minimum requirements at the point of sign-up:
           <ul class="list-group">
             <li class="list-group-item">Road Licence Class and Safety Rating: C2.00 or higher</li>
