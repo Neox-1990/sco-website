@@ -195,7 +195,7 @@
           <ol><li>As per iRacing rules, a “fair share” is defined as a quarter of an equal share.<br>Example:
             <pre>2 drivers with a total of 124 laps driven<br>→ 124 laps / 2 drivers = 62 laps per driver on an equal share<br>→ 62 laps / 4 = 15.5 laps → 15 laps minimum per driver</pre>
           </li>
-          <li>The minimum “fair share” lap count only applies to the number of drivers defined as the minimum required drivers, meaning only 3 drivers have to fulfil it in this event.</li></ol>
+          <li>The minimum “fair share” lap count only applies to the number of drivers defined as the minimum required drivers, meaning only 2 drivers have to fulfil it in this event.</li></ol>
         </li>
         <li>Additionally, to make sure people don't take too many liberties with the track limits, especially at more modern circuits with multiple tarmac run-off zones, a formula will be used to calculate a team's maximum number of incident points.
           <ol><li>This formula will take both, the number of turns on the circuit as well as the number of laps driven by the team's car into account and looks as follows:
