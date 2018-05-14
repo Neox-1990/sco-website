@@ -38,7 +38,7 @@
                 <td>Grand Touring</td>
                 <td class="badge-GT">GT</td>
                 <td>Audi R8 LMS	GT3<br>BMW Z4 GT3<br>Ferrari 488 GT3<br>Mercedes-Benz AMG GT3</td>
-                <td>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%</td>
+                <td>30 kg / 100%<br>0 kg / 100%<br>0 kg / 100%<br>10 kg / 100%</td>
               </tr>
               <tr>
                 <td>Cup Challenge</td>
