@@ -60,7 +60,9 @@ Route::get('/archive/{season}/{round}', 'SeasonController@archiveShowRound');
 Route::get('/rules', function () {
     return view('rules.show');
 });
-
+Route::get('/privacy', function () {
+    return view('privacy.show');
+});
 
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/manager', 'AdminController@managerIndex');

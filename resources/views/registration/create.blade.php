@@ -5,6 +5,7 @@
 <div class="row">
   <div class="col-sm-12 col-lg-6">
     <h1>Registration</h1>
+    <p>With this registration you confirm that you have read and accepted our <a href="{{url('/privacy')}}">privacy declaration</a>.</p>
     @if ($sco_settings['registration'] == 'closed')
       <p class="text-danger">Registration is closed, come back later.</p>
     @endif
@@ -31,7 +32,7 @@
         <button type="submit" class="btn btn-primary" name="button" {{$sco_settings['registration']=='closed'?'disabled':''}}>Register</button>
       </div>
     </form>
-    
+
   </div>
 </div>
 

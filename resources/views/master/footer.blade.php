@@ -13,6 +13,9 @@
       <small>SCO Website &copy; 2018 by <a href="mailto:dev@ronaldg.de">Ronald Großmann</a></small>
     </div>
   </div>
+  <div class="text-right pb-2">
+    <a href="{{url('/privacy')}}"><small>Privacy</small></a>
+  </div>
 </footer>
 
 <script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
