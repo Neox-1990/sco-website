@@ -17,7 +17,7 @@
       </ol>
       <h3>2. Cars and Class Structure</h3>
       <ol class="rulebook-section">
-        <li>The event will feature three different classes of cars. Each car class will include the following car models:
+        <li>All Sports Car Open events will feature three different classes of cars. Each car class will include the following car models:
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -29,52 +29,83 @@
             </thead>
             <tbody>
               <tr>
-                <td>Daytona Prototype</td>
-                <td class="badge-DP">DP</td>
-                <td>Corvette C7 DP</td>
+                <td>Prototype</td>
+                <td class="badge-P">P</td>
+                <td>Audi R18<br>Porsche 919 Hybrid</td>
                 <td>0 kg / 100%<br>0 kg / 100%</td>
+              </tr>
+              <tr>
+                <td>Prototype Challenge</td>
+                <td class="badge-PC">PC</td>
+                <td>HPD ARX-01c</td>
+                <td>0 kg / 66.7%</td>
               </tr>
               <tr>
                 <td>Grand Touring</td>
                 <td class="badge-GT">GT</td>
-                <td>Audi R8 LMS	GT3<br>BMW Z4 GT3<br>Ferrari 488 GT3<br>Mercedes-Benz AMG GT3</td>
-                <td>30 kg / 100%<br>0 kg / 100%<br>0 kg / 100%<br>10 kg / 100%</td>
-              </tr>
-              <tr>
-                <td>Cup Challenge</td>
-                <td class="badge-CC">CC</td>
-                <td>Porsche 911 GT3 Cup</td>
-                <td>0 kg / 75%</td>
+                <td>Ferrari 488 GTE<br>Ford GT GTE<br>Porsche 911 RSR</td>
+                <td>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%</td>
               </tr>
             </tbody>
           </table>
+          <ol>
+            <li>Should iRacing release a new LMP2 or DPi specification car with similar performance characteristics to the current PC class car, then the series administration can replace the car with the new car if at least 66% of all teams in the class agree to the change.</li>
+          </ol>
         </li>
-        <li>The event administration reserves itself the right to add ballast or limit the fuel capacity of any car or car class to balance the cars within a class or to modify the balance between the car classes. Such car adjustments will never be made any later than 3 days before the start of warm-up. Generally, no adjustments will be made, unless the event administration feels that there are overly dominant car models within a class or too small or large performance gaps between car classes.</li>
+        <li>The series administration reserves itself the right to add ballast or limit the fuel capacity of any car or car class to balance the cars within a class or to modify the balance between the car classes. Such car adjustments will never be made any later than 3 days before the start of warm-up. Generally, no adjustments will be made, unless the event administration feels that there are overly dominant car models within a class or too small or large performance gaps between car classes.</li>
         <li>Should an iRacing update affect the performance of one or multiple of the cars in the championship, the event administration can alter or reset any of the previously allocated weight handicaps or fuel capacity restrictions.</li>
       </ol>
       <h3>3. Timetable and Season Schedule</h3>
       <ol class="rulebook-section">
-        <li>The event sessions will run on the following days:
+        <li>The series will visit a total of 6 different venues during the 2018-2019 season. The opening and final rounds of the season will be 8 hour races, all other races will be 4 hours long.
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th>Event</th>
-                <th>Venue / Track Layout</th>
-                <th>Time of Day</th>
+                <th>Round</th>
+                <th>Venue / Track Layout / Time of Day</th>
                 <th>Session Dates</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Sports Car Open Road America 500</td>
-                <td>Road America <br>Full Course</td>
-                <td>Afternoon</td>
-                <td>FP1: 23.05.2018 <br>FP2: 24.05.2018 <br>FP3: 25.05.2018 <br><strong>Main Event: 26.05.2018</strong></td>
+                <td>Pre-Q.</td>
+                <td>Autodromo Enzo e Dino Ferrari - Grand Prix - Afternoon</td>
+                <td>26/08/2018 @ 16:00 UTC</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>8 hours of Spa-Francorchamps<br>Circuit de Spa-Francorchamps - GP Pits - Afternoon</td>
+                <td>FP1: 27/09/2018<br>FP2: 28/09/2018<br>FP3: 29/09/2018<br>Main Event: 30/09/2018</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>4 hours of Monza<br>Autodromo Nazionale Monza - Grand Prix - Afternoon</td>
+                <td>FP1: 01/11/2018<br>FP2: 02/11/2018<br>FP3: 03/11/2018<br>Main Event: 04/11/2018</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>4 hours of the Nürburgring<br>Nürburgring Grand-Prix-Strecke - Grand Prix - Afternoon</td>
+                <td>FP1: 29/11/2018<br>FP2: 30/11/2018<br>FP3: 01/12/2018<br>Main Event: 02/12/2018</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>4 hours of the Americas<br>Circuit of the Americas - Grand Prix - Afternoon</td>
+                <td>FP1: 03/01/2019<br>FP2: 04/01/2019<br>FP3: 05/01/2019<br>Main Event: 06/01/2019</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>4 hours of Interlagos<br>Autodromo Jose Carlos Pace – Grand Prix - Afternoon</td>
+                <td>FP1: 31/01/2019<br>FP2: 01/02/2019<br>FP3: 02/02/2019<br>Main Event: 03/02/2019</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>8 hours of Silverstone<br>Silverstone Circuit - Grand Prix - Afternoon</td>
+                <td>FP1: 21/02/2019<br>FP2: 22/02/2019<br>FP3: 23/02/2019<br>Main Event: 24/02/2019</td>
               </tr>
             </tbody>
           </table>
         </li>
-        <li>Start times for all sessions:
+        <li>Round 1 will use the following start times for all sessions:
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -84,28 +115,100 @@
             </thead>
             <tbody>
               <tr>
-                <td>Wednesday at <strong>18:00 UTC</strong></td>
+                <td>Thursday at <strong>18:00 UTC</strong></td>
                 <td>Start of Free Practice 1 <br><i>(360 minute duration)</i></td>
               </tr>
               <tr>
-                <td>Thursday at <strong>18:00 UTC</strong></td>
+                <td>Friday at <strong>18:00 UTC</strong></td>
                 <td>Start of Free Practice 2 <br><i>(360 minute duration)</i></td>
               </tr>
               <tr>
-                <td>Friday at <strong>18:00 UTC</strong></td>
+                <td>Saturday at <strong>18:00 UTC</strong></td>
                 <td>Start of Free Practice 3 <br><i>(360 minute duration)</i></td>
               </tr>
               <tr>
-                <td>Saturday at <strong>13:00 UTC</strong></td>
-                <td>Start of Warm Up <br><i>(70 minute duration)</i></td>
+                <td>Sunday at <strong>09:00 UTC</strong></td>
+                <td>Start of Warm Up <br><i>(100 minute duration)</i></td>
               </tr>
               <tr>
-                <td>Saturday at <strong>14:10 UTC</strong></td>
+                <td>Sunday at <strong>10:40 UTC</strong></td>
                 <td>Start of Qualifying <br><i>(20 minute duration)</i></td>
               </tr>
               <tr>
-                <td>Saturday at <strong>14:30 UTC</strong></td>
-                <td>Start of the Race <br><i>(124 laps or 270 minute duration)</i></td>
+                <td>Sunday at <strong>11:00 UTC</strong></td>
+                <td>Start of the Race <br><i>(480 minute duration)</i></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Rounds 2 to 5 will use the following start times for all sessions:
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Day &amp; Start Time</th>
+                <th>Session Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Thursday at <strong>19:00 UTC</strong></td>
+                <td>Start of Free Practice 1 <br><i>(360 minute duration)</i></td>
+              </tr>
+              <tr>
+                <td>Friday at <strong>19:00 UTC</strong></td>
+                <td>Start of Free Practice 2 <br><i>(360 minute duration)</i></td>
+              </tr>
+              <tr>
+                <td>Saturday at <strong>19:00 UTC</strong></td>
+                <td>Start of Free Practice 3 <br><i>(360 minute duration)</i></td>
+              </tr>
+              <tr>
+                <td>Sunday at <strong>14:00 UTC</strong></td>
+                <td>Start of Warm Up <br><i>(100 minute duration)</i></td>
+              </tr>
+              <tr>
+                <td>Sunday at <strong>15:40 UTC</strong></td>
+                <td>Start of Qualifying <br><i>(20 minute duration)</i></td>
+              </tr>
+              <tr>
+                <td>Sunday at <strong>16:00 UTC</strong></td>
+                <td>Start of the Race <br><i>(240 minute duration)</i></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Round 6 will use the following start times for all sessions:
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Day &amp; Start Time</th>
+                <th>Session Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Thursday at <strong>19:00 UTC</strong></td>
+                <td>Start of Free Practice 1 <br><i>(360 minute duration)</i></td>
+              </tr>
+              <tr>
+                <td>Friday at <strong>19:00 UTC</strong></td>
+                <td>Start of Free Practice 2 <br><i>(360 minute duration)</i></td>
+              </tr>
+              <tr>
+                <td>Saturday at <strong>19:00 UTC</strong></td>
+                <td>Start of Free Practice 3 <br><i>(360 minute duration)</i></td>
+              </tr>
+              <tr>
+                <td>Sunday at <strong>10:00 UTC</strong></td>
+                <td>Start of Warm Up <br><i>(100 minute duration)</i></td>
+              </tr>
+              <tr>
+                <td>Sunday at <strong>11:40 UTC</strong></td>
+                <td>Start of Qualifying <br><i>(20 minute duration)</i></td>
+              </tr>
+              <tr>
+                <td>Sunday at <strong>12:00 UTC</strong></td>
+                <td>Start of the Race <br><i>(480 minute duration)</i></td>
               </tr>
             </tbody>
           </table>
@@ -115,43 +218,72 @@
       <h3>4. Entry Conditions and Requirements</h3>
       <ol class="rulebook-section">
         <li>To be able to enter, every team must have a team manager as well as a driver line-up consisting of at least 2 but no more than 6 drivers. Team managers as well as other non-driving team representatives don't have to fulfil any of the driver requirements.</li>
-        <li>All driving team members, meaning everyone listed on a team's driver line-up, must meet the following minimum requirements at the point of sign-up:
-          <ul class="list-group">
-            <li class="list-group-item">Road Licence Class and Safety Rating: C2.00 or higher</li>
-            <li class="list-group-item">Road iRating: 2000 or higher</li>
-          </ul>
+        <li>All driving team members, meaning everyone listed on a team's driver line-up, must meet the minimum requirements for their team's car class at the point of sign-up. The minimum requirements for each car class are listed below.
+          <table class="table">
+            <tr>
+              <th>Car Clas</th>
+              <th>Minimum Road SR</th>
+              <th>Minimum Road iRating</th>
+            </tr>
+            <tr>
+              <td>Prototype</td>
+              <td>A 2.00 or higher</td>
+              <td>2500 or higher</td>
+            </tr>
+            <tr>
+              <td>Prototype Challenge</td>
+              <td>B 2.00 or higher</td>
+              <td>2250 or higher</td>
+            </tr>
+            <tr>
+              <td>Grand Touring</td>
+              <td>C 2.00 or higher</td>
+              <td>2000 or higher</td>
+            </tr>
+          </table>
         </li>
       </ol>
       <h3>5. Entry Procedure</h3>
       <ol class="rulebook-section">
-        <li>To enter the event, each team manager wishing to field one or multiple teams must register an account to be able to create these teams. For each team, all information must be filled in as required by the form on the website.</li>
-        <li>Once a team has been created, the team’s status will automatically be set to 'Pending' until it’s been reviewed by the event administration. Once this has happened, the team’s status will be changed to 'Reviewed'.
-          <ol><li>The team's status will only be set to 'Confirmed' once it has been reviewed by the event administration and has paid their entry fee of $5.00 in its entirety.</li></ol>
+        <li>To enter the series, each team manager wishing to field one or multiple teams must register an account to be able to create these teams. For each team, all information must be filled in as required by the form on the website and the series regulations.</li>
+        <li>Once a team has been created, the team’s status will automatically be set to 'Pending' until it’s been reviewed by the series administration. Once this has happened, the team’s status will be changed to 'Reviewed'.
+          <ol><li>The team's status will only be set to 'Confirmed' once it has been reviewed by the series administration, made it through pre-qualifying and has paid their entry fee of $25.00 in its entirety.</li>
+            <li>Teams with automatic invites do not have to advance through pre-qualifying to be have a guaranteed spot on the grid. Once an automatically invited team has had its status changed to 'Reviewed' they can ask to use their automatic invitation. They will then 			have their status changed to 'Pre-Qualified' and will have 72 hours to pay the entry fee in order to claim that spot without having to pre-qualify. A list of all automatically invited teams can be found below. Teams with '(x2)' have 2 invites, meaning they can field 2 cars without having to pre-qualify.<br><br>
+            AVA Simsport; CoRe SimRacing (x2); Follow Me eSports; Glacier Racing; Hellenic Racing; Mivano Racing; MSP Phoenix Racing; Obsidian Racing; Positive SimRacing (x2); Pure Racing Team; Sekrit; SimatoK eSport; SimRC.de; Sorg eSports (x2); SRT eSport (x2); Team Buschfink Racing (x2); Team Chimera; Torque Freak Racing; 			TRITON Racing; Vendaval Simracing</li>
+            <li>All other regular entrants, will be asked to not pay the entry fee until they're contacted about the matter following the publication of the official pre-qualifying results (check Section 7 for more information).</li>
+          </ol>
         </li>
-        <li>Teams must pay their entry fees through PayPal no later than Monday, May 21st 2018 at 23:59 UTC to be allowed to race.
-          <ol><li>The payment details will be sent to a team's manager once the team has been reviewed. Included in this e-mail will be a direct link to PayPal through which the entry fee can be paid.</li>
-            <li>Should the link not work, please send the entry fee to info@sco.coresimracing.com and include a note that clearly indicates which entry or entries the transferred money is intended for. </li>
-            <li>Please note that the teams must cover all transaction fees. Any amount of money that exceeds what teams must pay will be considered a donation. The same applies to any monetary sum that does not come with a payment note.</li></ol>
+        <li>Teams, that have made it through pre-qualifying, must pay their entry fees through PayPalwithin 72 hours of having their team's status changed to 'Pre-Qualified'. This will happen assoon as the pre-qualifying results will be declared official.
+          <ol><li>Should a category not have enough entrants to require a pre-qualifying session to takeplace 7 or fewer days from the pre-qualifying session's scheduled date, all teams in that category will have their status changed to 'Pre-Qualified'. The teams of said category will be given 7 days to cover their entry fee in this scenario.</li>
+            <li>Once these teams have covered their entry fee, their status will be changed to 'Confirmed'.</li></ol>
         </li>
-        <li>A team's status determines what about a team can be edited. When set to 'Pending', everything about a team can be edited, including the name, car number, category and car, whereas all other statuses only allow for driver line-up changes.
+        <li>A team's status determines what about a team can be edited. When set to 'Pending', everything about a team can be edited, including the name, car number, category and car whereas all other statuses only allow for driver line-up changes.
           <ol><li>Should a team wish to change their name for example, the team manager must send a request to the event administration.</li>
-          <li>Before the start of the event, team's will be allowed to change their cars until 24 hours before the start of the first free practice session.</li></ol>
+          <li>Before the start of the season, team's will be allowed to change their cars until 24 hours before the start of pre-qualifying. Should no pre-qualifying session take place, then this deadline will be extended to 24 hours before the opening round's first free 			practice session.</li></ol>
         </li>
         <li>Every team’s driver line-up must be unique. No driver may be listed on more than a single car’s driver line-up. Should he wish to drive for another team, his previous team must remove him their line-up before he can be added to his new team’s line-up.
           <ol><li>The deadline for driver line-up changes ahead of each round will be 24 hours before the start of the first free practice session.</li>
-          <li>Should a driver be added after the deadline and take part in the race, the team will have to serve a 30 second stop and hold penalty.</li></ol>
+          <li>Should a driver be added after the deadline and take part in the race, the team will be given a 30 seconds stop-hold penalty once he takes over the car.</li></ol>
         </li>
-        <li>No team will be allowed to field more than 2 entries in any class. The event administration reserves itself the right to waive this rule should the level of interest in a class be too low to fulfil the minimum car count.</li>
-        <li>The total car count will be limited to 54 cars across all 3 categories. While there are no strict limits on how big each class can be, no class will be allowed to have fewer than 12 entrants with the maximum car count per class being capped at 24.
-          <ol><li>The exact allocation of car slots will be determined by the number of teams signing up for each class, but it will always follow the minimum and maximum car counts as described above.</li>
-          <li>Slots will be assigned on a 'first to come means first to be served' basis.</li>
-          <li>Should fewer than 40 confirmed teams by Monday, May 21st 2018 at 23:59 UTC, the event will be cancelled with all entry fees being refunded.</li></ol>
+        <li>No team will be allowed to field more than 2 entries in any class. The series administration reserves itself the right to waive this rule for individual classes.</li>
+        <li>The total car count across all 3 classes will be limited to 50. These 50 slots have been allocated to each class as follows:
+          <ul class="list-group">
+            <li class="list-group-item">Prototype: 16 slots</li>
+            <li class="list-group-item">Prototype Challenge: 14 slots</li>
+            <li class="list-group-item">Grand Touring: 20 slots</li>
+          </ul>
+          <ol><li>re-qualifying for a class will take place once there are more teams interested in entering than there are spots in a class. More information can be found in Section 7.</li></ol>
         </li>
-        <li>Should a confirmed team withdraw, resulting in a free spot within a class on on the grid in general, then the first on that classes' waiting list will be called up fill the spot.
-          <ol><li>Substitute teams that replace previously confirmed teams will not have to pay the entry fee.</li>
-          <li>Substitute teams will not be called up any later than 24 hours before the first free practice session, meaning that if a team withdraws after this point or during an ongoing event, that spot will be left vacant.</li></ol>
+        <li>Should fewer than 35 teams want to enter within 7 days of the opening round of the season, the championship will be cancelled with all entry fees being refunded.
         </li>
-        <li>Any team that withdraws or is withdrawn will not be refunded their entry fee.</li>
+        <li>
+          Should a confirmed team withdraw, resulting in a free spot within a certain class, the first team on that class' waiting list will be called up to fill the vacant spot for the rest of the season.
+          <ol>
+            <li>Substitute teams that replace previously confirmed teams will not have to pay the entry fee.</li>
+            <li>Substitute teams will not be called up any later than 24 hours before a round's first free practice session, meaning that if a team withdraws after this point or during an ongoing event, that spot will be left vacant until the event's conclusion.</li>
+          </ol>
+        </li>
+        <li>Any team that misses 2 rounds without notifying the series administration of their absence before the event, as well as any team that misses 3 rounds in a row, will be withdrawn from the series if their class' waiting list has any potential replacement teams on it. Any team that withdraws or is withdrawn for inactivity will not be refunded their entry fee.</li>
       </ol>
       <h3>6. Paint Schemes</h3>
       <ol class="rulebook-section">
@@ -164,6 +296,21 @@
         </li>
         <li>Custom decal layers, including the event number boards as well as windscreen banners for all cars, will be used no matter whether a team sent in a paint file or not. These decal layers will also be included in the skin pack.</li>
         <li>Custom paint schemes for any single driver session, like both free practice sessions and any eventual test session do not have to be sent in and will not be accepted or included in any kind of skin pack.</li>
+      </ol>
+      <h3>7. Pre-Qualifying</h3>
+      <ol class="rulebook-section">
+        <li>Pre-Qualifying will take place if one or multiple categories require it due to the amount of teams interested in entering exceeding the amount of available slots in the class.</li>
+        <li>The session will be a 3 hour long open qualifying session in which all teams will run together on-track at the same time. This 180 minute long session will be preceeded by a 45 minute long warm-up session, so all teams can join and get used to the track conditions.
+          <ol>
+            <li>Pre-qualifying will also be the only session of the season that will use default iRacing weather conditions. The time of day will be set to 'afternoon' as it will be for all other events during the season.</li>
+          </ol>
+        </li>
+        <li>To pre-qualify, a team must field at least 2 of their drivers in the session. Both of them will be required to set at least one valid timed lap. The sum of both drivers' best laps will be a team's 		pre-qualifying lap time.</li>
+        <li>The order in which teams will fill the available slots in each class based on their pre-qualifying time, from the fastest to the slowest team.
+          <ol>
+            <li>The waiting list will also be filled up based on the order of the teams in the pre-qualifying results: First all teams with valid times that failed to make the cut, then all teams with only one valid driver lap time, then all other teams based on their time of sign-up, with those having signed up longer ago being put above those who have signed up more recently.</li>
+          </ol>
+        </li>
       </ol>
       <h3>8. Warm-up</h3>
       <ol class="rulebook-section">
@@ -186,22 +333,22 @@
       <ol class="rulebook-section">
         <li>All races will utilise the standard rolling start procedure the iRacing software provides with the following alterations:
           <ol><li>The class leaders of all supporting classes should keep a 10 second gap to the last car of the class ahead on the pace lap.</li>
-          <li>All cars and classes, meaning DP, GT and CC must ignore the "green flag" as displayed by iRacing and must remain in their grid formation while also keeping to the pace car speed.</li>
+          <li>All cars and classes, meaning P, PC and GT must ignore the "green flag" as displayed by iRacing and must remain in their grid formation while also keeping to the pace car speed.</li>
           <li>Only the leader of each class will be allowed to initiate the start of their categories’ race by starting to accelerate away from the field in the “starting zone”. Once he has done so, all cars of that class will be free to race. All classes will be subject to this procedure.</li>
           <li>Images of the exact beginning and end points of this “starting zone” will be part of the drivers’ briefing, which will be published before the first free practice session.</li>
-          <li>Teams that start from pit lane must line up at pit exit in a line. They will not be allowed to leave the lane until the race administration declares the pit exit open once the last CC car has passed the first turn. Leaving the pit lane early will result in a 30 second stop-hold penalty.</li></ol>
+          <li>Teams that start from pit lane must line up at pit exit in a line. They will not be allowed to leave the lane until the race administration declares the pit exit open once the last GT car has passed the first turn. Leaving the pit lane early will result in a 30 second stop-hold penalty.</li></ol>
         </li>
         <li>During the race itself, the fair share driving rule will be enabled with a minimum of 2 drivers and a maximum of 6 drivers being able to drive the car.
           <ol><li>As per iRacing rules, a “fair share” is defined as a quarter of an equal share.<br>Example:
-            <pre>2 drivers with a total of 124 laps driven<br>→ 124 laps / 2 drivers = 62 laps per driver on an equal share<br>→ 62 laps / 4 = 15.5 laps → 15 laps minimum per driver</pre>
+            <pre>2 drivers with a total of 114 laps driven<br>→ 114 laps / 2 drivers = 57 laps per driver on an equal share<br>→ 57 laps / 4 = 14.25 laps → 15 laps minimum per driver</pre>
           </li>
-          <li>The minimum “fair share” lap count only applies to the number of drivers defined as the minimum required drivers, meaning only 2 drivers have to fulfil it in this event.</li></ol>
+          <li>The minimum “fair share” lap count only applies to the number of drivers defined as the minimum required drivers, meaning only 2 drivers have to fulfil it in this series.</li></ol>
         </li>
         <li>Additionally, to make sure people don't take too many liberties with the track limits, especially at more modern circuits with multiple tarmac run-off zones, a formula will be used to calculate a team's maximum number of incident points.
           <ol><li>This formula will take both, the number of turns on the circuit as well as the number of laps driven by the team's car into account and looks as follows:
             <pre>Formula: (corners per lap * number of laps by car) / 25 = team's incident limit</pre>
           </li>
-          <li>Using this formula, a team that's driven 124 laps on a circuit with 14 corners would be able to get up to 70 incident points before exceeding the limit. Fractional amounts will always be rounded up to the closest full number.</li>
+          <li>Using this formula, a team that's driven 112 laps on a circuit with 18 corners would be able to get up to 81 incident points before exceeding the limit. Fractional amounts will always be rounded up to the closest full number.</li>
           <li>Exceeding the incident limit will result in the car being disqualified from the race.</li></ol>
         </li>
       </ol>
@@ -241,37 +388,95 @@
       </ol>
       <h3>14. Penalties</h3>
       <ol class="rulebook-section">
-        <li>There are several types of penalties that can be assigned following an investigation by the event administration. The list of possible penalties can be found below.
+        <li>There are several types of penalties that can be assigned following an investigation by the series administration. The list of possible penalties can be found below.
           <ul class="list-group">
             <li class="list-group-item">Warning</li>
             <li class="list-group-item">Drive-Through Penalty</li>
-            <li class="list-group-item">Stop & Hold Penalty (severity is down the event administration)</li>
-            <li class="list-group-item">Time Penalty (severity is down the event administration)</li>
+            <li class="list-group-item">Stop & Hold Penalty of 30 seconds</li>
+            <li class="list-group-item">Stop & Hold Penalty of 60 seconds</li>
+            <li class="list-group-item">Stop & Hold Penalty of 120 seconds</li>
             <li class="list-group-item">Points Deduction (severity is down to the event administration)</li>
             <li class="list-group-item">Disqualifications</li>
-            <li class="list-group-item">Suspensions (meaning exclusions from multiple events)</li>
+            <li class="list-group-item">Exclusions from Multiple Events</li>
           </ul>
         </li>
         <li>Unlike stop-hold penalties, drive-through penalties cannot be combined with pit stops. Violations of this rule will in a further drive-through penalty.</li>
-        <li>Once a team has received a driver-through penalty, they must not cross the timing line on the home straight more than 3 times before entering the pit lane to serve their penalty. Black flags (meaning stop-go or stop-hold penalties) should be served at the earliest opportunity that's available to the driver currently in the car.
+        <li>Once a team has received a drive-through penalty, they must not cross the timing line on the home straight more than 3 times before entering the pit lane to serve their penalty. Black flags (meaning stop-go or stop-hold penalties) should be served at the earliest opportunity that's available to the driver currently in the car.
           <ol>
-            <li>Failure to serve a drive-through penalty within the prescribed amount of laps will result in the team receiving a 15 second stop-hold penalty.</li>
+            <li>Failure to serve a drive-through penalty within the prescribed amount of laps will result in the team receiving a 30 second stop-hold penalty.</li>
           </ol>
         </li>
         <li>Repeat offenders will receive harsher penalties, should they be penalised for the same type of misbehaviour multiple times.</li>
         <li>Penalties can affect teams as well as drivers individually, meaning a team can just as easily be excluded from competition as individual drivers, depending on the severity of the rule violations they committed.</li>
-        <li>Should any warnings or penalties be assigned during or after the race, then they will always be announced on the Sports Car Open Discord before being applied in the game or the race results.  </li>
+        <li>All warnings and penalties that are assigned during or after the race will be posted in the in-game chat, the list of submitted protests as well as the #race_control channel on the series Discord.</li>
       </ol>
-      <h3>15. Classification</h3>
+      <h3>15. Championships</h3>
       <ol class="rulebook-section">
-        <li>All teams who start a race, fulfil the fair-share requirements and do not exceed their personal incident limit will be classified in their achieved overall race position in the official results.</li>
-        <li>The 5 best classified teams of each category will receive an automatic invitation to the 2nd season of the Sports Car Open, provided all of following conditions are fulfilled:
-          <ul class="list-group">
-            <li class="list-group-item">The name of the entrant remains the same (e.g. CoRe SimRacing)</li>
-      			<li class="list-group-item">The team manager is the same person as the team manager for this event</li>
-      			<li class="list-group-item">At least one driver from this event's driver line-up carries over</li>
-          </ul>
+        <li>All teams who start a race, fulfil the fair-share requirements and do not exceed their personal incident limit will be classified in their achieved overall race position in the official results. Points will be given to the top 15 cars within each class.</li>
+        <li>There will be three official championships in the series, one for each class.
+          <ol>
+            <li>The Sports Car Open Prototype title will be awarded to the P team which scores the most points throughout the whole season.</li>
+            <li>The Sports Car Open Prototype Challenge title will be awarded to the PC team which scores the most points throughout the whole season.</li>
+            <li>The Sports Car Open Grand Touring title will be awarded to the GT team which scores the most points throughout the whole season.</li>
+          </ol>
         </li>
+        <li>Championship points will be awarded to the top 15 classified cars within a category using the following scale:
+          <table class="table">
+            <tr>
+              <th>Class Position</th>
+              <th>Points scored</th>
+            </tr>
+            <tr>
+              <td>1st</td>
+              <td>25 points</td>
+            </tr>
+            <tr>
+              <td>2nd</td>
+              <td>20 points</td>
+            </tr>
+              <td>3rd</td>
+              <td>16 points</td>
+            </tr>
+              <td>4th</td>
+              <td>13 points</td>
+            </tr>
+              <td>5th</td>
+              <td>11 points</td>
+            </tr>
+              <td>6th</td>
+              <td>10 points</td>
+            </tr>
+              <td>7th</td>
+              <td>9 points</td>
+            </tr>
+              <td>8th</td>
+              <td>8 points</td>
+            </tr>
+              <td>9th</td>
+              <td>7 points</td>
+            </tr>
+              <td>10th</td>
+              <td>6 points</td>
+            </tr>
+              <td>11th</td>
+              <td>5 points</td>
+            </tr>
+              <td>12th</td>
+              <td>4 points</td>
+            </tr>
+              <td>13th</td>
+              <td>3 points</td>
+            </tr>
+              <td>14th</td>
+              <td>2 points</td>
+            </tr>
+              <td>15th</td>
+              <td>1 points</td>
+            </tr>
+          </table>
+        </li>
+        <li>In the event of a tie in points standings, the position in question will go to the team with the most race victories. If neither team has a win or not more than the other, the position goes to the team with the most second place finishes. If the same applies there, the procedure is continued until the tie can be broken. Should this not be possible, both teams will be declared champions.</li>
+        <li>Following the last round of the season, the top 8 teams in each category will receive automatic invites for the 2019-2020 Sports Car Open season.</li>
       </ol>
       <h3>16. In-Game Session Settings</h3>
       <ol class="rulebook-section">
@@ -288,7 +493,7 @@
         <li>Should any questions arise, team managers, vice managers, drivers and other persons can contact the event administration using the e-mail address below. Responses to any questions about the regulations, team line-up changes or other inquiries will be sent within 24 hours of us receiving the original message.
           <pre>Contact E-Mail Address: <a href="mailto:info@sco.coresimracing.com">info@sco.coresimracing.com</a></pre>
         </li>
-        <li>The event administration will also use a Discord server during events, but can also be contacted there at all other points. The permanent invite link to the Sports Car Open Discord can be found here: https://discord.gg/ShfkyTe
+        <li>The series administration will also use a Discord server during events, but can also be contacted there at all other points. The permanent invite link to the Sports Car Open Discord can be found below: https://discord.gg/ShfkyTe
           <ol><li>The event administration advises all team managers of team mates that are in contact with drivers on-track to be online on the SCO Discord during races. In general, instructions will be given both in-game as well as on Discord, but there's always a chance that in the case of server issues, race control will be affected too, meaning they'll no longer be able to give instructions in-game and must resort to Discord only.</li></ol>
         </li>
         <li>Some members of the event administration can also be contacted via private messages on the iRacing forum. A list of these event administration members can be found below.
@@ -315,9 +520,9 @@
           <li>One by one, all cars will be called out in order of their overall position. They must also go around the track and park up their car behind the car in front of them in the queue that's been started by the overall race leader.</li>
           <li>Drivers should not park their cars bumper to bumper when forming the queue. It's advised to leave a gap of two car lengths to the car ahead.</li>
           <li>Cars that have lost laps due to the mass disconnect will be instructed to do an extra lap before parking up at the end of the queue.</li>
-          <li>The procedure described in19.a.4 to 19.a.6 will happen with all classes: First DP, then GT and then CC.</li>
+          <li>The procedure described in 19.a.4 to 19.a.6 will happen with all classes: First P, then PC and then GT.</li>
           <li>Once all cars are back out on-track and formed up in the queue, all drivers must enable their pit speed limiters before slowly driving away from their parked positions. When driving away, they must remain in single file formation and in to one another.</li>
-          <li>The leaders of the GT and CC classes respectively should leave a gap of about 5 seconds to the last car of the class ahead of them.</li>
+          <li>The leaders of the PC and GT classes respectively should leave a gap of about 5 seconds to the last car of the class ahead of them.</li>
           <li>Once all queued up cars are back rolling, the '10 seconds to green' warning will be given through the race control text chat.</li>
           <li>Once those 10 seconds have passed, the 'GREEN FLAG' message will appear in text chat, meaning that the race is back underway and that all cars are allowed to race each other again.</li></ol>
         </li>
@@ -328,9 +533,9 @@
           <li>Once the race starts, race control will instruct the overall leader to do a lap and stop just shy of the timing line to not start a new lap.</li>
           <li>One by one, all cars will be called out in order of their overall position. They must also go around the track and park up their car behind the car in front of them in the queue that's been started by the overall race leader.</li>
           <li>Drivers should not park their cars bumper to bumper when forming the queue. It's advised to leave a gap of two car lengths to the car ahead.</li>
-          <li>The procedure described in 19.b.5 and 19.b.6 will happen with all classes: First DP, then GT and then CC.</li>
+          <li>he procedure described in 19.b.5 and 19.b.6 will happen with all classes: First P, then PC and then GT.</li>
           <li>Once all cars are back out on-track and formed up in the queue, all drivers must enable their pit speed limiters before slowly driving away from their parked positions. When driving away, they must remain in single file formation and in to one another.</li>
-          <li>The leaders of the GT and CC classes respectively should leave a gap of about 5 seconds to the last car of the class ahead of them.</li>
+          <li>The leaders of the PC and GT classes respectively should leave a gap of about 5 seconds to the last car of the class ahead of them.</li>
           <li>Once all queued up cars are back rolling, the '10 seconds to green' warning will be given through the race control text chat.</li>
           <li>Once those 10 seconds have passed, the 'GREEN FLAG' message will appear in text chat, meaning that the race is back underway and that all cars are allowed to race each other again.</li></ol>
         </li>

@@ -12,9 +12,12 @@ return [
     8 => 'Chevrolet Corvette C6.R',
     9 => 'BMW Z4 GT3',
     10=> 'Porsche 911 GT3 Cup',
-    11=> 'Chevrolet Corvette C7 Daytona Prototype'
+    11=> 'Chevrolet Corvette C7 Daytona Prototype',
+    12=> 'Audi R19',
+    13=> 'Porsche 919',
+    14=> 'Porsche 911 RSR',
   ],
-  'curent_season' => '4',
+  'curent_season' => '5',
   'classes' => [
     1 => [
       'Prototype' => [1],
@@ -29,6 +32,11 @@ return [
       'DP' => [11],
       'GT' => [4,9,6,5],
       'CC' => [10]
+    ],
+    5 => [
+      'P' => [12,13],
+      'PC' => [1],
+      'GT' => [2,3,14]
     ]
   ],
   'cars_to_classes' => [
@@ -55,6 +63,14 @@ return [
       6 => 'GT',
       5 => 'GT',
       10 => 'CC'
+    ],
+    5 => [
+      12 => 'P',
+      13 => 'P',
+      1 => 'PC',
+      2 => 'GT',
+      3 => 'GT',
+      14 => 'GT'
     ]
   ],
   'classNumbers' => [
@@ -94,6 +110,20 @@ return [
       'CC' => [
         'min' => 200,
         'max' => 299
+      ],
+    ],
+    5 => [
+      'P' => [
+        'min' => 1,
+        'max' => 30
+      ],
+      'PC' => [
+        'min' => 31,
+        'max' => 60
+      ],
+      'GT' => [
+        'min' => 61,
+        'max' => 99
       ],
     ]
   ],
