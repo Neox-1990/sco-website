@@ -10,7 +10,7 @@
       <hr>
       <h3>1. Introduction</h3>
       <ol class="rulebook-section">
-        <li>The Sports Car Open Road America 500 is an endurance racing event, which organised and run by CoRe SimRacing on the iRacing.com Motorsports Simulation service. The event will utilise a selection of prototype and grand touring cars in a team-based, multiclass race running on the Full Course layout of Road America.</li>
+        <li>The Sports Car Open is a racing league, which is organised and run by CoRe SimRacing on the iRacing.com Motorsports Simulation service. The series will utilise a selection of prototype and grand touring cars in a team-based, multiclass series running at different types of circuits from all around the world.</li>
         <li>While racing is obviously about competition and trying to achieve the best possible results, we would like to not lose the fun factor, since at the end of the day, it’s still the top priority.</li>
         <li>We also expect all drivers and team representatives to treat each other as well as members of the event administration with respect at all times.</li>
         <li>We are open to suggestions and constructive criticism as well as ideas and other things that contribute to improving our events in general.</li>
