@@ -87,7 +87,7 @@ class CreateTeam extends FormRequest
                 if ($count>0) {
                     $driver = App\Driver::where('iracing_id', intval($iracingid))->with('teams')->first();
                     foreach ($driver->teams as $team) {
-                        if ($team['season_id'] == config('constants.curent_season')) {
+                        if ($team['season_id'] == config('constants.current_season')) {
                             $error_list ['driver'.$i] = "Driver $i is already registered with another team.";
                         }
                     };
@@ -107,7 +107,7 @@ class CreateTeam extends FormRequest
         $error_list = [];
         $count = App\Team::where([
           ['name','=',$this->input('teamname')],
-          ['season_id','=',config('constants.curent_season')]
+          ['season_id','=',config('constants.current_season')]
         ])->count();
         if ($count>0) {
             $error_list['teamname'] = 'A team with the same name is already registered for this season';
@@ -115,7 +115,7 @@ class CreateTeam extends FormRequest
 
         $count = App\Team::where([
           ['number','=',$this->input('teamnumber')],
-          ['season_id','=',config('constants.curent_season')]
+          ['season_id','=',config('constants.current_season')]
         ])->count();
 
         if ($count>0) {
@@ -124,7 +124,7 @@ class CreateTeam extends FormRequest
 
         $count = App\Team::where([
           ['ir_teamid','=',$this->input('iracing_teamid')],
-          ['season_id','=',config('constants.curent_season')]
+          ['season_id','=',config('constants.current_season')]
         ])->count();
 
         if ($count>0) {
@@ -132,13 +132,13 @@ class CreateTeam extends FormRequest
         }
 
         $carToClass = [];
-        foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
+        foreach (config('constants.classes')[config('constants.current_season')] as $class => $cars) {
             foreach ($cars as $value) {
                 $carToClass[$value] = $class;
             }
         }
-        $min = config('constants.classNumbers')[config('constants.curent_season')][$carToClass[$this->input('teamcar')]]['min'];
-        $max = config('constants.classNumbers')[config('constants.curent_season')][$carToClass[$this->input('teamcar')]]['max'];
+        $min = config('constants.classNumbers')[config('constants.current_season')][$carToClass[$this->input('teamcar')]]['min'];
+        $max = config('constants.classNumbers')[config('constants.current_season')][$carToClass[$this->input('teamcar')]]['max'];
         if (!($this->input('teamnumber')<=$max && $this->input('teamnumber')>=$min)) {
             $error_list['teamnumber_invalid'] = 'Your choosen number is not in the numberrange for your choosen car';
         }
@@ -173,7 +173,7 @@ class CreateTeam extends FormRequest
         //Create Team
         $team = new App\Team;
         $team->user_id = $this->user()->id;
-        $team->season_id = config('constants.curent_season');
+        $team->season_id = config('constants.current_season');
         $team->name = $this->input('teamname');
         $team->number = $this->input('teamnumber');
         $team->car = $this->input('teamcar');

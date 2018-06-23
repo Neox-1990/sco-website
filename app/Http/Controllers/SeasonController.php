@@ -15,14 +15,14 @@ class SeasonController extends Controller
     public function index()
     {
         $lastRound = Round::where([
-        ['season_id','=',config('constants.curent_season')],
+        ['season_id','=',config('constants.current_season')],
         ['race_start','>',(new Carbon())->subDays(1)->toDateTimeString()]
       ])->orderBy('race_start', 'asc')
         ->first();
 
         if (is_null($lastRound)) {
             $roundId = Round::where([
-          ['season_id','=',config('constants.curent_season')]
+          ['season_id','=',config('constants.current_season')]
         ])->orderBy('race_start', 'desc')
           ->first()
           ->id;
@@ -35,13 +35,13 @@ class SeasonController extends Controller
 
     public function archiveIndex()
     {
-        $seasons = Season::where([['id', '<>' ,config('constants.curent_season')],['start','<',Carbon::now()]])->get();
+        $seasons = Season::where([['id', '<>' ,config('constants.current_season')],['start','<',Carbon::now()]])->get();
         return view('archive.index', compact('seasons'));
     }
 
     public function archiveShow(Season $season)
     {
-        //$results = Result::where('season_id', config('constants.curent_season'))->get();
+        //$results = Result::where('season_id', config('constants.current_season'))->get();
         $results = DB::table('results')->select(DB::raw('team_id, SUM(points) as points '))->where('season_id', $season->id)->groupBy('team_id')->get();
         $results = $results->map(function ($array, $key) {
             $array = (array)$array;

@@ -30,7 +30,7 @@ class SingleResult
         $this->car = $input[1];
         $this->carclass = '';
         $this->teamid = intval($input[5])*-1;
-        $this->team = Team::where([['ir_teamid','=',$this->teamid],['season_id','=',config('constants.curent_season')]])->withTrashed()->first();
+        $this->team = Team::where([['ir_teamid','=',$this->teamid],['season_id','=',config('constants.current_season')]])->withTrashed()->first();
         $this->points = 0.0;
         $this->out = $input[10];
         $this->laps = intval($input[18]);

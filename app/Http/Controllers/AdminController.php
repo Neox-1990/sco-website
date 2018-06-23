@@ -25,6 +25,7 @@ class AdminController extends Controller
     {
         $this->middleware('isAdmin');
     }
+
     public function index()
     {
         $teams = Team::getSortedTeams();
@@ -32,15 +33,18 @@ class AdminController extends Controller
         //dd($log);
         return view('admin.index', compact('teams', 'log'));
     }
+
     public function managerIndex()
     {
         $users = User::all();
         return view('admin.manager.index', compact('users'));
     }
+
     public function managerEdit(User $user)
     {
         return view('admin.manager.edit', compact('user'));
     }
+
     public function managerUpdate(Request $request, User $user)
     {
         $this->validate($request, [
@@ -70,6 +74,7 @@ class AdminController extends Controller
             return redirect('admin/manager/'.$user->id);
         }
     }
+
     public function logIndex(Request $request)
     {
         $log = LogEntry::query();
@@ -110,10 +115,11 @@ class AdminController extends Controller
     public function teamIndex()
     {
         $teams = Team::getSortedTeams();
-        $deletedTeams = Team::onlyTrashed()->where([['season_id','=',config('constants.curent_season')]])->get();
+        $deletedTeams = Team::onlyTrashed()->where([['season_id','=',config('constants.current_season')]])->get();
         //dd($deletedTeams);
         return view('admin.team.index', compact('teams', 'deletedTeams'));
     }
+
     public function teamList()
     {
         $teams = Team::getConfirmedTeams();
@@ -123,21 +129,21 @@ class AdminController extends Controller
     public function teamUpdate(Request $request, Team $team)
     {
         if ($request->has('confirm')) {
-            $team->status = 2;
+            $team->status = 4;
             $team->save();
             session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: confirmed');
             event(new TeamStatusChangeEvent($team));
             event(new TeamEditEvent($team, 'Status set confirmed'));
             return redirect('admin/teams/');
         } elseif ($request->has('review')) {
-            $team->status = 3;
+            $team->status = 1;
             $team->save();
             session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: reviewed');
             event(new TeamStatusChangeEvent($team));
             event(new TeamEditEvent($team, 'Status set reviewed'));
             return redirect('admin/teams/');
         } elseif ($request->has('waiting')) {
-            $team->status = 1;
+            $team->status = 2;
             $team->save();
             session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: reserve');
             event(new TeamStatusChangeEvent($team));
@@ -149,6 +155,13 @@ class AdminController extends Controller
             session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: pending');
             event(new TeamStatusChangeEvent($team));
             event(new TeamEditEvent($team, 'Status set pending'));
+            return redirect('admin/teams/');
+        } elseif ($request->has('qualified')) {
+            $team->status = 3;
+            $team->save();
+            session()->flash('flash_message_success', 'Status of '.$team->name.' changed to: qualified');
+            event(new TeamStatusChangeEvent($team));
+            event(new TeamEditEvent($team, 'Status set qualified'));
             return redirect('admin/teams/');
         } elseif ($request->has('teamdataupdate')) {
             $team->name = $request->input('teamname');
@@ -230,7 +243,7 @@ class AdminController extends Controller
     public function driverIndex()
     {
         $drivers = Driver::whereHas('teams', function ($query) {
-            $query->where('season_id', '=', config('constants.curent_season'));
+            $query->where('season_id', '=', config('constants.current_season'));
         })->get();
         return view('admin.drivers.index', compact('drivers'));
     }
@@ -260,14 +273,14 @@ class AdminController extends Controller
     public function showEmails()
     {
         $manager = User::whereHas('teams', function ($query) {
-            $query->where([['status', '=', '2'],['season_id', '=', config('constants.curent_season')]]);
+            $query->where([['status', '=', '4'],['season_id', '=', config('constants.current_season')]]);
         })->pluck('email');
         return $manager->implode(', ');
     }
 
     public function resultIndex()
     {
-        $rounds = Round::where('season_id', '=', config('constants.curent_season'))->get();
+        $rounds = Round::where('season_id', '=', config('constants.current_season'))->get();
         //dd($rounds);
         return view('admin.results.index', compact('rounds'));
     }
@@ -304,7 +317,7 @@ class AdminController extends Controller
 
             return view('admin.results.store1', compact('grid', 'round', 'teams'));
         } elseif ($request->has('editedResults')) {
-            foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
+            foreach (config('constants.classes')[config('constants.current_season')] as $class => $cars) {
                 for ($i=0; $i < sizeof($request->request->all()[$class]['number']); $i++) {
                     $classList = $request->request->all()[$class];
                     if ($classList['team'][$i] != 0) {
@@ -314,7 +327,7 @@ class AdminController extends Controller
                         $newResult->incs = $classList['incs'][$i];
                         $newResult->finish_status = $classList['finish'][$i];
                         $newResult->team_id = $classList['team'][$i];
-                        $newResult->season_id = config('constants.curent_season');
+                        $newResult->season_id = config('constants.current_season');
                         $newResult->round_id = $round->id;
                         if ($classList['finish'][$i] != 29) {
                             $newResult->points = config('constants.points')[$classList['number'][$i]];

@@ -29,7 +29,7 @@ class HomeController extends Controller
         $feedData = (new FacebookHelper())->getTextFeedElements(intval((Setting::where('key', '=', 'facebookentries')->first())->value));
         //dd($feedData);
         //$testdate = '2017-10-08 14:50:00';
-        $roundnumber = Round::where([['season_id',config('constants.curent_season')]])->count();
+        $roundnumber = Round::where([['season_id',config('constants.current_season')]])->count();
         //dd($roundnumber);
         $now = new Carbon();
 
@@ -38,7 +38,7 @@ class HomeController extends Controller
         $now->hour = 0;
         $now->minute = 0;
         $now->second = 0;
-        $round = Round::where([['race_start', '>', $now->toDateTimeString()],['season_id',config('constants.curent_season')]])->orderBy('race_start', 'asc')->first();
+        $round = Round::where([['race_start', '>', $now->toDateTimeString()],['season_id',config('constants.current_season')]])->orderBy('race_start', 'asc')->first();
         if ($round != null) {
             $roundid = $round->id;
             $fp1_start = is_null($round->fp1_start)?null:new Carbon($round->fp1_start);
@@ -192,7 +192,7 @@ class HomeController extends Controller
         $showPassword = false;
         $setup = Setting::getSetup();
         if (auth()->check() && $setup['session_password_active'] == 1) {
-            if (auth()->user()->teams->where('status', 2)->count()>0 || auth()->user()->isAdmin == 1) {
+            if (auth()->user()->teams->where('status', 4)->count()>0 || auth()->user()->isAdmin == 1) {
                 $showPassword = true;
             }
         }

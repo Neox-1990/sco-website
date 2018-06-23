@@ -15,28 +15,33 @@ class TeamController extends Controller
     public function index()
     {
         $teams;
-        $classes = config('constants.classes')[config('constants.curent_season')];
+        $classes = config('constants.classes')[config('constants.current_season')];
         foreach ($classes as $classname => $cararray) {
-            $teams[$classname]['confirmed'] = Team::where([['season_id','=',config('constants.curent_season')],['status','=',2]])
+            $teams[$classname]['confirmed'] = Team::where([['season_id','=',config('constants.current_season')],['status','=',4]])
               ->whereIn('car', $cararray)
               ->with(['user'])
               ->orderBy('created_at', 'asc')
               ->get();
-            $teams[$classname]['reviewed'] = Team::where([['season_id','=',config('constants.curent_season')],['status','=',3]])
+            $teams[$classname]['reviewed'] = Team::where([['season_id','=',config('constants.current_season')],['status','=',1]])
               ->whereIn('car', $cararray)
               ->with(['user'])
               ->orderBy('created_at', 'asc')
               ->get();
-            $teams[$classname]['waiting'] = Team::where([['season_id','=',config('constants.curent_season')],['status','=',1]])
+            $teams[$classname]['waiting'] = Team::where([['season_id','=',config('constants.current_season')],['status','=',2]])
               ->whereIn('car', $cararray)
               ->with(['user'])
               ->orderBy('created_at', 'asc')
               ->get();
-            $teams[$classname]['pending'] = Team::where([['season_id','=',config('constants.curent_season')],['status','=',0]])
+            $teams[$classname]['pending'] = Team::where([['season_id','=',config('constants.current_season')],['status','=',0]])
               ->whereIn('car', $cararray)
               ->with(['user'])
               ->orderBy('created_at', 'asc')
               ->get();
+            $teams[$classname]['qualified'] = Team::where([['season_id','=',config('constants.current_season')],['status','=',3]])
+                ->whereIn('car', $cararray)
+                ->with(['user'])
+                ->orderBy('created_at', 'asc')
+                ->get();
 
             $teams[$classname]['waiting'] = $teams[$classname]['waiting']->sort(function ($team1, $team2) {
                 $date1;
@@ -102,10 +107,10 @@ class TeamController extends Controller
 
         $currentTeams=$currentTeams->filter(function (Team $team, $key) {
             //dd($team->deleted_at);
-            return ($team->season_id == config('constants.curent_season') && $team->deleted_at === null);
+            return ($team->season_id == config('constants.current_season') && $team->deleted_at === null);
         });
         $oldTeams=$oldTeams->filter(function (Team $team, $key) {
-            return ($team->season_id != config('constants.curent_season') || $team->deleted_at !== null);
+            return ($team->season_id != config('constants.current_season') || $team->deleted_at !== null);
         });
 
         return view('teams.searchresult', compact('currentTeams', 'oldTeams', 'search'));

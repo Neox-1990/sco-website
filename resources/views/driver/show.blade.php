@@ -25,7 +25,7 @@
         <tr>
           <td><a href="{{url('/teams/'.$team_current['id'])}}">{{$team_current['name']}} #{{$team_current['number']}}</a></td>
           <td>{{config('constants.car_names')[$team_current['car']]}}</td>
-          <td class="text-{{$team_current['status']==0?'danger':($team_current['status']==1?'warning':($team_current['status']==2?'success':'info'))}}">{{config('constants.status_names')[$team_current['status']]}}</td>
+          <td class="text-{{config('constants.status_colors')[$team_current['status']]}}">{{config('constants.status_names')[$team_current['status']]}}</td>
         </tr>
       </table>
     @else

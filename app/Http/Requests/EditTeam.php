@@ -80,7 +80,7 @@ class EditTeam extends FormRequest
 
         $count = App\Team::where([
           ['name','=',$this->input('teamname')],
-          ['season_id','=',config('constants.curent_season')]
+          ['season_id','=',config('constants.current_season')]
         ])->count();
 
         if ($count >= 1 && $team->name != $this->input('teamname')) {
@@ -90,17 +90,17 @@ class EditTeam extends FormRequest
 
         $count = App\Team::where([
           ['number','=',$this->input('teamnumber')],
-          ['season_id','=',config('constants.curent_season')]
+          ['season_id','=',config('constants.current_season')]
         ])->count();
 
         $carToClass = [];
-        foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
+        foreach (config('constants.classes')[config('constants.current_season')] as $class => $cars) {
             foreach ($cars as $value) {
                 $carToClass[$value] = $class;
             }
         }
-        $min = config('constants.classNumbers')[config('constants.curent_season')][$carToClass[$this->input('teamcar')]]['min'];
-        $max = config('constants.classNumbers')[config('constants.curent_season')][$carToClass[$this->input('teamcar')]]['max'];
+        $min = config('constants.classNumbers')[config('constants.current_season')][$carToClass[$this->input('teamcar')]]['min'];
+        $max = config('constants.classNumbers')[config('constants.current_season')][$carToClass[$this->input('teamcar')]]['max'];
         if (!($this->input('teamnumber')<=$max && $this->input('teamnumber')>=$min)) {
             $checkResult['legit'] = false;
             $checkResult['errors']['numberOutOfRange'] = 'You choose a number that is outside of the numberrange for the car';
@@ -114,7 +114,7 @@ class EditTeam extends FormRequest
 
         $count = App\Team::where([
           ['ir_teamid','=',$this->input('iracing_teamid')],
-          ['season_id','=',config('constants.curent_season')]
+          ['season_id','=',config('constants.current_season')]
         ])->count();
 
         if ($count >= 1 && $team->ir_teamid != $this->input('iracing_teamid')) {
@@ -198,7 +198,7 @@ class EditTeam extends FormRequest
             $count = Driver::where('iracing_id', $this->input('driver.iracingid'))->count();
             if ($count>0) {
                 $driver = Driver::where('iracing_id', $this->input('driver.iracingid'))->first();
-                $count = $driver->teams()->where('season_id', config('constants.curent_season'))->count();
+                $count = $driver->teams()->where('season_id', config('constants.current_season'))->count();
                 if ($count>0) {
                     $checkResult['legit'] = false;
                     $checkResult['errors']['driverTakenError'] = 'The driver is already part of another team in this season.';

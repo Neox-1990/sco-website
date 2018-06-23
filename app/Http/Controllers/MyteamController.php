@@ -25,10 +25,10 @@ class MyteamController extends Controller
     public function show()
     {
         $user = auth()->user();
-        $season = Season::where('id', config('constants.curent_season'))->first();
+        $season = Season::where('id', config('constants.current_season'))->first();
         $teams = Team::with('drivers')
           ->where('user_id', $user->id)
-          ->where('season_id', config('constants.curent_season'))
+          ->where('season_id', config('constants.current_season'))
           ->get();
         return view('myteams.index', compact('teams', 'season'));
     }
@@ -71,7 +71,7 @@ class MyteamController extends Controller
             return redirect('/myteams/');
         }
         $legit = false;
-        if ($team->user()->first()->id == auth()->id() && $team->season()->first()->id == config('constants.curent_season')) {
+        if ($team->user()->first()->id == auth()->id() && $team->season()->first()->id == config('constants.current_season')) {
             $legit = true;
         }
         if (!$legit) {
@@ -80,12 +80,12 @@ class MyteamController extends Controller
         $numbers = Team::getClassNumbers();
         $classcars = Team::getCarToClassArray();
         $carClass = $classcars[$team->car];
-        foreach (config('constants.classes')[config('constants.curent_season')][$carClass] as $value) {
+        foreach (config('constants.classes')[config('constants.current_season')][$carClass] as $value) {
             $numbers[$value][$team->number] = $team->number;
         }
         $deadline = new Carbon((Setting::getSetup())['confirmed_carchange']);
         $deadline = $deadline->gt(new Carbon);
-        $classcars = config('constants.classes')[config('constants.curent_season')][$carClass];
+        $classcars = config('constants.classes')[config('constants.current_season')][$carClass];
 
         $now = Carbon::now('UTC');
         //$now = new Carbon('2017-10-05 16:59:59', 'UTC');
@@ -106,7 +106,7 @@ class MyteamController extends Controller
             return redirect('/myteams/');
         }
         $legit = false;
-        if ($team->user()->first()->id != auth()->id() || $team->season()->first()->id != config('constants.curent_season')) {
+        if ($team->user()->first()->id != auth()->id() || $team->season()->first()->id != config('constants.current_season')) {
             session()->flash('flash_message_alert', 'An error occured');
             return view('myteams.edit', compact('legit', 'team'));
         }

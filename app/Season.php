@@ -18,4 +18,8 @@ class Season extends Model
     {
         return $this->hasMany(Result::class);
     }
+    public function invites()
+    {
+        return $this->hasMany(Invite::class);
+    }
 }

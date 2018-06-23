@@ -54,15 +54,7 @@
           <tr>
             <td>Status</td>
             <td>
-              @if ($team['status'] == 0)
-                <p class="text-danger">{{config('constants.status_names')[$team['status']]}}</p>
-              @elseif ($team['status'] == 1)
-                <p class="text-warning">{{config('constants.status_names')[$team['status']]}}</p>
-              @elseif($team['status'] == 2)
-                <p class="text-success">{{config('constants.status_names')[$team['status']]}}</p>
-              @else
-                <p class="text-info">{{config('constants.status_names')[$team['status']]}}</p>
-              @endif
+              <p class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</p>
             </td>
           </tr>
           @if ($deadline)
@@ -103,15 +95,7 @@
             <tr>
               <td>Status</td>
               <td>
-                @if ($team['status'] == 0)
-                  <p class="text-danger">{{config('constants.status_names')[$team['status']]}}</p>
-                @elseif ($team['status'] == 1)
-                  <p class="text-warning">{{config('constants.status_names')[$team['status']]}}</p>
-                @elseif($team['status'] == 2)
-                  <p class="text-success">{{config('constants.status_names')[$team['status']]}}</p>
-                @else
-                  <p class="text-info">{{config('constants.status_names')[$team['status']]}}</p>
-                @endif
+                <p class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</p>
               </td>
             </tr>
             <tr>

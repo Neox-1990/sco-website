@@ -32,7 +32,7 @@
             <tr>
               <td>Car: {{config('constants.car_names')[$team->car]}}</td>
               <td>iRacing Team ID: {{$team->ir_teamid}}</td>
-              <td>Status: <span class="text-{{$team['status']==0?'danger':($team['status']==1?'warning':($team['status']==2?'success':'info'))}}">{{config('constants.status_names')[$team['status']]}}</span></td>
+              <td>Status: <span class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</span></td>
             </tr>
           </table>
         </div>

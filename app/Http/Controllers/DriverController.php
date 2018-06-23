@@ -39,15 +39,15 @@ class DriverController extends Controller
         $teams_old = $driver
           ->teams()
           ->withTrashed()
-          ->where('season_id', '<>', config('constants.curent_season'))
+          ->where('season_id', '<>', config('constants.current_season'))
           ->get();
         $teams_old2 = $driver
             ->teams()
             ->withTrashed()
-            ->where([['season_id', '=', config('constants.curent_season')],['deleted_at','<>', null]])
+            ->where([['season_id', '=', config('constants.current_season')],['deleted_at','<>', null]])
             ->get();
         $teams_old->concat($teams_old2);
-        $team_current = $driver->teams()->where('season_id', '=', config('constants.curent_season'))->first();
+        $team_current = $driver->teams()->where('season_id', '=', config('constants.current_season'))->first();
         return view('driver.show', compact('driver', 'teams_old', 'team_current'));
     }
     public function index()

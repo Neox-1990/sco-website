@@ -17,7 +17,7 @@ return [
     13=> 'Porsche 919',
     14=> 'Porsche 911 RSR',
   ],
-  'curent_season' => '5',
+  'current_season' => '5',
   'classes' => [
     1 => [
       'Prototype' => [1],
@@ -129,9 +129,17 @@ return [
   ],
   'status_names' => [
     0 => 'pending',
-    1 => 'reserve',
-    2 => 'confirmed',
-    3 => 'reviewed'
+    1 => 'reviewed',
+    2 => 'waitinglist',
+    3 => 'qualified',
+    4 => 'confirmed'
+  ],
+  'status_colors' => [
+    0 => 'danger',
+    1 => 'primary',
+    2 => 'warning',
+    3 => 'info',
+    4 => 'success'
   ],
   'points' => [
     1 => 0,

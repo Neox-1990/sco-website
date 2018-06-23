@@ -37,15 +37,15 @@ class Team extends Model
     {
         $classNumbers = [];
 
-        foreach (config('constants.classNumbers')[config('constants.curent_season')] as $className => $value) {
+        foreach (config('constants.classNumbers')[config('constants.current_season')] as $className => $value) {
             $classNumbers[$className] = [];
             for ($i=$value['min']; $i <= $value['max'] ; $i++) {
                 $classNumbers[$className][$i] = $i;
             }
         }
-        $teams = Team::where('season_id', config('constants.curent_season'))->get();
+        $teams = Team::where('season_id', config('constants.current_season'))->get();
         $classCarLUT = [];
-        foreach (config('constants.classes')[config('constants.curent_season')] as $className => $cars) {
+        foreach (config('constants.classes')[config('constants.current_season')] as $className => $cars) {
             foreach ($cars as $value) {
                 $classCarLUT [$value] = $className;
             }
@@ -69,20 +69,22 @@ class Team extends Model
     public static function getSortedTeams()
     {
         $teams = [];
-        $classes = config('constants.classes')[config('constants.curent_season')];
+        $classes = config('constants.classes')[config('constants.current_season')];
         foreach ($classes as $name => $cararray) {
             $teams[$name] = [
             'pending' => new Collection,
-            'waitinglist' => new Collection,
             'reviewed' => new Collection,
+            'waitinglist' => new Collection,
+            'qualified' => new Collection,
             'confirmed' => new Collection
           ];
             foreach ($cararray as $value) {
-                $teams[$name]['pending'] = $teams[$name]['pending']->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 0], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
-                $waitinglist = Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 1], ['car','=',$value]])->orderBy('created_at', 'asc')->get();
+                $teams[$name]['pending'] = $teams[$name]['pending']->merge(Team::where([['season_id','=',config('constants.current_season')], ['status', '=', 0], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
+                $waitinglist = Team::where([['season_id','=',config('constants.current_season')], ['status', '=', 2], ['car','=',$value]])->orderBy('created_at', 'asc')->get();
                 $teams[$name]['waitinglist'] = $teams[$name]['waitinglist']->merge($waitinglist);
-                $teams[$name]['reviewed'] = $teams[$name]['reviewed']->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 3], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
-                $teams[$name]['confirmed'] = $teams[$name]['confirmed']->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
+                $teams[$name]['reviewed'] = $teams[$name]['reviewed']->merge(Team::where([['season_id','=',config('constants.current_season')], ['status', '=', 1], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
+                $teams[$name]['qualified'] = $teams[$name]['qualified']->merge(Team::where([['season_id','=',config('constants.current_season')], ['status', '=', 3], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
+                $teams[$name]['confirmed'] = $teams[$name]['confirmed']->merge(Team::where([['season_id','=',config('constants.current_season')], ['status', '=', 4], ['car','=',$value]])->orderBy('created_at', 'asc')->get());
             }
             $waitinglist = ($teams[$name]['waitinglist'])->sort(function ($team1, $team2) {
                 $date1;
@@ -107,14 +109,14 @@ class Team extends Model
     public static function getConfirmedTeams($withTrashed = false)
     {
         $teams = [];
-        $classes = config('constants.classes')[config('constants.curent_season')];
+        $classes = config('constants.classes')[config('constants.current_season')];
         foreach ($classes as $name => $cararray) {
             $teams[$name] = new Collection;
             foreach ($cararray as $value) {
                 if ($withTrashed) {
-                    $teams[$name] = $teams[$name]->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',$value]])->with('drivers')->withTrashed()->get());
+                    $teams[$name] = $teams[$name]->merge(Team::where([['season_id','=',config('constants.current_season')], ['status', '=', 4], ['car','=',$value]])->with('drivers')->withTrashed()->get());
                 } else {
-                    $teams[$name] = $teams[$name]->merge(Team::where([['season_id','=',config('constants.curent_season')], ['status', '=', 2], ['car','=',$value]])->with('drivers')->get());
+                    $teams[$name] = $teams[$name]->merge(Team::where([['season_id','=',config('constants.current_season')], ['status', '=', 4], ['car','=',$value]])->with('drivers')->get());
                 }
             }
             $teams[$name] = $teams[$name]->sortBy(function (Team $team) {
@@ -127,7 +129,7 @@ class Team extends Model
     public static function getCarToClassArray()
     {
         $result = [];
-        foreach (config('constants.classes')[config('constants.curent_season')] as $class => $cars) {
+        foreach (config('constants.classes')[config('constants.current_season')] as $class => $cars) {
             foreach ($cars as $value) {
                 $result[$value] = $class;
             }

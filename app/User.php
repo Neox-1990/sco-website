@@ -19,6 +19,11 @@ class User extends Authenticatable
         return $this->hasMany(LogEntry::class);
     }
 
+    public function invites()
+    {
+        return $this->hasMany(Invite::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

@@ -12,7 +12,7 @@ class RoundController extends Controller
     public function show(Round $round)
     {
         //dd($round);
-        $all = Round::where('season_id', config('constants.curent_season'))->get();
+        $all = Round::where('season_id', config('constants.current_season'))->get();
         $title = explode('#', $round->combo);
         $title[1] = explode(' - ', $title[1]);
         $times = [
@@ -23,7 +23,7 @@ class RoundController extends Controller
           'q' => new Carbon($round->qual_start),
           'r' => new Carbon($round->race_start),
         ];
-        $season = Season::where('id', config('constants.curent_season'))->first();
+        $season = Season::where('id', config('constants.current_season'))->first();
         return view('rounds.show', compact('round', 'all', 'title', 'times', 'season'));
     }
 }

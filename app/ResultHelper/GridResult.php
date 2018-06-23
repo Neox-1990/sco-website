@@ -28,7 +28,7 @@ class GridResult
             $this->grid[$key]->setCar(config('constants.ircars_to_car')[$result->getCar()]);
         }
         foreach ($this->grid as $key => $result) {
-            $this->grid[$key]->setCarClass(config('constants.cars_to_classes')[config('constants.curent_season')][$result->getCar()]);
+            $this->grid[$key]->setCarClass(config('constants.cars_to_classes')[config('constants.current_season')][$result->getCar()]);
         }
         foreach ($this->grid as $result) {
             $this->gridClasses[$result->getCarClass()][] = $result;
