@@ -15,17 +15,21 @@ use Carbon\Carbon;
         <tr>
           <th>class</th>
           <th>pending</th>
-          <th>reserve</th>
           <th>reviewed</th>
+          <th>reserve</th>
+          <th>qualified</th>
           <th>confirmed</th>
+          <th>max</th>
         </tr>
         @foreach ($teams as $name => $list)
           <tr>
             <td>{{$name}}</td>
             <td>{{$list['pending']->count()}}</td>
-            <td>{{$list['waitinglist']->count()}}</td>
             <td>{{$list['reviewed']->count()}}</td>
+            <td>{{$list['waitinglist']->count()}}</td>
+            <td>{{$list['qualified']->count()}}</td>
             <td>{{$list['confirmed']->count()}}</td>
+            <td>{{config('constants.class_limits')[config('constants.current_season')][$name]}}</td>
           </tr>
         @endforeach
       </table>

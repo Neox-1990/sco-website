@@ -95,3 +95,7 @@ Route::get('/admin/season/edit/{season}/editRound/{round}', 'AdminController@rou
 Route::post('/admin/season/edit/{season}/editRound/{round}', 'AdminController@roundUpdate');
 Route::get('/admin/season/edit/{season}/createRound', 'AdminController@roundCreate');
 Route::post('/admin/season/edit/{season}/createRound', 'AdminController@roundStore');
+Route::get('/admin/invites', 'AdminController@invitesIndex');
+Route::post('/admin/invites', 'AdminController@invitesProcess');
+
+Route::get('/ajax/formerteam/{team}', 'AjaxController@formerTeams');

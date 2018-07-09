@@ -48,10 +48,10 @@ class EditTeam extends FormRequest
     public function check(Team $team)
     {
         $checkResult;
-        if ($this->input('updateTeamdata') !== null) {
+        /*if ($this->input('updateTeamdata') !== null) {
             //dd("Dataupdate");
             $checkResult = $this->teamDataUpdate($team);
-        } elseif ($this->input('removeDriver') !== null) {
+        } else*/if ($this->input('removeDriver') !== null) {
             //dd("Deletedriver");
             $checkResult = $this->removeDriver($team);
         } elseif ($this->input('addDriver') !== null) {
@@ -164,10 +164,11 @@ class EditTeam extends FormRequest
             $checkResult['errors']['driverTeamPartError'] = 'The driver you tried to remove isn\'t part of this team.';
         }
 
+        //enough drivers left in team
         $count = $team->drivers()->count();
-        if ($count <= 2) {
+        if ($count <= config('constants.driver_limits')['min']) {
             $checkResult['legit'] = false;
-            $checkResult['errors']['driverTeamAmountError'] = 'Your team need at least two drivers. Add a new driver first or delete the team alltogether.';
+            $checkResult['errors']['driverTeamAmountError'] = 'Your team need at least '.config('constants.driver_limits')['min'].' drivers. Add a new driver first or delete the team alltogether.';
         }
 
         if ($checkResult['legit']) {
@@ -190,9 +191,15 @@ class EditTeam extends FormRequest
           'errors' => [],
           'flash' => ''
         ];
-        if ($team->drivers()->count()>=6) {
+        $sr_limits = config('constants.sr_limits')[config('constants.cars_to_classes')[config('constants.current_season')][$team['car']]];
+        $sr_lower_limit = array_pop($sr_limits);
+        if ($team->drivers()->count()>=config('constants.driver_limits')['max']) {
             $checkResult['legit'] = false;
-            $checkResult['errors']['maxDriverLimit'] = 'There are already 6 drivers in this team.';
+            $checkResult['errors']['maxDriverLimit'] = 'There are already '.config('constants.driver_limits')['min'].' drivers in this team.';
+            $checkResult['flash'] = 'An error occurred';
+        } elseif (!(in_array($this->input('driver.sr1'), $sr_limits) || $this->input('driver.sr1') == $sr_lower_limit && $this->input('driver.sr2') >= 2)) {
+            $checkResult['legit'] = false;
+            $checkResult['errors']['driverNotLegible'] = 'The driver doesn\'t fulfil the sr-requirements.';
             $checkResult['flash'] = 'An error occurred';
         } else {
             $count = Driver::where('iracing_id', $this->input('driver.iracingid'))->count();

@@ -1,5 +1,5 @@
 export const tablesorterInit = function(){
-  $('.sco-table-sort').on('click',tablesorter).append('<span class="ml-3 sco-sort-icon"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>');
+  $('.sco-table-sort').on('click',tablesorter).append('<span class="ml-3 sco-sort-icon"><i class="fas fa-sort-down " aria-hidden="true"></i></span>');
 }
 export const tablesorter = function(){
   const column = $(this).index();
@@ -8,11 +8,11 @@ export const tablesorter = function(){
   if($(this).attr('data-sort-dir') == 'asc'){
     dir = 1;
     $(this).attr('data-sort-dir', 'desc');
-    $(this).find('.sco-sort-icon').empty().append('<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>');
+    $(this).find('.sco-sort-icon').empty().append('<i class="fas fa-sort-up" aria-hidden="true"></i>');
   }else{
     dir = -1;
     $(this).attr('data-sort-dir', 'asc');
-    $(this).find('.sco-sort-icon').empty().append('<i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>');
+    $(this).find('.sco-sort-icon').empty().append('<i class="fas fa-sort-down " aria-hidden="true"></i>');
   }
   var table = $(this).parent().parent().parent().find('tbody').first();
   var rows = table.find('tr').get();

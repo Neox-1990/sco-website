@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Team;
 use App\Round;
+use App\Invite;
 use App\Season;
 use App\Setting;
 use App\Events\TeamDeleteEvent;
@@ -39,8 +40,12 @@ class MyteamController extends Controller
             session()->flash('flash_message_alert', 'Teams are frozen right now. You can\'t add teams.');
             return redirect('/myteams/');
         }
+        $has_invite = Invite::where([['user_id','=', auth()->user()->id],['season_id', '=', config('constants.current_season')],['used', '=', null]])->count() > 0;
         $numbers = Team::getClassNumbers();
-        return view('myteams.create', compact('numbers'));
+        $min_ir = max(config('constants.ir_limits'));
+        $former_teams = Team::where([['user_id', auth()->user()->id],['season_id', '<>', config('constants.current_season')]])->with('season')->get();
+        //dd($former_teams);
+        return view('myteams.create', compact('has_invite', 'numbers', 'min_ir', 'former_teams'));
     }
     public function store(CreateTeam $request)
     {

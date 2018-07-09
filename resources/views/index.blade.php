@@ -7,7 +7,7 @@
     @foreach ($feedData as $feedElement)
       <div class="jumbotron facebook-feed-element">
         <div class="facebook-feed-element-header">
-          <a href="https://www.facebook.com/{{$feedElement['id']}}" class="mr-3">Posted on <i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/{{$feedElement['id']}}" class="mr-3">Posted on <i class="fab fa-facebook" aria-hidden="true"></i></a>
           <span class="facebook-feed-element-date">{{(new Carbon\Carbon($feedElement['created_time']))->format('jS F Y - H:i:s')}}</span>
           @if (array_key_exists('link',$feedElement))
             <a class="btn btn-outline-primary btn-sm ml-5" href="{{$feedElement['link']}}">Link</a>

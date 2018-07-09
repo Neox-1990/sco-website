@@ -4,6 +4,9 @@ namespace App\Http\Requests;
 
 use App;
 use App\Team;
+use App\Invite;
+use Carbon\Carbon;
+
 use App\Events\TeamCreateEvent;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -26,52 +29,77 @@ class CreateTeam extends FormRequest
      */
     public function rules()
     {
-        return [
-          'teamname' => 'required|max:255',
-          'teamcar' => 'required|integer',
-          'teamnumber' => 'required|integer|max:999',
-          'iracing_teamid' => 'required|integer|max:9999999',
+        $ir_limit = config('constants.ir_limits')[config('constants.cars_to_classes')[config('constants.current_season')][$this->input('teamcar')]];
 
-          'driver1.name' => 'required|max:255',
-          'driver1.iracingid' => 'required|numeric|max:9999999',
-          'driver1.ir' => 'required|numeric|min:2000|max:12000',
-          'driver1.sr1' => 'required|in:c,b,a,p',
-          'driver1.sr2' => 'required|numeric|max:128',
-
-          'driver2.name' => 'required|max:255',
-          'driver2.iracingid' => 'required|numeric|max:9999999',
-          'driver2.ir' => 'required|numeric|min:2000|max:12000',
-          'driver2.sr1' => 'required|in:c,b,a,p',
-          'driver2.sr2' => 'required|numeric|max:128',
-
-          'driver3.name' => 'nullable|required_with:driver3.iracingid|max:255',
-          'driver3.iracingid' => 'nullable|required_with:driver3.name|numeric|max:9999999',
-          'driver3.ir' => 'nullable|required_with_all:driver3.iracingid,driver3.name|numeric|min:2000|max:12000',
-          'driver3.sr1' => 'nullable|required_with_all:driver3.iracingid,driver3.name|in:c,b,a,p',
-          'driver3.sr2' => 'nullable|required_with_all:driver3.iracingid,driver3.name|numeric|max:128',
-
-          'driver4.name' => 'nullable|required_with:driver4.iracingid|max:255',
-          'driver4.iracingid' => 'nullable|required_with:driver4.name|numeric|max:9999999',
-          'driver4.ir' => 'nullable|required_with_all:driver4.iracingid,driver4.name|numeric|min:2000|max:12000',
-          'driver4.sr1' => 'nullable|required_with_all:driver4.iracingid,driver4.name|in:c,b,a,p',
-          'driver4.sr2' => 'nullable|required_with_all:driver4.iracingid,driver4.name|numeric|max:128',
-
-          'driver5.name' => 'nullable|required_with:driver5.iracingid|max:255',
-          'driver5.iracingid' => 'nullable|required_with:driver5.name|numeric|max:9999999',
-          'driver5.ir' => 'nullable|required_with_all:driver5.iracingid,driver5.name|numeric|min:2000|max:12000',
-          'driver5.sr1' => 'nullable|required_with_all:driver5.iracingid,driver5.name|in:c,b,a,p',
-          'driver5.sr2' => 'nullable|required_with_all:driver5.iracingid,driver5.name|numeric|max:128',
-
-          'driver6.name' => 'nullable|required_with:driver6.iracingid|max:255',
-          'driver6.iracingid' => 'nullable|required_with:driver6.name|numeric|max:9999999',
-          'driver6.ir' => 'nullable|required_with_all:driver6.iracingid,driver6.name|numeric|min:2000|max:12000',
-          'driver6.sr1' => 'nullable|required_with_all:driver6.iracingid,driver6.name|in:c,b,a,p',
-          'driver6.sr2' => 'nullable|required_with_all:driver6.iracingid,driver6.name|numeric|max:128',
-
-          '*.iracingid' => 'distinct'
+        $rules = [
+        'teamname' => 'required|max:255',
+        'teamcar' => 'required|integer',
+        'teamnumber' => 'required|integer|max:999',
+        'iracing_teamid' => 'required|integer|max:9999999'
       ];
+        for ($i = 1; $i <= config('constants.driver_limits')['max']; $i++) {
+            if ($i <= config('constants.driver_limits')['min']) {
+                $rules["driver$i.name"]     = "required|max:255";
+                $rules["driver$i.iracingid"]= "required|numeric|max:9999999";
+                $rules["driver$i.ir"]       = "required|numeric|min:$ir_limit|max:12000";
+                $rules["driver$i.sr1"]      = "required|in:c,b,a,p";
+                $rules["driver$i.sr2"]      = "required|numeric|max:128";
+            } else {
+                $rules["driver$i.name"]       = "nullable|required_with:driver$i.iracingid|max:255";
+                $rules["driver$i.iracingid"]  = "nullable|required_with:driver$i.name|numeric|max:9999999";
+                $rules["driver$i.ir"]         = "nullable|required_with_all:driver$i.iracingid,driver$i.name|numeric|min:$ir_limit|max:12000";
+                $rules["driver$i.sr1"]        = "nullable|required_with_all:driver$i.iracingid,driver$i.name|in:c,b,a,p";
+                $rules["driver$i.sr2"]        = "nullable|required_with_all:driver$i.iracingid,driver$i.name|numeric|max:128";
+            }
+        }
+        $rules['*.iracingid'] = 'distinct';
+        //dd($rules);
+        return $rules;
 
         //return [];
+    }
+
+    public function messages()
+    {
+        $ir_limit = config('constants.ir_limits')[config('constants.cars_to_classes')[config('constants.current_season')][$this->input('teamcar')]];
+
+        $messages = [
+        'teamname.required' => 'A teamname is required',
+        'teamname.max' => 'Teamname is to long (max 255)',
+        'teamcar.required' => 'You need to select a car',
+        'teamcar.integer' => 'Don\'t tinker with the fucking page',
+        'teamnumber.required' => 'A teamnumber is required',
+        'teamnumber.integer' => 'Don\'t tinker with the fucking page',
+        'teamnumber.max' => 'The teamnumber is to large',
+        'iracing_teamid.required' => 'iRacing teamid is missing',
+        'iracing_teamid.integer' => 'Pleaser enter only numbers as teamid',
+        'iracing_teamid.max' => 'iRacing teamid is to large'
+      ];
+
+        for ($i = 1; $i <= config('constants.driver_limits')['max']; $i++) {
+            $messages["driver$i.name.required"] = "Driver $i name required";
+            $messages["driver$i.name.max"] = "Driver $i name to long";
+
+            $messages["driver$i.iracingid.required"] = "Driver $i iRacing ID required";
+            $messages["driver$i.iracingid.numeric"] = "Driver $i iRacing ID must be a number";
+            $messages["driver$i.iracingid.max"] = "Driver $i iRacing ID to long";
+
+            $messages["driver$i.ir.required"] = "Driver $i iRating is required";
+            $messages["driver$i.ir.numeric"] = "Driver $i iRating must be a number";
+            $messages["driver$i.ir.min"] = "Driver $i iRating must be at least $ir_limit";
+
+            $messages["driver$i.sr1.required"] = "Driver $i license required";
+            $messages["driver$i.sr1.in"] = "Driver $i license must be valid";
+
+            $messages["driver$i.sr2.required"] = "Driver $i safety rating is required";
+            $messages["driver$i.sr2.numeric"] = "Driver $i safety rating must be a number";
+            $messages["driver$i.sr2.max"] = "Driver $i safety rating to high";
+
+            $messages["driver$i.*.required_with_all"] = "Information missing for driver $i";
+            $messages["driver$i.*.required_with"] = "Information missing for driver $i";
+        }
+
+        return $messages;
     }
 
     /**
@@ -80,9 +108,17 @@ class CreateTeam extends FormRequest
     public function checkDrivers()
     {
         $error_list = [];
-        for ($i = 1; $i < 7; $i++) {
+        //Check if Drivers are already in a team
+        $sr_limits = config('constants.sr_limits')[config('constants.cars_to_classes')[config('constants.current_season')][$this->input('teamcar')]];
+        $sr_lower_limit = array_pop($sr_limits);
+        //dd($sr_limits);
+        for ($i = 1; $i <= config('constants.driver_limits')['max']; $i++) {
             $iracingid = $this->input('driver'.$i.'.iracingid');
             if ($iracingid != '' || $iracingid != null) {
+                if (!(in_array($this->input('driver'.$i.'.sr1'), $sr_limits) || $this->input('driver'.$i.'.sr1') == $sr_lower_limit && $this->input('driver'.$i.'.sr2') >= 2)) {
+                    $error_list ['driver'.$i] = "Driver $i does not fulfil the SR-requirements";
+                }
+
                 $count = App\Driver::where('iracing_id', intval($iracingid))->count();
                 if ($count>0) {
                     $driver = App\Driver::where('iracing_id', intval($iracingid))->with('teams')->first();
@@ -94,6 +130,7 @@ class CreateTeam extends FormRequest
                 }
             }
         }
+        //dd($error_list);
         return $error_list;
     }
 
@@ -104,6 +141,7 @@ class CreateTeam extends FormRequest
      */
     public function checkTeam()
     {
+        //Test Unique Teamname
         $error_list = [];
         $count = App\Team::where([
           ['name','=',$this->input('teamname')],
@@ -113,6 +151,7 @@ class CreateTeam extends FormRequest
             $error_list['teamname'] = 'A team with the same name is already registered for this season';
         }
 
+        //Test Unique Teamnumber
         $count = App\Team::where([
           ['number','=',$this->input('teamnumber')],
           ['season_id','=',config('constants.current_season')]
@@ -122,6 +161,7 @@ class CreateTeam extends FormRequest
             $error_list['teamnumber'] = 'A team with the same number is already registered for this season';
         }
 
+        //Test Unique TeamID
         $count = App\Team::where([
           ['ir_teamid','=',$this->input('iracing_teamid')],
           ['season_id','=',config('constants.current_season')]
@@ -131,6 +171,7 @@ class CreateTeam extends FormRequest
             $error_list['iracing_teamid'] = 'A team with the same iRacing Team ID is already registered for this season';
         }
 
+        //Test Valid Car Number
         $carToClass = [];
         foreach (config('constants.classes')[config('constants.current_season')] as $class => $cars) {
             foreach ($cars as $value) {
@@ -143,12 +184,27 @@ class CreateTeam extends FormRequest
             $error_list['teamnumber_invalid'] = 'Your choosen number is not in the numberrange for your choosen car';
         }
 
+        //Test if Invite is valid if used
+        if ($this->filled('useinvite')) {
+            if (Invite::where([['user_id','=', auth()->user()->id],['season_id', '=', config('constants.current_season')],['used', '=', null]])->count() <= 0) {
+                $error_list['invite_invalid'] = 'You don\'t have a valid invite';
+            }
+        }
+        //dd($error_list);
         return $error_list;
     }
 
     public function enterTeam()
     {
         $driverIds = [];
+        $team_postfix = '';
+        if ($this->filled('useinvite')) {
+            $team_postfix = ' *** ';
+            $invite = Invite::where([['user_id','=', auth()->user()->id],['season_id', '=', config('constants.current_season')],['used', '=', null]])->first();
+            $invite->used = Carbon::now().'';
+            $invite->save();
+        }
+        
         //Add Drivers in DB and store in Array
         for ($i=1; $i < 7; $i++) {
             if ($this->input('driver'.$i.'.iracingid') != null || $this->input('driver'.$i.'.iracingid') != '') {
@@ -174,7 +230,7 @@ class CreateTeam extends FormRequest
         $team = new App\Team;
         $team->user_id = $this->user()->id;
         $team->season_id = config('constants.current_season');
-        $team->name = $this->input('teamname');
+        $team->name = trim($this->input('teamname')).$team_postfix;
         $team->number = $this->input('teamnumber');
         $team->car = $this->input('teamcar');
         $team->status = 0;

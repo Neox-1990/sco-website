@@ -18,92 +18,27 @@
         </div>
       @endif
       @include('master.formerrors')
-      @if ($team['status'] != 0)
-        @if ($deadline)
-          <form class="" action="{{url('/myteams/edit/'.$team->id)}}" method="post">
-            {{csrf_field()}}
-            <input type="hidden" name="teamname" value="{{$team['name']}}">
-            <input type="hidden" name="teamnumber" value="{{$team['number']}}">
-            <input type="hidden" name="iracing_teamid" value="{{$team['ir_teamid']}}">
-        @endif
-        <table class="table">
-          <tr>
-            <td>Name</td>
-            <td>#{{$team['number']}} {{$team['name']}}</td>
-          </tr>
-          @if ($deadline)
-            <tr>
-              <td>Car</td>
-              <td>
-              <select id="car" class="form-control" name="teamcar" style="display: inline-block;width:auto;">
-                @foreach ($classcars as $value)
-                  <option value="{{$value}}" {{old('teamcar') !== null?(old('teamcar') == $value?'selected':''):($team['car'] == $value?'selected':'')}}>{{config('constants.car_names')[$value]}}</option>
-                @endforeach
-              </select></td>
-            </tr>
-          @else
-            <tr>
-              <td>Car</td>
-              <td>{{config('constants.car_names')[$team['car']]}}</td>
-            </tr>
-          @endif
-          <tr>
-            <td>iRacing Team ID</td>
-            <td>{{$team['ir_teamid']}}</td>
-          </tr>
-          <tr>
-            <td>Status</td>
-            <td>
-              <p class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</p>
-            </td>
-          </tr>
-          @if ($deadline)
-            <tr>
-              <td colspan="2"><input type="submit" name="updateTeamdata" value="Update teamdata" class="btn btn-primary"></td>
-            </tr>
-          @endif
-        </table>
-        @if ($deadline)
-        </form>
-        @endif
-      @else
-        <form class="" action="{{url('/myteams/edit/'.$team->id)}}" method="post">
-          {{csrf_field()}}
-          <table class="table">
-            <tr>
-              <td>Name</td>
-              <td>#
-              <select id="number" class="form-control" name="teamnumber" style="display: inline-block;width:auto;">
-                @for ($i=1; $i < 150; $i++)
-                  <option value="{{$i}}" {{old('teamnumber')!==null?(old('teamnumber') == $i ? 'selected' : ''):($team['number'] == $i ? 'selected' : '')}}>{{$i}}</option>
-                @endfor
-              </select><input id="teamname" class="form-control" type="text" name="teamname" value="{{old('teamname')!==null?old('teamname'):$team->name}}" placeholder="Teamname" style="display: inline-block;width:auto;"></td>
-            </tr>
-            <tr>
-              <td>Car</td>
-              <td>
-              <select id="car" class="form-control" name="teamcar" style="display: inline-block;width:auto;">
-                @foreach (config('constants.car_names') as $key => $value)
-                  <option value="{{$key}}" {{old('teamcar') !== null?(old('teamcar') == $key?'selected':''):($team['car'] == $key?'selected':'')}}>{{$value}}</option>
-                @endforeach
-              </select></td>
-            </tr>
-            <tr>
-              <td>iRacing Team ID</td>
-              <td><input type="text" id="ir_teamid" class="form-control" name="iracing_teamid" value="{{old('iracing_teamid')!==null?old('iracing_teamid'):$team->ir_teamid}}" placeholder="iRacing Team ID"></td>
-            </tr>
-            <tr>
-              <td>Status</td>
-              <td>
-                <p class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</p>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2"><input type="submit" name="updateTeamdata" value="Update teamdata" class="btn btn-primary"></td>
-            </tr>
-          </table>
-        </form>
-      @endif
+      <p><i class="fas fa-question-circle" data-toggle="popover" data-content="If you want to update your teams basedata, please contact the admins" data-trigger="hover"></i></p>
+      <table class="table">
+        <tr>
+          <td>Name</td>
+          <td>#{{$team['number']}} {{$team['name']}}</td>
+        </tr>
+        <tr>
+          <td>Car</td>
+          <td>{{config('constants.car_names')[$team['car']]}}</td>
+        </tr>
+        <tr>
+          <td>iRacing Team ID</td>
+          <td>{{$team['ir_teamid']}}</td>
+        </tr>
+        <tr>
+          <td>Status</td>
+          <td>
+            <p class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</p>
+          </td>
+        </tr>
+      </table>
 
       <h2>Drivers</h2>
       <table class="table">
@@ -168,4 +103,11 @@
     @endif
   </div>
 </div>
+@endsection
+@section('additionalFooter')
+  <script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+  </script>
 @endsection

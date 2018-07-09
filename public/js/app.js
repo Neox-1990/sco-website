@@ -11163,7 +11163,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-window.Popper = __webpack_require__(11);
+__webpack_require__(11);
 __webpack_require__(12);
 window.easteregg = '********************\nActivate epic for epicness\n********************\nActivate useless for useless information @ home\n********************';
 
@@ -11186,11 +11186,14 @@ $(document).ready(function () {
   Object(__WEBPACK_IMPORTED_MODULE_2__helper_adminhelper_js__["a" /* toggleTeamTablesInit */])();
   Object(__WEBPACK_IMPORTED_MODULE_3__helper_resulthelper_js__["a" /* resultToggleInit */])();
   if (typeof numbers !== 'undefined') {
-    Object(__WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["b" /* updateNumbers */])();
-    $('#car').on('change', __WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["b" /* updateNumbers */]);
+    Object(__WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["d" /* updateNumbers */])();
+    $('#car').on('change', __WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["d" /* updateNumbers */]);
   }
 
   $('#add-driver-form').on('click', __WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["a" /* addDriverForm */]);
+
+  $('#loadoldteam').on('click', __WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["c" /* loadOldTeam */]);
+  $('.clear_driver').on('click', __WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["b" /* clearDriver */]);
 });
 
 /***/ }),
@@ -38458,8 +38461,10 @@ module.exports = function spread(callback) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return updateNumbers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return updateNumbers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return addDriverForm; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return clearDriver; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return loadOldTeam; });
 var updateNumbers = function updateNumbers() {
   var car = $('#car').val();
   var selOption = $('#number').val();
@@ -38476,7 +38481,51 @@ var updateNumbers = function updateNumbers() {
 
 var addDriverForm = function addDriverForm() {
   var active = $('div.add-driver-form-active').length;
-  if (active < 6) $('#driver' + (active + 1)).parent().addClass('add-driver-form-active');
+  var max = $('div.add-driver-form').length;
+  if (active < max) $('#driver' + (active + 1)).parent().addClass('add-driver-form-active');
+};
+
+var clearDriver = function clearDriver() {
+  var frame = $(this).parent().parent();
+  var id = frame.attr('data-driver');
+  //console.log(frame);
+  frame.find('#driver' + id + 'name').val('');
+  frame.find('#driver' + id + 'iracingid').val('');
+  frame.find('#driver' + id + 'irating').val('5000');
+  frame.find('#driver' + id + 'sr1').val('a');
+  frame.find('#driver' + id + 'sr2').val('2.00');
+  if (!frame.hasClass('add-driver-form-mandatory')) {
+    frame.removeClass('add-driver-form-active');
+  }
+};
+
+var loadOldTeam = function loadOldTeam() {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+  $.get('/ajax/formerteam/' + $('#old_team').val(), function (data, status) {
+    //console.log(data);
+    //$('#driver1name').val(data[0].name);
+    $('.add-driver-form').each(function (i) {
+      var driver = data[i];
+      i++;
+      if (typeof driver === 'undefined') {
+        if ($('#driver' + i + 'name').val() == '') {
+          $(this).removeClass('add-driver-form-active');
+        }
+      } else {
+        $(this).addClass('add-driver-form-active');
+        $('#driver' + i + 'name').val(driver.name);
+        $('#driver' + i + 'iracingid').val(driver.iracing_id);
+        $('#driver' + i + 'irating').val(driver.irating);
+        var sr = driver.safetyrating.split('@');
+        $('#driver' + i + 'sr1').val(sr[0].toLowerCase());
+        $('#driver' + i + 'sr2').val(sr[1]);
+      }
+    });
+  });
 };
 
 /***/ }),
@@ -38487,7 +38536,7 @@ var addDriverForm = function addDriverForm() {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return tablesorterInit; });
 /* unused harmony export tablesorter */
 var tablesorterInit = function tablesorterInit() {
-  $('.sco-table-sort').on('click', tablesorter).append('<span class="ml-3 sco-sort-icon"><i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i></span>');
+  $('.sco-table-sort').on('click', tablesorter).append('<span class="ml-3 sco-sort-icon"><i class="fas fa-sort-down " aria-hidden="true"></i></span>');
 };
 var tablesorter = function tablesorter() {
   var column = $(this).index();
@@ -38496,11 +38545,11 @@ var tablesorter = function tablesorter() {
   if ($(this).attr('data-sort-dir') == 'asc') {
     dir = 1;
     $(this).attr('data-sort-dir', 'desc');
-    $(this).find('.sco-sort-icon').empty().append('<i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i>');
+    $(this).find('.sco-sort-icon').empty().append('<i class="fas fa-sort-up" aria-hidden="true"></i>');
   } else {
     dir = -1;
     $(this).attr('data-sort-dir', 'asc');
-    $(this).find('.sco-sort-icon').empty().append('<i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>');
+    $(this).find('.sco-sort-icon').empty().append('<i class="fas fa-sort-down " aria-hidden="true"></i>');
   }
   var table = $(this).parent().parent().parent().find('tbody').first();
   var rows = table.find('tr').get();

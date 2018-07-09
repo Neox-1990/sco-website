@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Team;
 use App\Round;
+use App\Invite;
 use App\Result;
 use App\Season;
 use App\LogEntry;
@@ -454,6 +455,37 @@ class AdminController extends Controller
         } else {
             session()->flash('flash_message_alert', 'Round creation failed');
             return redirect('admin/season/edit/'.$season->id);
+        }
+    }
+
+    public function invitesIndex()
+    {
+        $managers = User::get();
+        $open_invites = Invite::where([['season_id', config('constants.current_season')],['used', null]])->with('user')->get();
+        $used_invites = Invite::where([['season_id', config('constants.current_season')],['used', '<>', null]])->with('user')->get();
+
+        //dd($managers, $open_invites, $used_invites);
+        return view('admin.invites.index', compact('managers', 'open_invites', 'used_invites'));
+    }
+    public function invitesProcess(Request $request)
+    {
+        if ($request->has('add')) {
+            $invite = new Invite;
+            $invite->season_id = config('constants.current_season');
+            $invite->user_id = $request->input('inviteManager');
+            if ($invite->save()) {
+                session()->flash('flash_message_success', 'Invite added');
+                return redirect('admin/invites');
+            } else {
+                session()->flash('flash_message_alert', 'Invite failed');
+                return redirect('admin/invites');
+            }
+        }
+
+        if ($request->has('delete_invite')) {
+            $invite = Invite::where('id', $request->input('id'))->delete();
+            session()->flash('flash_message_success', 'Invite deleted');
+            return redirect('admin/invites');
         }
     }
 }

@@ -22,7 +22,7 @@
             <td>{{$team['user']['name']}}</td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
             <td><span class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</span></td>
-            <td>Season: {{$team['season_id']}}</td>
+            <td>{{$team['season']['name']}}</td>
           </tr>
         @endforeach
       </table>
@@ -49,8 +49,8 @@
             </td>
             <td>{{$team['user']['name']}}</td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
-            <td><span class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</span></td>
-            <td>Season: {{$team['season_id']}}</td>
+            <td><span class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</span></td>
+            <td>{{$team['season']['name']}}</td>
           </tr>
         @endforeach
       </table>

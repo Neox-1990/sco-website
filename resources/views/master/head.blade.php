@@ -8,6 +8,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon_apple.png">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/favicon_ms.png">
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<title>Sports Car Open</title>
 
 <link rel="stylesheet" href="{{asset('css/app.css')}}?date=20180531">
-<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">

@@ -8,6 +8,7 @@ html{
   font-family: 'Ubuntu', sans-serif !important;
 }
 body{
+  font-family: 'Ubuntu', sans-serif !important;
   font-size: 18px;
   background-color: #fff;
   background-image: url('/img/sco2k18_website_background.jpg');
@@ -520,7 +521,7 @@ body#admin-dashbord{
 }
 
 #teams-table{
-  th{
+  th,td{
     box-sizing: border-box;
     &:nth-child(1){
       width:7%;
@@ -536,6 +537,27 @@ body#admin-dashbord{
     }
     &:nth-child(5){
       width:13%;
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    th,td{
+      box-sizing: border-box;
+      &:nth-child(1){
+        width:7%;
+      }
+      &:nth-child(2){
+        width:auto;
+      }
+      &:nth-child(3){
+        display: none;
+      }
+      &:nth-child(4){
+        display: none;
+      }
+      &:nth-child(5){
+        width:13%;
+      }
     }
   }
 }
@@ -554,4 +576,61 @@ body#admin-dashbord{
       transform: rotate(180deg);
     }
   }
+}
+
+.team_summary{
+  font-weight: normal;
+  font-size: 1rem;
+  margin-left: 1rem;
+
+  .team_summary_toggler{
+    cursor: pointer;
+  }
+
+  .team_summary_sep{
+    display: inherit;
+  }
+  .team_summary_title{
+    display: none;
+  }
+}
+.team_summary_open{
+  display:block;
+  position:absolute;
+  top: 0rem;
+  left: 1.6rem;
+  background-color: #fff;
+  @extend .p-3;
+  @extend .border;
+  @extend .rounded;
+
+  .team_summary_toggler{
+    display: block;
+  }
+
+  .team_summary_sep{
+    display: none !important;
+  }
+
+  .team_summary_sub{
+    display: block !important;
+    @extend .my-1;
+
+    .team_summary_title{
+      display: inline-block !important;
+    }
+  }
+}
+
+span.clear_driver{
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.5rem;
+}
+
+.crs-ptr{
+  cursor: pointer;
 }

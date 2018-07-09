@@ -13,11 +13,25 @@ return [
     9 => 'BMW Z4 GT3',
     10=> 'Porsche 911 GT3 Cup',
     11=> 'Chevrolet Corvette C7 Daytona Prototype',
-    12=> 'Audi R19',
-    13=> 'Porsche 919',
+    12=> 'Audi R18',
+    13=> 'Porsche 919 Hybrid',
     14=> 'Porsche 911 RSR',
   ],
   'current_season' => '5',
+  'driver_limits' => [
+    'min' => 2,
+    'max' => 6,
+  ],
+  'ir_limits' => [
+    'P' => 2500,
+    'PC' => 2250,
+    'GT' => 2000
+  ],
+  'sr_limits' => [
+    'P' => ['p', 'a'],
+    'PC' => ['p', 'a', 'b'],
+    'GT' => ['p', 'a', 'b', 'c']
+  ],
   'classes' => [
     1 => [
       'Prototype' => [1],
@@ -37,6 +51,27 @@ return [
       'P' => [12,13],
       'PC' => [1],
       'GT' => [2,3,14]
+    ]
+  ],
+  'class_limits' => [
+    1 => [
+      'Prototype' => 24,
+      'GT' => 24,
+      'GTC' => 24
+    ],
+    3 => [
+      'GT1' => 35,
+      'GT3' => 35
+    ],
+    4 => [
+      'DP' => 24,
+      'GT' => 24,
+      'CC' => 24
+    ],
+    5 => [
+      'P' => 16,
+      'PC' => 14,
+      'GT' => 20
     ]
   ],
   'cars_to_classes' => [

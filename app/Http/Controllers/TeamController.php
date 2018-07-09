@@ -92,6 +92,7 @@ class TeamController extends Controller
         if (is_numeric($search)) {
             $teams = Team::withTrashed()->where('ir_teamid', '=', intval($search))
               ->with('user')
+              ->with('season')
               ->get();
         } else {
             $searchterms = explode(' ', preg_replace('!\s+!', ' ', $search));
@@ -100,7 +101,7 @@ class TeamController extends Controller
             foreach ($searchterms as $term) {
                 $teams->orWhere('name', 'LIKE', '%'.$term.'%');
             }
-            $teams = $teams->with('user')->get();
+            $teams = $teams->with('user')->with('season')->get();
         }
         $currentTeams = clone($teams);
         $oldTeams = clone($teams);

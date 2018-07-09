@@ -6,7 +6,7 @@
   <a href="{{url('admin/entrylist')}}">Entrylist</a>
   <hr>
   @foreach ($teams as $name => $list)
-  <h3 class="mt-5 teamtabletoggle">{{$name}} (<span class="text-danger">{{sizeof($list['pending'])}}</span>/<span class="text-primary">{{sizeof($list['reviewed'])}}</span>/<span class="text-warning">{{sizeof($list['waitinglist'])}}</span>/<span class="text-info">{{sizeof($list['qualified'])}}</span>/<span class="text-success">{{sizeof($list['confirmed'])}}</span>)<span class="ml-3 toggle-icon"><i class="fa fa-chevron-circle-down closed" aria-hidden="true"></i></span></h3>
+  <h3 class="mt-5 teamtabletoggle">{{$name}} (<span class="text-danger">{{sizeof($list['pending'])}}</span>/<span class="text-primary">{{sizeof($list['reviewed'])}}</span>/<span class="text-warning">{{sizeof($list['waitinglist'])}}</span>/<span class="text-info">{{sizeof($list['qualified'])}}</span>/<span class="text-success">{{sizeof($list['confirmed'])}}</span>)<span class="ml-3 toggle-icon"><i class="fas fa-chevron-down closed" aria-hidden="true"></i></span></h3>
   <div class="">
     <table class="table table-bordered table-hovered">
       <thead>
@@ -192,7 +192,7 @@
         </table>
   </div>
   @endforeach
-  <h3 class="mt-5 teamtabletoggle">Deleted <span class="ml-3 toggle-icon"><i class="fa fa-chevron-circle-down closed" aria-hidden="true"></i></span></h3>
+  <h3 class="mt-5 teamtabletoggle">Deleted <span class="ml-3 toggle-icon"><i class="fas fa-chevron-down closed" aria-hidden="true"></i></span></h3>
   <div class="">
     <table class="table table-bordered table-hovered">
       <thead>

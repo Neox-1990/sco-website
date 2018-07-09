@@ -5,6 +5,7 @@
     <a href="{{url('admin/teams')}}" class="list-group-item list-group-item-action">Teams</a>
     <a href="{{url('admin/drivers')}}" class="list-group-item list-group-item-action">Drivers</a>
     <a href="{{url('admin/log')}}" class="list-group-item list-group-item-action">Log</a>
+    <a href="{{url('admin/invites')}}" class="list-group-item list-group-item-action">Invites</a>
     <a href="{{url('admin/results')}}" class="list-group-item list-group-item-action">Results</a>
     <a href="{{url('admin/season')}}" class="list-group-item list-group-item-action">Season</a>
     <a href="{{url('admin/settings')}}" class="list-group-item list-group-item-action">Settings</a>

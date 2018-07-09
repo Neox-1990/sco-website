@@ -6,7 +6,7 @@
   <div class="col-12">
     <div class="p-2" id="rulebook">
       <h1>Rulebook</h1>
-      <a data-status="closed" class="btn btn-outline-dark m-1" id="openAllRules"><i class="fa fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
+      <a data-status="closed" class="btn btn-outline-dark m-1" id="openAllRules"><i class="fas fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
       <hr>
       <h3>1. Introduction</h3>
       <ol class="rulebook-section">
@@ -549,7 +549,7 @@
 @section('additionalFooter')
 <script type="text/javascript">
   $(function(){
-    $('.rulebook-section').prev().append('<i class="fa fa-caret-square-o-down ml-3" aria-hidden="true"></i>').on('click', toggleRule);
+    $('.rulebook-section').prev().append('<i class="fas fa-caret-square-down ml-3" aria-hidden="true"></i>').on('click', toggleRule);
     $('#openAllRules').on('click', openAllRules);
   });
 
