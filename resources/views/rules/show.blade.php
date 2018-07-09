@@ -32,19 +32,19 @@
                 <td>Prototype</td>
                 <td class="badge-P">P</td>
                 <td>Audi R18<br>Porsche 919 Hybrid</td>
-                <td>0 kg / 100%<br>0 kg / 100%</td>
+                <td>0 kg / 100% (=50 l)<br>0 kg / 100% (=62.5 l)</td>
               </tr>
               <tr>
                 <td>Prototype Challenge</td>
                 <td class="badge-PC">PC</td>
                 <td>HPD ARX-01c</td>
-                <td>0 kg / 66.7%</td>
+                <td>0 kg / 66.7% (=40 kg)</td>
               </tr>
               <tr>
                 <td>Grand Touring</td>
                 <td class="badge-GT">GT</td>
                 <td>Ferrari 488 GTE<br>Ford GT GTE<br>Porsche 911 RSR</td>
-                <td>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%</td>
+                <td>0 kg / 100% (=90 l)<br>0 kg / 100% (=98 l)<br>0 kg / 100% (=106 l)</td>
               </tr>
             </tbody>
           </table>
@@ -245,40 +245,55 @@
       </ol>
       <h3>5. Entry Procedure</h3>
       <ol class="rulebook-section">
-        <li>To enter the series, each team manager wishing to field one or multiple teams must register an account to be able to create these teams. For each team, all information must be filled in as required by the form on the website and the series regulations.</li>
-        <li>Once a team has been created, the team’s status will automatically be set to 'Pending' until it’s been reviewed by the series administration. Once this has happened, the team’s status will be changed to 'Reviewed'.
-          <ol><li>The team's status will only be set to 'Confirmed' once it has been reviewed by the series administration, made it through pre-qualifying and has paid their entry fee of $25.00 in its entirety.</li>
-            <li>Teams with automatic invites do not have to advance through pre-qualifying to be have a guaranteed spot on the grid. Once an automatically invited team has had its status changed to 'Reviewed' they can ask to use their automatic invitation. They will then 			have their status changed to 'Pre-Qualified' and will have 72 hours to pay the entry fee in order to claim that spot without having to pre-qualify. A list of all automatically invited teams can be found below. Teams with '(x2)' have 2 invites, meaning they can field 2 cars without having to pre-qualify.<br><br>
-            AVA Simsport; CoRe SimRacing (x2); Follow Me eSports; Glacier Racing; Hellenic Racing; Mivano Racing; MSP Phoenix Racing; Obsidian Racing; Positive SimRacing (x2); Pure Racing Team; Sekrit; SimatoK eSport; SimRC.de; Sorg eSports (x2); SRT eSport (x2); Team Buschfink Racing (x2); Team Chimera; Torque Freak Racing; 			TRITON Racing; Vendaval Simracing</li>
-            <li>All other regular entrants, will be asked to not pay the entry fee until they're contacted about the matter following the publication of the official pre-qualifying results (check Section 7 for more information).</li>
+        <li>The sign-ups for all teams will open on Monday, July 16th, 2018 at 17:00 UTC. From this point onwards, all teams, those with automatic invites and those without will be able to create teams.
+          <ol>
+            <li>Please note that no team will be allowed to enter more than 2 cars into any of the classes. The maximum number of available spaces per car class can be seen below:
+              <ul>
+                <li>Prototype (P): 16 cars</li>
+                <li>Prototype Challenge (PC): 14 cars</li>
+                <li>Grand Touring (GT): 20 cars</li>
+              </ul></li>
+            </ol>
+        </li>
+        <li>Teams with automatic invites must enter no later than Sunday, August 5th, 2018 at 23:59 UTC and must pay the full entry fee of $25 in order to claim their automatic invites.
+        <ol>
+          <li>Managers who have used their invite when creating a team but did not pay the entry fee of $25 for that team by the date listed in 5.b, will lose their invited status and will be treated like every other regular entrant from this point onwards.</li>
+          <li>All other unused automatic invites will also expire on the date listed in 5.b.</li>
+        </ol> </li>
+        <li>The entry deadline for all regular entrants will be on Sunday, August 19th, 2018 at 23:59 UTC.
+          <ol>
+            <li>Should the number of teams entering a class not exceed the number of available slots for that class (see 5.a.1) by the date mentioned in 5.c, then the teams of said class must pay their entry fee of $25 by Saturday, August 25th, 2018 at 23:59 UTC.</li>
+            <li>All teams, that have entered a car class with multiple car models, must also declare their final car selection for the season by the deadline listed in 5.c.1.</li>
+            <li>Should a class have fewer entries than the categories' maximum car count allows for (see 5.a.1), then the remaining open slots will instead be moved to the next smallest class (e.g.: Only 12 PC cars enter, meaning 2 slots remain open => P will receive the additional 2 slots to make it an 18 car class).</li>
+            <li>Should the need for a pre-qualifying session disappear through the slot re-allocation described in 5.c.3, then the teams of this class will also have to pay the entry fee of $25 by the deadline described in 5.c.1.</li>
+            <li>In any case, a team that doesn't have to pre-qualify themselves onto the grid but still
+fails to pay the entry fee of $25 by the deadline mentioned in 5.c.1 will lose that spot and will be demoted to the waiting list for their class instead. That new open slot would be re-assigned to the next smallest car category as described in 5.c.3.</li>
+            <li>Teams, in categories with enough entries to require a pre-qualifying session to take place, will be required to pre-qualify themselves into the field, unless their team entered the series using an automatic invite. More information about pre-qualifying can be found in Section 7 of this document.</li>
           </ol>
         </li>
-        <li>Teams, that have made it through pre-qualifying, must pay their entry fees through PayPalwithin 72 hours of having their team's status changed to 'Pre-Qualified'. This will happen assoon as the pre-qualifying results will be declared official.
-          <ol><li>Should a category not have enough entrants to require a pre-qualifying session to takeplace 7 or fewer days from the pre-qualifying session's scheduled date, all teams in that category will have their status changed to 'Pre-Qualified'. The teams of said category will be given 7 days to cover their entry fee in this scenario.</li>
-            <li>Once these teams have covered their entry fee, their status will be changed to 'Confirmed'.</li></ol>
-        </li>
-        <li>A team's status determines what about a team can be edited. When set to 'Pending', everything about a team can be edited, including the name, car number, category and car whereas all other statuses only allow for driver line-up changes.
-          <ol><li>Should a team wish to change their name for example, the team manager must send a request to the event administration.</li>
-          <li>Before the start of the season, team's will be allowed to change their cars until 24 hours before the start of pre-qualifying. Should no pre-qualifying session take place, then this deadline will be extended to 24 hours before the opening round's first free 			practice session.</li></ol>
-        </li>
-        <li>Every team’s driver line-up must be unique. No driver may be listed on more than a single car’s driver line-up. Should he wish to drive for another team, his previous team must remove him their line-up before he can be added to his new team’s line-up.
-          <ol><li>The deadline for driver line-up changes ahead of each round will be 24 hours before the start of the first free practice session.</li>
-          <li>Should a driver be added after the deadline and take part in the race, the team will be given a 30 seconds stop-hold penalty once he takes over the car.</li></ol>
-        </li>
-        <li>No team will be allowed to field more than 2 entries in any class. The series administration reserves itself the right to waive this rule for individual classes.</li>
-        <li>The total car count across all 3 classes will be limited to 50. These 50 slots have been allocated to each class as follows:
-          <ul class="list-group">
-            <li class="list-group-item">Prototype: 16 slots</li>
-            <li class="list-group-item">Prototype Challenge: 14 slots</li>
-            <li class="list-group-item">Grand Touring: 20 slots</li>
-          </ul>
-          <ol><li>re-qualifying for a class will take place once there are more teams interested in entering than there are spots in a class. More information can be found in Section 7.</li></ol>
-        </li>
-        <li>Should fewer than 35 teams want to enter within 7 days of the opening round of the season, the championship will be cancelled with all entry fees being refunded.
-        </li>
-        <li>
-          Should a confirmed team withdraw, resulting in a free spot within a certain class, the first team on that class' waiting list will be called up to fill the vacant spot for the rest of the season.
+        <li>Should a pre-qualifying session have taken place on Sunday, August 26th, 2018 at 16:00 UTC, the results will be published no later than Tuesday, August 28th, 2018 at 16:00 UTC.
           <ol>
+            <li>All teams that made it through pre-qualifying will have until Sunday, September 2nd, 2018 at 23:59 UTC to pay their entry fee of $25.</li>
+            <li>Teams that fail to pay the entry fee of $25 in time will lose their spot to the next team that failed to make the cut in their category. This new team will then have a maximum of 48 hours to pay the entry fee of $25 and claim the slot before this procedure is repeated.</li>
+            <li>Should a class run out of teams through the procedure described in 5.d.2, then the first team of the next-biggest class that had teams attempting to pre-qualify themselves into the field will go through the same procedure as mentioned above.</li>
+          </ol>
+        </li>
+        <li>Every team that's created during a season will have a team status assigned to it. There are a total of 5 different statuses: 'Pending', 'Reviewed', 'Waiting List', 'Qualified' and 'Confirmed'.
+          <ol>
+            <li>Newly created teams will have their status set to 'Pending' automatically. Once the series administration has checked everything about said newly created team, the team's status will either be changed to 'Reviewed' (for regular entrants) or 'Qualified' if a team enters using an automatic invite.</li>
+            <li>Once any team with the 'Qualified' status has paid the entry fee of $25 in its entirety,  their team's status will be changed to 'Confirmed'.</li>
+            <li>The 'Waiting List' status will be reserved for teams on the waiting list for their respective class.</li>
+          </ol>
+        </li>
+        <li>After a team has been created, a team manager will only be allowed to edit the driver line-up of his teams. Should he wish to edit further details, he must contact the series administration.
+          <ol>
+            <li>Driver line-ups may not be edited any later than 24 hours before the start of prequalifying and no later than 24 hours before the start of FP1 ahead of each round. All edits made beyond these points will only be valid for future events.</li>
+            <li>Should a driver, who was added to a team's line-up after the deadline actually compete in the race, the team in question will receive a 60 second stop and hold penalty once said driver has taken over the car</li>
+          </ol>
+        </li>
+        <li>Should a 'Confirmed' team withdraw, resulting in a free spot within a certain class, the first team on that class' waiting list will be called up to fill the vacant spot for the rest of the season.
+          <ol>
+            <li>In the case of there being no waiting list teams for said car class, the first waiting list team of the next-biggest car class will fill the spot instead.</li>
             <li>Substitute teams that replace previously confirmed teams will not have to pay the entry fee.</li>
             <li>Substitute teams will not be called up any later than 24 hours before a round's first free practice session, meaning that if a team withdraws after this point or during an ongoing event, that spot will be left vacant until the event's conclusion.</li>
           </ol>
@@ -299,10 +314,12 @@
       </ol>
       <h3>7. Pre-Qualifying</h3>
       <ol class="rulebook-section">
-        <li>Pre-Qualifying will take place if one or multiple categories require it due to the amount of teams interested in entering exceeding the amount of available slots in the class.</li>
+        <li>Pre-Qualifying will take place on if one or multiple categories require it due to the amount of teams interested in entering exceeding the amount of available slots in the class. The scheduled date for this pre-qualifying session will be Sunday, August 26th, 2018 at 16:00 UTC.</li>
         <li>The session will be a 3 hour long open qualifying session in which all teams will run together on-track at the same time. This 180 minute long session will be preceeded by a 45 minute long warm-up session, so all teams can join and get used to the track conditions.
           <ol>
             <li>Pre-qualifying will also be the only session of the season that will use default iRacing weather conditions. The time of day will be set to 'afternoon' as it will be for all other events during the season.</li>
+            <li>Should the number of teams taking part in pre-qualifying exceed 30 cars, or if one class has significantly more teams wanting to pre-qualify than the other(s), then multiple sessions will be created, using the same settings as described in 7.b and 7.b.1.</li>
+            <li>Which teams would be assigned to which session in this scenario will be decided by the series administration. A list of which teams are meant to be in which session would be published no later than 48 hours before the scheduled start of pre-qualifying.</li>
           </ol>
         </li>
         <li>To pre-qualify, a team must field at least 2 of their drivers in the session. Both of them will be required to set at least one valid timed lap. The sum of both drivers' best laps will be a team's 		pre-qualifying lap time.</li>
