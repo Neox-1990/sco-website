@@ -3,15 +3,15 @@
 @section('main')
 <div class="row">
   <div class="col-12" style="padding-bottom:2rem;">
-    <div class="mb-3 d-flex flex-wrap" id="results_controlbox_rounds">
-      <a href="{{url('/results')}}" class="btn btn-outline-primary">Championship</a>
+    <a href="{{url('/results')}}" class="btn btn-outline-primary m-2">Championship</a>
+    <div class="mb-3 d-flex flex-wrap justify-content-start align-items-stretch" id="results_controlbox_rounds">
       @foreach ($rounds as $roundX)
-        <a href="{{url('/results/'.$roundX->id)}}" class="btn btn-{{$roundX->id==$round->id?'primary':'outline-primary'}} ml-3 mt-1">Round {{$roundX->number}}</a>
+        <a href="{{url('/results/'.$roundX->id)}}" class="btn btn-{{$roundX->id==$round->id?'primary':'outline-primary'}} m-2">Round {{$roundX->number}}</a>
       @endforeach
     </div>
     <div class="mb-3 d-flex flex-wrap" id="results_controlbox_class">
       @foreach ($resultsSorted as $class => $results)
-        <button data-class="{{$class}}" class="btn btn-{{$class!=$first?'outline-'.$class:$class}} mr-3 mt-1 {{$class}}-toggle">{{$class}}</button>
+        <button data-class="{{$class}}" class="btn btn-{{$class!=$first?'outline-'.$class:$class}} m-2 {{$class}}-toggle">{{$class}}</button>
       @endforeach
     </div>
     @if ($resultsSorted[$first]->isEmpty())

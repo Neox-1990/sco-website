@@ -176,7 +176,7 @@ class EditTeam extends FormRequest
             //dd($driver->id);
             $team->drivers()->detach($driver->id);
             $checkResult['flash'] = 'You removed the driver '.$driver->name.' from '.$team->name;
-            event(new TeamEditEvent($team, 'Team driver removed'));
+            event(new TeamEditEvent($team, 'Team driver removed', 'removed driver: <a href="admin/drivers/'.$driver->id.'" title="'.$driver->name.'">'.$driver->id.'</a>'));
         } else {
             $checkResult['flash'] = 'An error occurred';
         }
@@ -216,7 +216,7 @@ class EditTeam extends FormRequest
                     $driver->save();
                     $team->drivers()->attach($driver->id);
                     $checkResult['flash'] = 'You successfully added '.$driver->name.' to '.$team->name;
-                    event(new TeamEditEvent($team, 'Team driver added'));
+                    event(new TeamEditEvent($team, 'Team driver added', 'added driver: <a href="admin/drivers/'.$driver->id.'" title="'.$driver->name.'">'.$driver->id.'</a>'));
                 }
             } else {
                 $driver = new Driver;
@@ -228,7 +228,7 @@ class EditTeam extends FormRequest
                 $driver->save();
                 $team->drivers()->attach($driver->id);
                 $checkResult['flash'] = 'You successfully added '.$driver->name.' to '.$team->name;
-                event(new TeamEditEvent($team, 'Team driver added'));
+                event(new TeamEditEvent($team, 'Team driver added', 'added driver: <a href="admin/drivers/'.$driver->id.'" title="'.$driver->name.'">'.$driver->id.'</a>'));
             }
         }
 

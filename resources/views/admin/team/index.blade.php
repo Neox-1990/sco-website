@@ -6,7 +6,7 @@
   <a href="{{url('admin/entrylist')}}">Entrylist</a>
   <hr>
   @foreach ($teams as $name => $list)
-  <h3 class="mt-5 teamtabletoggle">{{$name}} (<span class="text-danger">{{sizeof($list['pending'])}}</span>/<span class="text-primary">{{sizeof($list['reviewed'])}}</span>/<span class="text-warning">{{sizeof($list['waitinglist'])}}</span>/<span class="text-info">{{sizeof($list['qualified'])}}</span>/<span class="text-success">{{sizeof($list['confirmed'])}}</span>)<span class="ml-3 toggle-icon"><i class="fas fa-chevron-down closed" aria-hidden="true"></i></span></h3>
+  <h3 class="mt-5 teamtabletoggle">{{$name}} (<span class="text-danger">{{sizeof($list['pending'])}}</span>/<span class="text-primary">{{sizeof($list['reviewed'])}}</span>/<span class="text-warning">{{sizeof($list['waitinglist'])}}</span>/<span class="text-info">{{sizeof($list['qualified'])}}</span>/<span class="text-success">{{sizeof($list['confirmed'])}}</span>)<span class="ml-3 toggle-icon"><i class="fas fa-angle-double-down"></i></span></h3>
   <div class="">
     <table class="table table-bordered table-hovered">
       <thead>
@@ -35,26 +35,21 @@
             <td>{{$team['number']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-danger" type="submit" name="pending" value="set pending">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-primary" type="submit" name="review" value="set review">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-warning" type="submit" name="waiting" value="set reserve">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-info" type="submit" name="qualified" value="set qualified">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-success" type="submit" name="confirm" value="set confirm" disabled>
-            </form></td>
+            <td>
+              <button class="btn btn-danger teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="0">set pending</button>
+            </td>
+            <td>
+              <button class="btn btn-primary teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="1">set review</button>
+            </td>
+            <td>
+              <button class="btn btn-warning teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="2">set reserve</button>
+            </td>
+            <td>
+              <button class="btn btn-info teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="3">set qualified</button>
+            </td>
+            <td>
+              <button class="btn btn-success teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="4" disabled>set confirm</button>
+            </td>
           </tr>
         @endforeach
         @foreach ($list['qualified'] as $team)
@@ -68,26 +63,21 @@
             <td>{{$team['number']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-danger" type="submit" name="pending" value="set pending">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-primary" type="submit" name="review" value="set review">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-warning" type="submit" name="waiting" value="set reserve">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-info" type="submit" name="qualified" value="set qualified" disabled>
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-success" type="submit" name="confirm" value="set confirm">
-            </form></td>
+            <td>
+              <button class="btn btn-danger teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="0">set pending</button>
+            </td>
+            <td>
+              <button class="btn btn-primary teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="1">set review</button>
+            </td>
+            <td>
+              <button class="btn btn-warning teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="2">set reserve</button>
+            </td>
+            <td>
+              <button class="btn btn-info teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="3" disabled>set qualified</button>
+            </td>
+            <td>
+              <button class="btn btn-success teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="4">set confirm</button>
+            </td>
           </tr>
         @endforeach
         @foreach ($list['waitinglist'] as $team)
@@ -101,26 +91,21 @@
             <td>{{$team['number']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-danger" type="submit" name="pending" value="set pending">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-primary" type="submit" name="review" value="set review">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-warning" type="submit" name="waiting" value="set reserve" disabled>
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-info" type="submit" name="qualified" value="set qualified">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-success" type="submit" name="confirm" value="set confirm">
-            </form></td>
+            <td>
+              <button class="btn btn-danger teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="0">set pending</button>
+            </td>
+            <td>
+              <button class="btn btn-primary teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="1">set review</button>
+            </td>
+            <td>
+              <button class="btn btn-warning teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="2" disabled>set reserve</button>
+            </td>
+            <td>
+              <button class="btn btn-info teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="3">set qualified</button>
+            </td>
+            <td>
+              <button class="btn btn-success teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="4">set confirm</button>
+            </td>
           </tr>
         @endforeach
         @foreach ($list['reviewed'] as $team)
@@ -134,26 +119,21 @@
             <td>{{$team['number']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-danger" type="submit" name="pending" value="set pending">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-primary" type="submit" name="review" value="set review" disabled>
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-warning" type="submit" name="waiting" value="set reserve">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-info" type="submit" name="qualified" value="set qualified">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-success" type="submit" name="confirm" value="set confirm">
-            </form></td>
+            <td>
+              <button class="btn btn-danger teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="0">set pending</button>
+            </td>
+            <td>
+              <button class="btn btn-primary teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="1" disabled>set review</button>
+            </td>
+            <td>
+              <button class="btn btn-warning teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="2">set reserve</button>
+            </td>
+            <td>
+              <button class="btn btn-info teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="3">set qualified</button>
+            </td>
+            <td>
+              <button class="btn btn-success teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="4">set confirm</button>
+            </td>
           </tr>
         @endforeach
         @foreach ($list['pending'] as $team)
@@ -167,26 +147,21 @@
             <td>{{$team['number']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-danger" type="submit" name="pending" value="set pending" disabled>
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-info" type="submit" name="review" value="set review">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-warning" type="submit" name="waiting" value="set reserve">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-info" type="submit" name="qualified" value="set qualified">
-            </form></td>
-            <td><form class="" action="{{url('admin/teams/'.$team['id'])}}" method="post">
-              {{csrf_field()}}
-              <input class="btn btn-success" type="submit" name="confirm" value="set confirm">
-            </form></td>
+            <td>
+              <button class="btn btn-danger teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="0" disabled>set pending</button>
+            </td>
+            <td>
+              <button class="btn btn-primary teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="1">set review</button>
+            </td>
+            <td>
+              <button class="btn btn-warning teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="2">set reserve</button>
+            </td>
+            <td>
+              <button class="btn btn-info teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="3">set qualified</button>
+            </td>
+            <td>
+              <button class="btn btn-success teamchangebtn" type="button" data-team="{{$team['id']}}" data-status="4">set confirm</button>
+            </td>
           </tr>
         @endforeach
         </table>

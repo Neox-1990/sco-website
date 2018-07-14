@@ -3,8 +3,12 @@
 namespace App\Listeners;
 
 use App\LogEntry;
+use App\Mail\StatusUpdateMail;
+
 use App\Events\TeamCreateEvent;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Mail;
+
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class TeamCreateEventListener
@@ -37,9 +41,8 @@ class TeamCreateEventListener
         }, $driverids);
 
         $action = 'New team created. Teamname: '.$event->team->name.
-          ' | Teamid: '.$event->team->id.
           ' | Teamnumber: '.$event->team->number.
-          ' | iRacing Team ID: <a href="'.url('/admin/teams/'.$event->team->ir_teamid).'">'.$event->team->ir_teamid.'</a>'.
+          ' | Teamid: <a href="'.url('/admin/teams/'.$event->team->id).'">'.$event->team->id.'</a>'.
           ' | Car: '.config('constants.car_names')[$event->team->car].
           ' | Drivers (ids): '.implode(',', $driverids);
 
@@ -48,5 +51,8 @@ class TeamCreateEventListener
         $logentry->title = 'New team created';
         $logentry->action = $action;
         $logentry->save();
+        $user = $event->team->user()->first();
+        
+        Mail::to($user->email)->send(new StatusUpdateMail($event->team));
     }
 }

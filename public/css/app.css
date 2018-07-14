@@ -10430,7 +10430,6 @@ body {
 }
 
 .container {
-  margin-bottom: 2rem;
   padding: 0;
 }
 
@@ -10507,14 +10506,12 @@ main {
 }
 
 a.sco-nav-link {
-  border-radius: 5px;
   color: #fff !important;
 }
 
 a.sco-nav-link:hover {
   background-color: #eee !important;
   color: #000 !important;
-  border-radius: 0.25rem;
 }
 
 #flash_message {
@@ -10715,22 +10712,12 @@ ol.rulebook-section ol > li::before {
 }
 
 .facebook-feed-element .facebook-feed-element-body {
-  padding: 0 5%;
+  padding: 0 3rem;
   margin-top: 1rem;
-}
-
-.facebook-feed-element .facebook-feed-element-link {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.facebook-feed-element .facebook-feed-element-link a {
-  max-width: 80%;
-  overflow-x: hidden;
 }
 
 .facebook-feed-element .facebook-feed-element-picture {
-  padding: 0 5%;
+  padding: 0 3rem;
   margin-top: 1rem;
 }
 
@@ -10741,6 +10728,23 @@ ol.rulebook-section ol > li::before {
   max-width: 100%;
   height: auto;
   border-radius: 0.2rem;
+}
+
+@media (max-width: 767.98px) {
+  .facebook-feed-element .facebook-feed-element-body,
+  .facebook-feed-element .facebook-feed-element-picture {
+    padding: 0 0rem;
+  }
+}
+
+.facebook-feed-element .facebook-feed-element-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.facebook-feed-element .facebook-feed-element-link a {
+  max-width: 80%;
+  overflow-x: hidden;
 }
 
 .btn-outline-dark:hover {
@@ -11176,5 +11180,12 @@ span.clear_driver {
 
 .crs-ptr {
   cursor: pointer;
+}
+
+.admin-alert {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10000;
 }
 

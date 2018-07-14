@@ -17,16 +17,18 @@ class TeamEditEvent
 
     public $team;
     public $title;
+    public $specialString;
     /**
      * Create a new event instance.
      *
      * @return void
      */
 
-    public function __construct(Team $team, $title)
+    public function __construct(Team $team, $title, $specialString = null)
     {
         $this->team = $team;
         $this->title = $title;
+        $this->specialString = $specialString;
     }
 
     /**

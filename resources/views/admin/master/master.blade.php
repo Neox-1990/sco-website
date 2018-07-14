@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <title>SCO Admin Dashbord</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   </head>
   <body id="admin-dashbord">
+    <div class="admin-alert">
+    </div>
     @include('master.flash')
     <div class="container-fluid">
       <div class="d-flex">

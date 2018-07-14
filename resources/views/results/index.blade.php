@@ -3,15 +3,15 @@
 @section('main')
 <div class="row">
   <div class="col-12" style="padding-bottom:2rem;">
-    <div class="mb-3 d-flex flex-wrap" id="results_controlbox_rounds">
-      <a href="{{url('/results')}}" class="btn btn-primary">Championship</a>
+    <a href="{{url('/results')}}" class="btn btn-primary m-2">Championship</a>
+    <div class="mb-3 d-flex flex-wrap justify-content-start align-items-stretch" id="results_controlbox_rounds">
       @foreach ($rounds as $round)
-        <a href="{{url('/results/'.$round->id)}}" class="btn btn-outline-primary ml-3 mt-1">Round {{$round->number}}</a>
+        <a href="{{url('/results/'.$round->id)}}" class="btn btn-outline-primary m-2">Round {{$round->number}}</a>
       @endforeach
     </div>
     <div class="mb-3 d-flex flex-wrap" id="results_controlbox_class">
       @foreach ($resultsSorted as $class => $results)
-        <button data-class="{{$class}}" class="btn btn-{{$class!=$first?'outline-'.$class:$class}} mr-3 mt-1 {{$class}}-toggle">{{$class}}</button>
+        <button data-class="{{$class}}" class="btn btn-{{$class!=$first?'outline-'.$class:$class}} m-2 {{$class}}-toggle">{{$class}}</button>
       @endforeach
     </div>
     @if ($resultsSorted[$first]->isEmpty())

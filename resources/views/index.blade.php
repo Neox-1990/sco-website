@@ -3,7 +3,7 @@
 @section('main')
 
 <div class="row d-flex align-items-stretch">
-  <div class="col-lg-9" id="facebookfeed">
+  <div class="col-12 col-lg-9 px-0 px-md-3" id="facebookfeed">
     @foreach ($feedData as $feedElement)
       <div class="jumbotron facebook-feed-element">
         <div class="facebook-feed-element-header">
@@ -25,11 +25,11 @@
       </div>
     @endforeach
   </div>
-  <aside class="col-lg-3 d-flex flex-column align-items-start align-items-stretch">
+  <aside class="col-lg-3 d-flex flex-column align-items-start align-items-stretch px-0 px-md-3">
     @if (app('request')->has('useless'))
       @include('master.useless')
     @endif
-    <div class="card sco-status mt-md-3 mt-lg-0">
+    <div class="card sco-status mt-3 mt-lg-0">
       <div class="card-header text-center">
         <h3>Season Status</h3>
       </div>

@@ -566,21 +566,21 @@ fails to pay the entry fee of $25 by the deadline mentioned in 5.c.1 will lose t
 @section('additionalFooter')
 <script type="text/javascript">
   $(function(){
-    $('.rulebook-section').prev().append('<i class="fas fa-caret-square-down ml-3" aria-hidden="true"></i>').on('click', toggleRule);
+    $('.rulebook-section').prev().append('<i class="far fa-plus-square ml-3" aria-hidden="true"></i>').on('click', toggleRule);
     $('#openAllRules').on('click', openAllRules);
   });
 
   function toggleRule(){
     $(this).next().slideToggle();
-    $(this).find('i').first().toggleClass('fa-caret-square-o-down').toggleClass('fa-caret-square-o-up');
+    $(this).find('i').first().toggleClass('fa-plus-square').toggleClass('fa-minus-square');
   }
   function openAllRules(){
     if($(this).attr('data-status')=='closed'){
-      $('.rulebook-section').slideDown().prev().find('i').removeClass('fa-caret-square-o-down').addClass('fa-caret-square-o-up');
+      $('.rulebook-section').slideDown().prev().find('i').removeClass('fa-plus-square').addClass('fa-minus-square');
       $(this).attr('data-status', 'open');
       $(this).find('span').first().html('Close all rules');
     }else{
-      $('.rulebook-section').slideUp().prev().find('i').addClass('fa-caret-square-o-down').removeClass('fa-caret-square-o-up');
+      $('.rulebook-section').slideUp().prev().find('i').addClass('fa-plus-square').removeClass('fa-minus-square');
       $(this).attr('data-status', 'closed');
       $(this).find('span').first().html('Open all rules');
     }

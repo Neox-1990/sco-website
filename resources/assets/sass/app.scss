@@ -17,7 +17,6 @@ body{
 }
 
 .container{
-  margin-bottom: 2rem;
   padding:0;
 }
 nav{
@@ -82,12 +81,12 @@ main{
   }
 }
 a.sco-nav-link{
-  border-radius: 5px;
+  //border-radius: 0px;
   color: #fff !important;
   &:hover{
     background-color: #eee !important;
     color: #000 !important;
-    border-radius: $border-radius;
+    //border-radius: $border-radius;
   }
 }
 #flash_message{
@@ -258,19 +257,11 @@ ol.rulebook-section{
     font-size: 0.8rem;
   }
   .facebook-feed-element-body{
-    padding: 0 5%;
+    padding: 0 3*$spacer;
     margin-top:1rem;
-  }
-  .facebook-feed-element-link{
-    text-align: center;
-    margin-top:1rem;
-    a{
-      max-width:80%;
-      overflow-x: hidden;
-    }
   }
   .facebook-feed-element-picture{
-    padding: 0 5%;
+    padding: 0 3*$spacer;
     margin-top:1rem;
     img{
       display:block;
@@ -279,6 +270,22 @@ ol.rulebook-section{
       max-width: 100%;
       height:auto;
       border-radius: 0.2rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm){
+    .facebook-feed-element-body,
+    .facebook-feed-element-picture{
+      padding: 0 0*$spacer;
+    }
+  }
+
+  .facebook-feed-element-link{
+    text-align: center;
+    margin-top:1rem;
+    a{
+      max-width:80%;
+      overflow-x: hidden;
     }
   }
 }
@@ -633,4 +640,11 @@ span.clear_driver{
 
 .crs-ptr{
   cursor: pointer;
+}
+
+.admin-alert{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10000;
 }

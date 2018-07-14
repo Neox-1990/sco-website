@@ -99,3 +99,4 @@ Route::get('/admin/invites', 'AdminController@invitesIndex');
 Route::post('/admin/invites', 'AdminController@invitesProcess');
 
 Route::get('/ajax/formerteam/{team}', 'AjaxController@formerTeams');
+Route::get('/ajax/changeTeam/{team}', 'AdminController@updateTeamStatus');

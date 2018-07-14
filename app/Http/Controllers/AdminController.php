@@ -176,8 +176,9 @@ class AdminController extends Controller
         } elseif ($request->has('driverremove')) {
             $team->drivers()->detach($request->input('driverid'));
             $team->save();
+            $driver = Driver::where('id', $request->input('driverid'))->first();
             session()->flash('flash_message_success', 'You removed the driver from '.$team->name);
-            event(new TeamEditEvent($team, 'Team driver removed'));
+            event(new TeamEditEvent($team, 'Team driver removed', 'removed driver: <a href="admin/drivers/'.$request->input('driverid').'" title="'.$driver->name.'">'.$request->input('driverid').'</a>'));
             return redirect('admin/teams/'.$team['id']);
         } else {
             session()->flash('flash_message_alert', 'Unknown Error');
@@ -487,5 +488,26 @@ class AdminController extends Controller
             session()->flash('flash_message_success', 'Invite deleted');
             return redirect('admin/invites');
         }
+    }
+
+    public function updateTeamStatus(Request $request, Team $team)
+    {
+        $status = $request->input('newstatus');
+        $team->status = $status;
+        $success = $team->save();
+        //$response;
+        if ($success) {
+            $response = $team->name." set to ".config('constants.status_names')[$status];
+
+            event(new TeamStatusChangeEvent($team));
+            event(new TeamEditEvent($team, 'Status set '.config('constants.status_names')[$status]));
+        } else {
+            $response = $team->name." coundt be set to ".config('constants.status_names')[$status];
+        }
+        return array(
+          'success' => $success,
+          'response' => $response,
+          'status' => $status,
+        );
     }
 }

@@ -11177,14 +11177,13 @@ $(document).ready(function () {
       $(this).remove();
     });
   });
-  $('#flash_message>button.close').on('click', function () {
-    $(this).parent().fadeOut(500, function () {
-      $(this).remove();
-    });
+  $('#flash_message button.close').on('click', function () {
+    $(this).parent().remove();
   });
   Object(__WEBPACK_IMPORTED_MODULE_1__helper_tablesorter_js__["a" /* tablesorterInit */])();
-  Object(__WEBPACK_IMPORTED_MODULE_2__helper_adminhelper_js__["a" /* toggleTeamTablesInit */])();
+  Object(__WEBPACK_IMPORTED_MODULE_2__helper_adminhelper_js__["b" /* toggleTeamTablesInit */])();
   Object(__WEBPACK_IMPORTED_MODULE_3__helper_resulthelper_js__["a" /* resultToggleInit */])();
+  Object(__WEBPACK_IMPORTED_MODULE_2__helper_adminhelper_js__["a" /* changeTeamStatusInit */])();
   if (typeof numbers !== 'undefined') {
     Object(__WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["d" /* updateNumbers */])();
     $('#car').on('change', __WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["d" /* updateNumbers */]);
@@ -38577,8 +38576,10 @@ var tablesorter = function tablesorter() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return toggleTeamTablesInit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return toggleTeamTablesInit; });
 /* unused harmony export toggleTeamTables */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return changeTeamStatusInit; });
+/* unused harmony export changeTeamStatus */
 var toggleTeamTablesInit = function toggleTeamTablesInit() {
   $('.teamtabletoggle').on('click', toggleTeamTables);
   $('.teamtabletoggle').next().hide();
@@ -38587,6 +38588,37 @@ var toggleTeamTablesInit = function toggleTeamTablesInit() {
 var toggleTeamTables = function toggleTeamTables() {
   $(this).find('.toggle-icon i').first().toggleClass('closed').toggleClass('open');
   $(this).next().slideToggle(800);
+};
+
+var changeTeamStatusInit = function changeTeamStatusInit() {
+  $('button.teamchangebtn').on('click', changeTeamStatus);
+};
+
+var changeTeamStatus = function changeTeamStatus() {
+  var caller = $(this);
+  var teamid = caller.attr('data-team');
+  var status = caller.attr('data-status');
+
+  $.get('/ajax/changeTeam/' + teamid, {
+    newstatus: '' + status
+  }, function (data) {
+    if (data.success) {
+      var colors = {
+        0: 'bg-danger',
+        1: 'bg-primary',
+        2: 'bg-warning',
+        3: 'bg-info',
+        4: 'bg-success'
+      };
+      caller.parent().parent().find('.teamchangebtn').removeAttr('disabled');
+      caller.attr('disabled', 'disabled');
+      caller.parent().parent().find('td:first').removeClass();
+      caller.parent().parent().find('td:first').addClass(colors[data.status]);
+      $('<div class="alert alert-success">' + data.response + '<button type="button" class="close" aria-label="Close" onclick="$(this).parent().fadeOut();">' + '<span aria-hidden="true">&times;</span>' + '</button>' + '</div>').appendTo('.admin-alert').delay(3000).fadeOut();
+    } else {
+      $('<div class="alert alert-danger">' + data.response + '<button type="button" class="close" aria-label="Close" onclick="$(this).parent().fadeOut();">' + '<span aria-hidden="true">&times;</span>' + '</button>' + '</div>').appendTo('.admin-alert').delay(3000).fadeOut();
+    }
+  });
 };
 
 /***/ }),
