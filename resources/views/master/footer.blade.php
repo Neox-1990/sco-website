@@ -18,4 +18,4 @@
   </div>
 </footer>
 
-<script type="text/javascript" src="{{asset('/js/app.js')}}"></script>
+<script type="text/javascript" src="{{asset('/js/app.js')}}?date=20180716"></script>
