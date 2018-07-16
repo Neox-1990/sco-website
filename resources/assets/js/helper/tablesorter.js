@@ -1,3 +1,5 @@
+import {changeTeamStatusInit, changeTeamStatus} from './adminhelper.js';
+
 export const tablesorterInit = function(){
   $('.sco-table-sort').on('click',tablesorter).append('<span class="ml-3 sco-sort-icon"><i class="fas fa-sort-down " aria-hidden="true"></i></span>');
 }
@@ -33,4 +35,5 @@ export const tablesorter = function(){
     return (aVal>bVal?dir:(aVal==bVal?0:-dir));
   });
   table.append(rows);
+  changeTeamStatusInit();
 }

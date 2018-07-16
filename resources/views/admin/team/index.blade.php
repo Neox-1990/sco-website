@@ -8,13 +8,14 @@
   @foreach ($teams as $name => $list)
   <h3 class="mt-5 teamtabletoggle">{{$name}} (<span class="text-danger">{{sizeof($list['pending'])}}</span>/<span class="text-primary">{{sizeof($list['reviewed'])}}</span>/<span class="text-warning">{{sizeof($list['waitinglist'])}}</span>/<span class="text-info">{{sizeof($list['qualified'])}}</span>/<span class="text-success">{{sizeof($list['confirmed'])}}</span>)<span class="ml-3 toggle-icon"><i class="fas fa-angle-double-down"></i></span></h3>
   <div class="">
-    <table class="table table-bordered table-hovered">
+    <table class="table table-bordered table-hovered" id="admin-teamtable">
       <thead>
         <tr>
           <th>edit</th>
           <th class="sco-table-sort" data-sort-content="date" data-sort-dir="asc">created</th>
           <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">name</th>
           <th class="sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">number</th>
+          <th class="sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">iR ID</th>
           <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">manager</th>
           <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">car</th>
           <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">pending</th>
@@ -33,6 +34,7 @@
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['name']}}</td>
             <td>{{$team['number']}}</td>
+            <td>{{$team['ir_teamid']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
             <td>
@@ -61,6 +63,7 @@
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['name']}}</td>
             <td>{{$team['number']}}</td>
+            <td>{{$team['ir_teamid']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
             <td>
@@ -89,6 +92,7 @@
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['name']}}</td>
             <td>{{$team['number']}}</td>
+            <td>{{$team['ir_teamid']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
             <td>
@@ -117,6 +121,7 @@
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['name']}}</td>
             <td>{{$team['number']}}</td>
+            <td>{{$team['ir_teamid']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
             <td>
@@ -145,6 +150,7 @@
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['created_at']->format('d.m.Y-H:i')}}</td>
             <td>{{$team['name']}}</td>
             <td>{{$team['number']}}</td>
+            <td>{{$team['ir_teamid']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
             <td>
@@ -195,6 +201,7 @@
             <td>{{$team['ir_teamid']}}</td>
             <td>{{$team['name']}}</td>
             <td>{{$team['number']}}</td>
+            <td>{{$team['ir_teamid']}}</td>
             <td><a href="{{url('admin/manager/'.$team['user']['id'])}}">{{$team['user']['name']}}</a></td>
             <td>{{config('constants.car_names')[$team['car']]}}</td>
             <td data-sort-date="{{$team['created_at']->format('YmdHis')}}">{{$team['deleted_at']->format('d.m.Y-H:i')}}</td>
