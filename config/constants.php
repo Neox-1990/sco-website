@@ -71,7 +71,7 @@ return [
     5 => [
       'P' => 16,
       'PC' => 14,
-      'GT' => 20
+      'GT' => 24
     ]
   ],
   'cars_to_classes' => [

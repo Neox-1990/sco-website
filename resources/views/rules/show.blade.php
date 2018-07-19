@@ -251,7 +251,7 @@
               <ul>
                 <li>Prototype (P): 16 cars</li>
                 <li>Prototype Challenge (PC): 14 cars</li>
-                <li>Grand Touring (GT): 20 cars</li>
+                <li>Grand Touring (GT): 24 cars</li>
               </ul></li>
             </ol>
         </li>
@@ -289,6 +289,7 @@ fails to pay the entry fee of $25 by the deadline mentioned in 5.c.1 will lose t
           <ol>
             <li>Driver line-ups may not be edited any later than 24 hours before the start of prequalifying and no later than 24 hours before the start of FP1 ahead of each round. All edits made beyond these points will only be valid for future events.</li>
             <li>Should a driver, who was added to a team's line-up after the deadline actually compete in the race, the team in question will receive a 60 second stop and hold penalty once said driver has taken over the car</li>
+            <li>There is only a single scenario under which drivers cannot be moved freely from one team's roster to another: The drivers, who pre-qualified a team's car into the field, must remain part of that car's driver line-up until after the 2nd event of the season has been completed. For transparency reasons, this limitation is also referenced in rule 7.e.</li>
           </ol>
         </li>
         <li>Should a 'Confirmed' team withdraw, resulting in a free spot within a certain class, the first team on that class' waiting list will be called up to fill the vacant spot for the rest of the season.
@@ -328,6 +329,7 @@ fails to pay the entry fee of $25 by the deadline mentioned in 5.c.1 will lose t
             <li>The waiting list will also be filled up based on the order of the teams in the pre-qualifying results: First all teams with valid times that failed to make the cut, then all teams with only one valid driver lap time, then all other teams based on their time of sign-up, with those having signed up longer ago being put above those who have signed up more recently.</li>
           </ol>
         </li>
+        <li>The drivers, who drove a team's car to pre-qualify it into the field, will be locked into that car's driver line-up for the first 2 events of the season. This limitation does not apply, if an entry not make it through pre-qualifying and ends up on the waiting list. For transparency reasons, this limitation is also mentioned in rule 5.f.3.</li>
       </ol>
       <h3>8. Warm-up</h3>
       <ol class="rulebook-section">
