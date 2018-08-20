@@ -263,11 +263,9 @@
         <li>The entry deadline for all regular entrants will be on Sunday, August 19th, 2018 at 23:59 UTC.
           <ol>
             <li>Should the number of teams entering a class not exceed the number of available slots for that class (see 5.a.1) by the date mentioned in 5.c, then the teams of said class must pay their entry fee of $25 by Saturday, August 25th, 2018 at 23:59 UTC.</li>
-            <li>All teams, that have entered a car class with multiple car models, must also declare their final car selection for the season by the deadline listed in 5.c.1.</li>
             <li>Should a class have fewer entries than the categories' maximum car count allows for (see 5.a.1), then the remaining open slots will instead be moved to the next smallest class (e.g.: Only 12 PC cars enter, meaning 2 slots remain open => P will receive the additional 2 slots to make it an 18 car class).</li>
-            <li>Should the need for a pre-qualifying session disappear through the slot re-allocation described in 5.c.3, then the teams of this class will also have to pay the entry fee of $25 by the deadline described in 5.c.1.</li>
-            <li>In any case, a team that doesn't have to pre-qualify themselves onto the grid but still
-fails to pay the entry fee of $25 by the deadline mentioned in 5.c.1 will lose that spot and will be demoted to the waiting list for their class instead. That new open slot would be re-assigned to the next smallest car category as described in 5.c.3.</li>
+            <li>Should the need for a pre-qualifying session disappear through the slot re-allocation described in 5.c.2, then the teams of this class will also have to pay the entry fee of $25 by the deadline described in 5.c.1.</li>
+            <li>In any case, a team that doesn't have to pre-qualify themselves onto the grid but still fails to pay the entry fee of $25 by the deadline mentioned in 5.c.1 will lose that spot and will be demoted to the waiting list for their class instead. That new open slot would be re-assigned to the next smallest car category as described in 5.c.2.</li>
             <li>Teams, in categories with enough entries to require a pre-qualifying session to take place, will be required to pre-qualify themselves into the field, unless their team entered the series using an automatic invite. More information about pre-qualifying can be found in Section 7 of this document.</li>
           </ol>
         </li>
@@ -290,6 +288,11 @@ fails to pay the entry fee of $25 by the deadline mentioned in 5.c.1 will lose t
             <li>Driver line-ups may not be edited any later than 24 hours before the start of prequalifying and no later than 24 hours before the start of FP1 ahead of each round. All edits made beyond these points will only be valid for future events.</li>
             <li>Should a driver, who was added to a team's line-up after the deadline actually compete in the race, the team in question will receive a 60 second stop and hold penalty once said driver has taken over the car</li>
             <li>There is only a single scenario under which drivers cannot be moved freely from one team's roster to another: The drivers, who pre-qualified a team's car into the field, must remain part of that car's driver line-up until after the 2nd event of the season has been completed. For transparency reasons, this limitation is also referenced in rule 7.e.</li>
+          </ol>
+        </li>
+        <li>Ahead of the first round of the season, all teams, that have entered a car class with multiple car models, must declare their final car selection for the season no later than Sunday, September 23rd, 2018 at 23:59 UTC.
+          <ol>
+            <li>Rule 5.g does not apply to waiting list teams, who may change their car model up to the point of being asked to fill an open spot in their class.</li>
           </ol>
         </li>
         <li>Should a 'Confirmed' team withdraw, resulting in a free spot within a certain class, the first team on that class' waiting list will be called up to fill the vacant spot for the rest of the season.
