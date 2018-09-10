@@ -35,12 +35,12 @@ class TeamEditEventListener
 
         $driverids = array_map(function ($id) {
             $driver = Driver::where('id', $id)->first();
-            return '<a href="'.url('/admin/drivers/'.$id).'" title="'.$driver->name.'">'.$id.'</a>';
+            return '<a href="'.'/admin/drivers/'.$id.'" title="'.$driver->name.'">'.$id.'</a>';
         }, $driverids);
 
         $action = $event->title.'. Teamname: '.$event->team->name.
       ' | Teamnumber: '.$event->team->number.
-      ' | Teamid: <a href="'.url('/admin/teams/'.$event->team->id).'">'.$event->team->id.'</a>'.
+      ' | Teamid: <a href="'.'/admin/teams/'.$event->team->id.'">'.$event->team->id.'</a>'.
       ' | Car: '.config('constants.car_names')[$event->team->car].
       ' | Drivers (ids): '.implode(',', $driverids);
 

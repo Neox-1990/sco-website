@@ -10,7 +10,7 @@
       <input id="driver_name" class="form-control" type="text" name="drivername" value="{{$driver['name']}}">
     </div>
     <div class="form-group">
-      <label for="driver_irid"><a target="_blank" href="http://members.iracing.com/membersite/member/CareerStats.do?custid={{$driver['id']}}">iRacing ID</a></label>
+      <label for="driver_irid"><a target="_blank" href="http://members.iracing.com/membersite/member/CareerStats.do?custid={{$driver['iracing_id']}}">iRacing ID</a></label>
       <input id="driver_irid" class="form-control" type="text" name="driveririd" value="{{$driver['iracing_id']}}">
     </div>
     <div class="form-group">
