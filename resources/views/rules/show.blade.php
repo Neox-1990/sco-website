@@ -6,6 +6,7 @@
   <div class="col-12">
     <div class="p-2" id="rulebook">
       <h1>Rulebook</h1>
+      <p><em>Last update: 5th September 2018</em></p>
       <a data-status="closed" class="btn btn-outline-dark m-1" id="openAllRules"><i class="fas fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
       <hr>
       <h3>1. Introduction</h3>
@@ -38,7 +39,7 @@
                 <td>Prototype Challenge</td>
                 <td class="badge-PC">PC</td>
                 <td>HPD ARX-01c</td>
-                <td>0 kg / 66.7% (=40 kg)</td>
+                <td>0 kg / 67% (=40.2 kg)</td>
               </tr>
               <tr>
                 <td>Grand Touring</td>
@@ -272,7 +273,8 @@
         <li>Should a pre-qualifying session have taken place on Sunday, August 26th, 2018 at 16:00 UTC, the results will be published no later than Tuesday, August 28th, 2018 at 16:00 UTC.
           <ol>
             <li>All teams that made it through pre-qualifying will have until Sunday, September 2nd, 2018 at 23:59 UTC to pay their entry fee of $25.</li>
-            <li>Teams that fail to pay the entry fee of $25 in time will lose their spot to the next team that failed to make the cut in their category. This new team will then have a maximum of 48 hours to pay the entry fee of $25 and claim the slot before this procedure is repeated.</li>
+            <li>Teams that fail to pay the entry fee of $25 in time will lose their spot to the next team that failed to make the cut in their category. This new team will then have a maximum of 48 hours to pay the entry fee of $25 and claim the slot before this procedure is repeated and the next reserve team team will be given the same time period to pay and claim the slot.</li>
+            <li>Once a team has claimed a slot by paying the entry fee within 48 hours once they've been given the chance to do so (see 5.d.2), the team that initially qualified for the spot on the grid will become the new first reserve team in their class. All other reserve teams will remain on the waiting list in the same order they were in before the procedure described in 5.d.2 began.</li>
             <li>Should a class run out of teams through the procedure described in 5.d.2, then the first team of the next-biggest class that had teams attempting to pre-qualify themselves into the field will go through the same procedure as mentioned above.</li>
           </ol>
         </li>
