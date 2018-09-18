@@ -52,7 +52,7 @@
     </div>
     <div class="card mt-3">
       <div class="card-body">
-        <a href="https://www.coresimracing.com/"><img src="{{asset('img/core-logo.png')}}" alt="" class="img-fluid"></a>
+        <a href="https://www.coresimracing.com/"><img src="{{asset('img/core2k19_mainlogo_black-1024x330.png')}}" alt="" class="img-fluid"></a>
         <hr>
         <a href="http://racespot.tv/"><img src="{{asset('img/racespot-logo.png')}}" alt="" class="img-fluid"></a>
         <hr>
