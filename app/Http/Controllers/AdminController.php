@@ -19,6 +19,7 @@ use App\Events\TeamStatusChangeEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -80,7 +81,9 @@ class AdminController extends Controller
     {
         $log = LogEntry::query();
         if ($request->has('team_id')) {
-            $log->where('action', 'like', '%Teamid: '.$request->input('teamID').'%');
+            $log
+              ->where('action', 'like', '%Teamid: '.$request->input('teamID').'%')
+              ->orWhere('action', 'like', '%Teamid: <a href="/admin/teams/'.$request->input('teamID').'">'.$request->input('teamID').'</a>%');
         } elseif ($request->has('manager_id')) {
             $log->where('user_id', '=', $request->input('managerID'));
         } elseif ($request->has('action_')) {
@@ -109,7 +112,9 @@ class AdminController extends Controller
                 $log->orWhere('title', 'like', '%car class changed%');
             }
         }
+        //DB::enableQueryLog();
         $log = $log->with('user')->orderBy('created_at', 'desc')->get();
+        //dd(DB::getQueryLog());
         return view('admin.log.index', compact('log'));
     }
 
