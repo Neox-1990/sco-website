@@ -11,6 +11,8 @@ use App\Season;
 use App\LogEntry;
 use App\Setting;
 use App\Driver;
+use App\Mail\Briefing;
+
 use App\Events\TeamDeleteEvent;
 use App\ResultHelper\GridResult;
 use App\Events\TeamEditEvent;
@@ -18,6 +20,7 @@ use App\Events\UserUpdateEvent;
 use App\Events\TeamStatusChangeEvent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
@@ -514,5 +517,33 @@ class AdminController extends Controller
           'response' => $response,
           'status' => $status,
         );
+    }
+
+    public function briefingEdit()
+    {
+        //dd($managers, $open_invites, $used_invites);
+        return view('admin.briefing.edit');
+    }
+
+    public function briefingSend(Request $request)
+    {
+        $subject = $request->input('mail_subject');
+        $salutation = $request->input('mail_salutation');
+        $text = $request->input('mail_text');
+        $link = $request->input('mail_link');
+        $farewell = $request->input('mail_farewell');
+
+        $input = compact('subject', 'salutation', 'text', 'link', 'farewell');
+        $manager = User::whereHas('teams', function ($query) {
+            $query->where([['status', '=', '4'],['season_id', '=', config('constants.current_season')]]);
+        })->pluck('email');
+        array_push($manager, 'kontakt@ronaldg.de');
+        foreach ($manager as $mail) {
+            // code...
+            Mail::to(/*$mail*/'kontakt@ronaldg.de')->send(new Briefing($input));
+        }
+
+        dd($input);
+        //return view('admin.briefing.send');
     }
 }

@@ -97,6 +97,8 @@ Route::get('/admin/season/edit/{season}/createRound', 'AdminController@roundCrea
 Route::post('/admin/season/edit/{season}/createRound', 'AdminController@roundStore');
 Route::get('/admin/invites', 'AdminController@invitesIndex');
 Route::post('/admin/invites', 'AdminController@invitesProcess');
+Route::get('/admin/briefing', 'AdminController@briefingEdit');
+Route::post('/admin/briefing', 'AdminController@briefingSend');
 
 Route::get('/ajax/formerteam/{team}', 'AjaxController@formerTeams');
 Route::get('/ajax/changeTeam/{team}', 'AdminController@updateTeamStatus');
