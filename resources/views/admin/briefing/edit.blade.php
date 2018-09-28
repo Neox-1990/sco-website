@@ -3,7 +3,7 @@
 @section('content')
   <h1>Briefing</h1>
   <hr>
-  <form class="" action="{{url('admin/briefing')}}" method="post">
+  <form class="" action="/admin/briefing" method="post">
     {{ csrf_field() }}
     <div class="form-group">
       <label for="mail_subject">Subject</label>
