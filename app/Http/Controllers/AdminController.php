@@ -537,6 +537,7 @@ class AdminController extends Controller
         $manager = User::whereHas('teams', function ($query) {
             $query->where([['status', '=', '4'],['season_id', '=', config('constants.current_season')]]);
         })->pluck('email');
+        dd($manager);
         array_push($manager, 'kontakt@ronaldg.de');
         dd($manager);
         foreach ($manager as $mail) {
