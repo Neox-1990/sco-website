@@ -1,7 +1,7 @@
-{{$input['salutation']}}
+{!! $input['salutation'] !!}
 
-{{$input['text']}}
+{!! $input['text'] !!}
 
-Briefing PDF: {{$input['link']}}
+Briefing PDF: {!! $input['link'] !!}
 
-{{$input['farewell']}}
+{!! $input['farewell'] !!}

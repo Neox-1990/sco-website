@@ -542,7 +542,7 @@ class AdminController extends Controller
         //dd($manager);
         foreach ($manager as $mail) {
             // code...
-            Mail::to(/*$mail*/'kontakt@ronaldg.de')->send(new Briefing($input));
+            Mail::to($mail)->send(new Briefing($input));
         }
 
         dd($input);
