@@ -22,6 +22,12 @@ class RoundController extends Controller
           'wup' => new Carbon($round->warmup_start),
           'q' => new Carbon($round->qual_start),
           'r' => new Carbon($round->race_start),
+          'fp1_i' => is_null($round->fp1_insimdate)?null:new Carbon($round->fp1_insimdate),
+          'fp2_i' => is_null($round->fp2_insimdate)?null:new Carbon($round->fp2_insimdate),
+          'fp3_i' => is_null($round->fp3_insimdate)?null:new Carbon($round->fp3_insimdate),
+          'wup_i' => is_null($round->warmup_insimdate)?null:new Carbon($round->warmup_insimdate),
+          'q_i' => is_null($round->qual_insimdate)?null:new Carbon($round->qual_insimdate),
+          'r_i' => is_null($round->race_insimdate)?null:new Carbon($round->race_insimdate),
         ];
         $season = Season::where('id', config('constants.current_season'))->first();
         return view('rounds.show', compact('round', 'all', 'title', 'times', 'season'));

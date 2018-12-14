@@ -28,6 +28,10 @@
       <input type="text" class="form-control" name="round_fp1_start" placeholder="YYYY-MM-DD HH:MM:SS" id="round_fp1_start">
     </div>
     <div class="form-group">
+      <label for="round_fp1_insimdate">FP1 Insimdate</label>
+      <input type="text" class="form-control" name="round_fp1_insimdate" placeholder="YYYY-MM-DD HH:MM:SS" id="round_fp1_insimdate">
+    </div>
+    <div class="form-group">
       <label for="round_fp1_min">FP1 Minutes</label>
       <input type="text" class="form-control" name="round_fp1_min" placeholder="number" id="round_fp1_min">
     </div>
@@ -35,6 +39,10 @@
     <div class="form-group">
       <label for="round_fp2_start">FP2 Start</label>
       <input type="text" class="form-control" name="round_fp2_start" placeholder="YYYY-MM-DD HH:MM:SS" id="round_fp2_start">
+    </div>
+    <div class="form-group">
+      <label for="round_fp2_insimdate">FP2 Insimdate</label>
+      <input type="text" class="form-control" name="round_fp2_insimdate" placeholder="YYYY-MM-DD HH:MM:SS" id="round_fp2_insimdate">
     </div>
     <div class="form-group">
       <label for="round_fp2_min">FP2 Minutes</label>
@@ -46,6 +54,10 @@
       <input type="text" class="form-control" name="round_fp3_start" placeholder="YYYY-MM-DD HH:MM:SS" id="round_fp3_start">
     </div>
     <div class="form-group">
+      <label for="round_fp3_insimdate">FP3 Insimdate</label>
+      <input type="text" class="form-control" name="round_fp3_insimdate" placeholder="YYYY-MM-DD HH:MM:SS" id="round_fp3_insimdate">
+    </div>
+    <div class="form-group">
       <label for="round_fp3_min">FP3 Minutes</label>
       <input type="text" class="form-control" name="round_fp3_min" placeholder="number" id="round_fp3_min">
     </div>
@@ -53,6 +65,10 @@
     <div class="form-group">
       <label for="round_warmup_start">Warmup Start</label>
       <input type="text" class="form-control" name="round_warmup_start" placeholder="YYYY-MM-DD HH:MM:SS" id="round_warmup_start">
+    </div>
+    <div class="form-group">
+      <label for="round_warmup_insimdate">Warmup Insimdate</label>
+      <input type="text" class="form-control" name="round_warmup_insimdate" placeholder="YYYY-MM-DD HH:MM:SS" id="round_warmup_insimdate">
     </div>
     <div class="form-group">
       <label for="round_warmup_min">Warmup Minutes</label>
@@ -64,6 +80,10 @@
       <input type="text" class="form-control" name="round_qual_start" placeholder="YYYY-MM-DD HH:MM:SS" id="round_qual_start">
     </div>
     <div class="form-group">
+      <label for="round_qual_insimdate">Qual Insimdate</label>
+      <input type="text" class="form-control" name="round_qual_insimdate" placeholder="YYYY-MM-DD HH:MM:SS" id="round_qual_insimdate">
+    </div>
+    <div class="form-group">
       <label for="round_qual_min">Qual Minutes</label>
       <input type="text" class="form-control" name="round_qual_min" placeholder="number" id="round_qual_min">
     </div>
@@ -71,6 +91,10 @@
     <div class="form-group">
       <label for="round_race_start">Race Start</label>
       <input type="text" class="form-control" name="round_race_start" placeholder="YYYY-MM-DD HH:MM:SS" id="round_race_start">
+    </div>
+    <div class="form-group">
+      <label for="round_race_insimdate">Race Insimdate</label>
+      <input type="text" class="form-control" name="round_race_insimdate" placeholder="YYYY-MM-DD HH:MM:SS" id="round_race_insimdate">
     </div>
     <div class="form-group">
       <label for="round_race_min">Race Minutes</label>

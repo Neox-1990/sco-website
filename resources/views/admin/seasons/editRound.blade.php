@@ -31,6 +31,10 @@
       <input type="text" class="form-control" name="round_fp1_start" value="{{$round['fp1_start']}}" id="round_fp1_start">
     </div>
     <div class="form-group">
+      <label for="round_fp1_insimdate">FP1 Insimdate</label>
+      <input type="text" class="form-control" name="round_fp1_insimdate" value="{{$round['fp1_insimdate']}}" id="round_fp1_insimdate">
+    </div>
+    <div class="form-group">
       <label for="round_fp1_min">FP1 Minutes</label>
       <input type="text" class="form-control" name="round_fp1_min" value="{{$round['fp1_minutes']}}" id="round_fp1_min">
     </div>
@@ -38,6 +42,10 @@
     <div class="form-group">
       <label for="round_fp2_start">FP2 Start</label>
       <input type="text" class="form-control" name="round_fp2_start" value="{{$round['fp2_start']}}" id="round_fp2_start">
+    </div>
+    <div class="form-group">
+      <label for="round_fp2_insimdate">FP2 Insimdate</label>
+      <input type="text" class="form-control" name="round_fp2_insimdate" value="{{$round['fp2_insimdate']}}" id="round_fp2_insimdate">
     </div>
     <div class="form-group">
       <label for="round_fp2_min">FP2 Minutes</label>
@@ -49,6 +57,10 @@
       <input type="text" class="form-control" name="round_fp3_start" value="{{$round['fp3_start']}}" id="round_fp3_start">
     </div>
     <div class="form-group">
+      <label for="round_fp3_insimdate">FP3 Insimdate</label>
+      <input type="text" class="form-control" name="round_fp3_insimdate" value="{{$round['fp3_insimdate']}}" id="round_fp3_insimdate">
+    </div>
+    <div class="form-group">
       <label for="round_fp3_min">FP3 Minutes</label>
       <input type="text" class="form-control" name="round_fp3_min" value="{{$round['fp3_minutes']}}" id="round_fp3_min">
     </div>
@@ -56,6 +68,10 @@
     <div class="form-group">
       <label for="round_warmup_start">Warmup Start</label>
       <input type="text" class="form-control" name="round_warmup_start" value="{{$round['warmup_start']}}" id="round_warmup_start">
+    </div>
+    <div class="form-group">
+      <label for="round_warmup_insimdate">Warmup Insimdate</label>
+      <input type="text" class="form-control" name="round_warmup_insimdate" value="{{$round['warmup_insimdate']}}" id="round_warmup_insimdate">
     </div>
     <div class="form-group">
       <label for="round_warmup_min">Warmup Minutes</label>
@@ -67,6 +83,10 @@
       <input type="text" class="form-control" name="round_qual_start" value="{{$round['qual_start']}}" id="round_qual_start">
     </div>
     <div class="form-group">
+      <label for="round_qual_insimdate">Qual Insimdate</label>
+      <input type="text" class="form-control" name="round_qual_insimdate" value="{{$round['qual_insimdate']}}" id="round_qual_insimdate">
+    </div>
+    <div class="form-group">
       <label for="round_qual_min">Qual Minutes</label>
       <input type="text" class="form-control" name="round_qual_min" value="{{$round['qual_minutes']}}" id="round_qual_min">
     </div>
@@ -74,6 +94,10 @@
     <div class="form-group">
       <label for="round_race_start">Race Start</label>
       <input type="text" class="form-control" name="round_race_start" value="{{$round['race_start']}}" id="round_race_start">
+    </div>
+    <div class="form-group">
+      <label for="round_race_insimdate">Race Insimdate</label>
+      <input type="text" class="form-control" name="round_race_insimdate" value="{{$round['race_insimdate']}}" id="round_race_insimdate">
     </div>
     <div class="form-group">
       <label for="round_race_min">Race Minutes</label>
