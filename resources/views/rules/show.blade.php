@@ -6,7 +6,7 @@
   <div class="col-12">
     <div class="p-2" id="rulebook">
       <h1>Rulebook</h1>
-      <p><em>Last update: 5th September 2018</em></p>
+      <p><em>Last update: 14th December 2018</em></p>
       <a data-status="closed" class="btn btn-outline-dark m-1" id="openAllRules"><i class="fas fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
       <hr>
       <h3>1. Introduction</h3>
@@ -58,158 +58,244 @@
       </ol>
       <h3>3. Timetable and Season Schedule</h3>
       <ol class="rulebook-section">
-        <li>The series will visit a total of 6 different venues during the 2018-2019 season. The opening and final rounds of the season will be 8 hour races, all other races will be 4 hours long.
+        <li>The series will visit a total of 6 different venues during the 2018-2019 season. The opening and final rounds of the season will be 8 hour races, all other races will be 4 hours long. The session dates and start times as well as the in-sim date and time of day are listed below.
           <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Round</th>
-                <th>Venue / Track Layout / Time of Day</th>
-                <th>Session Dates</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
-                <td>Pre-Q.</td>
-                <td>Autodromo Enzo e Dino Ferrari - Grand Prix - Afternoon</td>
-                <td>26/08/2018 @ 16:00 UTC</td>
+                <td colspan="3">PQ Autodromo Enzo e Dino Ferrari - Grand Prix - Afternoon 26/08/2018 @ 16:00 UTC</td>
               </tr>
               <tr>
-                <td>1</td>
-                <td>8 hours of Spa-Francorchamps<br>Circuit de Spa-Francorchamps - GP Pits - Afternoon</td>
-                <td>FP1: 27/09/2018<br>FP2: 28/09/2018<br>FP3: 29/09/2018<br>Main Event: 30/09/2018</td>
+                <td colspan="3" class="pt-5">1 <b class="ml-5">8 hours of Spa-Francorchamps</b> (Circuit de Spa-Francorchamps - GP Pits)</td>
               </tr>
               <tr>
-                <td>2</td>
-                <td>4 hours of Monza<br>Autodromo Nazionale Monza - Grand Prix - Afternoon</td>
-                <td>FP1: 01/11/2018<br>FP2: 02/11/2018<br>FP3: 03/11/2018<br>Main Event: 04/11/2018</td>
+                <th>Session</th>
+                <th>Sim Date & Time</th>
+                <th>Session Start</th>
               </tr>
               <tr>
-                <td>3</td>
-                <td>4 hours of the Nürburgring<br>Nürburgring Grand-Prix-Strecke - Grand Prix - Afternoon</td>
-                <td>FP1: 29/11/2018<br>FP2: 30/11/2018<br>FP3: 01/12/2018<br>Main Event: 02/12/2018</td>
+                <td>Free Practice 1</td>
+                <td>2018-03-27 @ 10:00 local</td>
+                <td>27/09/18 @ 18:00 UTC</td>
               </tr>
               <tr>
-                <td>4</td>
-                <td>4 hours of the Americas<br>Circuit of the Americas - Grand Prix - Afternoon</td>
-                <td>FP1: 03/01/2019<br>FP2: 04/01/2019<br>FP3: 05/01/2019<br>Main Event: 06/01/2019</td>
+                <td>Free Practice 2</td>
+                <td>2018-03-28 @ 12:00 local</td>
+                <td>28/09/18 @ 18:00 UTC</td>
               </tr>
               <tr>
-                <td>5</td>
-                <td>4 hours of Interlagos<br>Autodromo Jose Carlos Pace – Grand Prix - Afternoon</td>
-                <td>FP1: 31/01/2019<br>FP2: 01/02/2019<br>FP3: 02/02/2019<br>Main Event: 03/02/2019</td>
+                <td>Free Practice 3</td>
+                <td>2018-03-29 @ 14:00 local</td>
+                <td>29/09/18 @ 18:00 UTC</td>
               </tr>
               <tr>
-                <td>6</td>
-                <td>8 hours of Silverstone<br>Silverstone Circuit - Grand Prix - Afternoon</td>
-                <td>FP1: 21/02/2019<br>FP2: 22/02/2019<br>FP3: 23/02/2019<br>Main Event: 24/02/2019</td>
-              </tr>
-            </tbody>
-          </table>
-        </li>
-        <li>Round 1 will use the following start times for all sessions:
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Day &amp; Start Time</th>
-                <th>Session Duration</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Thursday at <strong>18:00 UTC</strong></td>
-                <td>Start of Free Practice 1 <br><i>(360 minute duration)</i></td>
+                <td>Warm-Up</td>
+                <td>2018-03-30 @ 10:00 local</td>
+                <td>30/09/18 @ 09:00 UTC</td>
               </tr>
               <tr>
-                <td>Friday at <strong>18:00 UTC</strong></td>
-                <td>Start of Free Practice 2 <br><i>(360 minute duration)</i></td>
+                <td>Qualifying</td>
+                <td>2018-03-30 @ 11:45 local</td>
+                <td>30/09/18 @ 10:40 UTC</td>
               </tr>
               <tr>
-                <td>Saturday at <strong>18:00 UTC</strong></td>
-                <td>Start of Free Practice 3 <br><i>(360 minute duration)</i></td>
+                <td>Race</td>
+                <td>2018-03-30 @ 12:10 local</td>
+                <td>30/09/18 @ 11:00 UTC</td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="pt-5">2 <b class="ml-5">4 hours of Monza</b> (Autodromo Nazionale Monza - Grand Prix)</td>
               </tr>
               <tr>
-                <td>Sunday at <strong>09:00 UTC</strong></td>
-                <td>Start of Warm Up <br><i>(100 minute duration)</i></td>
+                <th>Session</th>
+                <th>Sim Date & Time</th>
+                <th>Session Start</th>
               </tr>
               <tr>
-                <td>Sunday at <strong>10:40 UTC</strong></td>
-                <td>Start of Qualifying <br><i>(20 minute duration)</i></td>
+                <td>Free Practice 1</td>
+                <td>2018-05-01 @ 13:00 local</td>
+                <td>01/11/18 @ 19:00 UTC</td>
               </tr>
               <tr>
-                <td>Sunday at <strong>11:00 UTC</strong></td>
-                <td>Start of the Race <br><i>(480 minute duration)</i></td>
-              </tr>
-            </tbody>
-          </table>
-        </li>
-        <li>Rounds 2 to 5 will use the following start times for all sessions:
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Day &amp; Start Time</th>
-                <th>Session Duration</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Thursday at <strong>19:00 UTC</strong></td>
-                <td>Start of Free Practice 1 <br><i>(360 minute duration)</i></td>
+                <td>Free Practice 2</td>
+                <td>2018-05-02 @ 13:00 local</td>
+                <td>02/11/18 @ 19:00 UTC</td>
               </tr>
               <tr>
-                <td>Friday at <strong>19:00 UTC</strong></td>
-                <td>Start of Free Practice 2 <br><i>(360 minute duration)</i></td>
+                <td>Free Practice 3</td>
+                <td>2018-05-03 @ 13:00 local</td>
+                <td>03/11/18 @ 19:00 UTC</td>
               </tr>
               <tr>
-                <td>Saturday at <strong>19:00 UTC</strong></td>
-                <td>Start of Free Practice 3 <br><i>(360 minute duration)</i></td>
+                <td>Warm-Up</td>
+                <td>2018-05-04 @ 13:00 local</td>
+                <td>04/11/18 @ 14:00 UTC</td>
               </tr>
               <tr>
-                <td>Sunday at <strong>14:00 UTC</strong></td>
-                <td>Start of Warm Up <br><i>(100 minute duration)</i></td>
+                <td>Qualifying</td>
+                <td>2018-05-04 @ 14:45 local</td>
+                <td>04/11/18 @ 15:40 UTC</td>
               </tr>
               <tr>
-                <td>Sunday at <strong>15:40 UTC</strong></td>
-                <td>Start of Qualifying <br><i>(20 minute duration)</i></td>
+                <td>Race</td>
+                <td>2018-05-04 @ 15:10 local</td>
+                <td>04/11/18 @ 16:00 UTC</td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="pt-5">2 <b class="ml-5">4 hours of the Nürburgring</b> (Nürburgring Grand-Prix-Strecke - Grand Prix)</td>
               </tr>
               <tr>
-                <td>Sunday at <strong>16:00 UTC</strong></td>
-                <td>Start of the Race <br><i>(240 minute duration)</i></td>
-              </tr>
-            </tbody>
-          </table>
-        </li>
-        <li>Round 6 will use the following start times for all sessions:
-          <table class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Day &amp; Start Time</th>
-                <th>Session Duration</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Thursday at <strong>19:00 UTC</strong></td>
-                <td>Start of Free Practice 1 <br><i>(360 minute duration)</i></td>
+                <th>Session</th>
+                <th>Sim Date & Time</th>
+                <th>Session Start</th>
               </tr>
               <tr>
-                <td>Friday at <strong>19:00 UTC</strong></td>
-                <td>Start of Free Practice 2 <br><i>(360 minute duration)</i></td>
+                <td>Free Practice 1</td>
+                <td>2018-05-30 @ 13:00 local</td>
+                <td>29/11/18 @ 19:00 UTC</td>
               </tr>
               <tr>
-                <td>Saturday at <strong>19:00 UTC</strong></td>
-                <td>Start of Free Practice 3 <br><i>(360 minute duration)</i></td>
+                <td>Free Practice 2</td>
+                <td>2018-05-31 @ 13:00 local</td>
+                <td>30/11/18 @ 19:00 UTC</td>
               </tr>
               <tr>
-                <td>Sunday at <strong>10:00 UTC</strong></td>
-                <td>Start of Warm Up <br><i>(100 minute duration)</i></td>
+                <td>Free Practice 3</td>
+                <td>2018-06-01 @ 13:00 local</td>
+                <td>01/12/18 @ 19:00 UTC</td>
               </tr>
               <tr>
-                <td>Sunday at <strong>11:40 UTC</strong></td>
-                <td>Start of Qualifying <br><i>(20 minute duration)</i></td>
+                <td>Warm-Up</td>
+                <td>2018-06-02 @ 13:00 local</td>
+                <td>02/12/18 @ 14:00 UTC</td>
               </tr>
               <tr>
-                <td>Sunday at <strong>12:00 UTC</strong></td>
-                <td>Start of the Race <br><i>(480 minute duration)</i></td>
+                <td>Qualifying</td>
+                <td>2018-06-02 @ 14:45 local</td>
+                <td>02/12/18 @ 15:40 UTC</td>
+              </tr>
+              <tr>
+                <td>Race</td>
+                <td>2018-06-02 @ 15:10 local</td>
+                <td>02/12/18 @ 16:00 UTC</td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="pt-5">2 <b class="ml-5">4 hours of the Americas</b> (Circuit of the Americas - Grand Prix)</td>
+              </tr>
+              <tr>
+                <th>Session</th>
+                <th>Sim Date & Time</th>
+                <th>Session Start</th>
+              </tr>
+              <tr>
+                <td>Free Practice 1</td>
+                <td>2018-07-03 @ 14:30 local</td>
+                <td>03/01/19 @ 19:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Free Practice 2</td>
+                <td>2018-07-04 @ 14:30 local</td>
+                <td>04/01/19 @ 19:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Free Practice 3</td>
+                <td>2018-07-05 @ 14:30 local</td>
+                <td>05/01/19 @ 19:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Warm-Up</td>
+                <td>2018-07-06 @ 14:30 local</td>
+                <td>06/01/19 @ 14:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Qualifying</td>
+                <td>2018-07-06 @ 16:15 local</td>
+                <td>06/01/19 @ 15:40 UTC</td>
+              </tr>
+              <tr>
+                <td>Race</td>
+                <td>2018-07-06 @ 16:40 local</td>
+                <td>06/01/19 @ 16:00 UTC</td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="pt-5">2 <b class="ml-5">4 hours of Interlagos</b> (Autodromo Jose Carlos Pace – Grand Prix)</td>
+              </tr>
+              <tr>
+                <th>Session</th>
+                <th>Sim Date & Time</th>
+                <th>Session Start</th>
+              </tr>
+              <tr>
+                <td>Free Practice 1</td>
+                <td>2018-01-31 @ 10:00 local</td>
+                <td>03/01/19 @ 19:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Free Practice 2</td>
+                <td>2018-02-01 @ 10:00 local</td>
+                <td>04/01/19 @ 19:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Free Practice 3</td>
+                <td>2018-02-02 @ 10:00 local</td>
+                <td>05/01/19 @ 19:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Warm-Up</td>
+                <td>2018-02-03 @ 10:00 local</td>
+                <td>06/01/19 @ 14:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Qualifying</td>
+                <td>2018-02-03 @ 11:45 local</td>
+                <td>06/01/19 @ 15:40 UTC</td>
+              </tr>
+              <tr>
+                <td>Race</td>
+                <td>2018-02-03 @ 12:10 local</td>
+                <td>06/01/19 @ 16:00 UTC</td>
+              </tr>
+
+              <tr>
+                <td colspan="3" class="pt-5">2 <b class="ml-5">8 hours of Silverstone</b> (Silverstone Circuit - Grand Prix)</td>
+              </tr>
+              <tr>
+                <th>Session</th>
+                <th>Sim Date & Time</th>
+                <th>Session Start</th>
+              </tr>
+              <tr>
+                <td>Free Practice 1</td>
+                <td>2018-08-21 @ 10:30 local</td>
+                <td>21/02/19 @ 19:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Free Practice 2</td>
+                <td>2018-08-22 @ 12:30 local</td>
+                <td>22/02/19 @ 19:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Free Practice 3</td>
+                <td>2018-08-23 @ 14:30 local</td>
+                <td>23/02/19 @ 19:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Warm-Up</td>
+                <td>2018-08-24 @ 10:30 local</td>
+                <td>24/02/19 @ 10:00 UTC</td>
+              </tr>
+              <tr>
+                <td>Qualifying</td>
+                <td>2018-08-24 @ 12:15 local</td>
+                <td>24/02/19 @ 11:40 UTC</td>
+              </tr>
+              <tr>
+                <td>Race</td>
+                <td>2018-08-24 @ 12:40 local</td>
+                <td>24/02/19 @ 12:00 UTC</td>
               </tr>
             </tbody>
           </table>
@@ -308,11 +394,20 @@
       </ol>
       <h3>6. Paint Schemes</h3>
       <ol class="rulebook-section">
-        <li>All teams are free to submit custom paint schemes, should they want to use one.</li>
+        <li>All teams are free to submit custom paint schemes, should they wish to use one.</li>
         <li>When submitting a paint scheme, every team has to make sure to include information like the team name, car number and car model. All paint scheme files should be named as shown below:
           <pre>car_team_XXXXX.tga	(XXXXX should be your team's ID)</pre>
         </li>
-        <li>Should teams elect to use a paint scheme, they must send it to <a href="mailto:info@sco.coresimracing.com">info@sco.coresimracing.com</a> at least 24 hours before the start of first practice for it to be included in the latest version of the skin pack.
+        <li>All custom paint schemes that are received by the series administration will be reviewed and must be in compliance with the 5 key principles listed below.
+          <ol>
+            <li>Teams must have written permission from the companies involved, to be allowed to run sponsors' logos on their car.</li>
+            <li>Logos of products that compete with iRacing (such as the Gran Turismo and Forza frachises for example) will not be permitted. The same is the case for logos of automotive brands that compete with the brand of car that they're displayed on.</li>
+            <li>It will be strictly forbidden for paint schemes to directly or indirectly promote tobacco or any products that are restricted to minors by law (e.g.: alcohol, knives, etc.). They must not include any kind of political message.</li>
+            <li>No team liveries will be allowed to run 'parodies' of logos or other intellectual property.</li>
+            <li>Any logo already available in the iRacing Paint Shop may be used.</li>
+          </ol>
+        </li>
+        <li>Should teams elect to use a paint scheme, they must send it to <a href="mailto:info@sco.coresimracing.com">info@sco.coresimracing.com</a> at least 24 hours before the start of first practice for it to be included in the latest version of the paint pack.
           <ol><li>Please make sure to include your team’s car number, team name and car class in the subject line of the e-mail when sending the paint file. You may also send multiple paint files in a single mail, but please make it clear which paint is for which car in the mail itself.</li></ol>
         </li>
         <li>Custom decal layers, including the event number boards as well as windscreen banners for all cars, will be used no matter whether a team sent in a paint file or not. These decal layers will also be included in the skin pack.</li>
@@ -341,7 +436,7 @@
         <li>Warm-up is the session in which all teams and drivers will be able to connect to the race server to prepare and drive practice laps ahead of qualifying and the race session itself.</li>
         <li>Teams will be required to register with the correct team and car, meaning that the team ID, team name, car number and car model have to match the information listed on the events' entry list.</li>
         <li>Should a team join with the incorrect team ID or car number, they will be allowed to participate in the remaining sessions, but will receive a drive-through penalty within the first 20 minutes of the race.
-          <ol>li>No penalties will be given to teams who had their car number taken away by a team that registered before them.</li></ol>
+          <ol><li>No penalties will be given to teams who had their car number taken away by a team that registered before them.</li></ol>
         </li>
         <li>Any team that registers with the wrong car model or even registers with multiple teams will be disqualified from the event and refused entry to the qualifying and race sessions.</li>
       </ol>
@@ -509,7 +604,10 @@
           <li>Dynamic weather will be used in all sessions. Exceptions include pre-qualifying (should it happen) or other types of test sessions that require fewer variables for more accurate data.</li>
           <li>The track state will be always be set to “automatically generated” at the beginning of a session and will carry over to the next sessions on race day. Marbles will be removed between sessions.</li>
           <li>Full course cautions as well as fast repairs will be disabled.</li>
-          <li>All driving aids with the exceptions of clutch assists will be disallowed.</li></ol>
+          <li>All driving aids with the exceptions of clutch assists will be disallowed.</li>
+          <li>The sim date and time of day will be carried over from session to session on race day. Roughly 5 minutes of in-game time will pass on each session transition.</li>
+          <li>The Sun Acceleration Multiplier will be set to '1x' at all times.</li>
+        </ol>
         </li>
       </ol>
       <h3>17. Contact Details and Communication</h3>
