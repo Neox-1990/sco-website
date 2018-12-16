@@ -143,7 +143,7 @@
               </tr>
 
               <tr>
-                <td colspan="3" class="pt-5">2 <b class="ml-5">4 hours of the Nürburgring</b> (Nürburgring Grand-Prix-Strecke - Grand Prix)</td>
+                <td colspan="3" class="pt-5">3 <b class="ml-5">4 hours of the Nürburgring</b> (Nürburgring Grand-Prix-Strecke - Grand Prix)</td>
               </tr>
               <tr>
                 <th>Session</th>
@@ -182,7 +182,7 @@
               </tr>
 
               <tr>
-                <td colspan="3" class="pt-5">2 <b class="ml-5">4 hours of the Americas</b> (Circuit of the Americas - Grand Prix)</td>
+                <td colspan="3" class="pt-5">4 <b class="ml-5">4 hours of the Americas</b> (Circuit of the Americas - Grand Prix)</td>
               </tr>
               <tr>
                 <th>Session</th>
@@ -221,7 +221,7 @@
               </tr>
 
               <tr>
-                <td colspan="3" class="pt-5">2 <b class="ml-5">4 hours of Interlagos</b> (Autodromo Jose Carlos Pace – Grand Prix)</td>
+                <td colspan="3" class="pt-5">5 <b class="ml-5">4 hours of Interlagos</b> (Autodromo Jose Carlos Pace – Grand Prix)</td>
               </tr>
               <tr>
                 <th>Session</th>
@@ -260,7 +260,7 @@
               </tr>
 
               <tr>
-                <td colspan="3" class="pt-5">2 <b class="ml-5">8 hours of Silverstone</b> (Silverstone Circuit - Grand Prix)</td>
+                <td colspan="3" class="pt-5">6 <b class="ml-5">8 hours of Silverstone</b> (Silverstone Circuit - Grand Prix)</td>
               </tr>
               <tr>
                 <th>Session</th>
