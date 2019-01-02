@@ -191,32 +191,32 @@
               </tr>
               <tr>
                 <td>Free Practice 1</td>
-                <td>2018-07-03 @ 14:30 local</td>
+                <td>2019-07-03 @ 14:30 local</td>
                 <td>03/01/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Free Practice 2</td>
-                <td>2018-07-04 @ 14:30 local</td>
+                <td>2019-07-04 @ 14:30 local</td>
                 <td>04/01/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Free Practice 3</td>
-                <td>2018-07-05 @ 14:30 local</td>
+                <td>2019-07-05 @ 14:30 local</td>
                 <td>05/01/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Warm-Up</td>
-                <td>2018-07-06 @ 14:30 local</td>
+                <td>2019-07-06 @ 14:30 local</td>
                 <td>06/01/19 @ 14:00 UTC</td>
               </tr>
               <tr>
                 <td>Qualifying</td>
-                <td>2018-07-06 @ 16:15 local</td>
+                <td>2019-07-06 @ 16:15 local</td>
                 <td>06/01/19 @ 15:40 UTC</td>
               </tr>
               <tr>
                 <td>Race</td>
-                <td>2018-07-06 @ 16:40 local</td>
+                <td>2019-07-06 @ 16:40 local</td>
                 <td>06/01/19 @ 16:00 UTC</td>
               </tr>
 
@@ -230,32 +230,32 @@
               </tr>
               <tr>
                 <td>Free Practice 1</td>
-                <td>2018-01-31 @ 10:00 local</td>
+                <td>2019-01-31 @ 10:00 local</td>
                 <td>03/01/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Free Practice 2</td>
-                <td>2018-02-01 @ 10:00 local</td>
+                <td>2019-02-01 @ 10:00 local</td>
                 <td>04/01/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Free Practice 3</td>
-                <td>2018-02-02 @ 10:00 local</td>
+                <td>2019-02-02 @ 10:00 local</td>
                 <td>05/01/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Warm-Up</td>
-                <td>2018-02-03 @ 10:00 local</td>
+                <td>2019-02-03 @ 10:00 local</td>
                 <td>06/01/19 @ 14:00 UTC</td>
               </tr>
               <tr>
                 <td>Qualifying</td>
-                <td>2018-02-03 @ 11:45 local</td>
+                <td>2019-02-03 @ 11:45 local</td>
                 <td>06/01/19 @ 15:40 UTC</td>
               </tr>
               <tr>
                 <td>Race</td>
-                <td>2018-02-03 @ 12:10 local</td>
+                <td>2019-02-03 @ 12:10 local</td>
                 <td>06/01/19 @ 16:00 UTC</td>
               </tr>
 
@@ -269,32 +269,32 @@
               </tr>
               <tr>
                 <td>Free Practice 1</td>
-                <td>2018-08-21 @ 10:30 local</td>
+                <td>2019-08-21 @ 10:30 local</td>
                 <td>21/02/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Free Practice 2</td>
-                <td>2018-08-22 @ 12:30 local</td>
+                <td>2019-08-22 @ 12:30 local</td>
                 <td>22/02/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Free Practice 3</td>
-                <td>2018-08-23 @ 14:30 local</td>
+                <td>2019-08-23 @ 14:30 local</td>
                 <td>23/02/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Warm-Up</td>
-                <td>2018-08-24 @ 10:30 local</td>
+                <td>2019-08-24 @ 10:30 local</td>
                 <td>24/02/19 @ 10:00 UTC</td>
               </tr>
               <tr>
                 <td>Qualifying</td>
-                <td>2018-08-24 @ 12:15 local</td>
+                <td>2019-08-24 @ 12:15 local</td>
                 <td>24/02/19 @ 11:40 UTC</td>
               </tr>
               <tr>
                 <td>Race</td>
-                <td>2018-08-24 @ 12:40 local</td>
+                <td>2019-08-24 @ 12:40 local</td>
                 <td>24/02/19 @ 12:00 UTC</td>
               </tr>
             </tbody>
