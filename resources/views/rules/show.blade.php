@@ -6,7 +6,7 @@
   <div class="col-12">
     <div class="p-2" id="rulebook">
       <h1>Rulebook</h1>
-      <p><em>Last update: 14th December 2018</em></p>
+      <p><em>Last update: 8th January 2019</em></p>
       <a data-status="closed" class="btn btn-outline-dark m-1" id="openAllRules"><i class="fas fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
       <hr>
       <h3>1. Introduction</h3>
@@ -231,32 +231,32 @@
               <tr>
                 <td>Free Practice 1</td>
                 <td>2019-01-31 @ 10:00 local</td>
-                <td>03/01/19 @ 19:00 UTC</td>
+                <td>31/01/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Free Practice 2</td>
                 <td>2019-02-01 @ 10:00 local</td>
-                <td>04/01/19 @ 19:00 UTC</td>
+                <td>01/02/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Free Practice 3</td>
                 <td>2019-02-02 @ 10:00 local</td>
-                <td>05/01/19 @ 19:00 UTC</td>
+                <td>02/02/19 @ 19:00 UTC</td>
               </tr>
               <tr>
                 <td>Warm-Up</td>
                 <td>2019-02-03 @ 10:00 local</td>
-                <td>06/01/19 @ 14:00 UTC</td>
+                <td>03/02/19 @ 14:00 UTC</td>
               </tr>
               <tr>
                 <td>Qualifying</td>
                 <td>2019-02-03 @ 11:45 local</td>
-                <td>06/01/19 @ 15:40 UTC</td>
+                <td>03/02/19 @ 15:40 UTC</td>
               </tr>
               <tr>
                 <td>Race</td>
                 <td>2019-02-03 @ 12:10 local</td>
-                <td>06/01/19 @ 16:00 UTC</td>
+                <td>03/02/19 @ 16:00 UTC</td>
               </tr>
 
               <tr>
