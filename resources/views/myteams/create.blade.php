@@ -66,6 +66,8 @@
             </div>
 
           </div>
+          <p><button class="btn btn-outline-secondary my-3" type="button" id="loadingIRteam">Load data from iRacing for all drivers (via ID)
+            <i class="ml-3 far fa-question-circle" data-toggle="tooltip" data-placement="top" title="loads drivers name, irating and safety rating directly from iracing, using the provided iracing driver ids"></i></button></p>
         </div>
         @for ($n=1; $n <= config('constants.driver_limits')['max']; $n++)
           <div class="col-lg-6 col-sm-12 mt-5 add-driver-form {{$n<=config('constants.driver_limits')['min']||old('driver'.$n.'.name')!==null||old('driver'.$n.'.iracingid')!==null?'add-driver-form-active add-driver-form-mandatory':''}}" data-driver="{{$n}}">
@@ -76,15 +78,16 @@
                 <label for="driver{{$n}}name">Name</label>
                 <input class="form-control" type="text" name="driver{{$n}}[name]" id="driver{{$n}}name" value="{{old('driver'.$n.'.name')}}" placeholder="Name of Driver {{$n}}">
               </div>
-              <div class="form-group">
-                <label for="driver{{$n}}iracingid">iRacing ID</label>
+              <div class="form-group my-5">
+                <label for="driver{{$n}}iracingid">iRacing ID </label><button class="btn btn-sm btn-outline-secondary my-1 ml-3" type="button" id="loadingIR{{$n}}">Load driverdata from iracing
+                <i class="ml-3 far fa-question-circle" data-toggle="tooltip" data-placement="top" title="loads driver name, irating and safety rating directly from iracing, using the provided iracing driver id"></i></button>
                 <input class="form-control" type="text" name="driver{{$n}}[iracingid]" id="driver{{$n}}iracingid" value="{{old('driver'.$n.'.iracingid')}}" placeholder="iRacing ID of Driver {{$n}}">
               </div>
-              <div class="form-group">
+              <div class="form-group my-5">
                 <label for="driver{{$n}}irating">iRating</label>
                 <input class="form-control" type="number" min="2000" max="12000" step="1" value="{{old('driver'.$n.'.ir',$min_ir)}}" name="driver{{$n}}[ir]" id="driver{{$n}}irating">
               </div>
-              <div class="form-group">
+              <div class="form-group my-5">
                 <label for="driver{{$n}}sr1">License & SR</label>
                 <div class="form-group input-group">
                   <select class="form-control" name="driver{{$n}}[sr1]" id="driver{{$n}}sr1" title="License">

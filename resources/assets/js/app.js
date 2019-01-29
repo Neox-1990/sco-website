@@ -7,12 +7,14 @@
 require('./../../../node_modules/popper.js/dist/umd/popper.js');
 require('./bootstrap');
 window.easteregg = '********************\nActivate epic for epicness\n********************\nActivate useless for useless information @ home\n********************';
-import {updateNumbers, addDriverForm, loadOldTeam, clearDriver} from './helper/myteamhelper.js';
+import * as myTeamHelper from './helper/myteamhelper.js';
 import {tablesorterInit, tablesorter} from './helper/tablesorter.js';
 import {toggleTeamTables, toggleTeamTablesInit, changeTeamStatusInit, changeTeamStatus} from './helper/adminhelper.js';
 import {resultToggleInit, resultToggle} from './helper/resulthelper.js';
+import * as iRatingloader from './helper/iratingloader.js';
 
 $(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
   $('#flash_message').slideDown(150,function(){
     $(this).delay(10000).slideUp(150,function(){
       $(this).remove();
@@ -25,13 +27,14 @@ $(document).ready(function(){
   toggleTeamTablesInit();
   resultToggleInit();
   changeTeamStatusInit();
+  iRatingloader.initIRloader();
   if(typeof(numbers) !== 'undefined'){
-    updateNumbers();
-    $('#car').on('change', updateNumbers);
+    myTeamHelper.updateNumbers();
+    $('#car').on('change', myTeamHelper.updateNumbers);
   }
 
-  $('#add-driver-form').on('click',addDriverForm);
+  $('#add-driver-form').on('click',myTeamHelper.addDriverForm);
 
-  $('#loadoldteam').on('click',loadOldTeam);
-  $('.clear_driver').on('click', clearDriver);
+  $('#loadoldteam').on('click',myTeamHelper.loadOldTeam);
+  $('.clear_driver').on('click', myTeamHelper.clearDriver);
 });

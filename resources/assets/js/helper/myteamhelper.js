@@ -38,7 +38,7 @@ export const loadOldTeam = function(){
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
   });
-  $.get('/ajax/formerteam/'+$('#old_team').val(),
+  $.post('/ajax/formerteam/'+$('#old_team').val(),{},
   function(data, status){
     //console.log(data);
     //$('#driver1name').val(data[0].name);

@@ -100,5 +100,6 @@ Route::post('/admin/invites', 'AdminController@invitesProcess');
 Route::get('/admin/briefing', 'AdminController@briefingEdit');
 Route::post('/admin/briefing', 'AdminController@briefingSend');
 
-Route::get('/ajax/formerteam/{team}', 'AjaxController@formerTeams');
+Route::post('/ajax/formerteam/{team}', 'AjaxController@formerTeams');
 Route::get('/ajax/changeTeam/{team}', 'AdminController@updateTeamStatus');
+Route::post('/ajax/irating/team/', 'AjaxController@iratingTeam');

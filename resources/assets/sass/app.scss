@@ -6,14 +6,19 @@
 
 html{
   font-family: 'Ubuntu', sans-serif !important;
+  font-size: 18px;
 }
 body{
   font-family: 'Ubuntu', sans-serif !important;
-  font-size: 18px;
   background-color: #fff;
   background-image: url('/img/sco2k18_website_background.jpg');
   background-position: center top;
   background-repeat: no-repeat;
+}
+@include media-breakpoint-down(sm){
+  html{
+    font-size: 14px;
+  }
 }
 
 .container{
@@ -33,6 +38,11 @@ main{
   //border: 1px solid #222;
   //border-top-width: 0;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+@include media-breakpoint-down(sm){
+  main{
+    padding: 0.5rem;
+  }
 }
 
 .sco-header{
