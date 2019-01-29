@@ -18,7 +18,7 @@ export function loadTeamIrating(){
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
   });
-  $.post(`/ajax/irating/team/`, {'ids': keys}, function(data, status){
+  $.post(`/ajax/irating/team`, {'ids': keys}, function(data, status){
     ids = ids.map(function(el, index){
       if(index in data){
         let name = data[index].driver;
@@ -45,7 +45,7 @@ export function loadDriverIrating(){
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
   });
-  $.post(`/ajax/irating/team/`, {'ids': id}, function(data, status){
+  $.post(`/ajax/irating/team`, {'ids': id}, function(data, status){
     ids = ids.map(function(el, index){
       if(index in data){
         let name = data[index].driver;
