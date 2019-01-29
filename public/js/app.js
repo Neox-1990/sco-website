@@ -38681,7 +38681,7 @@ function loadTeamIrating() {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  var jqxhr = $.post('/ajax/irating/team/', { 'ids': keys }, function (data, status, jq) {
+  $.post('/ajax/irating/team/', { 'ids': keys }, function (data, status) {
     ids = ids.map(function (el, index) {
       if (index in data) {
         var name = data[index].driver;
@@ -38694,7 +38694,6 @@ function loadTeamIrating() {
     });
     setDataTeam(ids);
   }, 'json');
-  console.log(jqxhr);
 }
 
 function loadDriverIrating() {
@@ -38709,7 +38708,7 @@ function loadDriverIrating() {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
   });
-  var jqxhr = $.post('/ajax/irating/team/', { 'ids': id }, function (data, status, jq) {
+  $.post('/ajax/irating/team/', { 'ids': id }, function (data, status) {
     ids = ids.map(function (el, index) {
       if (index in data) {
         var name = data[index].driver;
