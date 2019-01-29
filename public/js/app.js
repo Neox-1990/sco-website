@@ -38694,6 +38694,7 @@ function loadTeamIrating() {
     });
     setDataTeam(ids);
   }, 'json');
+  console.log(jqxhr);
 }
 
 function loadDriverIrating() {
