@@ -31,6 +31,7 @@ export function loadTeamIrating(){
     });
     setDataTeam(ids);
   },'json');
+  console.log(jqxhr);
 }
 
 export function loadDriverIrating(){
