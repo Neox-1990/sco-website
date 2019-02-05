@@ -26,9 +26,6 @@ class CreateResultsTable extends Migration
             $table->timestamps();
 
             $table->unique(['team_id', 'season_id', 'round_id']);
-            //$table->foreign('team_id')->references('id')->on('drivers');
-            //$table->foreign('season_id')->references('id')->on('seasons');
-            //$table->foreign('round_id')->references('id')->on('rounds');
         });
     }
 

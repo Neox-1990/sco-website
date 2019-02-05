@@ -16,11 +16,9 @@ class CreateInvitesTable extends Migration
         Schema::create('invites', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('season_id');
+            $table->integer('user_id');
+            $table->integer('season_id');
             $table->dateTime('used')->nullable();
-
-            //$table->primary('id');
         });
     }
 
