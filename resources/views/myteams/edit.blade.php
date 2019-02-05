@@ -63,14 +63,15 @@
       </table>
       <h2>Add new Driver</h2>
       <div class="col-lg-6 col-sm-12">
-      <form class="" action="{{url('/myteams/edit/'.$team->id)}}" method="post">
+      <form id="newDriverForm" class="" action="{{url('/myteams/edit/'.$team->id)}}" method="post">
         {{csrf_field()}}
         <div class="form-group">
           <label for="drivername">Name</label>
           <input class="form-control" type="text" name="driver[name]" id="drivername" value="{{old('driver.name')}}" placeholder="Name of Driver" {{$driverLimitReached?'disabled':''}}>
         </div>
         <div class="form-group">
-          <label for="driveriracingid">iRacing ID</label>
+          <label for="driveriracingid">iRacing ID</label><button class="btn btn-sm btn-outline-secondary my-1 ml-3" type="button" id="newLoadingIR">Load driverdata from iracing
+          <i class="ml-3 far fa-question-circle" data-toggle="tooltip" data-placement="top" title="loads driver name, irating and safety rating directly from iracing, using the provided iracing driver id"></i></button>
           <input class="form-control" type="text" name="driver[iracingid]" id="driveriracingid" value="{{old('driver.iracingid')}}" placeholder="iRacing ID of Driver" {{$driverLimitReached?'disabled':''}}>
         </div>
         <div class="form-group">

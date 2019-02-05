@@ -40,4 +40,8 @@ return [
       'app_access_token' => env('FB_APP_TOKEN')
     ],
 
+    'irtracker' => [
+      'token' => env('IR_TRACKERTOKEN'),
+    ]
+
 ];
