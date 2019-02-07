@@ -88,8 +88,6 @@ class MyteamController extends Controller
         foreach (config('constants.classes')[config('constants.current_season')][$carClass] as $value) {
             $numbers[$value][$team->number] = $team->number;
         }
-        $deadline = new Carbon((Setting::getSetup())['confirmed_carchange']);
-        $deadline = $deadline->gt(new Carbon);
         $classcars = config('constants.classes')[config('constants.current_season')][$carClass];
 
         $now = Carbon::now('UTC');

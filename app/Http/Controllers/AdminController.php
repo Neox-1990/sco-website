@@ -227,9 +227,7 @@ class AdminController extends Controller
     }
     public function settingsUpdate(Request $request)
     {
-        $this->validate($request, [
-        'confirmed_carchange' => 'nullable|string|regex:/[\d]{4}-[\d]{2}-[\d]{2}T[\d]{2}:[\d]{2}(:[\d]{2})?/',
-      ]);
+        
         if ($request->has('simpleSubmit')) {
             foreach ($request->except(['_token','simpleSubmit']) as $key => $value) {
                 $setting = Setting::where('key', '=', $key)->first();

@@ -15,10 +15,6 @@ class SettingsTableSeeder extends Seeder
     {
         //
         Setting::create([
-          'key' => 'confirmed_carchange',
-          'value' => '2017-09-25T17:00'
-        ]);
-        Setting::create([
           'key' => 'facebookentries',
           'value' => '3'
         ]);
