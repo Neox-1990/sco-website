@@ -223,11 +223,11 @@ class AdminController extends Controller
         foreach ($settings as $setting) {
             $setup[$setting['key']] = $setting['value'];
         }
-        return view('admin.settings.edit', compact('setup'));
+        return view('admin.settings.edit', compact('setup','settings'));
     }
     public function settingsUpdate(Request $request)
     {
-        
+
         if ($request->has('simpleSubmit')) {
             foreach ($request->except(['_token','simpleSubmit']) as $key => $value) {
                 $setting = Setting::where('key', '=', $key)->first();
@@ -527,6 +527,12 @@ class AdminController extends Controller
           'response' => $response,
           'status' => $status,
         );
+    }
+
+    public function updateSetting(Request $request, Setting $setting)
+    {
+      $setting['value'] = $request->input('value');
+      return json_encode($setting->save());
     }
 
     public function briefingEdit()

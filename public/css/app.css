@@ -11201,3 +11201,46 @@ span.clear_driver {
   z-index: 10000;
 }
 
+.admin-checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 1rem;
+  width: 3rem;
+}
+
+.admin-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.admin-checkbox input:checked ~ .admin-check {
+  background-image: url(/images/checked.png?dd0d37723f0415229415a80d8b08683c);
+}
+
+.admin-checkbox:hover input ~ .admin-check {
+  background-image: url(/images/unchecked_hover.png?3db99e6f9cc2df45ef8674595a556753);
+}
+
+.admin-checkbox:hover input:checked ~ .admin-check {
+  background-image: url(/images/checked_hover.png?3de0a3eec37c8a41bbfa5f8e19ef81f6);
+}
+
+.admin-check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  width: 3rem;
+  background-color: #fff;
+  background-size: contain;
+  background-image: url(/images/unchecked.png?4f9ee560e7f36814c5c680f9c32199b9);
+}
+

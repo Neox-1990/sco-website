@@ -12,6 +12,7 @@ import {tablesorterInit, tablesorter} from './helper/tablesorter.js';
 import {toggleTeamTables, toggleTeamTablesInit, changeTeamStatusInit, changeTeamStatus} from './helper/adminhelper.js';
 import {resultToggleInit, resultToggle} from './helper/resulthelper.js';
 import * as iRatingloader from './helper/iratingloader.js';
+import * as adminSettingsUpdater from './helper/settinghelper.js';
 
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
@@ -28,6 +29,7 @@ $(document).ready(function(){
   resultToggleInit();
   changeTeamStatusInit();
   iRatingloader.initIRloader();
+  adminSettingsUpdater.init();
   if(typeof(numbers) !== 'undefined'){
     myTeamHelper.updateNumbers();
     $('#car').on('change', myTeamHelper.updateNumbers);

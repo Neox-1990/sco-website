@@ -11208,6 +11208,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helper_adminhelper_js__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helper_resulthelper_js__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helper_iratingloader_js__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__helper_settinghelper_js__ = __webpack_require__(52);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -11217,6 +11218,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __webpack_require__(12);
 __webpack_require__(13);
 window.easteregg = '********************\nActivate epic for epicness\n********************\nActivate useless for useless information @ home\n********************';
+
 
 
 
@@ -11238,6 +11240,7 @@ $(document).ready(function () {
   Object(__WEBPACK_IMPORTED_MODULE_3__helper_resulthelper_js__["a" /* resultToggleInit */])();
   Object(__WEBPACK_IMPORTED_MODULE_2__helper_adminhelper_js__["a" /* changeTeamStatusInit */])();
   __WEBPACK_IMPORTED_MODULE_4__helper_iratingloader_js__["a" /* initIRloader */]();
+  __WEBPACK_IMPORTED_MODULE_5__helper_settinghelper_js__["a" /* init */]();
   if (typeof numbers !== 'undefined') {
     __WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["d" /* updateNumbers */]();
     $('#car').on('change', __WEBPACK_IMPORTED_MODULE_0__helper_myteamhelper_js__["d" /* updateNumbers */]);
@@ -38797,6 +38800,58 @@ function setDataNew(datarray) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = init;
+/* unused harmony export binaryUpdate */
+/* unused harmony export contentUpdate */
+function init() {
+  $('#adminsettings .admin-checkbox>input[type="checkbox"]').on('change', binaryUpdate);
+  $('#adminsettings .admin-textbox button[type="button"]').on('click', contentUpdate);
+}
+
+function binaryUpdate() {
+  var key = $(this).attr('name');
+  var status = $(this).prop('checked') ? 1 : 0;
+
+  $.get('/ajax/settings/' + key, {
+    value: '' + parseInt(status)
+  }, function (data) {
+    if (data === 'true') {
+      $('<div class="alert alert-success">' + 'Setting updated' + '<button type="button" class="close" aria-label="Close" onclick="$(this).parent().fadeOut();">' + '<span aria-hidden="true">&times;</span>' + '</button>' + '</div>').appendTo('.admin-alert').delay(3000).fadeOut();
+    } else {
+      $('<div class="alert alert-danger">' + 'Setting update failed' + '<button type="button" class="close" aria-label="Close" onclick="$(this).parent().fadeOut();">' + '<span aria-hidden="true">&times;</span>' + '</button>' + '</div>').appendTo('.admin-alert').delay(3000).fadeOut();
+    }
+  });
+}
+
+function contentUpdate() {
+  var key = $(this).parent().parent().find('input[type="text"]').attr('name');
+  var content = $(this).parent().parent().find('input[type="text"]').val();
+
+  $.get('/ajax/settings/' + key, {
+    value: '' + content
+  }, function (data) {
+    if (data === 'true') {
+      $('<div class="alert alert-success">' + 'Setting updated' + '<button type="button" class="close" aria-label="Close" onclick="$(this).parent().fadeOut();">' + '<span aria-hidden="true">&times;</span>' + '</button>' + '</div>').appendTo('.admin-alert').delay(3000).fadeOut();
+    } else {
+      $('<div class="alert alert-danger">' + 'Setting update failed' + '<button type="button" class="close" aria-label="Close" onclick="$(this).parent().fadeOut();">' + '<span aria-hidden="true">&times;</span>' + '</button>' + '</div>').appendTo('.admin-alert').delay(3000).fadeOut();
+    }
+  });
+}
 
 /***/ })
 /******/ ]);

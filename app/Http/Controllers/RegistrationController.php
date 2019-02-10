@@ -56,7 +56,7 @@ class RegistrationController extends Controller
         ]);
 
         $settings = \App\Setting::getSetup();
-        if ($settings['registration']=='closed') {
+        if ($settings['registration']=='0') {
             $error = 'Registration is closed!';
             session()->flash('flash_message_alert', 'An error occurred.');
             return back()->withInput()->withErrors($error);
