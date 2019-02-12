@@ -12,6 +12,7 @@ use App\LogEntry;
 use App\Setting;
 use App\Driver;
 use App\Mail\Briefing;
+use App\News;
 
 use App\Events\TeamDeleteEvent;
 use App\ResultHelper\GridResult;
@@ -563,5 +564,14 @@ class AdminController extends Controller
 
         dd($input);
         //return view('admin.briefing.send');
+    }
+
+    public function newsIndex(){
+      $news = News::all();
+      return view('admin.news.index', compact('news'));
+    }
+
+    public function newsCreate(){
+      return view('admin.news.create');
     }
 }
