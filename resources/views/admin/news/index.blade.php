@@ -4,26 +4,22 @@
   <h1>News</h1>
   <hr>
   <a href="{{url('admin/news/create')}}" class="btn btn-success">+ New Article</a>
-  <!--<form class="" action="{{url('admin/briefing')}}" method="post">
-    {{ csrf_field() }}
-    <div class="form-group">
-      <label for="mail_subject">Subject</label>
-      <input id="mail_subject" class="form-control" type="text" name="mail_subject" required>
-    </div>
-    <div class="form-group">
-      <input id="mail_salutation" class="form-control" type="text" name="mail_salutation" value="Dear Team Managers,">
-      <textarea id="mail_text" name="mail_text" rows="8" cols="80"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="mail_link">Link</label>
-      <input id="mail_link" class="form-control" type="text" name="mail_link">
-    </div>
-    <div class="form-group">
-      <textarea name="mail_farewell" id="mail_farewell" rows="2" cols="80">Regards,
-Your SCO Administration</textarea>
-    </div>
-    <div class="form-group">
-      <input class="btn btn-primary" type="submit" name="editdriver" value="Send">
-    </div>
-  </form> -->
+  <hr>
+  <table class="table w-100">
+    <tr>
+      <th>Title</th>
+      <th>Publishdate</th>
+      <th>Active</th>
+      <th colspan="2">Options</th>
+    </tr>
+    @foreach ($news as $new)
+    <tr>
+      <td>{{$new['title']}}</td>
+      <td>{{$new['published']}}</td>
+      <td>{{$new['active']}}</td>
+      <td><a class="btn btn-warning" href="{{url('/admin/news/edit/'.$new['id'])}}">edit</a></td>
+      <td><a class="btn btn-danger" href="{{url('/admin/news/delete/'.$new['id'])}}">delete</a></td>
+    </tr>
+    @endforeach
+  </table>
 @endsection
