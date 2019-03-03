@@ -51,15 +51,15 @@
       <div class="collapse{{!(empty(old('website')) AND empty(old('twitter')) AND empty(old('facebook'))) ? 'show' : ''}}" id="socialmedia-input">
         <div class="form-group">
           <label for="website">Website</label>
-          <input type="text" id="website" class="form-control" name="website" value="{{old('website')}}" placeholder="Website URL">
+          <input type="text" id="website" class="form-control" name="website" value="{{old('website')}}" placeholder="Website URL (including https://)">
         </div>
         <div class="form-group">
           <label for="twitter">Twitter</label>
-          <input type="text" id="twitter" class="form-control" name="twitter" value="{{old('twitter')}}" placeholder="Twitter URL">
+          <input type="text" id="twitter" class="form-control" name="twitter" value="{{old('twitter')}}" placeholder="Twitter URL (including https://)">
         </div>
         <div class="form-group">
           <label for="facebook">Facebook</label>
-          <input type="text" id="facebook" class="form-control" name="facebook" value="{{old('facebook')}}" placeholder="Facebook URL">
+          <input type="text" id="facebook" class="form-control" name="facebook" value="{{old('facebook')}}" placeholder="Facebook URL (including https://)">
         </div>
       </div>
       <hr>
