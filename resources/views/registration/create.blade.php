@@ -2,7 +2,7 @@
 
 @section('main')
 
-<div class="row">
+<div class="row mx-0">
   <div class="col-sm-12 col-lg-6">
     <h1>Registration</h1>
     <p>With this registration you confirm that you have read and accepted our <a href="{{url('/privacy')}}">privacy declaration</a>.</p>

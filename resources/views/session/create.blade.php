@@ -2,7 +2,7 @@
 
 @section('main')
 
-<div class="row">
+<div class="row mx-0">
   <div class="col-sm-12 col-lg-6">
     <h1>Login</h1>
     <form class="" action="/login" method="post">

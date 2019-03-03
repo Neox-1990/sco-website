@@ -2,7 +2,7 @@
 
 @section('main')
 
-<div class="row d-flex align-items-stretch">
+<div class="row mx-0 d-flex align-items-stretch">
   <div class="col-12 col-lg-9 px-0 px-md-3" id="facebookfeed">
     @foreach ($feedData as $feedElement)
       <div class="jumbotron facebook-feed-element">

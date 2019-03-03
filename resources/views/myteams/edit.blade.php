@@ -5,7 +5,7 @@
     var selOption = {{$team['number']}}
     var numbers = <?php echo json_encode($numbers); ?>;
   </script>
-<div class="row">
+<div class="row mx-0">
   <div class="col-12" style="padding-bottom:2rem;">
     @if ($legit)
       <h1>Edit Team</h1>

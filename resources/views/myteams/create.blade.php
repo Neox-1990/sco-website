@@ -5,7 +5,7 @@
   var selOption = 0;
   var numbers = <?php echo json_encode($numbers); ?>
 </script>
-<div class="row">
+<div class="row mx-0">
   <div class="col-12" style="padding-bottom:2rem;">
     <h1>Create New Team</h1>
     @include('master.formerrors')

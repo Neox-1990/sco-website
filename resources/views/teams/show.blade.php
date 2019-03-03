@@ -1,7 +1,7 @@
 @extends('master.master')
 
 @section('main')
-<div class="row">
+<div class="row mx-0">
   <div class="col-12" style="padding-bottom:2rem;">
     <h1 {{$team['deleted_at']!=null?'class=text-muted':''}}>{{$team['name']}}<span class="ml-5">
       @if(!empty($team['website']))
