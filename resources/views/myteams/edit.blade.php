@@ -33,6 +33,18 @@
           <td>{{$team['ir_teamid']}}</td>
         </tr>
         <tr>
+          <td>Website</td>
+          <td>{{$team['website']}}</td>
+        </tr>
+        <tr>
+          <td>Twitter</td>
+          <td>{{$team['twitter']}}</td>
+        </tr>
+        <tr>
+          <td>facebook</td>
+          <td>{{$team['facebook']}}</td>
+        </tr>
+        <tr>
           <td>Status</td>
           <td>
             <p class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</p>

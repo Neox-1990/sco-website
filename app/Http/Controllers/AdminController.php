@@ -178,6 +178,9 @@ class AdminController extends Controller
             $team->number = $request->input('teamnumber');
             $team->car = $request->input('teamcar');
             $team->ir_teamid = $request->input('teamiracingid');
+            $team->website = $request->input('website', null);
+            $team->twitter = $request->input('twitter', null);
+            $team->facebook = $request->input('facebook', null);
             $team->save();
             session()->flash('flash_message_success', 'Data of '.$team->name.' updated');
             event(new TeamEditEvent($team, 'Team data updated'));

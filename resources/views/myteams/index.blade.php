@@ -34,6 +34,19 @@
               <td>iRacing Team ID: {{$team->ir_teamid}}</td>
               <td>Status: <span class="text-{{config('constants.status_colors')[$team['status']]}}">{{config('constants.status_names')[$team['status']]}}</span></td>
             </tr>
+            <tr>
+              <td colspan="3">
+                @if(!empty($team->website))
+                  <a class="mr-3" href="{{$team->website}}"><i class="fas fa-globe"></i></a>
+                @endif
+                @if(!empty($team->twitter))
+                  <a class="mr-3" href="{{$team->twitter}}"><i class="fab fa-twitter"></i></a>
+                @endif
+                @if(!empty($team->facebook))
+                  <a class="mr-3" href="{{$team->facebook}}"><i class="fab fa-facebook"></i></a>
+                @endif
+              </td>
+            </tr>
           </table>
         </div>
         <div class="card-body">

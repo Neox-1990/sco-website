@@ -43,7 +43,6 @@
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">#</th>
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Name</th>
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Car</th>
-                <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Manager</th>
                 <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Status</th>
               </tr>
             </thead>
@@ -51,45 +50,115 @@
               @foreach ($class['confirmed'] as $team)
                 <tr>
                   <td class="text-center">{{$team['number']}}</td>
-                  <td><a href="/teams/{{$team['id']}}">{{$team['name']}}</a></td>
+                  <td>
+                    <div class="d-flex justify-content-between">
+                      <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
+                      <span class="ml-auto">
+                        @if(!empty($team['website']))
+                        <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe"></i></a>
+                        @endif
+                        @if(!empty($team['twitter']))
+                        <a class="mr-3" href="{{$team['twitter']}}"><i class="fab fa-twitter"></i></a>
+                        @endif
+                        @if(!empty($team['facebook']))
+                        <a class="mr-3" href="{{$team['facebook']}}"><i class="fab fa-facebook"></i></a>
+                        @endif
+                      </span>
+                    </div>
+                  </td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
-                  <td>{{$team['user']['name']}}</td>
                   <td class="text-success">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
               @foreach ($class['qualified'] as $team)
                 <tr>
                   <td class="text-center">{{$team['number']}}</td>
-                  <td><a href="/teams/{{$team['id']}}">{{$team['name']}}</a></td>
+                  <td>
+                    <div class="d-flex justify-content-between">
+                      <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
+                      <span class="ml-auto">
+                        @if(!empty($team['website']))
+                        <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe"></i></a>
+                        @endif
+                        @if(!empty($team['twitter']))
+                        <a class="mr-3" href="{{$team['twitter']}}"><i class="fab fa-twitter"></i></a>
+                        @endif
+                        @if(!empty($team['facebook']))
+                        <a class="mr-3" href="{{$team['facebook']}}"><i class="fab fa-facebook"></i></a>
+                        @endif
+                      </span>
+                    </div>
+                  </td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
-                  <td>{{$team['user']['name']}}</td>
                   <td class="text-info">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
               @foreach ($class['waiting'] as $team)
                 <tr>
                   <td class="text-center">{{$team['number']}}</td>
-                  <td><a href="/teams/{{$team['id']}}">{{$team['name']}}</a></td>
+                  <td>
+                    <div class="d-flex justify-content-between">
+                      <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
+                      <span class="ml-auto">
+                        @if(!empty($team['website']))
+                        <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe"></i></a>
+                        @endif
+                        @if(!empty($team['twitter']))
+                        <a class="mr-3" href="{{$team['twitter']}}"><i class="fab fa-twitter"></i></a>
+                        @endif
+                        @if(!empty($team['facebook']))
+                        <a class="mr-3" href="{{$team['facebook']}}"><i class="fab fa-facebook"></i></a>
+                        @endif
+                      </span>
+                    </div>
+                  </td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
-                  <td>{{$team['user']['name']}}</td>
                   <td class="text-warning">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
               @foreach ($class['reviewed'] as $team)
                 <tr>
                   <td class="text-center">{{$team['number']}}</td>
-                  <td><a href="/teams/{{$team['id']}}">{{$team['name']}}</a></td>
+                  <td>
+                    <div class="d-flex justify-content-between">
+                      <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
+                      <span class="ml-auto">
+                        @if(!empty($team['website']))
+                        <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe"></i></a>
+                        @endif
+                        @if(!empty($team['twitter']))
+                        <a class="mr-3" href="{{$team['twitter']}}"><i class="fab fa-twitter"></i></a>
+                        @endif
+                        @if(!empty($team['facebook']))
+                        <a class="mr-3" href="{{$team['facebook']}}"><i class="fab fa-facebook"></i></a>
+                        @endif
+                      </span>
+                    </div>
+                  </td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
-                  <td>{{$team['user']['name']}}</td>
                   <td class="text-primary">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
               @foreach ($class['pending'] as $team)
                 <tr>
                   <td class="text-center">{{$team['number']}}</td>
-                  <td><a href="/teams/{{$team['id']}}">{{$team['name']}}</a></td>
+                  <td>
+                    <div class="d-flex justify-content-between">
+                      <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
+                      <span class="ml-auto">
+                        @if(!empty($team['website']))
+                        <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe"></i></a>
+                        @endif
+                        @if(!empty($team['twitter']))
+                        <a class="mr-3" href="{{$team['twitter']}}"><i class="fab fa-twitter"></i></a>
+                        @endif
+                        @if(!empty($team['facebook']))
+                        <a class="mr-3" href="{{$team['facebook']}}"><i class="fab fa-facebook"></i></a>
+                        @endif
+                      </span>
+                    </div>
+                  </td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
-                  <td>{{$team['user']['name']}}</td>
                   <td class="text-danger">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
