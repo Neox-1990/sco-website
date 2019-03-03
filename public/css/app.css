@@ -12842,3 +12842,25 @@ span.clear_driver {
   background-image: url(/images/unchecked.png?4f9ee560e7f36814c5c680f9c32199b9);
 }
 
+#other-site {
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #01256a;
+  color: #fff;
+}
+
+#other-site a {
+  font-weight: bold;
+  color: #fff;
+}
+
+#other-site a:hover {
+  color: #dc3545;
+}
+
+@media (max-width: 767.98px) {
+  #other-site {
+    margin: -0.5rem -0.5rem 1rem -0.5rem;
+  }
+}
+

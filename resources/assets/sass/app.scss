@@ -709,3 +709,22 @@ span.clear_driver{
   background-size: contain;
   background-image: url('img/unchecked.png');
 }
+
+#other-site{
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: $blue;
+  color: $white;
+  a{
+    font-weight: bold;
+    color: $white;
+    &:hover{
+      color: $red;
+    }
+  }
+}
+@include media-breakpoint-down(sm){
+  #other-site{
+    margin: -0.5rem -0.5rem 1rem -0.5rem;
+  }
+}
