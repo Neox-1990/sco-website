@@ -22,7 +22,7 @@ class CreateNewsTable extends Migration
             $table->longText('body');
             $table->string('image')->nullable();
             $table->boolean('active')->default(0);
-            $table->dateTime('published')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('published')->nullable();
         });
     }
 
