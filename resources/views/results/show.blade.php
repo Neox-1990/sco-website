@@ -1,7 +1,7 @@
 @extends('master.master')
 
 @section('main')
-<div class="row">
+<div class="row mx-0">
   <div class="col-12" style="padding-bottom:2rem;">
     <a href="{{url('/results')}}" class="btn btn-outline-primary m-2">Championship</a>
     <div class="mb-3 d-flex flex-wrap justify-content-start align-items-stretch" id="results_controlbox_rounds">

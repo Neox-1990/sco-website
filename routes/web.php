@@ -99,6 +99,12 @@ Route::get('/admin/invites', 'AdminController@invitesIndex');
 Route::post('/admin/invites', 'AdminController@invitesProcess');
 Route::get('/admin/briefing', 'AdminController@briefingEdit');
 Route::post('/admin/briefing', 'AdminController@briefingSend');
+Route::get('/admin/news', 'AdminController@newsIndex');
+Route::get('/admin/news/create', 'AdminController@newsCreate');
+Route::post('/admin/news/create', 'AdminController@newsStore');
+Route::get('/admin/news/edit/{news}', 'AdminController@newsEdit');
+Route::post('/admin/news/edit/{news}', 'AdminController@newsUpdate');
+Route::get('/admin/news/delete/{news}', 'AdminController@newsDelete');
 
 Route::post('/ajax/formerteam/{team}', 'AjaxController@formerTeams');
 Route::get('/ajax/changeTeam/{team}', 'AdminController@updateTeamStatus');

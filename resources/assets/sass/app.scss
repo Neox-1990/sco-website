@@ -1,6 +1,7 @@
 //@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer');
+@import "node_modules/bootstrap/scss/bootstrap-reboot";
 @import "myvariables";
 @import "node_modules/bootstrap/scss/bootstrap";
 
@@ -707,4 +708,23 @@ span.clear_driver{
   background-color: #fff;
   background-size: contain;
   background-image: url('img/unchecked.png');
+}
+
+#other-site{
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: $blue;
+  color: $white;
+  a{
+    font-weight: bold;
+    color: $white;
+    &:hover{
+      color: $red;
+    }
+  }
+}
+@include media-breakpoint-down(sm){
+  #other-site{
+    margin: -0.5rem -0.5rem 1rem -0.5rem;
+  }
 }

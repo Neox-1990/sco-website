@@ -1,5 +1,14 @@
 $brand-primary: #01256a;
 $primary: #01256a;
+$blue: #01256a;
+$theme-colors: (
+  "primary": $primary
+);
+$colors: (
+  "blue": $primary
+);
+$link-color: $primary;
+$link-hover-color: darken($link-color, 15%);
 $sco-red: #d00505;
 $darkborder: #222;
 $lightborder: #ddd;

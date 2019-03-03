@@ -12,6 +12,7 @@ use App\LogEntry;
 use App\Setting;
 use App\Driver;
 use App\Mail\Briefing;
+use App\News;
 
 use App\Events\TeamDeleteEvent;
 use App\ResultHelper\GridResult;
@@ -177,6 +178,9 @@ class AdminController extends Controller
             $team->number = $request->input('teamnumber');
             $team->car = $request->input('teamcar');
             $team->ir_teamid = $request->input('teamiracingid');
+            $team->website = $request->input('website', null);
+            $team->twitter = $request->input('twitter', null);
+            $team->facebook = $request->input('facebook', null);
             $team->save();
             session()->flash('flash_message_success', 'Data of '.$team->name.' updated');
             event(new TeamEditEvent($team, 'Team data updated'));
@@ -563,5 +567,50 @@ class AdminController extends Controller
 
         dd($input);
         //return view('admin.briefing.send');
+    }
+
+    public function newsIndex(){
+      $news = News::orderBy('id', 'desc')->get();
+      return view('admin.news.index', compact('news'));
+    }
+
+    public function newsCreate(){
+      return view('admin.news.create');
+    }
+
+    public function newsStore(Request $request){
+      $newsitem = new News;
+      $newsitem->title = $request->input('title');
+      $newsitem->teaser = $request->input('teaser');
+      $newsitem->body = $request->input('body');
+      $newsitem->image = null;
+      $newsitem->active = $request->input('active', '0');
+      $newsitem->published = $request->input('publish');
+
+      //dd($newsitem);
+
+      $newsitem->save();
+      return redirect('admin/news');
+    }
+
+    public function newsEdit(News $news){
+      return view('admin.news.edit', compact('news'));
+    }
+
+    public function newsUpdate(Request $request, News $news){
+      $news->title = $request->input('title');
+      $news->teaser = $request->input('teaser');
+      $news->body = $request->input('body');
+      $news->image = null;
+      $news->active = $request->input('active', '0');
+      $news->published = $request->input('publish');
+
+      $news->save();
+      return redirect('admin/news');
+    }
+
+    public function newsDelete(News $news){
+      $news->delete();
+      return redirect('admin/news');
     }
 }

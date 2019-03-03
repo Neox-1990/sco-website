@@ -19,6 +19,18 @@
       <input type="text" class="form-control" name="teamnumber" value="{{$team['number']}}" id="team_number">
     </div>
     <div class="form-group">
+      <label for="website">Website</label>
+      <input type="text" class="form-control" name="website" value="{{$team['website']}}" id="website">
+    </div>
+    <div class="form-group">
+      <label for="twitter">Twitter</label>
+      <input type="text" class="form-control" name="twitter" value="{{$team['twitter']}}" id="twitter">
+    </div>
+    <div class="form-group">
+      <label for="facebook">Facebook</label>
+      <input type="text" class="form-control" name="facebook" value="{{$team['facebook']}}" id="facebook">
+    </div>
+    <div class="form-group">
       <label for="team_car">Car</label>
       <select class="form-control" name="teamcar" id="team_car">
         @foreach ($cars as $key => $value)
