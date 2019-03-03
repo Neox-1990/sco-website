@@ -5,7 +5,7 @@
   var selOption = 0;
   var numbers = <?php echo json_encode($numbers); ?>
 </script>
-<div class="row">
+<div class="row mx-0">
   <div class="col-12" style="padding-bottom:2rem;">
     <h1>Create New Team</h1>
     @include('master.formerrors')
@@ -44,6 +44,23 @@
       <div class="form-group">
         <label for="ir_teamid">iRacing Team ID</label>
         <input type="text" id="ir_teamid" class="form-control" name="iracing_teamid" value="{{old('iracing_teamid')}}" placeholder="iRacing Team ID">
+      </div>
+      <button class="btn btn-primary mt-5 mb-3" type="button" data-toggle="collapse" data-target="#socialmedia-input" aria-expanded="false" aria-controls="socialmedia-input">
+        add website and socialmedia info
+      </button>
+      <div class="collapse{{!(empty(old('website')) AND empty(old('twitter')) AND empty(old('facebook'))) ? 'show' : ''}}" id="socialmedia-input">
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input type="text" id="website" class="form-control" name="website" value="{{old('website')}}" placeholder="Website URL (including https://)">
+        </div>
+        <div class="form-group">
+          <label for="twitter">Twitter</label>
+          <input type="text" id="twitter" class="form-control" name="twitter" value="{{old('twitter')}}" placeholder="Twitter URL (including https://)">
+        </div>
+        <div class="form-group">
+          <label for="facebook">Facebook</label>
+          <input type="text" id="facebook" class="form-control" name="facebook" value="{{old('facebook')}}" placeholder="Facebook URL (including https://)">
+        </div>
       </div>
       <hr>
       <div class="row" style="padding:1rem;">

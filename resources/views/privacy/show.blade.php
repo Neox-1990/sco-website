@@ -2,7 +2,7 @@
 
 @section('main')
 
-<div class="row">
+<div class="row mx-0">
   <div class="col-12">
     <div class="p-2" id="rulebook">
       <h1>Privacy Policy</h1>

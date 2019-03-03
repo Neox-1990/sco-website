@@ -204,7 +204,7 @@ class CreateTeam extends FormRequest
             $invite->used = Carbon::now().'';
             $invite->save();
         }
-        
+
         //Add Drivers in DB and store in Array
         for ($i=1; $i < 7; $i++) {
             if ($this->input('driver'.$i.'.iracingid') != null || $this->input('driver'.$i.'.iracingid') != '') {
@@ -236,6 +236,9 @@ class CreateTeam extends FormRequest
         $team->status = 0;
         $team->ir_teamid = $this->input('iracing_teamid');
         $team->preqtime = 0;
+        $team->website = $this->input('website', null);
+        $team->twitter = $this->input('twitter', null);
+        $team->facebook = $this->input('facebook', null);
         $team->save();
         $team->drivers()->attach($driverIds); //Add drivers
 

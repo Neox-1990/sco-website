@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 @section('main')
 
-<div class="row">
+<div class="row mx-0">
   <div class="col-12">
     <div class="p-3">
       <h1>{{$season->name}}</h1>

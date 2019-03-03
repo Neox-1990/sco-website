@@ -1,9 +1,19 @@
 @extends('master.master')
 
 @section('main')
-<div class="row">
+<div class="row mx-0">
   <div class="col-12" style="padding-bottom:2rem;">
-    <h1 {{$team['deleted_at']!=null?'class=text-muted':''}}>{{$team['name']}}</h1>
+    <h1 {{$team['deleted_at']!=null?'class=text-muted':''}}>{{$team['name']}}<span class="ml-5">
+      @if(!empty($team['website']))
+      <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe fa-xs"></i></a>
+      @endif
+      @if(!empty($team['twitter']))
+      <a class="mr-3" href="{{$team['twitter']}}"><i class="fab fa-twitter fa-xs"></i></a>
+      @endif
+      @if(!empty($team['facebook']))
+      <a class="mr-3" href="{{$team['facebook']}}"><i class="fab fa-facebook fa-xs"></i></a>
+      @endif
+    </span></h1>
     @if ($team['deleted_at'] !== null)
       <p class="text-muted">deleted team</p>
     @endif

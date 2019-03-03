@@ -2,7 +2,7 @@
 
 @section('main')
 
-<div class="row">
+<div class="row mx-0">
   <div class="col-12">
     <h1>Event Archive</h1>
     <table class="table">
