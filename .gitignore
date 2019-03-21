@@ -3,6 +3,8 @@
 /public/.htaccess
 /public/.htpasswd
 /public/storage
+/public/downloads/*
+!/public/downloads/.gitkeep
 /storage/*.key
 /vendor
 /.idea
