@@ -1,4 +1,5 @@
 <footer class="col-lg-12">
+  <a href="{{url('/downloads')}}" class="my-3 d-inline-block"><i class="fas fa-file-download mr-2"></i>Download archive</a>
   <div class="d-flex justify-content-between flex-wrap pt-3 pb-2">
     <div class="m-2">
       <small>Sports Car Open is a series by <a href="http://www.coresimracing.com">CoRe SimRacing</a></small>
