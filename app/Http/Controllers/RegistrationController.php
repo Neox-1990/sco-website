@@ -52,7 +52,7 @@ class RegistrationController extends Controller
         $this->validate($request, [
           'email' => 'required|string|email|max:255|unique:users',
           'name' => 'required|string|max:255',
-          'password' => 'required|string|min:6|max:255|confirmed|not_in:'.implode(',', $forbiddenPW)
+          'password' => 'required|string|min:8|max:255|confirmed|not_in:'.implode(',', $forbiddenPW)
         ]);
 
         $settings = \App\Setting::getSetup();
