@@ -9,7 +9,7 @@
         "erusev/parsedown": "^1.7",
         "facebook/graph-sdk": "^5.6",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.6.*",
+        "laravel/framework": "5.7.*",
         "laravel/tinker": "~1.0"
     },
     "require-dev": {
