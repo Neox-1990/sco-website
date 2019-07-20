@@ -110,3 +110,5 @@ Route::post('/ajax/formerteam/{team}', 'AjaxController@formerTeams');
 Route::get('/ajax/changeTeam/{team}', 'AdminController@updateTeamStatus');
 Route::post('/ajax/irating/team', 'AjaxController@iratingTeam');
 Route::get('/ajax/settings/{setting}', 'AdminController@updateSetting');
+
+Route::get('/downloads', 'DownloadController@index');
