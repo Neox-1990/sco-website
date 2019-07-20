@@ -23,7 +23,7 @@
       </tr>
       <tr>
         <td>Car</td>
-        <td><span class="badge badge-pill badge-{{$className}} badge-normal">{{config('constants.car_names')[$team['car']]}}</span></td>
+        <td><span class="badge badge-pill badge-{{$className.config('constants.current_season')}} badge-normal">{{config('constants.car_names')[$team['car']]}}</span></td>
       </tr>
       <tr>
         <td>Manager</td>

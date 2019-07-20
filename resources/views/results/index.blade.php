@@ -11,8 +11,10 @@
     </div>
     <div class="mb-3 d-flex flex-wrap" id="results_controlbox_class">
       @foreach ($resultsSorted as $class => $results)
-        <button data-class="{{$class}}" class="btn btn-{{$class!=$first?'outline-'.$class:$class}} m-2 {{$class}}-toggle">{{$class}}</button>
+        <button data-class="{{$class}}" data-season="{{config('constants.current_season')}}" class="btn class-btn-background-{{$class!=$first?'outline-'.$class:$class}}{{config('constants.current_season')}} m-2 {{$class}}-toggle">{{$class}}</button>
       @endforeach
+
+      <button data-class="cleanx" data-season="{{config('constants.current_season')}}" class="btn class-btn-background-outline-cleanx{{config('constants.current_season')}} m-2 cleanx-toggle">Clean X</button>
     </div>
     @if ($resultsSorted[$first]->isEmpty())
       <p>No results yet.</p>
