@@ -27,7 +27,7 @@ class EditUser extends FormRequest
     {
         return [
           'oldPassword' => 'required_with_all:password,password_confirmation|required_with:changePassword',
-          'password' => 'string|min:6|max:255|required_with_all:oldPassword,password_confirmation|required_with:changePassword',
+          'password' => 'string|min:8|max:255|required_with_all:oldPassword,password_confirmation|required_with:changePassword',
           'password_confirmation' => 'same:password|required_with_all:password,oldPassword|required_with:changePassword',
 
           'name' => 'required_with_all:password,changeName|string|max:255',
