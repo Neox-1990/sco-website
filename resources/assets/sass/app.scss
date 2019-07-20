@@ -119,42 +119,52 @@ a.sco-nav-link{
 .badge-normal{
   font-size: 100%;
 }
-.badge-DP{
-  background-color: $sco-dp !important;
-  color: #fff !important;
+
+//class color stuff
+@each $class, $color in $sco-class-colors{
+  .class-btn-background-#{$class}{
+    background-color: $color;
+    @if(lightness($color) > 50){
+      color: #000;
+    }@else{
+      color: #fff;
+    }
+
+    &:hover{
+      background-color: darken($color, 10%);
+      @if(lightness($color) > 50){
+        color: #000;
+      }@else{
+        color: #fff;
+      }
+    }
+  }
+
+  .class-btn-background-outline-#{$class}{
+    background-color: #fff;
+    color: $color;
+    border-color: $color;
+
+    &:hover{
+      background-color: $color;
+      @if(lightness($color) > 50){
+        color: #000;
+      }@else{
+        color: #fff;
+      }
+    }
+  }
+
+  .badge-#{$class}{
+    background-color: $color;
+    @if(lightness($color) > 50){
+      color: #000;
+    }@else{
+      color: #fff;
+    }
+  }
 }
-.badge-Prototype{
-  background-color: $sco-p !important;
-  color: #fff !important;
-}
-.badge-P{
-  background-color: $sco-p !important;
-  color: #fff !important;
-}
-.badge-GT{
-  background-color: $sco-gt !important;
-  color: #fff !important;
-}
-.badge-PC{
-  background-color: $sco-pc !important;
-  color: #fff !important;
-}
-.badge-CC{
-  background-color: $sco-cc !important;
-  color: #fff !important;
-}
-.badge-GTC{
-  background-color: $sco-gtc !important;
-  color: #fff !important;
-}
-.badge-GT1{
-  background-color: $sco-gt1 !important;
-  color: #000 !important;
-}
-.badge-GT3{
-  background-color: $sco-gt3 !important;
-  color: #fff !important;
-}
+
 .team-overview-class{
   margin: 2rem 0;
 }
@@ -333,151 +343,8 @@ footer{
 nav{
   background-color: $sco-dark !important;
 }
-.btn-DP{
-  background-color: $sco-dp;
-  color: #fff;
-  &:hover{
-    background-color: darken($sco-dp, 10%);
-  }
-}
-.btn-Prototype{
-  background-color: $sco-p;
-  color: #fff;
-  &:hover{
-    background-color: darken($sco-p, 10%);
-  }
-}
-.btn-P{
-  background-color: $sco-p;
-  color: #fff;
-  &:hover{
-    background-color: darken($sco-p, 10%);
-  }
-}
-.btn-GT{
-  background-color: $sco-gt;
-  color: #fff;
-  &:hover{
-    background-color: darken($sco-gt, 10%);
-  }
-}
-.btn-PC{
-  background-color: $sco-pc;
-  color: #fff;
-  &:hover{
-    background-color: darken($sco-pc, 10%);
-  }
-}
-.btn-CC{
-  background-color: $sco-cc;
-  color: #fff;
-  &:hover{
-    background-color: darken($sco-cc, 10%);
-  }
-}
-.btn-GTC{
-  background-color: $sco-gtc;
-  color: #fff;
-  &:hover{
-    background-color: darken($sco-gtc, 10%);
-  }
-}
-.btn-GT1{
-  background-color: $sco-gt1;
-  color: #fff;
-  &:hover{
-    background-color: darken($sco-gt1, 10%);
-  }
-}
-.btn-GT3{
-  background-color: $sco-gt3;
-  color: #fff;
-  &:hover{
-    background-color: darken($sco-gt3, 10%);
-  }
-}
 
-.btn-outline-Prototype{
-  background-color: #fff;
-  border-color: $sco-p;
-  color: $sco-p;
-  &:hover{
-    background-color: $sco-p;
-    color: #fff;
-  }
-}
-.btn-outline-P{
-  background-color: #fff;
-  border-color: $sco-p;
-  color: $sco-p;
-  &:hover{
-    background-color: $sco-p;
-    color: #fff;
-  }
-}
-.btn-outline-DP{
-  background-color: #fff;
-  border-color: $sco-dp;
-  color: $sco-dp;
-  &:hover{
-    background-color: $sco-dp;
-    color: #fff;
-  }
-}
-.btn-outline-GT{
-  background-color: #fff;
-  border-color: $sco-gt;
-  color: $sco-gt;
-  &:hover{
-    background-color: $sco-gt;
-    color: #fff;
-  }
-}
-.btn-outline-PC{
-  background-color: #fff;
-  border-color: $sco-pc;
-  color: $sco-pc;
-  &:hover{
-    background-color: $sco-pc;
-    color: #fff;
-  }
-}
-.btn-outline-CC{
-  background-color: #fff;
-  border-color: $sco-cc;
-  color: $sco-cc;
-  &:hover{
-    background-color: $sco-cc;
-    color: #fff;
-  }
-}
-.btn-outline-GTC{
-  background-color: #fff;
-  border-color: $sco-gtc;
-  color: $sco-gtc;
-  &:hover{
-    background-color: $sco-gtc;
-    color: #fff;
-  }
-}
-.btn-outline-GT1{
-  background-color: #fff;
-  border-color: $sco-gt1;
-  color: $sco-gt1;
-  &:hover{
-    background-color: $sco-gt1;
-    color: #fff;
-  }
-}
-.btn-outline-GT3{
-  background-color: #fff;
-  border-color: $sco-gt3;
-  color: $sco-gt3;
-  &:hover{
-    background-color: $sco-gt3;
-    color: #fff;
-  }
-}
+
 table.result-table{
   table-layout: auto;
   th{

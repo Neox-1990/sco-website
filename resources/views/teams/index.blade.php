@@ -25,7 +25,7 @@
     </form>
     @foreach ($teams as $classname => $class)
       <div class="team-overview-class">
-        <h2 class="position-relative"><span class="badge badge-default badge-{{$classname}}">{{$classname}}</span>
+        <h2 class="position-relative"><span class="badge badge-default badge-{{$classname.config('constants.current_season')}}">{{$classname}}</span>
         <span class="team_summary">
           <span class="team_summary_toggler mr-3"><i class="fas fa-caret-down"></i></span>
           <span class="team_summary_sub text-danger"><span class="team_summary_title">Pending:&nbsp;</span>{{$class['pending']->count()}}</span><span class="team_summary_sep">&nbsp;</span>
@@ -40,16 +40,15 @@
           <table id="teams-table" class="table table-hover table-bordered">
             <thead class="thead-default">
               <tr>
-                <th class="badge-{{$classname}} sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">#</th>
-                <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Name</th>
-                <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Car</th>
-                <th class="badge-{{$classname}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Status</th>
+                <th class="badge-{{$classname.config('constants.current_season')}} sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">#</th>
+                <th class="badge-{{$classname.config('constants.current_season')}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Name</th>
+                <th class="badge-{{$classname.config('constants.current_season')}} sco-table-sort" data-sort-content="text" data-sort-dir="asc">Car</th>
               </tr>
             </thead>
             <tbody>
               @foreach ($class['confirmed'] as $team)
                 <tr>
-                  <td class="text-center">{{$team['number']}}</td>
+                  <td class="text-center bg-success text-white">{{$team['number']}}</td>
                   <td>
                     <div class="d-flex justify-content-between">
                       <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
@@ -67,12 +66,11 @@
                     </div>
                   </td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
-                  <td class="text-success">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
               @foreach ($class['qualified'] as $team)
                 <tr>
-                  <td class="text-center">{{$team['number']}}</td>
+                  <td class="text-center bg-info text-white">{{$team['number']}}</td>
                   <td>
                     <div class="d-flex justify-content-between">
                       <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
@@ -90,12 +88,11 @@
                     </div>
                   </td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
-                  <td class="text-info">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
               @foreach ($class['waiting'] as $team)
                 <tr>
-                  <td class="text-center">{{$team['number']}}</td>
+                  <td class="text-center bg-warning">{{$team['number']}}</td>
                   <td>
                     <div class="d-flex justify-content-between">
                       <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
@@ -113,12 +110,11 @@
                     </div>
                   </td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
-                  <td class="text-warning">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
               @foreach ($class['reviewed'] as $team)
                 <tr>
-                  <td class="text-center">{{$team['number']}}</td>
+                  <td class="text-center bg-primary text-white">{{$team['number']}}</td>
                   <td>
                     <div class="d-flex justify-content-between">
                       <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
@@ -136,12 +132,11 @@
                     </div>
                   </td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
-                  <td class="text-primary">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
               @foreach ($class['pending'] as $team)
                 <tr>
-                  <td class="text-center">{{$team['number']}}</td>
+                  <td class="text-center bg-danger text-white">{{$team['number']}}</td>
                   <td>
                     <div class="d-flex justify-content-between">
                       <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
@@ -159,7 +154,6 @@
                     </div>
                   </td>
                   <td>{{config('constants.car_names')[$team['car']]}}</td>
-                  <td class="text-danger">{{config('constants.status_names')[$team['status']]}}</td>
                 </tr>
               @endforeach
             </tbody>
