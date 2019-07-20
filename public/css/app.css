@@ -12022,7 +12022,7 @@ html {
 body {
   font-family: 'Ubuntu', sans-serif !important;
   background-color: #fff;
-  background-image: url("/img/sco2k18_website_background.jpg");
+  background-image: url("/img/sco2k19_website_background.jpg");
   background-position: center top;
   background-repeat: no-repeat;
 }
@@ -12432,40 +12432,14 @@ a.sco-nav-link:hover {
   color: #fff;
 }
 
-.class-btn-background-cleanx5 {
-  background-color: #111;
-  color: #fff;
-}
-
-.class-btn-background-cleanx5:hover {
-  background-color: black;
-  color: #fff;
-}
-
-.class-btn-background-outline-cleanx5 {
-  background-color: #fff;
-  color: #111;
-  border-color: #111;
-}
-
-.class-btn-background-outline-cleanx5:hover {
-  background-color: #111;
-  color: #fff;
-}
-
-.badge-cleanx5 {
-  background-color: #111;
-  color: #fff;
-}
-
 .class-btn-background-P16 {
   background-color: #E62B1E;
-  color: #000;
+  color: #fff;
 }
 
 .class-btn-background-P16:hover {
   background-color: #bc2015;
-  color: #000;
+  color: #fff;
 }
 
 .class-btn-background-outline-P16 {
@@ -12476,12 +12450,12 @@ a.sco-nav-link:hover {
 
 .class-btn-background-outline-P16:hover {
   background-color: #E62B1E;
-  color: #000;
+  color: #fff;
 }
 
 .badge-P16 {
   background-color: #E62B1E;
-  color: #000;
+  color: #fff;
 }
 
 .class-btn-background-P26 {
@@ -12533,6 +12507,32 @@ a.sco-nav-link:hover {
 
 .badge-GT6 {
   background-color: #00AF2F;
+  color: #fff;
+}
+
+.class-btn-background-cleanx6 {
+  background-color: #111;
+  color: #fff;
+}
+
+.class-btn-background-cleanx6:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.class-btn-background-outline-cleanx6 {
+  background-color: #fff;
+  color: #111;
+  border-color: #111;
+}
+
+.class-btn-background-outline-cleanx6:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+.badge-cleanx6 {
+  background-color: #111;
   color: #fff;
 }
 

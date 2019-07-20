@@ -12,7 +12,7 @@ html{
 body{
   font-family: 'Ubuntu', sans-serif !important;
   background-color: #fff;
-  background-image: url('/img/sco2k18_website_background.jpg');
+  background-image: url('/img/sco2k19_website_background.jpg');
   background-position: center top;
   background-repeat: no-repeat;
 }
@@ -124,7 +124,7 @@ a.sco-nav-link{
 @each $class, $color in $sco-class-colors{
   .class-btn-background-#{$class}{
     background-color: $color;
-    @if(lightness($color) > 50){
+    @if(lightness($color) > 60){
       color: #000;
     }@else{
       color: #fff;
@@ -132,7 +132,7 @@ a.sco-nav-link{
 
     &:hover{
       background-color: darken($color, 10%);
-      @if(lightness($color) > 50){
+      @if(lightness($color) > 60){
         color: #000;
       }@else{
         color: #fff;
@@ -147,7 +147,7 @@ a.sco-nav-link{
 
     &:hover{
       background-color: $color;
-      @if(lightness($color) > 50){
+      @if(lightness($color) > 60){
         color: #000;
       }@else{
         color: #fff;
@@ -157,7 +157,7 @@ a.sco-nav-link{
 
   .badge-#{$class}{
     background-color: $color;
-    @if(lightness($color) > 50){
+    @if(lightness($color) > 60){
       color: #000;
     }@else{
       color: #fff;

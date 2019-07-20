@@ -6,6 +6,6 @@
     </div>
   @else
     <div class="sco-header">
-      <a href="{{url('/')}}"><img src="{{asset('img/SCO2K18_Logo_Alternate.png')}}?date=20180716" alt=""></a>
+      <a href="{{url('/')}}"><img src="{{asset('img/SCO2K19_LOGO_Alternate_coloured.png')}}?date=20190721" alt=""></a>
     </div>
   @endif
