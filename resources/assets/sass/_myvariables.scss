@@ -14,16 +14,24 @@ $darkborder: #222;
 $lightborder: #ddd;
 $sco-dark: #222;
 
-$sco-p: #d52b1e;
-$sco-gt: #009639;
-$sco-gtc: #1c1c1c;
-$sco-gt3: #1c1c1c;
-$sco-gt1: #1da35c;
-$sco-dp: #d1291d;
-$sco-gt-ra: #f4f4f4;
-$sco-cc: #0160c2;
-$sco-pc: #21578a;
-
 $facebookblue: #3b5998;
 $twitterblue: #4099FF;
 $youtubered: #ff0000;
+
+$sco-class-colors:(
+"Prototype1": #d52b1e,
+"GT1": #009639,
+"GTC1": #1c1c1c,
+"GT13": #1da35c,
+"GT33": #1c1c1c,
+"DP4": #d1291d,
+"GT4": #f4f4f4,
+"CC4": #0160c2,
+"P5": #d52b1e,
+"PC5": #21578a,
+"GT5": #009639,
+"cleanx5": #111,
+"P16": #E62B1E,
+"P26": #3954B8,
+"GT6": #00AF2F
+);

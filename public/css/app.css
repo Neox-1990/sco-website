@@ -12146,49 +12146,394 @@ a.sco-nav-link:hover {
   font-size: 100%;
 }
 
-.badge-DP {
-  background-color: #d1291d !important;
-  color: #fff !important;
+.class-btn-background-Prototype1 {
+  background-color: #d52b1e;
+  color: #fff;
 }
 
-.badge-Prototype {
-  background-color: #d52b1e !important;
-  color: #fff !important;
+.class-btn-background-Prototype1:hover {
+  background-color: #a82218;
+  color: #fff;
 }
 
-.badge-P {
-  background-color: #d52b1e !important;
-  color: #fff !important;
+.class-btn-background-outline-Prototype1 {
+  background-color: #fff;
+  color: #d52b1e;
+  border-color: #d52b1e;
 }
 
-.badge-GT {
-  background-color: #009639 !important;
-  color: #fff !important;
+.class-btn-background-outline-Prototype1:hover {
+  background-color: #d52b1e;
+  color: #fff;
 }
 
-.badge-PC {
-  background-color: #21578a !important;
-  color: #fff !important;
+.badge-Prototype1 {
+  background-color: #d52b1e;
+  color: #fff;
 }
 
-.badge-CC {
-  background-color: #0160c2 !important;
-  color: #fff !important;
+.class-btn-background-GT1 {
+  background-color: #009639;
+  color: #fff;
 }
 
-.badge-GTC {
-  background-color: #1c1c1c !important;
-  color: #fff !important;
+.class-btn-background-GT1:hover {
+  background-color: #006326;
+  color: #fff;
+}
+
+.class-btn-background-outline-GT1 {
+  background-color: #fff;
+  color: #009639;
+  border-color: #009639;
+}
+
+.class-btn-background-outline-GT1:hover {
+  background-color: #009639;
+  color: #fff;
 }
 
 .badge-GT1 {
-  background-color: #1da35c !important;
-  color: #000 !important;
+  background-color: #009639;
+  color: #fff;
 }
 
-.badge-GT3 {
-  background-color: #1c1c1c !important;
-  color: #fff !important;
+.class-btn-background-GTC1 {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.class-btn-background-GTC1:hover {
+  background-color: #030303;
+  color: #fff;
+}
+
+.class-btn-background-outline-GTC1 {
+  background-color: #fff;
+  color: #1c1c1c;
+  border-color: #1c1c1c;
+}
+
+.class-btn-background-outline-GTC1:hover {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.badge-GTC1 {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.class-btn-background-GT13 {
+  background-color: #1da35c;
+  color: #fff;
+}
+
+.class-btn-background-GT13:hover {
+  background-color: #157844;
+  color: #fff;
+}
+
+.class-btn-background-outline-GT13 {
+  background-color: #fff;
+  color: #1da35c;
+  border-color: #1da35c;
+}
+
+.class-btn-background-outline-GT13:hover {
+  background-color: #1da35c;
+  color: #fff;
+}
+
+.badge-GT13 {
+  background-color: #1da35c;
+  color: #fff;
+}
+
+.class-btn-background-GT33 {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.class-btn-background-GT33:hover {
+  background-color: #030303;
+  color: #fff;
+}
+
+.class-btn-background-outline-GT33 {
+  background-color: #fff;
+  color: #1c1c1c;
+  border-color: #1c1c1c;
+}
+
+.class-btn-background-outline-GT33:hover {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.badge-GT33 {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.class-btn-background-DP4 {
+  background-color: #d1291d;
+  color: #fff;
+}
+
+.class-btn-background-DP4:hover {
+  background-color: #a42017;
+  color: #fff;
+}
+
+.class-btn-background-outline-DP4 {
+  background-color: #fff;
+  color: #d1291d;
+  border-color: #d1291d;
+}
+
+.class-btn-background-outline-DP4:hover {
+  background-color: #d1291d;
+  color: #fff;
+}
+
+.badge-DP4 {
+  background-color: #d1291d;
+  color: #fff;
+}
+
+.class-btn-background-GT4 {
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+.class-btn-background-GT4:hover {
+  background-color: #dbdada;
+  color: #000;
+}
+
+.class-btn-background-outline-GT4 {
+  background-color: #fff;
+  color: #f4f4f4;
+  border-color: #f4f4f4;
+}
+
+.class-btn-background-outline-GT4:hover {
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+.badge-GT4 {
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+.class-btn-background-CC4 {
+  background-color: #0160c2;
+  color: #fff;
+}
+
+.class-btn-background-CC4:hover {
+  background-color: #01478f;
+  color: #fff;
+}
+
+.class-btn-background-outline-CC4 {
+  background-color: #fff;
+  color: #0160c2;
+  border-color: #0160c2;
+}
+
+.class-btn-background-outline-CC4:hover {
+  background-color: #0160c2;
+  color: #fff;
+}
+
+.badge-CC4 {
+  background-color: #0160c2;
+  color: #fff;
+}
+
+.class-btn-background-P5 {
+  background-color: #d52b1e;
+  color: #fff;
+}
+
+.class-btn-background-P5:hover {
+  background-color: #a82218;
+  color: #fff;
+}
+
+.class-btn-background-outline-P5 {
+  background-color: #fff;
+  color: #d52b1e;
+  border-color: #d52b1e;
+}
+
+.class-btn-background-outline-P5:hover {
+  background-color: #d52b1e;
+  color: #fff;
+}
+
+.badge-P5 {
+  background-color: #d52b1e;
+  color: #fff;
+}
+
+.class-btn-background-PC5 {
+  background-color: #21578a;
+  color: #fff;
+}
+
+.class-btn-background-PC5:hover {
+  background-color: #173d61;
+  color: #fff;
+}
+
+.class-btn-background-outline-PC5 {
+  background-color: #fff;
+  color: #21578a;
+  border-color: #21578a;
+}
+
+.class-btn-background-outline-PC5:hover {
+  background-color: #21578a;
+  color: #fff;
+}
+
+.badge-PC5 {
+  background-color: #21578a;
+  color: #fff;
+}
+
+.class-btn-background-GT5 {
+  background-color: #009639;
+  color: #fff;
+}
+
+.class-btn-background-GT5:hover {
+  background-color: #006326;
+  color: #fff;
+}
+
+.class-btn-background-outline-GT5 {
+  background-color: #fff;
+  color: #009639;
+  border-color: #009639;
+}
+
+.class-btn-background-outline-GT5:hover {
+  background-color: #009639;
+  color: #fff;
+}
+
+.badge-GT5 {
+  background-color: #009639;
+  color: #fff;
+}
+
+.class-btn-background-cleanx5 {
+  background-color: #111;
+  color: #fff;
+}
+
+.class-btn-background-cleanx5:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.class-btn-background-outline-cleanx5 {
+  background-color: #fff;
+  color: #111;
+  border-color: #111;
+}
+
+.class-btn-background-outline-cleanx5:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+.badge-cleanx5 {
+  background-color: #111;
+  color: #fff;
+}
+
+.class-btn-background-P16 {
+  background-color: #E62B1E;
+  color: #000;
+}
+
+.class-btn-background-P16:hover {
+  background-color: #bc2015;
+  color: #000;
+}
+
+.class-btn-background-outline-P16 {
+  background-color: #fff;
+  color: #E62B1E;
+  border-color: #E62B1E;
+}
+
+.class-btn-background-outline-P16:hover {
+  background-color: #E62B1E;
+  color: #000;
+}
+
+.badge-P16 {
+  background-color: #E62B1E;
+  color: #000;
+}
+
+.class-btn-background-P26 {
+  background-color: #3954B8;
+  color: #fff;
+}
+
+.class-btn-background-P26:hover {
+  background-color: #2d4291;
+  color: #fff;
+}
+
+.class-btn-background-outline-P26 {
+  background-color: #fff;
+  color: #3954B8;
+  border-color: #3954B8;
+}
+
+.class-btn-background-outline-P26:hover {
+  background-color: #3954B8;
+  color: #fff;
+}
+
+.badge-P26 {
+  background-color: #3954B8;
+  color: #fff;
+}
+
+.class-btn-background-GT6 {
+  background-color: #00AF2F;
+  color: #fff;
+}
+
+.class-btn-background-GT6:hover {
+  background-color: #007c21;
+  color: #fff;
+}
+
+.class-btn-background-outline-GT6 {
+  background-color: #fff;
+  color: #00AF2F;
+  border-color: #00AF2F;
+}
+
+.class-btn-background-outline-GT6:hover {
+  background-color: #00AF2F;
+  color: #fff;
+}
+
+.badge-GT6 {
+  background-color: #00AF2F;
+  color: #fff;
 }
 
 .team-overview-class {
@@ -12400,186 +12745,6 @@ footer a.ytlink:hover {
 
 nav {
   background-color: #222 !important;
-}
-
-.btn-DP {
-  background-color: #d1291d;
-  color: #fff;
-}
-
-.btn-DP:hover {
-  background-color: #a42017;
-}
-
-.btn-Prototype {
-  background-color: #d52b1e;
-  color: #fff;
-}
-
-.btn-Prototype:hover {
-  background-color: #a82218;
-}
-
-.btn-P {
-  background-color: #d52b1e;
-  color: #fff;
-}
-
-.btn-P:hover {
-  background-color: #a82218;
-}
-
-.btn-GT {
-  background-color: #009639;
-  color: #fff;
-}
-
-.btn-GT:hover {
-  background-color: #006326;
-}
-
-.btn-PC {
-  background-color: #21578a;
-  color: #fff;
-}
-
-.btn-PC:hover {
-  background-color: #173d61;
-}
-
-.btn-CC {
-  background-color: #0160c2;
-  color: #fff;
-}
-
-.btn-CC:hover {
-  background-color: #01478f;
-}
-
-.btn-GTC {
-  background-color: #1c1c1c;
-  color: #fff;
-}
-
-.btn-GTC:hover {
-  background-color: #030303;
-}
-
-.btn-GT1 {
-  background-color: #1da35c;
-  color: #fff;
-}
-
-.btn-GT1:hover {
-  background-color: #157844;
-}
-
-.btn-GT3 {
-  background-color: #1c1c1c;
-  color: #fff;
-}
-
-.btn-GT3:hover {
-  background-color: #030303;
-}
-
-.btn-outline-Prototype {
-  background-color: #fff;
-  border-color: #d52b1e;
-  color: #d52b1e;
-}
-
-.btn-outline-Prototype:hover {
-  background-color: #d52b1e;
-  color: #fff;
-}
-
-.btn-outline-P {
-  background-color: #fff;
-  border-color: #d52b1e;
-  color: #d52b1e;
-}
-
-.btn-outline-P:hover {
-  background-color: #d52b1e;
-  color: #fff;
-}
-
-.btn-outline-DP {
-  background-color: #fff;
-  border-color: #d1291d;
-  color: #d1291d;
-}
-
-.btn-outline-DP:hover {
-  background-color: #d1291d;
-  color: #fff;
-}
-
-.btn-outline-GT {
-  background-color: #fff;
-  border-color: #009639;
-  color: #009639;
-}
-
-.btn-outline-GT:hover {
-  background-color: #009639;
-  color: #fff;
-}
-
-.btn-outline-PC {
-  background-color: #fff;
-  border-color: #21578a;
-  color: #21578a;
-}
-
-.btn-outline-PC:hover {
-  background-color: #21578a;
-  color: #fff;
-}
-
-.btn-outline-CC {
-  background-color: #fff;
-  border-color: #0160c2;
-  color: #0160c2;
-}
-
-.btn-outline-CC:hover {
-  background-color: #0160c2;
-  color: #fff;
-}
-
-.btn-outline-GTC {
-  background-color: #fff;
-  border-color: #1c1c1c;
-  color: #1c1c1c;
-}
-
-.btn-outline-GTC:hover {
-  background-color: #1c1c1c;
-  color: #fff;
-}
-
-.btn-outline-GT1 {
-  background-color: #fff;
-  border-color: #1da35c;
-  color: #1da35c;
-}
-
-.btn-outline-GT1:hover {
-  background-color: #1da35c;
-  color: #fff;
-}
-
-.btn-outline-GT3 {
-  background-color: #fff;
-  border-color: #1c1c1c;
-  color: #1c1c1c;
-}
-
-.btn-outline-GT3:hover {
-  background-color: #1c1c1c;
-  color: #fff;
 }
 
 table.result-table {
