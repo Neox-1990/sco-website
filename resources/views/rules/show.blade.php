@@ -45,7 +45,7 @@
                 <td>Grand Touring</td>
                 <td class="badge-GT">GT</td>
                 <td>BMW M8 GTE<br>Ferrari 488 GTE<br>Ford GT GTE<br>Porsche 911 RSR</td>
-                <td>0 kg / 100% (92 l)<br>0 kg / 100% (=90 l)<br>0 kg / 100% (=98 l)<br>0 kg / 100% (=106 l)</td>
+                <td>0 kg / 100% (=92 l)<br>0 kg / 100% (=90 l)<br>0 kg / 100% (=98 l)<br>0 kg / 100% (=106 l)</td>
               </tr>
             </tbody>
           </table>
@@ -212,7 +212,7 @@
               <li>The series administration can grant exceptions to the 2 car limit per class per team 			upon receiving a request from the team manager(s) of the affected entries. These 			requests will be assessed on a case-by-case basis.</li>
             </ol>
         </li>
-        <li>Teams with automatic invites must enter no later than Sunday, September 8th, 2019 at 23:59 		UTC and must pay the full entry fee of $35 in order to claim their automatic invites. A list of 		all automatically invited teams can be found <a href="https://docs.google.com/spreadsheets/d/17HXVQERrMQ_KVkasLk0N8nggaPjGbZTkyhWlVyys774/edit#gid=0">here</a>.
+        <li>Teams with automatic invites must enter no later than Sunday, September 8th, 2019 at 23:59 		UTC and must pay the full entry fee of $35 in order to claim their automatic invites. A list of 		all automatically invited teams can be found <b><a href="https://docs.google.com/spreadsheets/d/17HXVQERrMQ_KVkasLk0N8nggaPjGbZTkyhWlVyys774/edit#gid=0">here</a></b>.
         <ol>
           <li>Automatic invites are only valid for the class that they were earned in. This means that 			a P team from SCO2 may only use their invite for a P1 slot, a PC team from SCO2 may 			only use their invite for a P2 slot and a GT team may only use their invite for a GT 			slot. The only way to change which class a team's invite is valid for is to swap their 			invite with another invited team, as described below in 5.b.2.</li>
           <li>Invited teams may exchange invites between them. For example, a team with a GT 			invite and a team with a P1 invite may approach the series administration together to 			request to switch which class their invites are valid for. This is only possible if the series 			administration agrees to the swap and if neither team has entered a car using their 			invite yet.</li>
