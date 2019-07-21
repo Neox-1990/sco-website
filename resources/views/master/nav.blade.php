@@ -13,6 +13,7 @@
           <li class="nav-item flex-fill text-lg-center"><a class="nav-link text-uppercase sco-nav-link p-2 rounded" href="{{url('/myteams')}}">My Teams</a></li>
         @endif
       <li class="nav-item flex-fill text-lg-center"><a class="nav-link text-uppercase sco-nav-link p-2 rounded" href="{{url('/archive')}}">Archive</a></li>
+      <li class="nav-item text-lg-center" ><a class="nav-link text-uppercase sco-nav-link p-2 rounded" href="{{url('/downloads')}}"><i class="fas fa-file-download"></i></a></li>
     </ul>
   </div>
 </nav>
