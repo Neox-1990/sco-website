@@ -57,9 +57,8 @@ Route::get('/archive', 'SeasonController@archiveIndex');
 Route::get('/archive/{season}', 'SeasonController@archiveShow');
 Route::get('/archive/{season}/{round}', 'SeasonController@archiveShowRound');
 
-Route::get('/rules', function () {
-    return view('rules.show');
-});
+Route::get('/rules', 'RulesController@index');
+
 Route::get('/privacy', function () {
     return view('privacy.show');
 });
