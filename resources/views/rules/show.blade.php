@@ -31,19 +31,19 @@
             <tbody>
               <tr>
                 <td>Prototype 1</td>
-                <td class="badge-P">P1</td>
+                <td class="badge-P16">P1</td>
                 <td>Audi R18<br>Porsche 919 Hybrid</td>
                 <td>0 kg / 100% (=50 l)<br>0 kg / 100% (=62.5 l)</td>
               </tr>
               <tr>
                 <td>Prototype 2</td>
-                <td class="badge-PC">P2</td>
+                <td class="badge-P26">P2</td>
                 <td>HPD ARX-01c</td>
                 <td>0 kg / 84% (=50.4 kg)</td>
               </tr>
               <tr>
                 <td>Grand Touring</td>
-                <td class="badge-GT">GT</td>
+                <td class="badge-GT6">GT</td>
                 <td>BMW M8 GTE<br>Ferrari 488 GTE<br>Ford GT GTE<br>Porsche 911 RSR</td>
                 <td>0 kg / 100% (=92 l)<br>0 kg / 100% (=90 l)<br>0 kg / 100% (=98 l)<br>0 kg / 100% (=106 l)</td>
               </tr>
@@ -62,7 +62,7 @@
           <table class="table table-bordered">
             <tbody>
               <tr>
-                <td colspan="3">PQ<b class="mx-5">SCO3 Pre-Qualifying at Interlagos</b> (Autodromo Jose Carlos Pace - Grand Prix)</td>
+                <td colspan="3">PQ<b class="mx-5">SCO3 Pre-Qualifying at Interlagos</b>(Autodromo Jose Carlos Pace - Grand Prix)</td>
               </tr>
               <tr>
                 <th>Session</th>
@@ -73,6 +73,11 @@
                 <td>Warm-Up</td>
                 <td>2019-11-15 at 03:08 pm local</td>
                 <td>22/09/19 at 14:10 UTC</td>
+              </tr>
+              <tr>
+                <td>Qualifying</td>
+                <td>2019-11-15 at 03:08 pm local</td>
+                <td>22/09/19 at 15:00 UTC</td>
               </tr>
               @foreach($rounds as $round)
                 @php
