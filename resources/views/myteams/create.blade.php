@@ -108,6 +108,7 @@
                 <label for="driver{{$n}}sr1">License & SR</label>
                 <div class="form-group input-group">
                   <select class="form-control" name="driver{{$n}}[sr1]" id="driver{{$n}}sr1" title="License">
+                    <option value="d" {{old('driver'.$n.'.sr1') == 'd' ? 'selected' : ''}}>D</option>
                     <option value="c" {{old('driver'.$n.'.sr1') == 'c' ? 'selected' : ''}}>C</option>
                     <option value="b" {{old('driver'.$n.'.sr1') == 'b' ? 'selected' : ''}}>B</option>
                     <option value="a" {{old('driver'.$n.'.sr1') == 'a' ? 'selected' : ''}}>A</option>
