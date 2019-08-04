@@ -42,13 +42,13 @@ class CreateTeam extends FormRequest
                 $rules["driver$i.name"]     = "required|max:255";
                 $rules["driver$i.iracingid"]= "required|numeric|max:9999999";
                 $rules["driver$i.ir"]       = "required|numeric|min:$ir_limit|max:12000";
-                $rules["driver$i.sr1"]      = "required|in:c,b,a,p";
+                $rules["driver$i.sr1"]      = "required|in:d,c,b,a,p";
                 $rules["driver$i.sr2"]      = "required|numeric|max:128";
             } else {
                 $rules["driver$i.name"]       = "nullable|required_with:driver$i.iracingid|max:255";
                 $rules["driver$i.iracingid"]  = "nullable|required_with:driver$i.name|numeric|max:9999999";
                 $rules["driver$i.ir"]         = "nullable|required_with_all:driver$i.iracingid,driver$i.name|numeric|min:$ir_limit|max:12000";
-                $rules["driver$i.sr1"]        = "nullable|required_with_all:driver$i.iracingid,driver$i.name|in:c,b,a,p";
+                $rules["driver$i.sr1"]        = "nullable|required_with_all:driver$i.iracingid,driver$i.name|in:d,c,b,a,p";
                 $rules["driver$i.sr2"]        = "nullable|required_with_all:driver$i.iracingid,driver$i.name|numeric|max:128";
             }
         }
@@ -111,11 +111,11 @@ class CreateTeam extends FormRequest
         //Check if Drivers are already in a team
         $sr_limits = config('constants.sr_limits')[config('constants.cars_to_classes')[config('constants.current_season')][$this->input('teamcar')]];
         $sr_lower_limit = array_pop($sr_limits);
-        //dd($sr_limits);
+        //dd($sr_limits, $sr_lower_limit);
         for ($i = 1; $i <= config('constants.driver_limits')['max']; $i++) {
             $iracingid = $this->input('driver'.$i.'.iracingid');
             if ($iracingid != '' || $iracingid != null) {
-                if (!(in_array($this->input('driver'.$i.'.sr1'), $sr_limits) || $this->input('driver'.$i.'.sr1') == $sr_lower_limit && $this->input('driver'.$i.'.sr2') >= 2)) {
+                if (!(in_array($this->input('driver'.$i.'.sr1'), $sr_limits) || $this->input('driver'.$i.'.sr1') == $sr_lower_limit && $this->input('driver'.$i.'.sr2') >= 4)) {
                     $error_list ['driver'.$i] = "Driver $i does not fulfil the SR-requirements";
                 }
 

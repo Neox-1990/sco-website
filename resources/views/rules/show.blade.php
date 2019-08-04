@@ -217,27 +217,27 @@
               <li>The series administration can grant exceptions to the 2 car limit per class per team 			upon receiving a request from the team manager(s) of the affected entries. These 			requests will be assessed on a case-by-case basis.</li>
             </ol>
         </li>
-        <li>Teams with automatic invites must enter no later than Sunday, September 8th, 2019 at 23:59 		UTC and must pay the full entry fee of $35 in order to claim their automatic invites. A list of 		all automatically invited teams can be found <b><a href="https://docs.google.com/spreadsheets/d/17HXVQERrMQ_KVkasLk0N8nggaPjGbZTkyhWlVyys774/edit#gid=0">here</a></b>.
+        <li>Teams with automatic invites must enter no later than Sunday, September 8th, 2019 at 23:59 		UTC and must pay the full entry fee of $30 in order to claim their automatic invites. A list of 		all automatically invited teams can be found <b><a href="https://docs.google.com/spreadsheets/d/17HXVQERrMQ_KVkasLk0N8nggaPjGbZTkyhWlVyys774/edit#gid=0">here</a></b>.
         <ol>
           <li>Automatic invites are only valid for the class that they were earned in. This means that 			a P team from SCO2 may only use their invite for a P1 slot, a PC team from SCO2 may 			only use their invite for a P2 slot and a GT team may only use their invite for a GT 			slot. The only way to change which class a team's invite is valid for is to swap their 			invite with another invited team, as described below in 5.b.2.</li>
           <li>Invited teams may exchange invites between them. For example, a team with a GT 			invite and a team with a P1 invite may approach the series administration together to 			request to switch which class their invites are valid for. This is only possible if the series 			administration agrees to the swap and if neither team has entered a car using their 			invite yet.</li>
-          <li>Managers, who have used their invite when creating a team, but did not pay the entry 			fee of $35 for that team by the date listed in 5.b, will lose their invited status and will 			be treated like every other regular entrant from this point onwards.</li>
+          <li>Managers, who have used their invite when creating a team, but did not pay the entry 			fee of $30 for that team by the date listed in 5.b, will lose their invited status and will 			be treated like every other regular entrant from this point onwards.</li>
           <li>If a team has changed names or changed managers since earning the invite, the team, 			or the new team management respectively, can contact the series administration to 			request a transfer of the invite. These requests will be assessed on a case-by-case 			basis.</li>
           <li>All other unused automatic invites will also expire on the date listed in 5.b.</li>
         </ol> </li>
         <li>The entry deadline for all regular entrants will be on Sunday, September 15th, 2019 at 23:59 		UTC.
           <ol>
-            <li>Should the number of teams entering a class not exceed the number of available slots 			for that class (see 5.a.1) by the date mentioned in 5.c, then the teams of said class 			must pay their entry fee of $35 by Saturday, September 21st, 2019 at 23:59 UTC.</li>
+            <li>Should the number of teams entering a class not exceed the number of available slots 			for that class (see 5.a.1) by the date mentioned in 5.c, then the teams of said class 			must pay their entry fee of $30 by Saturday, September 21st, 2019 at 23:59 UTC.</li>
             <li>Should a class have fewer entries than the categories' maximum car count allows for 			(see 5.a.1), then the remaining open slots will instead be re-allocated to the class with 			the highest number of cars on the waiting list (e.g.: Only 12 P2 cars enter, meaning 2 			slots remain open and GT has the most reserves => GT will receive the additional 2 slots 			to make it a 26 car class).</li>
-            <li>Should the need for a pre-qualifying session disappear through the slot re-allocation 			described in 5.c.2, then the teams of this class will also have to pay the entry fee of 			$35 by the deadline described in 5.c.1.</li>
-            <li>In any case, a team that doesn't have to pre-qualify themselves onto the grid but still 			fails to pay the entry fee of $35 by the deadline mentioned in 5.c.1 will lose that spot 			and will be demoted to the waiting list for their class instead. That new open slot 			would be re-assigned to the car category with the most entries as described in 5.c.2.</li>
+            <li>Should the need for a pre-qualifying session disappear through the slot re-allocation 			described in 5.c.2, then the teams of this class will also have to pay the entry fee of 			$30 by the deadline described in 5.c.1.</li>
+            <li>In any case, a team that doesn't have to pre-qualify themselves onto the grid but still 			fails to pay the entry fee of $30 by the deadline mentioned in 5.c.1 will lose that spot 			and will be demoted to the waiting list for their class instead. That new open slot 			would be re-assigned to the car category with the most entries as described in 5.c.2.</li>
             <li>Teams, in categories with enough entries to require a pre-qualifying session to take 			place, will be required to pre-qualify themselves into the field, unless their team 			entered the series using an automatic invite. More information about pre-qualifying can 			be found in Section 7 of this document.</li>
           </ol>
         </li>
         <li>Should a pre-qualifying session have taken place on Sunday, September 22nd, 2019 at 16:00 		UTC, the results will be published no later than Tuesday, September 24th, 2019 at 16:00 UTC.
           <ol>
-            <li>All teams that made it through pre-qualifying will have until Sunday, September 29th, 			2019 at 23:59 UTC to pay their entry fee of $35.</li>
-            <li>Teams that fail to pay the entry fee of $35 in time will lose their spot to the next team 			that failed to make the cut in their category. This new team will then have a maximum 			of 48 hours to pay the entry fee of $35 and claim the slot before this procedure is 			repeated and the next reserve team team will be given the same time period to pay 			and claim the slot.</li>
+            <li>All teams that made it through pre-qualifying will have until Sunday, September 29th, 			2019 at 23:59 UTC to pay their entry fee of $30.</li>
+            <li>Teams that fail to pay the entry fee of $30 in time will lose their spot to the next team 			that failed to make the cut in their category. This new team will then have a maximum 			of 48 hours to pay the entry fee of $30 and claim the slot before this procedure is 			repeated and the next reserve team team will be given the same time period to pay 			and claim the slot.</li>
             <li>Once a team has claimed a slot by paying the entry fee within 48 hours once they've 			been given the chance to do so (see 5.d.2), the team that initially qualified for the spot 			on the grid will become the new first reserve team in their class. All other reserve 			teams will remain on the waiting list in the same order they were in before the 				procedure described in 5.d.2 began.</li>
             <li>Should a class run out of teams through the procedure described in 5.d.2, then the first 			team of the next-biggest class that had teams attempting to pre-qualify themselves 			into the field will go through the same procedure as mentioned above.</li>
           </ol>
@@ -245,7 +245,7 @@
         <li>Every team that's created during a season will have a team status assigned to it. There are a 		total of 5 different statuses: 'Pending', 'Reviewed', 'Waiting List', 'Qualified' and 'Confirmed'.
           <ol>
             <li>Newly created teams will have their status set to 'Pending' automatically. Once the 			series administration has checked everything about said newly created team, the 			team's status will either be changed to 'Reviewed' (for regular entrants) or 'Qualified' if 			a team enters using an automatic invite.</li>
-            <li>Once any team with the 'Qualified' status has paid the entry fee of $35 in its entirety, 			their team's status will be changed to 'Confirmed'.</li>
+            <li>Once any team with the 'Qualified' status has paid the entry fee of $30 in its entirety, 			their team's status will be changed to 'Confirmed'.</li>
             <li>The 'Waiting List' status will be reserved for teams on the waiting list for their 				respective class.</li>
           </ol>
         </li>

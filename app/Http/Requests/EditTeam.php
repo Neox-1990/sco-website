@@ -39,7 +39,7 @@ class EditTeam extends FormRequest
         'driver.name' => 'nullable|required_with:driver.iracingid|required_with:addDriver|max:255',
         'driver.iracingid' => 'nullable|required_with:driver.name|numeric|required_with:addDriver|max:9999999',
         'driver.ir' => 'nullable|required_with_all:driver.iracingid,driver.name|numeric|min:2000|required_with:addDriver|max:12000',
-        'driver.sr1' => 'nullable|required_with_all:driver.iracingid,driver.name|in:c,b,a,p|required_with:addDriver',
+        'driver.sr1' => 'nullable|required_with_all:driver.iracingid,driver.name|in:d,c,b,a,p|required_with:addDriver',
         'driver.sr2' => 'nullable|required_with_all:driver.iracingid,driver.name|numeric|required_with:addDriver|max:128',
 
         'driverID' => 'nullable|numeric|required_with:removeDriver|max:9999999'
@@ -197,7 +197,7 @@ class EditTeam extends FormRequest
             $checkResult['legit'] = false;
             $checkResult['errors']['maxDriverLimit'] = 'There are already '.config('constants.driver_limits')['min'].' drivers in this team.';
             $checkResult['flash'] = 'An error occurred';
-        } elseif (!(in_array($this->input('driver.sr1'), $sr_limits) || $this->input('driver.sr1') == $sr_lower_limit && $this->input('driver.sr2') >= 2)) {
+        } elseif (!(in_array($this->input('driver.sr1'), $sr_limits) || $this->input('driver.sr1') == $sr_lower_limit && $this->input('driver.sr2') >= 4)) {
             $checkResult['legit'] = false;
             $checkResult['errors']['driverNotLegible'] = 'The driver doesn\'t fulfil the sr-requirements.';
             $checkResult['flash'] = 'An error occurred';

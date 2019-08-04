@@ -94,6 +94,7 @@
           <label for="driversr1">License & SR</label>
           <div class="form-group input-group">
             <select class="form-control" name="driver[sr1]" id="driversr1" title="License" {{$driverLimitReached?'disabled':''}}>
+              <option value="d" {{old('driver.sr1') == 'd' ? 'selected' : ''}}>D</option>
               <option value="c" {{old('driver.sr1') == 'c' ? 'selected' : ''}}>C</option>
               <option value="b" {{old('driver.sr1') == 'b' ? 'selected' : ''}}>B</option>
               <option value="a" {{old('driver.sr1') == 'a' ? 'selected' : ''}}>A</option>
