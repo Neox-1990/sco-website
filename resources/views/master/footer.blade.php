@@ -5,12 +5,12 @@
     </div>
     <div class="m-2">
       <small>Visit us on:</small>
-      <a href="https://www.facebook.com/coresimracing" class="ml-2 fblink"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a>
-      <a href="https://twitter.com/coresimracing" class="ml-2 twlink"><i class="fab fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+      <a href="https://www.facebook.com/SportsCarOpen/" class="ml-2 fblink"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a>
+      <a href="https://twitter.com/SportsCarOpen" class="ml-2 twlink"><i class="fab fa-twitter-square fa-lg" aria-hidden="true"></i></a>
       <a href="https://www.youtube.com/user/FireMike15NBA" class="ml-2 ytlink"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></a>
     </div>
     <div class="m-2">
-      <small>SCO Website &copy; 2018 by <a href="mailto:dev@ronaldg.de">Ronald Großmann</a></small>
+      <small>SCO Website &copy; 2019 by <a href="mailto:dev@ronaldg.de">Ronald Großmann</a></small>
     </div>
   </div>
   <div class="text-right pb-2">
