@@ -302,7 +302,7 @@
       <h3>7. Pre-Qualifying</h3>
       <ol class="rulebook-section">
         <li>Pre-Qualifying will take place if one or multiple categories require it due to the amount of 		teams interested in entering exceeding the amount of available slots in the class. The 			scheduled date for this pre-qualifying session will be Sunday, September 22nd, 2019 at 13:10 		UTC.</li>
-        <li>Every car class that requires a pre-qualifying session to take place will have its own session. 		All sessions will be 180 minutes long and will be preceded by a 50 minute long warm-up 		session, so all teams can join and familiarise themselves with the track conditions.
+        <li>Every car class that requires a pre-qualifying session to take place will have its own session. 		All sessions will be 180 minutes long and will be preceded by a 110 minute long warm-up 		session, so all teams can join and familiarise themselves with the track conditions.
           <ol>
             <li>All pre-qualifying sessions will be set up using the following settings:
               <table class="table table-bordered">
