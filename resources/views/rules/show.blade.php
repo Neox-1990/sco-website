@@ -6,7 +6,7 @@
   <div class="col-12">
     <div class="p-2" id="rulebook">
       <h1>Rulebook</h1>
-      <p><em>Last update: 21st July 2019</em></p>
+      <p><em>Last update: 10th September 2019</em></p>
       <a data-status="closed" class="btn btn-outline-dark m-1" id="openAllRules"><i class="fas fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
       <hr>
       <h3>1. Introduction</h3>
@@ -58,7 +58,7 @@
       </ol>
       <h3>3. Timetable and Season Schedule</h3>
       <ol class="rulebook-section">
-        <li>The series will visit a total of 6 different venues during the 2018-2019 season. The opening and final rounds of the season will be 8 hour races, all other races will be 4 hours long. The session dates and start times as well as the in-sim date and time of day are listed below.
+        <li>The series will visit a total of 6 different venues during the 2019-2020 season. The opening and final rounds of the season will be 8 hour races, all other races will be 4 hours long. The session dates and start times as well as the in-sim date and time of day are listed below.
           <table class="table table-bordered">
             <tbody>
               <tr>
@@ -72,7 +72,7 @@
               <tr>
                 <td>Warm-Up</td>
                 <td>2019-11-15 at 03:08 pm local</td>
-                <td>22/09/19 at 14:10 UTC</td>
+                <td>22/09/19 at 13:10 UTC</td>
               </tr>
               <tr>
                 <td>Qualifying</td>
@@ -234,7 +234,7 @@
             <li>Teams, in categories with enough entries to require a pre-qualifying session to take 			place, will be required to pre-qualify themselves into the field, unless their team 			entered the series using an automatic invite. More information about pre-qualifying can 			be found in Section 7 of this document.</li>
           </ol>
         </li>
-        <li>Should a pre-qualifying session have taken place on Sunday, September 22nd, 2019 at 16:00 		UTC, the results will be published no later than Tuesday, September 24th, 2019 at 16:00 UTC.
+        <li>Should a pre-qualifying session have taken place on Sunday, September 22nd, 2019 at 13:10 		UTC, the results will be published no later than Tuesday, September 24th, 2019 at 13:10 UTC.
           <ol>
             <li>All teams that made it through pre-qualifying will have until Sunday, September 29th, 			2019 at 23:59 UTC to pay their entry fee of $30.</li>
             <li>Teams that fail to pay the entry fee of $30 in time will lose their spot to the next team 			that failed to make the cut in their category. This new team will then have a maximum 			of 48 hours to pay the entry fee of $30 and claim the slot before this procedure is 			repeated and the next reserve team team will be given the same time period to pay 			and claim the slot.</li>
@@ -301,7 +301,7 @@
       </ol>
       <h3>7. Pre-Qualifying</h3>
       <ol class="rulebook-section">
-        <li>Pre-Qualifying will take place if one or multiple categories require it due to the amount of 		teams interested in entering exceeding the amount of available slots in the class. The 			scheduled date for this pre-qualifying session will be Sunday, September 22nd, 2019 at 14:10 		UTC.</li>
+        <li>Pre-Qualifying will take place if one or multiple categories require it due to the amount of 		teams interested in entering exceeding the amount of available slots in the class. The 			scheduled date for this pre-qualifying session will be Sunday, September 22nd, 2019 at 13:10 		UTC.</li>
         <li>Every car class that requires a pre-qualifying session to take place will have its own session. 		All sessions will be 180 minutes long and will be preceded by a 50 minute long warm-up 		session, so all teams can join and familiarise themselves with the track conditions.
           <ol>
             <li>All pre-qualifying sessions will be set up using the following settings:
@@ -312,15 +312,15 @@
                 </tr>
                 <tr>
                   <td>SimTime:</td>
-                  <td>2019-11-15 @ 03:08 pm local (dynamic sky will be disabled)</td>
+                  <td>2019-11-15 @ 03:08 pm local (afternoon; dynamic sky will be disabled)</td>
                 </tr>
                 <tr>
                   <td>Track State:</td>
-                  <td>Automatically generated; marbles will not be left on-track</td>
+                  <td>Starting at 50% and will be carried over; marbles will be cleaned</td>
                 </tr>
                 <tr>
                   <td>Weather:</td>
-                  <td>78°F ambient; 55% RH; N winds at 2 mph; partly cloudy skies</td>
+                  <td>65°F ambient; 55% RH; N winds at 2 mph; clear skies</td>
                 </tr>
               </table>
             </li>

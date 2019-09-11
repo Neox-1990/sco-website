@@ -10,7 +10,7 @@
       <a href="https://www.youtube.com/user/FireMike15NBA" class="ml-2 ytlink"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></a>
     </div>
     <div class="m-2">
-      <small>SCO Website &copy; 2018 by <a href="mailto:dev@ronaldg.de">Ronald Großmann</a></small>
+      <small>SCO Website &copy; 2019 by <a href="mailto:dev@ronaldg.de">Ronald Großmann</a></small>
     </div>
   </div>
   <div class="text-right pb-2">
