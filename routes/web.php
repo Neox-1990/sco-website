@@ -104,6 +104,9 @@ Route::post('/admin/news/create', 'AdminController@newsStore');
 Route::get('/admin/news/edit/{news}', 'AdminController@newsEdit');
 Route::post('/admin/news/edit/{news}', 'AdminController@newsUpdate');
 Route::get('/admin/news/delete/{news}', 'AdminController@newsDelete');
+Route::get('/admin/tools', 'AdminController@toolShow');
+Route::get('/admin/tools/pq', 'AdminController@pqtoolShow');
+Route::post('/admin/tools/pq', 'AdminController@pqtoolProcess');
 
 Route::post('/ajax/formerteam/{team}', 'AjaxController@formerTeams');
 Route::get('/ajax/changeTeam/{team}', 'AdminController@updateTeamStatus');
