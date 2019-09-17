@@ -12,5 +12,6 @@
     <a href="{{url('admin/settings')}}" class="list-group-item list-group-item-action">Settings</a>
     <a href="{{url('admin/briefing')}}" class="list-group-item list-group-item-action">Briefing</a>
     <a href="{{url('/')}}" class="list-group-item list-group-item-action bg-info">Page</a>
+    <a href="{{url('admin/tools')}}" class="list-group-item list-group-item-action">Toolbox</a>
   </div>
 </nav>
