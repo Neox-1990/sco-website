@@ -41,6 +41,24 @@
           @endforeach
         </table>
       @endforeach
+
+      <table id="cleanx-result" class="table table-hover result-table d-none">
+        <tr>
+          <th class="text-center">Pos</th>
+          <th class="text-center">#</th>
+          <th>Team</th>
+          <th class="text-center">Pts</th>
+        </tr>
+        @foreach ($incsSorted as $key => $team)
+          <tr>
+            <td class="text-center">{{$key+1}}</td>
+            <td class="text-center">{{$team->team->number}}</td>
+            <td><a href="{{url('teams/'.$team->team->id)}}">{{$team->team->name}}</a></td>
+            <td class="text-center">{{$team->laps - $team->incs}}</td>
+          </tr>
+        @endforeach
+      </table>
+
     @endif
 
   </div>
