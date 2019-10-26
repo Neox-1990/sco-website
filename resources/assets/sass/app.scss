@@ -595,3 +595,17 @@ span.clear_driver{
     margin: -0.5rem -0.5rem 1rem -0.5rem;
   }
 }
+
+table#cleanx-result{
+  th{
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(4){
+      width: 4rem;
+    }
+
+    &:nth-child(3){
+      width: auto;
+    }
+  }
+}

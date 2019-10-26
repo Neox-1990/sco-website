@@ -14,7 +14,7 @@ class ResultController extends Controller
     public function index()
     {
         //$results = Result::where('season_id', config('constants.current_season'))->get();
-        $results = DB::table('results')->select(DB::raw('team_id, SUM(points) as points '))->where('season_id', config('constants.current_season'))->groupBy('team_id')->get();
+        $results = DB::table('results')->select(DB::raw('team_id, SUM(points) as points, SUM(laps) as laps, SUM(incs) as incs '))->where('season_id', config('constants.current_season'))->groupBy('team_id')->get();
         $results = $results->map(function ($array, $key) {
             $array = (array)$array;
             $array['team'] = Team::withTrashed()->where('id', $array['team_id'])->first();
@@ -22,7 +22,18 @@ class ResultController extends Controller
             return $array;
         });
         $resultsSorted = array();
-        //dd($results);
+
+        $incsSortedraw = $results->sort(function($a, $b){
+          $aCleanX = $a->laps - $a->incs;
+          $bCleanX = $b->laps - $b->incs;
+          if($aCleanX == $bCleanX) return 0;
+          else{
+            return ($aCleanX > $bCleanX) ? -1 : 1;
+          }
+        });
+
+        $incsSorted = $incsSortedraw->values();
+        //dd($incsSorted);
         foreach (config('constants.classes')[config('constants.current_season')] as $class => $cars) {
             $resultsSorted[$class] = $results->filter(function ($result, $key) use ($cars) {
                 $team = Team::withTrashed()->where('id', $result->team_id)->first();
@@ -93,7 +104,7 @@ class ResultController extends Controller
         }
         $first = array_keys($resultsSorted)[0];
         //dd($resultsSorted);
-        return view('results.index', compact('resultsSorted', 'rounds', 'first', 'teamResults'));
+        return view('results.index', compact('resultsSorted', 'incsSorted', 'rounds', 'first', 'teamResults'));
     }
 
     public function show(Round $round)
