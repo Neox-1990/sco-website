@@ -1,7 +1,7 @@
 import {changeTeamStatusInit, changeTeamStatus} from './adminhelper.js';
 
 export const tablesorterInit = function(){
-  $('.sco-table-sort').on('click',tablesorter).append('<span class="ml-3 sco-sort-icon"><i class="fas fa-sort-down " aria-hidden="true"></i></span>');
+  $('.sco-table-sort').on('click',tablesorter).append('<span class="ml-1 sco-sort-icon"><i class="fas fa-sort-down " aria-hidden="true"></i></span>');
 }
 export const tablesorter = function(){
   const column = $(this).index();

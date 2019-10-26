@@ -39619,7 +39619,7 @@ var loadOldTeam = function loadOldTeam() {
 
 
 var tablesorterInit = function tablesorterInit() {
-  $('.sco-table-sort').on('click', tablesorter).append('<span class="ml-3 sco-sort-icon"><i class="fas fa-sort-down " aria-hidden="true"></i></span>');
+  $('.sco-table-sort').on('click', tablesorter).append('<span class="ml-1 sco-sort-icon"><i class="fas fa-sort-down " aria-hidden="true"></i></span>');
 };
 var tablesorter = function tablesorter() {
   var column = $(this).index();

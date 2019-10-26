@@ -2,7 +2,7 @@
 
 @section('main')
 <div class="row mx-0">
-  <div class="col-12" style="padding-bottom:2rem;">
+  <div class="col-12 px-0 px-md-3" style="padding-bottom:2rem;">
     <h1>Teams</h1>
     @include('master.formerrors')
     <form action="{{url('teams/')}}" method="post" class="mb-3">
@@ -65,7 +65,7 @@
                       </span>
                     </div>
                   </td>
-                  <td>{{config('constants.car_names')[$team['car']]}}</td>
+                  <td><span class="sr-only">{{config('constants.car_names')[$team['car']]}}</span><div class="manufactur-img manufactur-img-{{$team['car']}}"></div></td>
                 </tr>
               @endforeach
               @foreach ($class['qualified'] as $team)
@@ -87,7 +87,7 @@
                       </span>
                     </div>
                   </td>
-                  <td>{{config('constants.car_names')[$team['car']]}}</td>
+                  <td><span class="sr-only">{{config('constants.car_names')[$team['car']]}}</span><div class="manufactur-img manufactur-img-{{$team['car']}}"></div></td>
                 </tr>
               @endforeach
               @foreach ($class['waiting'] as $team)
@@ -109,7 +109,7 @@
                       </span>
                     </div>
                   </td>
-                  <td>{{config('constants.car_names')[$team['car']]}}</td>
+                  <td><span class="sr-only">{{config('constants.car_names')[$team['car']]}}</span><div class="manufactur-img manufactur-img-{{$team['car']}}"></div></td>
                 </tr>
               @endforeach
               @foreach ($class['reviewed'] as $team)
@@ -131,7 +131,7 @@
                       </span>
                     </div>
                   </td>
-                  <td>{{config('constants.car_names')[$team['car']]}}</td>
+                  <td><span class="sr-only">{{config('constants.car_names')[$team['car']]}}</span><div class="manufactur-img manufactur-img-{{$team['car']}}"></div></td>
                 </tr>
               @endforeach
               @foreach ($class['pending'] as $team)
@@ -153,7 +153,7 @@
                       </span>
                     </div>
                   </td>
-                  <td>{{config('constants.car_names')[$team['car']]}}</td>
+                  <td><span class="sr-only">{{config('constants.car_names')[$team['car']]}}</span><div class="manufactur-img manufactur-img-{{$team['car']}}"></div></td>
                 </tr>
               @endforeach
             </tbody>
