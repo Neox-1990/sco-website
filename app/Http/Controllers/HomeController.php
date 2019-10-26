@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $feedData = (new FacebookHelper())->getTextFeedElements(intval((Setting::where('key', '=', 'facebookentries')->first())->value));
-        //$testdate = '2019-02-25 18:00:00';
+        //$testdate = '2019-11-17 22:00:00';
         $roundnumber = Round::where([['season_id',config('constants.current_season')]])->count();
         $now = new Carbon();
 
@@ -137,8 +137,8 @@ class HomeController extends Controller
             } elseif ($now->between($race_start, $race_end)) {
                 $season['curent'] = 'Round '.$round->number.' - Race';
                 if ($round->number<$roundnumber) {
-                  $nextround = Round::where([['season_id',config('constants.current_season')],['number',$round->number+1]])->first();
-                  $nextround_start = new Carbon($nextround->fp1_start);
+                    $nextround = Round::where([['season_id',config('constants.current_season')],['number',$round->number+1]])->first();
+                    $nextround_start = new Carbon($nextround->fp1_start);
                     $season['next']=[
                   'session' => 'Round '.($round->number+1).' - FP1',
                   'time' => $now->diffForHumans($nextround_start, true)
@@ -151,9 +151,11 @@ class HomeController extends Controller
                 }
             } else {
                 if ($round->number<$roundnumber) {
+                    $nextround = Round::where([['season_id',config('constants.current_season')],['number',$round->number+1]])->first();
+                    $nextround_start = new Carbon($nextround->fp1_start);
                     $season['next']=[
                 'session' => 'Round '.($round->number+1).' - FP1',
-                'time' => $now->diffForHumans($race_start, true)
+                'time' => $now->diffForHumans($nextround_start, true)
               ];
                 } else {
                     $season['next']=[
@@ -173,7 +175,7 @@ class HomeController extends Controller
               'time' => 'some time'
             ];
         }
-        
+
         $showPassword = false;
         $setup = Setting::getSetup();
         if (auth()->check() && $setup['session_password_active'] == 1) {
