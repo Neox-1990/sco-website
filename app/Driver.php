@@ -37,7 +37,7 @@ class Driver extends Model
                 $data = json_decode(curl_exec($ch), true);
                 curl_close($ch);
                 //dd($driverpack, $driverIds, $data);
-                
+
 
                 foreach ($driverpack as $packdriver) {
                     isset($data[$packdriver->iracing_id]['location']) ? $packdriver->location = $data[$packdriver->iracing_id]['location'] : null;
@@ -71,7 +71,7 @@ class Driver extends Model
                 $driver->save();
             }
 
-            dd($driverpack);
+            //dd($driverpack);
             $driverpack = [];
         }
 

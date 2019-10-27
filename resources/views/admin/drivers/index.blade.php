@@ -3,7 +3,7 @@
 @section('content')
   <h1>Drivers</h1>
   <hr>
-  <p><a href="{{url('/admin/drivers/')}}">Current Season</a></p>
+  <p><a href="{{url('/admin/drivers/')}}">Current Season</a><a class="ml-3" href="{{url('/admin/driverupdate')}}">Update them</a></p>
   <p><a href="{{url('/admin/drivers/all/')}}">All Drivers</a></p>
   <table class="table table-hover">
     <thead>
