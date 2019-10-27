@@ -1,0 +1,128 @@
+//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "myvariables";
+
+html{
+  font-family: 'Ubuntu', sans-serif !important;
+  font-size: 18px;
+}
+
+h1{
+  background-image: url('img/sco.svg');
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  background-size: 5rem 5rem;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 3rem;
+
+  margin: 1rem -0.5rem;
+  padding: 1rem 2rem;
+
+  position: relative;
+
+  &::after{
+    content: "Sports Car Open";
+    color: inherit;
+    position: absolute;
+    top: 1.0rem;
+    right: 6rem;
+    font-weight: bold;
+  }
+
+  @include media-breakpoint-down(sm){
+    &::after{
+      content: "SCO";
+    }
+  }
+}
+
+@each $class,$color in $sco-class-colors{
+  .class-#{$class}{
+    background-color: $color;
+    @if (lightness( $color ) > 60){
+      color: #000;
+    }@else{
+      color: #fff;
+    }
+  }
+}
+.spotterguide-tile{
+
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px dashed $gray-700;
+
+  &:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .card{
+    border-color: $gray-700;
+    border-width: 2px;
+  }
+  .car-image{
+    background-color: #bbb;
+    background-repeat: no-repeat;
+    background-position: 99% 10%;
+    background-size: auto 40%;
+
+    @each $id,$url in $car_manufacturer{
+      &.car-man-#{$id}{
+        background-image: $url;
+      }
+    }
+
+  }
+  .car-info{
+    font-size: 0.7rem;
+    background-color: $gray-900;
+    color: #fff;
+
+    p:first-child{
+      font-size: 1.2rem;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow-x: hidden;
+    }
+  }
+  .info-box{
+    height: calc(6rem + 5px);
+    width: 100%;
+    //margin-top: -1px;
+
+
+    .team-number{
+      width: calc(9rem);
+      padding: 0 0.5rem;
+      font-size: 5rem;
+      line-height: 5rem;
+      border-right: 2px solid $gray-900;
+      letter-spacing: -.25rem;
+
+      span{
+        margin-top: -1rem;
+      }
+    }
+    .team-drivers{
+      font-size: 0.7rem;
+      line-height: 1.0rem;
+      padding: 0 0.5rem;
+      width: calc(100% - 9rem);
+      overflow-x: hidden;
+
+      p{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+        border-bottom:1px solid $gray-900;
+        &:nth-child(6){
+          border-bottom-width: 0;
+        }
+      }
+    }
+  }
+
+}

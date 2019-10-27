@@ -116,4 +116,14 @@ class TeamController extends Controller
 
         return view('teams.searchresult', compact('currentTeams', 'oldTeams', 'search'));
     }
+
+    public function spotterguide($class = null)
+    {
+        $teamlist = Team::getConfirmedTeams();
+        if (array_key_exists($class, $teamlist)) {
+            $teamlist = [$class => $teamlist[$class]];
+        }
+        //dd($class, $teams['P1'][3]->drivers);
+        return view('spotterguide.show', compact('teamlist'));
+    }
 }

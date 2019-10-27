@@ -37,6 +37,8 @@ Route::get('/teams', 'TeamController@index');
 Route::post('/teams', 'TeamController@search');
 Route::get('/teams/{team}', 'TeamController@show');
 
+Route::get('/spotterguide/{class?}', 'TeamController@spotterguide');
+
 Route::post('/driver', 'DriverController@search');
 Route::get('/driver', 'DriverController@index');
 Route::get('/driver/{driver}', 'DriverController@show');
