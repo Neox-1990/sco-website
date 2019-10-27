@@ -10551,6 +10551,18 @@ html {
   font-size: 18px;
 }
 
+@media (max-width: 767.98px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 h1 {
   background-image: url("img/sco.svg");
   background-position: 100% 50%;
@@ -10739,7 +10751,7 @@ h1::after {
 }
 
 .spotterguide-tile .info-box {
-  height: calc(6 * 1.2rem + 5px);
+  height: calc(6 * 1.4rem + 5px);
   width: 100%;
 }
 
@@ -10749,16 +10761,15 @@ h1::after {
   font-size: 5rem;
   line-height: 5rem;
   border-right: 2px solid #212529;
-  letter-spacing: -.25rem;
 }
 
 .spotterguide-tile .info-box .team-number span {
-  margin-top: -1rem;
+  margin-top: calc(((65/90 * 5rem) - 5rem) / 2);
 }
 
 .spotterguide-tile .info-box .team-drivers {
-  font-size: 0.9rem;
-  line-height: 1.2rem;
+  font-size: 1.0rem;
+  line-height: 1.4rem;
   padding: 0 0.5rem;
   width: calc(100% - 9rem);
   overflow-x: hidden;

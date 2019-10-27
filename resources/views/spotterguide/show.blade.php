@@ -23,7 +23,7 @@
       <h1 class="class-{{$class.config('constants.current_season')}} rounded-pill">{{$class}}</h1>
       <div class="row d-flex flex-row flex-wrap align-items-stretch spotterguide-tile">
       @foreach($teams as $team)
-        <div class="col-12 col-md-6 col-lg-4 p-1">
+        <div class="col-12 col-md-6 col-xl-4 p-1">
           <div class="card h-100">
             <img src="{{asset('assets/spotterguide/'.$team['ir_teamid'].'.png')}}" class="card-img-top car-image car-man-{{$team->car}}">
             <div class="p-1 px-2 car-info d-flex flex-wrap justify-content-between">
