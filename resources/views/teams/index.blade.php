@@ -39,7 +39,7 @@
           <span class="team_summary_sub">&Sigma; {{$class['pending']->count()+$class['reviewed']->count()+$class['waiting']->count()+$class['qualified']->count()+$class['confirmed']->count()}}/{{config('constants.class_limits')[config('constants.current_season')][$classname]}}</span>
         </span>
         </h2>
-        <a href="{{url('/spotterguide/'.$classname)}}" target="_blank" class="my-1 btn class-btn-background-outline-{{$classname.config('constants.current_season')}}"><i class="fas fa-camera mr-3 "></i>Spotterguide for all the {{$classname}} class</a>
+        <a href="{{url('/spotterguide/'.$classname)}}" target="_blank" class="my-1 btn class-btn-background-outline-{{$classname.config('constants.current_season')}}"><i class="fas fa-camera mr-3 "></i>Spotterguide for the {{$classname}} class</a>
         <div class="table-responsive">
           <table id="teams-table" class="table table-hover table-bordered">
             <thead class="thead-default">
