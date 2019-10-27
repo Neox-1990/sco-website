@@ -119,6 +119,7 @@ h1{
       width: calc(100% - 9rem);
       overflow-x: hidden;
       .flag{
+        margin-left: 2px;
         -webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.2);
         -moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.2);
         box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.2);

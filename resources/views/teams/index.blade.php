@@ -23,6 +23,9 @@
         <input type="text" class="form-control" placeholder="Search Driver by iRacing ID or name" aria-describedby="basic-addon1" name="searchinput">
       </div>
     </form>
+    <div class="my-3">
+      <a href="{{url('/spotterguide')}}" class="btn btn-outline-primary" target="_blank"><i class="fas fa-camera mr-3"></i>Spotterguide for all classes</a>
+    </div>
     @foreach ($teams as $classname => $class)
       <div class="team-overview-class">
         <h2 class="position-relative"><span class="badge badge-default badge-{{$classname.config('constants.current_season')}}">{{$classname}}</span>
@@ -36,6 +39,7 @@
           <span class="team_summary_sub">&Sigma; {{$class['pending']->count()+$class['reviewed']->count()+$class['waiting']->count()+$class['qualified']->count()+$class['confirmed']->count()}}/{{config('constants.class_limits')[config('constants.current_season')][$classname]}}</span>
         </span>
         </h2>
+        <a href="{{url('/spotterguide/'.$classname)}}" target="_blank" class="my-1 btn class-btn-background-outline-{{$classname.config('constants.current_season')}}"><i class="fas fa-camera mr-3 "></i>Spotterguide for all the {{$classname}} class</a>
         <div class="table-responsive">
           <table id="teams-table" class="table table-hover table-bordered">
             <thead class="thead-default">
