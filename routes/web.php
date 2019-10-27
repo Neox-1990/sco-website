@@ -109,6 +109,7 @@ Route::get('/admin/news/delete/{news}', 'AdminController@newsDelete');
 Route::get('/admin/tools', 'AdminController@toolShow');
 Route::get('/admin/tools/pq', 'AdminController@pqtoolShow');
 Route::post('/admin/tools/pq', 'AdminController@pqtoolProcess');
+Route::get('/admin/driverupdate', 'AdminController@updateDriverInfo');
 
 Route::post('/ajax/formerteam/{team}', 'AjaxController@formerTeams');
 Route::get('/ajax/changeTeam/{team}', 'AdminController@updateTeamStatus');

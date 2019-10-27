@@ -15,6 +15,7 @@
     <title>Sports Car Open</title>
 
     <link rel="stylesheet" href="{{asset('css/spotterguide.css')}}?date=20191020">
+    <link rel="stylesheet" href="{{asset('css/flags/css/flag-icon.min.css')}}">
   </head>
   <body>
     <div class="container-fluid">
@@ -35,7 +36,7 @@
               </div>
               <div class="team-drivers align-self-start">
               @foreach($team->drivers as $driver)
-                <p class="my-0">{{$driver->name}}</p>
+                <p class="my-0"><span class="flag flag-icon flag-icon-{{strtolower($driver->location)}} mr-2"></span>{{$driver->name}}</p>
               @endforeach
               </div>
             </div>

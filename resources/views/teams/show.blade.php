@@ -1,5 +1,9 @@
 @extends('master.master')
 
+@section('additionalHeader')
+<link rel="stylesheet" href="{{asset('css/flags/css/flag-icon.min.css')}}">
+@endsection
+
 @section('main')
 <div class="row mx-0">
   <div class="col-12" style="padding-bottom:2rem;">
@@ -47,7 +51,7 @@
       </tr>
       @foreach ($team['drivers'] as $driver)
         <tr>
-          <td><a href="http://members.iracing.com/membersite/member/CareerStats.do?custid={{$driver['iracing_id']}}" target="_blank">{{$driver['name']}}</a></td>
+          <td><span class="mr-3 flag-icon flag-icon-{{strtolower($driver->location)}}"></span><a href="http://members.iracing.com/membersite/member/CareerStats.do?custid={{$driver['iracing_id']}}" target="_blank">{{$driver['name']}}</a></td>
           <td>{{$driver['irating']}}</td>
           <td>{{$driver['safetyrating']}}</td>
         </tr>

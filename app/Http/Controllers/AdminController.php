@@ -227,11 +227,10 @@ class AdminController extends Controller
         foreach ($settings as $setting) {
             $setup[$setting['key']] = $setting['value'];
         }
-        return view('admin.settings.edit', compact('setup','settings'));
+        return view('admin.settings.edit', compact('setup', 'settings'));
     }
     public function settingsUpdate(Request $request)
     {
-
         if ($request->has('simpleSubmit')) {
             foreach ($request->except(['_token','simpleSubmit']) as $key => $value) {
                 $setting = Setting::where('key', '=', $key)->first();
@@ -277,6 +276,7 @@ class AdminController extends Controller
         $driver->iracing_id = $request->input('driveririd');
         $driver->irating = $request->input('driverirating');
         $driver->safetyrating = $request->input('driversafetyrating');
+        $driver->safetyrating = strtoupper($request->input('driverlocation'));
         $driver->save();
         session()->flash('flash_message_success', 'Data of '.$driver->name.' updated');
         return redirect('admin/drivers/'.$driver['id']);
@@ -535,8 +535,8 @@ class AdminController extends Controller
 
     public function updateSetting(Request $request, Setting $setting)
     {
-      $setting['value'] = $request->input('value');
-      return json_encode($setting->save());
+        $setting['value'] = $request->input('value');
+        return json_encode($setting->save());
     }
 
     public function briefingEdit()
@@ -569,65 +569,74 @@ class AdminController extends Controller
         //return view('admin.briefing.send');
     }
 
-    public function newsIndex(){
-      $news = News::orderBy('id', 'desc')->get();
-      return view('admin.news.index', compact('news'));
+    public function newsIndex()
+    {
+        $news = News::orderBy('id', 'desc')->get();
+        return view('admin.news.index', compact('news'));
     }
 
-    public function newsCreate(){
-      return view('admin.news.create');
+    public function newsCreate()
+    {
+        return view('admin.news.create');
     }
 
-    public function newsStore(Request $request){
-      $newsitem = new News;
-      $newsitem->title = $request->input('title');
-      $newsitem->teaser = $request->input('teaser');
-      $newsitem->body = $request->input('body');
-      $newsitem->image = null;
-      $newsitem->active = $request->input('active', '0');
-      $newsitem->published = $request->input('publish');
+    public function newsStore(Request $request)
+    {
+        $newsitem = new News;
+        $newsitem->title = $request->input('title');
+        $newsitem->teaser = $request->input('teaser');
+        $newsitem->body = $request->input('body');
+        $newsitem->image = null;
+        $newsitem->active = $request->input('active', '0');
+        $newsitem->published = $request->input('publish');
 
-      //dd($newsitem);
+        //dd($newsitem);
 
-      $newsitem->save();
-      return redirect('admin/news');
+        $newsitem->save();
+        return redirect('admin/news');
     }
 
-    public function newsEdit(News $news){
-      return view('admin.news.edit', compact('news'));
+    public function newsEdit(News $news)
+    {
+        return view('admin.news.edit', compact('news'));
     }
 
-    public function newsUpdate(Request $request, News $news){
-      $news->title = $request->input('title');
-      $news->teaser = $request->input('teaser');
-      $news->body = $request->input('body');
-      $news->image = null;
-      $news->active = $request->input('active', '0');
-      $news->published = $request->input('publish');
+    public function newsUpdate(Request $request, News $news)
+    {
+        $news->title = $request->input('title');
+        $news->teaser = $request->input('teaser');
+        $news->body = $request->input('body');
+        $news->image = null;
+        $news->active = $request->input('active', '0');
+        $news->published = $request->input('publish');
 
-      $news->save();
-      return redirect('admin/news');
-    }
-
-    public function newsDelete(News $news){
-      $news->delete();
-      return redirect('admin/news');
+        $news->save();
+        return redirect('admin/news');
     }
 
-    public function toolShow(){
-      return view('admin.tools.show');
+    public function newsDelete(News $news)
+    {
+        $news->delete();
+        return redirect('admin/news');
     }
-    public function pqtoolShow(){
-      return view('admin.tools.pqshow');
+
+    public function toolShow()
+    {
+        return view('admin.tools.show');
     }
-    public function pqtoolProcess(Request $request){
-      $raw = $request->input('raw');
-      $exploded_raw = explode("\r\n", $raw);
-      //dd($exploded_raw);
-      $time_array = [];
-      $drivers = [];
-      foreach ($exploded_raw as $i => $row) {
-        switch ($i % 4) {
+    public function pqtoolShow()
+    {
+        return view('admin.tools.pqshow');
+    }
+    public function pqtoolProcess(Request $request)
+    {
+        $raw = $request->input('raw');
+        $exploded_raw = explode("\r\n", $raw);
+        //dd($exploded_raw);
+        $time_array = [];
+        $drivers = [];
+        foreach ($exploded_raw as $i => $row) {
+            switch ($i % 4) {
           case 0:
             $lap = explode("\t", $row);
             array_push($time_array, ['lap' => intval($lap[0])]);
@@ -636,8 +645,8 @@ class AdminController extends Controller
           case 2:
             $lasti = count($time_array) - 1;
             $time_array[$lasti]['name'] = $row;
-            if(!in_array($row, $drivers)){
-              array_push($drivers, $row);
+            if (!in_array($row, $drivers)) {
+                array_push($drivers, $row);
             }
             break;
 
@@ -650,65 +659,70 @@ class AdminController extends Controller
           default:
             break;
         }
-      }
+        }
 
-      $time_array = array_filter($time_array, function($e){
-        return preg_match('/\d\d:\d\d.\d\d\d/',$e['time']) === 1;
-      });
-      $time_array = array_map(function($e){
-        $time = explode(":",$e['time']);
-        $time = floatval(60 * intval($time[0])) + floatval($time[1]);
-        $e['time'] = $time;
-        return $e;
-      }, $time_array);
-
-      $driver_array = [];
-
-      foreach ($drivers as $driver) {
-        $driver_array[$driver] = [];
-        $driver_array[$driver]["laps"] = array_filter($time_array, function($e) use ($driver){
-          return $e['name'] == $driver;
+        $time_array = array_filter($time_array, function ($e) {
+            return preg_match('/\d\d:\d\d.\d\d\d/', $e['time']) === 1;
         });
-      }
+        $time_array = array_map(function ($e) {
+            $time = explode(":", $e['time']);
+            $time = floatval(60 * intval($time[0])) + floatval($time[1]);
+            $e['time'] = $time;
+            return $e;
+        }, $time_array);
 
-      foreach ($driver_array as $drivername => $darray) {
-        //get start index (laps) of runs
-        $driver_array[$drivername]['run_starts'] = [];
-        foreach ($darray['laps'] as $i => $time) {
-          $check = true;
-          for ($j=1; $j < 10 ; $j++) {
-            if(!key_exists($i+$j, $darray['laps'])){
-              $check = false;
-              break;
+        $driver_array = [];
+
+        foreach ($drivers as $driver) {
+            $driver_array[$driver] = [];
+            $driver_array[$driver]["laps"] = array_filter($time_array, function ($e) use ($driver) {
+                return $e['name'] == $driver;
+            });
+        }
+
+        foreach ($driver_array as $drivername => $darray) {
+            //get start index (laps) of runs
+            $driver_array[$drivername]['run_starts'] = [];
+            foreach ($darray['laps'] as $i => $time) {
+                $check = true;
+                for ($j=1; $j < 10 ; $j++) {
+                    if (!key_exists($i+$j, $darray['laps'])) {
+                        $check = false;
+                        break;
+                    }
+                }
+                if ($check) {
+                    array_push($driver_array[$drivername]['run_starts'], $i);
+                }
             }
-          }
-          if($check){
-            array_push($driver_array[$drivername]['run_starts'], $i);
-          }
         }
-      }
 
-      foreach ($driver_array as $drivername => $darray) {
-        //calculate runtimes
-        $driver_array[$drivername]['run_times'] = [];
-        foreach ($darray['run_starts'] as $startindex) {
-          $time = $darray['laps'][$startindex]['time'];
-          for ($i=$startindex+1; $i < $startindex+10; $i++) {
-            $time += $darray['laps'][$i]['time'];
-          }
-          array_push($driver_array[$drivername]['run_times'], $time);
+        foreach ($driver_array as $drivername => $darray) {
+            //calculate runtimes
+            $driver_array[$drivername]['run_times'] = [];
+            foreach ($darray['run_starts'] as $startindex) {
+                $time = $darray['laps'][$startindex]['time'];
+                for ($i=$startindex+1; $i < $startindex+10; $i++) {
+                    $time += $darray['laps'][$i]['time'];
+                }
+                array_push($driver_array[$drivername]['run_times'], $time);
+            }
         }
-      }
 
-      foreach ($driver_array as $drivername => $darray) {
-        //get fastest runtimes
-        if(empty($darray['run_times'])){
-          $driver_array[$drivername]['final_time'] = 0;
-        }else{
-          $driver_array[$drivername]['final_time'] = min($darray['run_times']);
+        foreach ($driver_array as $drivername => $darray) {
+            //get fastest runtimes
+            if (empty($darray['run_times'])) {
+                $driver_array[$drivername]['final_time'] = 0;
+            } else {
+                $driver_array[$drivername]['final_time'] = min($darray['run_times']);
+            }
         }
-      }
-      //dd($driver_array);
-      return view('admin.tools.pqprocess', compact('driver_array'));
+        //dd($driver_array);
+        return view('admin.tools.pqprocess', compact('driver_array'));
+    }
+
+    public function updateDriverInfo()
+    {
+        Driver::updateDriverData();
     }
 }

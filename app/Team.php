@@ -136,4 +136,9 @@ class Team extends Model
         }
         return $result;
     }
+
+    public function getAverageIrating()
+    {
+        return round($this->drivers->avg('irating'), 0);
+    }
 }

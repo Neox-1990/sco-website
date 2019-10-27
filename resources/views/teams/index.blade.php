@@ -51,7 +51,7 @@
                   <td class="text-center bg-success text-white">{{$team['number']}}</td>
                   <td>
                     <div class="d-flex justify-content-between">
-                      <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
+                      <span><a href="/teams/{{$team['id']}}">{{$team['name']}}</a><span class="irating-average">(&empty; iRating: {{$team->getAverageIrating()}})</span></span>
                       <span class="ml-auto">
                         @if(!empty($team['website']))
                         <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe"></i></a>
@@ -73,7 +73,7 @@
                   <td class="text-center bg-info text-white">{{$team['number']}}</td>
                   <td>
                     <div class="d-flex justify-content-between">
-                      <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
+                      <span><a href="/teams/{{$team['id']}}">{{$team['name']}}</a><span class="irating-average">(&empty; iRating: {{$team->getAverageIrating()}})</span></span>
                       <span class="ml-auto">
                         @if(!empty($team['website']))
                         <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe"></i></a>
@@ -95,7 +95,7 @@
                   <td class="text-center bg-warning">{{$team['number']}}</td>
                   <td>
                     <div class="d-flex justify-content-between">
-                      <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
+                      <span><a href="/teams/{{$team['id']}}">{{$team['name']}}</a><span class="irating-average">(&empty; iRating: {{$team->getAverageIrating()}})</span></span>
                       <span class="ml-auto">
                         @if(!empty($team['website']))
                         <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe"></i></a>
@@ -117,7 +117,7 @@
                   <td class="text-center bg-primary text-white">{{$team['number']}}</td>
                   <td>
                     <div class="d-flex justify-content-between">
-                      <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
+                      <span><a href="/teams/{{$team['id']}}">{{$team['name']}}</a><span class="irating-average">(&empty; iRating: {{$team->getAverageIrating()}})</span></span>
                       <span class="ml-auto">
                         @if(!empty($team['website']))
                         <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe"></i></a>
@@ -139,7 +139,7 @@
                   <td class="text-center bg-danger text-white">{{$team['number']}}</td>
                   <td>
                     <div class="d-flex justify-content-between">
-                      <a href="/teams/{{$team['id']}}">{{$team['name']}}</a>
+                      <span><a href="/teams/{{$team['id']}}">{{$team['name']}}</a><span class="irating-average">(&empty; iRating: {{$team->getAverageIrating()}})</span></span>
                       <span class="ml-auto">
                         @if(!empty($team['website']))
                         <a class="mr-3" href="{{$team['website']}}"><i class="fas fa-globe"></i></a>

@@ -11368,6 +11368,14 @@ body#admin-dashbord .dashbord-log-table {
   padding: 0.25rem;
 }
 
+#teams-table th .irating-average, #teams-table td .irating-average {
+  display: block;
+  color: #495057;
+  font-size: 0.6rem;
+  line-height: 0.5rem;
+  margin-bottom: -0.5rem;
+}
+
 .teamtabletoggle {
   cursor: pointer;
 }

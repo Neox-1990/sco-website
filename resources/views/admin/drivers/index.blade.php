@@ -14,6 +14,7 @@
         <th class="sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">iracing id</th>
         <th class="sco-table-sort" data-sort-content="numeric" data-sort-dir="asc">irating</th>
         <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">safetyrating</th>
+        <th class="sco-table-sort" data-sort-content="text" data-sort-dir="asc">location</th>
       </tr>
     </thead>
     <tbody>
@@ -25,6 +26,7 @@
           <td><a href="http://members.iracing.com/membersite/member/CareerStats.do?custid={{$driver['iracing_id']}}">{{$driver['iracing_id']}}</a></td>
           <td>{{$driver['irating']}}</td>
           <td>{{$driver['safetyrating']}}</td>
+          <td>{{$driver['location']}}</td>
         </tr>
       @endforeach
     </tbody>
