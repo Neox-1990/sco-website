@@ -25,6 +25,10 @@
       <label for="driver_location">Location</label>
       <input id="driver_location" class="form-control" type="text" name="driverlocation" value="{{$driver['location']}}">
     </div>
+    <div class="form-group form-check">
+      <input id="driver_locationoverwrite" class="form-check-input" type="checkbox" name="driverlocationoverwrite" value="1"{{$driver['overwrite_location'] == 1 ? ' checked' : ''}}>
+      <label class="form-check-label" for="driver_locationoverwrite">Location Overwrite</label>
+    </div>
     <div class="form-group">
       <input class="btn btn-primary" type="submit" name="editdriver" value="edit">
     </div>

@@ -26,7 +26,7 @@
           <td><a href="http://members.iracing.com/membersite/member/CareerStats.do?custid={{$driver['iracing_id']}}">{{$driver['iracing_id']}}</a></td>
           <td>{{$driver['irating']}}</td>
           <td>{{$driver['safetyrating']}}</td>
-          <td>{{$driver['location']}}</td>
+          <td>{!!$driver['overwrite_location'] == 1 ? '<b>'.$driver['location'].'</b>' : $driver['location']!!}</td>
         </tr>
       @endforeach
     </tbody>
