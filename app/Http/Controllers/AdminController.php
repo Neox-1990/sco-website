@@ -276,7 +276,8 @@ class AdminController extends Controller
         $driver->iracing_id = $request->input('driveririd');
         $driver->irating = $request->input('driverirating');
         $driver->safetyrating = $request->input('driversafetyrating');
-        $driver->safetyrating = strtoupper($request->input('driverlocation'));
+        $driver->setLocation(strtoupper($request->input('driverlocation')), true);
+        $driver->overwrite_location = \intval($request->input('driverlocationoverwrite', 0));
         $driver->save();
         session()->flash('flash_message_success', 'Data of '.$driver->name.' updated');
         return redirect('admin/drivers/'.$driver['id']);

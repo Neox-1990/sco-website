@@ -40,7 +40,7 @@ class Driver extends Model
 
 
                 foreach ($driverpack as $packdriver) {
-                    isset($data[$packdriver->iracing_id]['location']) ? $packdriver->location = $data[$packdriver->iracing_id]['location'] : null;
+                    isset($data[$packdriver->iracing_id]['location']) ? $packdriver->setLocation($data[$packdriver->iracing_id]['location']) : $packdriver->setLocation(null);
                     isset($data[$packdriver->iracing_id]['irating']) ? $packdriver->irating = $data[$packdriver->iracing_id]['irating'] : null;
                     isset($data[$packdriver->iracing_id]['safetyrating']) ? $packdriver->safetyrating = \str_replace(' ', '@', $data[$packdriver->iracing_id]['safetyrating']) : null;
                     $packdriver->save();
@@ -66,9 +66,11 @@ class Driver extends Model
             curl_close($ch);
             //dd($driverpack, $driverIds, $data);
 
-            foreach ($driverpack as $driver) {
-                $driver->location = $data[$driver->iracing_id]['location'];
-                $driver->save();
+            foreach ($driverpack as $packdriver) {
+                isset($data[$packdriver->iracing_id]['location']) ? $packdriver->setLocation($data[$packdriver->iracing_id]['location']) : $packdriver->setLocation(null);
+                isset($data[$packdriver->iracing_id]['irating']) ? $packdriver->irating = $data[$packdriver->iracing_id]['irating'] : null;
+                isset($data[$packdriver->iracing_id]['safetyrating']) ? $packdriver->safetyrating = \str_replace(' ', '@', $data[$packdriver->iracing_id]['safetyrating']) : null;
+                $packdriver->save();
             }
 
             //dd($driverpack);
@@ -76,5 +78,13 @@ class Driver extends Model
         }
 
         dd($drivers);
+    }
+
+    public function setLocation($locationcode, bool $force = false)
+    {
+        if ($this->overwrite_location === 0 || $force) {
+            $this->location = $locationcode;
+            $this->save();
+        }
     }
 }

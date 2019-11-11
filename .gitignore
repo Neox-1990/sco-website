@@ -6,6 +6,7 @@
 /public/downloads/*
 /public/download_resources/*
 !/public/downloads/.gitkeep
+/public/assets/spotterguide/*
 /storage/*.key
 /vendor
 /.idea
