@@ -29,15 +29,12 @@ class Driver extends Model
                     return $d->iracing_id;
                 }, $driverpack);
 
-                //dd($driverIds);
                 $ch = curl_init("https://irt.rnld.io/road/?irt_key=".(config('services.irtracker')['token'])."&action=multi&filter=&id=".\implode(',', $driverIds));
-                //dd($ch);
+
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 $data = json_decode(curl_exec($ch), true);
                 curl_close($ch);
-                //dd($driverpack, $driverIds, $data);
-
 
                 foreach ($driverpack as $packdriver) {
                     isset($data[$packdriver->iracing_id]['location']) ? $packdriver->setLocation($data[$packdriver->iracing_id]['location']) : $packdriver->setLocation(null);
@@ -46,7 +43,6 @@ class Driver extends Model
                     $packdriver->save();
                 }
 
-                //dd($driverpack);
                 $driverpack = [];
             }
             array_push($driverpack, $driver);
@@ -58,13 +54,11 @@ class Driver extends Model
                 return $d->iracing_id;
             }, $driverpack);
 
-            //dd($driverIds);
             $ch = curl_init("http://irt.rnld.io/road/?irt_key=".(config('services.irtracker')['token'])."&action=multi&filter=&id=".\implode(',', $driverIds));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             $data = json_decode(curl_exec($ch), true);
             curl_close($ch);
-            //dd($driverpack, $driverIds, $data);
 
             foreach ($driverpack as $packdriver) {
                 isset($data[$packdriver->iracing_id]['location']) ? $packdriver->setLocation($data[$packdriver->iracing_id]['location']) : $packdriver->setLocation(null);
@@ -72,8 +66,7 @@ class Driver extends Model
                 isset($data[$packdriver->iracing_id]['safetyrating']) ? $packdriver->safetyrating = \str_replace(' ', '@', $data[$packdriver->iracing_id]['safetyrating']) : null;
                 $packdriver->save();
             }
-
-            //dd($driverpack);
+            
             $driverpack = [];
         }
 
