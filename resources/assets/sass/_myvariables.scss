@@ -11,7 +11,7 @@ $link-color: $primary;
 $link-hover-color: darken($link-color, 15%);
 $sco-red: #d00505;
 $darkborder: #222;
-$lightborder: #ddd;
+$lightborder: darken(#fff, 5%);
 $sco-dark: #222;
 
 $facebookblue: #3b5998;

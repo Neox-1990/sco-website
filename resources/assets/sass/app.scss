@@ -1,20 +1,20 @@
-//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer');
-//@import "node_modules/bootstrap/scss/bootstrap-reboot";
+@import "node_modules/normalize-scss/sass/normalize";
 @import "myvariables";
 @import "node_modules/bootstrap/scss/bootstrap";
 
 html{
   font-family: 'Ubuntu', sans-serif !important;
   font-size: 18px;
+  background-color: #fff;
 }
 body{
   font-family: 'Ubuntu', sans-serif !important;
   background-color: #fff;
-  background-image: url('/img/sco2k19_website_background.jpg');
   background-position: center top;
   background-repeat: no-repeat;
+  position: relative;
 }
 @include media-breakpoint-down(sm){
   html{
@@ -25,20 +25,178 @@ body{
 .container{
   padding:0;
 }
-nav{
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 
-  .bg-sco-dark{
-    background-color: $sco-dark !important;
+nav{
+  position: fixed;
+  z-index: $zindex-modal;
+
+
+  #toolbar{
+    z-index: $zindex-modal;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 16rem;
+    height: 3rem;
+    background-color: rgba(255,255,255,0);
+    margin: 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.25rem;
+    font-size: 1rem;
+    transition: all 0.25s;
+
+    button,a{
+      background-color: #fff;
+      border: 0;
+      color: $primary;
+      position: relative;
+      width: 2rem;
+      height: 2rem;
+      margin: 0;
+      padding: 0;
+      font-size: 1.1rem;
+      transition: all 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      &:hover{
+        text-decoration: none;
+        transform: translateY(-0.25rem) translateX(-0.25rem);
+        -webkit-box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+        box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+      }
+    }
+    button.nav-toggler-closed{
+      display: flex;
+    }
+    button.nav-toggler-open{
+      display: none;
+    }
+  }
+
+  #mainnav{
+    z-index: $zindex-modal;
+    display: block;
+    position: absolute;
+    width: 5rem;
+    background-color: #fff;
+    transform: translateX(calc(-1px - 2.75rem));
+    transition: all 0.25s;
+
+    .nav-group{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: stretch;
+
+      .nav-group-title{
+        width: 2.75rem;
+        min-width: 2.75rem;
+        text-align: center;
+        margin-right: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background-color: $primary;
+        border-top: 1px solid rgba(255,255,255,0.25);
+        transition: all 0.25s;
+
+        span{
+          transform: rotate(-90deg);
+          display: block;
+          white-space: nowrap;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+
+      .nav-group-links{
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        flex-grow: 1;
+
+        a{
+          background-color: #fff;
+          padding: 0.5rem;
+          transition: all 0.25s;
+          font-size: 1.1rem;
+          text-decoration: none;
+          white-space:nowrap;
+          overflow-x: hidden;
+          width: 2rem;
+
+
+          &:hover{
+            width: 13rem;
+            transform: translateY(-0.25rem) translateX(-0.25rem);
+            -webkit-box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+            box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+            text-decoration: none;
+          }
+        }
+      }
+
+      &:first-child .nav-group-title{
+        border-top:0;
+      }
+
+      &:last-child .nav-group-links a{
+        //border-bottom-width: 1px;
+      }
+    }
+  }
+
+  &.open{
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background: rgba(32,32,32,0.5);
+    backdrop-filter: blur(8px);
+
+    #toolbar{
+      background-color: rgba(255,255,255,1);
+    }
+
+    button.nav-toggler-closed{
+      display: none !important;
+    }
+    button.nav-toggler-open{
+      display: flex !important;
+    }
+
+    #mainnav{
+      transform: translateX(0px);
+      width: 16rem;
+
+      .nav-group-title{
+        width: 3rem !important;
+        min-width: 3rem !important;
+        margin-right: 0rem !important;
+      }
+
+      .nav-group-links a{
+        width: 100% !important;
+      }
+    }
   }
 }
+
 main{
   margin-top: 0;
   padding: 1.5rem;
   background-color: #fff;
-  //border: 1px solid #222;
-  //border-top-width: 0;
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  border: 1px dashed $lightborder;
+  border-top-width: 0;
+
 }
 @include media-breakpoint-down(sm){
   main{
@@ -70,11 +228,6 @@ main{
     height:100%;
   }
 }
-
-#navbar-brand-scologo{
-  width: 32px;
-  height: auto;
-}
 @include media-breakpoint-only(md){
   .hidden-md-only{
     display:none;
@@ -91,15 +244,7 @@ main{
     }
   }
 }
-a.sco-nav-link{
-  //border-radius: 0px;
-  color: #fff !important;
-  &:hover{
-    background-color: #eee !important;
-    color: #000 !important;
-    //border-radius: $border-radius;
-  }
-}
+
 #flash_message{
   font-size: 1rem;
   position:fixed;
@@ -184,9 +329,7 @@ a.sco-nav-link{
 .add-driver-form-active{
   display:block;
 }
-/*.nav-item-fullwidth{
-  width: 100%;
-}*/
+
 .round-tabs .nav-item .nav-link{
   border: 1px solid rgba(240,240,240,1);
 }
@@ -261,55 +404,6 @@ ol.rulebook-section{
  }
 }
 
-#sco-user-bar{
-  background-color: $sco-dark;
-}
-
-.facebook-feed-element{
-  padding: 1rem;
-  background-color: #fff;
-  border: 1px solid $lightborder;
-
-  &:last-child{
-    margin-bottom: 0;
-  }
-
-  .facebook-feed-element-header{
-    font-size: 0.8rem;
-  }
-  .facebook-feed-element-body{
-    padding: 0 3*$spacer;
-    margin-top:1rem;
-  }
-  .facebook-feed-element-picture{
-    padding: 0 3*$spacer;
-    margin-top:1rem;
-    img{
-      display:block;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 100%;
-      height:auto;
-      border-radius: 0.2rem;
-    }
-  }
-
-  @include media-breakpoint-down(sm){
-    .facebook-feed-element-body,
-    .facebook-feed-element-picture{
-      padding: 0 0*$spacer;
-    }
-  }
-
-  .facebook-feed-element-link{
-    text-align: center;
-    margin-top:1rem;
-    a{
-      max-width:80%;
-      overflow-x: hidden;
-    }
-  }
-}
 .btn-outline-dark:hover{
   color: #fff !important;
 }
@@ -321,15 +415,8 @@ ol.rulebook-section{
   flex-grow: 1;
 }
 footer{
-  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-  background-color: $brand-primary;
-  color: #fff;
-  a{
-    color: #fff !important;
-    &:hover{
-      color: $sco-red !important;
-    }
-  }
+  background-color: #fff;
+
   a.fblink:hover{
     color: $facebookblue !important;
   }
@@ -340,10 +427,6 @@ footer{
     color: $youtubered !important;
   }
 }
-nav{
-  background-color: $sco-dark !important;
-}
-
 
 table.result-table{
   table-layout: auto;

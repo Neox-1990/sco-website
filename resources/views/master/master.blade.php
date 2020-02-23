@@ -6,11 +6,12 @@
   </head>
   <body>
     @include('master.flash')
-    <div class="container">
-      @include('user.bar')
+    @include('master.newnav')
+    <div class="container-fluid px-0">
       @include('master.header')
-      @include('master.nav')
+    </div>
 
+    <div class="container">
       <main>
         @yield('main')
       </main>
