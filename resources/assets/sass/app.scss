@@ -3,6 +3,7 @@
 @import "node_modules/normalize-scss/sass/normalize";
 @import "myvariables";
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "sco_forms";
 
 html{
   font-family: 'Ubuntu', sans-serif !important;
@@ -24,6 +25,10 @@ body{
 
 .container{
   padding:0;
+}
+
+#loginmodal{
+  z-index: $zindex-modal+100;
 }
 
 nav{
@@ -192,10 +197,10 @@ nav{
 
 main{
   margin-top: 0;
-  padding: 1.5rem;
+  //padding: 1.5rem;
   background-color: #fff;
-  border: 1px dashed $lightborder;
-  border-top-width: 0;
+  //border: 1px dashed $lightborder;
+  //border-top-width: 0;
 
 }
 @include media-breakpoint-down(sm){

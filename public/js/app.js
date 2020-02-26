@@ -13365,11 +13365,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helper_resulthelper_js__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__helper_iratingloader_js__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__helper_settinghelper_js__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helper_scoforms_js__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__helper_loginmodal_js__ = __webpack_require__(22);
 
 window.$ = window.jQuery = __webpack_require__(0);
 window.Hammer = __webpack_require__(5);
 __webpack_require__(1);
 __webpack_require__(7);
+
+
 
 
 
@@ -13393,8 +13397,10 @@ $(document).ready(function () {
   Object(__WEBPACK_IMPORTED_MODULE_3__helper_adminhelper_js__["b" /* toggleTeamTablesInit */])();
   Object(__WEBPACK_IMPORTED_MODULE_4__helper_resulthelper_js__["a" /* resultToggleInit */])();
   Object(__WEBPACK_IMPORTED_MODULE_3__helper_adminhelper_js__["a" /* changeTeamStatusInit */])();
+  __WEBPACK_IMPORTED_MODULE_7__helper_scoforms_js__["a" /* init */]();
   __WEBPACK_IMPORTED_MODULE_5__helper_iratingloader_js__["a" /* initIRloader */]();
   __WEBPACK_IMPORTED_MODULE_6__helper_settinghelper_js__["a" /* init */]();
+  __WEBPACK_IMPORTED_MODULE_8__helper_loginmodal_js__["a" /* init */]();
   if (typeof numbers !== 'undefined') {
     __WEBPACK_IMPORTED_MODULE_1__helper_myteamhelper_js__["d" /* updateNumbers */]();
     $('#car').on('change', __WEBPACK_IMPORTED_MODULE_1__helper_myteamhelper_js__["d" /* updateNumbers */]);
@@ -21014,6 +21020,58 @@ function contentUpdate() {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = init;
+/* unused harmony export fixLabel */
+function init() {
+  $('.sco-forms input[type=text],.sco-forms input[type=email],.sco-forms input[type=password]').on('change', fixLabel);
+  $('.sco-forms input[type=text],.sco-forms input[type=email],.sco-forms input[type=password]').each(function (index) {
+    var input = $(this);
+    if (String(input.val()) == '') {
+      input.next('label').removeClass('filled');
+    } else {
+      input.next('label').addClass('filled');
+    }
+  });
+}
+
+function fixLabel(e) {
+  var input = $(e.target);
+  if (String(input.val()) == '') {
+    input.next('label').removeClass('filled');
+  } else {
+    input.next('label').addClass('filled');
+  }
+}
+
+/***/ }),
+/* 22 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = init;
+function init() {
+  $('#loginmodal #loginmodal_toggle').on('click', function () {
+    if ($('#loginmodal #loginmodal_login').hasClass('d-none')) {
+      $('#loginmodal #loginmodaltitle').text('Login');
+    } else {
+      $('#loginmodal #loginmodaltitle').text('Register');
+    }
+
+    $('#loginmodal #loginmodal_login').toggleClass('d-none');
+    $('#loginmodal #loginmodal_register').toggleClass('d-none');
+  });
+}
 
 /***/ })
 /******/ ]);

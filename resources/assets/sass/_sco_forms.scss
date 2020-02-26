@@ -1,0 +1,43 @@
+.sco-forms{
+  input[type=text],input[type=password],input[type=email]{
+    border-radius: 0.25rem;
+    border-width: 0px;
+    border-bottom: 1px solid $gray-600;
+    background-color: $lightborder;
+    text-align: center;
+    padding: 0.5rem;
+    transition: all 0.25s;
+    -webkit-appearance: none;
+    background: url('img/pen_icon.svg'), $lightborder;
+    background-position: 0.5rem center;
+    background-size: 1rem 1rem;
+    background-repeat: no-repeat;
+
+    +label{
+      pointer-events: none;
+      display: inline-block;
+      text-align: center;
+      transform: translateY(-2rem);
+      transition: all 0.25s;
+      color: #aaa;
+
+      &.filled{
+        transform: translateY(-4rem);
+      }
+    }
+
+    &:focus,&:hover{
+      background-color: #fff;
+
+      +label{
+        transform: translateY(-4rem);
+        color: #000;
+      }
+    }
+  }
+
+  input[type=checkbox],input[type=radio]{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

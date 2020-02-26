@@ -5,12 +5,12 @@
     <a data-shortcut="0" title="Shortcut: alt+ctrl+0" href="{{url('/')}}"><i class="fas fa-home"></i></a>
     @if (auth()->check())
     <a href="#"><i class="fas fa-cog"></i></a>
-    <button><i class="fas fa-sign-out-alt"></i></button>
+    <a href="{{url('/logout')}}"><i class="fas fa-sign-out-alt"></i></a>
       @if(auth()->user()->isAdmin)
-      <a href="#"><i class="far fa-star"></i></a>
+      <a href="{{url('/admin')}}"><i class="far fa-star"></i></a>
       @endif
     @else
-    <button><i class="fas fa-sign-in-alt"></i></button>
+    <button data-toggle="modal" data-target="#loginmodal"><i class="fas fa-sign-in-alt"></i></button>
     @endif
   </div>
 

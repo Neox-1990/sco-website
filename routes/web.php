@@ -24,6 +24,7 @@ Route::get('/login', 'SessionsController@create')->name('login');
 Route::post('/login', 'SessionsController@store');
 
 Route::post('/logout', 'SessionsController@destroy');
+Route::get('/logout', 'SessionsController@destroy');
 
 Route::prefix('myteams')->group(function () {
     Route::get('/', 'MyteamController@show');

@@ -10751,6 +10751,53 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.sco-forms input[type=text], .sco-forms input[type=password], .sco-forms input[type=email] {
+  border-radius: 0.25rem;
+  border-width: 0px;
+  border-bottom: 1px solid #6c757d;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 0.5rem;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  -webkit-appearance: none;
+  background: url("img/pen_icon.svg"), #f2f2f2;
+  background-position: 0.5rem center;
+  background-size: 1rem 1rem;
+  background-repeat: no-repeat;
+}
+
+.sco-forms input[type=text] + label, .sco-forms input[type=password] + label, .sco-forms input[type=email] + label {
+  pointer-events: none;
+  display: inline-block;
+  text-align: center;
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  color: #aaa;
+}
+
+.sco-forms input[type=text] + label.filled, .sco-forms input[type=password] + label.filled, .sco-forms input[type=email] + label.filled {
+  -webkit-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+}
+
+.sco-forms input[type=text]:focus, .sco-forms input[type=text]:hover, .sco-forms input[type=password]:focus, .sco-forms input[type=password]:hover, .sco-forms input[type=email]:focus, .sco-forms input[type=email]:hover {
+  background-color: #fff;
+}
+
+.sco-forms input[type=text]:focus + label, .sco-forms input[type=text]:hover + label, .sco-forms input[type=password]:focus + label, .sco-forms input[type=password]:hover + label, .sco-forms input[type=email]:focus + label, .sco-forms input[type=email]:hover + label {
+  -webkit-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+  color: #000;
+}
+
+.sco-forms input[type=checkbox], .sco-forms input[type=radio] {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 html {
   font-family: 'Ubuntu', sans-serif !important;
   font-size: 18px;
@@ -10773,6 +10820,10 @@ body {
 
 .container {
   padding: 0;
+}
+
+#loginmodal {
+  z-index: 1150;
 }
 
 nav {
@@ -10986,10 +11037,7 @@ nav.open #mainnav .nav-group-links a {
 
 main {
   margin-top: 0;
-  padding: 1.5rem;
   background-color: #fff;
-  border: 1px dashed #f2f2f2;
-  border-top-width: 0;
 }
 
 @media (max-width: 767.98px) {
