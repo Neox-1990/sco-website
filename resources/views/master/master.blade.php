@@ -12,8 +12,8 @@
       @include('master.header')
     </div>
 
-    <div class="container p-0 pl-5 pl-sm-0">
-      <main>
+    <div class="container p-0">
+      <main class="ml-5">
         @yield('main')
       </main>
 

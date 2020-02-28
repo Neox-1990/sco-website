@@ -4,7 +4,7 @@
     <button data-shortcut="esc" title="Shortcut: esc" class="nav-toggler nav-toggler-open"><i class="far fa-window-close"></i></button>
     <a data-shortcut="0" title="Shortcut: alt+ctrl+0" href="{{url('/')}}"><i class="fas fa-home"></i></a>
     @if (auth()->check())
-    <a href="#"><i class="fas fa-cog"></i></a>
+    <a href="{{url('/user')}}"><i class="fas fa-cog"></i></a>
     <a href="{{url('/logout')}}"><i class="fas fa-sign-out-alt"></i></a>
       @if(auth()->user()->isAdmin)
       <a href="{{url('/admin')}}"><i class="far fa-star"></i></a>
