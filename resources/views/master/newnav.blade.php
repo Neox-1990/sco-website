@@ -1,16 +1,16 @@
 <nav>
   <div id="toolbar">
-    <button class="nav-toggler nav-toggler-closed"><i class="fas fa-bars"></i></button>
-    <button data-shortcut="esc" title="Shortcut: esc" class="nav-toggler nav-toggler-open"><i class="far fa-window-close"></i></button>
-    <a data-shortcut="0" title="Shortcut: alt+ctrl+0" href="{{url('/')}}"><i class="fas fa-home"></i></a>
+    <button class="nav-toggler nav-toggler-closed" title="open mainmenu"><i class="fas fa-bars"></i></button>
+    <button data-shortcut="esc" title="Shortcut: esc" class="nav-toggler nav-toggler-open" title="close mainmenu (esc)"><i class="far fa-window-close"></i></button>
+    <a data-shortcut="0" title="Start - Shortcut: alt+ctrl+0" href="{{url('/')}}"><i class="fas fa-home"></i></a>
     @if (auth()->check())
-    <a href="{{url('/user')}}"><i class="fas fa-cog"></i></a>
-    <a href="{{url('/logout')}}"><i class="fas fa-sign-out-alt"></i></a>
+    <a href="{{url('/user')}}" title="User Settings"><i class="fas fa-cog"></i></a>
+    <a href="{{url('/logout')}}" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
       @if(auth()->user()->isAdmin)
-      <a href="{{url('/admin')}}"><i class="far fa-star"></i></a>
+      <a href="{{url('/admin')}}" title="Adminarea"><i class="far fa-star"></i></a>
       @endif
     @else
-    <button data-toggle="modal" data-target="#loginmodal"><i class="fas fa-sign-in-alt"></i></button>
+    <button data-toggle="modal" data-target="#loginmodal" title="Login or Register"><i class="fas fa-sign-in-alt"></i></button>
     @endif
   </div>
 

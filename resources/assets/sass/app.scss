@@ -45,6 +45,10 @@ nav{
     width: 16rem;
     height: 3rem;
     background-color: rgba(255,255,255,0);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%);
+    background-size: 32rem 100%;
+    background-position: -16rem 0;
+
     margin: 0;
     padding: 0.5rem 0.5rem 0.5rem 0.25rem;
     font-size: 1rem;
@@ -107,6 +111,7 @@ nav{
         justify-content: center;
         color: #fff;
         background-color: $primary;
+        border: 0;
         border-top: 1px solid rgba(255,255,255,0.25);
         transition: all 0.25s;
 
@@ -152,10 +157,6 @@ nav{
       &:first-child .nav-group-title{
         border-top:0;
       }
-
-      &:last-child .nav-group-links a{
-        //border-bottom-width: 1px;
-      }
     }
   }
 
@@ -169,7 +170,7 @@ nav{
     backdrop-filter: blur(8px);
 
     #toolbar{
-      background-color: rgba(255,255,255,1);
+      background-position: 0rem 0;
     }
 
     button.nav-toggler-closed{
@@ -210,7 +211,7 @@ main{
   }
 }
 .header-container{
-  border-bottom: 1px dashed $gray-400;
+  border-bottom: 1px dashed $primary;
 
   header.sco-header{
     width: 100%;
