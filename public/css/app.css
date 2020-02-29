@@ -10810,6 +10810,7 @@ body {
   background-position: center top;
   background-repeat: no-repeat;
   position: relative;
+  min-height: 100vh;
 }
 
 @media (max-width: 767.98px) {
@@ -10925,7 +10926,7 @@ nav #mainnav .nav-group .nav-group-title {
   width: 2.75rem;
   min-width: 2.75rem;
   text-align: center;
-  margin-right: 0.25rem;
+  margin-right: 0.20rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11102,21 +11103,6 @@ main {
 @media (min-width: 768px) and (max-width: 991.98px) {
   .hidden-md-only {
     display: none;
-  }
-}
-
-@media (min-width: 992px) {
-  #nav-list {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
   }
 }
 
@@ -11653,20 +11639,105 @@ ol.rulebook-section ol > li::before {
           flex-grow: 1;
 }
 
-footer {
+div.footer-container {
+  margin-top: auto;
   background-color: #fff;
+  color: #01256a;
+  font-size: 0.75rem;
+  border-top: 1px dashed #01256a;
 }
 
-footer a.fblink:hover {
+@media (min-width: 768px) {
+  div.footer-container footer .footer-block {
+    border-right: 1px solid #01256a;
+  }
+  div.footer-container footer .footer-block:last-child {
+    border-right: 0;
+  }
+}
+
+div.footer-container footer h3 {
+  text-align: center;
+}
+
+div.footer-container footer a {
+  border: 1px solid #fff;
+  color: #01256a;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+div.footer-container footer a:hover {
+  color: #000b1e;
+  border-color: #000b1e;
+  background-color: #fff;
+  -webkit-transform: translateY(-0.25rem) translateX(-0.25rem);
+          transform: translateY(-0.25rem) translateX(-0.25rem);
+  -webkit-box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.75);
+}
+
+div.footer-container footer a.fblink:hover {
   color: #3b5998 !important;
+  border-color: #3b5998 !important;
 }
 
-footer a.twlink:hover {
+div.footer-container footer a.twlink:hover {
   color: #4099FF !important;
+  border-color: #4099FF !important;
 }
 
-footer a.ytlink:hover {
+div.footer-container footer a.ytlink:hover {
   color: #ff0000 !important;
+  border-color: #ff0000 !important;
+}
+
+div.footer-container footer a.corelink {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(255, 255, 255, 0.95)), color-stop(50%, rgba(255, 255, 255, 0.85))), url("../img/core2k19_mainlogo_black-1024x330.png");
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.85) 50%), url("../img/core2k19_mainlogo_black-1024x330.png");
+  background-size: 100% 10rem, contain;
+  background-position: 0 -5rem, center;
+  background-repeat: no-repeat;
+}
+
+div.footer-container footer a.corelink:hover {
+  color: #f23c0c !important;
+  border-color: #f23c0c !important;
+  background-position: 0 0, center;
+}
+
+div.footer-container footer a.racespotlink {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(255, 255, 255, 0.95)), color-stop(50%, rgba(255, 255, 255, 0.85))), url("../img/racespot-logo.png");
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.85) 50%), url("../img/racespot-logo.png");
+  background-size: 100% 10rem, contain;
+  background-position: 0 -5rem, center;
+  background-repeat: no-repeat;
+}
+
+div.footer-container footer a.racespotlink:hover {
+  color: #000 !important;
+  border-color: #000 !important;
+  background-position: 0 0, center;
+}
+
+div.footer-container footer a.discordlink {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%, rgba(255, 255, 255, 0.95)), color-stop(50%, rgba(255, 255, 255, 0.85))), url("../img/discord.png");
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.85) 50%), url("../img/discord.png");
+  background-size: 100% 10rem, contain;
+  background-position: 0 -5rem, center;
+  background-repeat: no-repeat;
+}
+
+div.footer-container footer a.discordlink:hover {
+  color: #7289da !important;
+  border-color: #7289da !important;
+  background-position: 0 0, center;
 }
 
 table.result-table {

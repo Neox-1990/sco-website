@@ -21,13 +21,13 @@
         <span>Season</span>
       </div>
       <div class="nav-group-links">
-        <a data-shortcut="1" title="Shortcut: alt+ctrl+1" href="#"><i class="far fa-calendar-alt mr-3"></i>Schedule</a>
-        <a data-shortcut="2" title="Shortcut: alt+ctrl+2" href="#"><i class="fas fa-poll-h mr-3"></i>Standings & Results</a>
-        <a data-shortcut="3" title="Shortcut: alt+ctrl+3" href="#"><i class="fas fa-car mr-3"></i>Teams</a>
+        <a data-shortcut="1" title="Shortcut: alt+ctrl+1" href="{{url('/season')}}"><i class="far fa-calendar-alt mr-3"></i>Schedule</a>
+        <a data-shortcut="2" title="Shortcut: alt+ctrl+2" href="{{url('/results')}}"><i class="fas fa-poll-h mr-3"></i>Standings & Results</a>
+        <a data-shortcut="3" title="Shortcut: alt+ctrl+3" href="{{url('/teams')}}"><i class="fas fa-car mr-3"></i>Teams</a>
         @if (auth()->check())
-        <a data-shortcut="4" title="Shortcut: alt+ctrl+4" href="#"><i class="fas fa-users mr-3"></i>My Teams</a>
+        <a data-shortcut="4" title="Shortcut: alt+ctrl+4" href="{{url('/myteams')}}"><i class="fas fa-user-friends mr-3"></i></i>My Teams</a>
         @endif
-        <a data-shortcut="5" title="Shortcut: alt+ctrl+5" href="#"><i class="fas fa-book mr-3"></i>Rules</a>
+        <a data-shortcut="5" title="Shortcut: alt+ctrl+5" href="{{url('/rules')}}"><i class="fas fa-book mr-3"></i>Rules</a>
       </div>
     </div>
 
@@ -36,9 +36,9 @@
         <span>Archive</span>
       </div>
       <div class="nav-group-links">
-        <a data-shortcut="6" title="Shortcut: alt+ctrl+6" href="#"><i class="fas fa-history mr-3"></i>Past Seasons</a>
-        <a data-shortcut="7" title="Shortcut: alt+ctrl+7" href="#"><i class="fas fa-trophy mr-3"></i>Hall Of Fame</a>
-        <a data-shortcut="8" title="Shortcut: alt+ctrl+8" href="#"><i class="fas fa-chart-bar mr-3"></i>Statistics</a>
+        <a data-shortcut="6" title="Shortcut: alt+ctrl+6" href="{{url('/archive')}}"><i class="fas fa-history mr-3"></i>Past Seasons</a>
+        <a data-shortcut="7" title="Shortcut: alt+ctrl+7" href="{{url('/hof')}}"><i class="fas fa-trophy mr-3"></i>Hall Of Fame</a>
+        <a data-shortcut="8" title="Shortcut: alt+ctrl+8" href="{{url('/statistics')}}"><i class="fas fa-chart-bar mr-3"></i>Statistics</a>
       </div>
     </div>
 
@@ -47,8 +47,8 @@
         <span>Misc</span>
       </div>
       <div class="nav-group-links">
-        <a data-shortcut="9" title="Shortcut: alt+ctrl+9" href="#"><i class="fas fa-download mr-3"></i>Downloads</a>
-        <a href="#"><i class="fas fa-question-circle mr-3"></i>About Us</a>
+        <a data-shortcut="9" title="Shortcut: alt+ctrl+9" href="{{url('/downloads')}}"><i class="fas fa-download mr-3"></i>Downloads</a>
+        <a href="{{url('/aboutus')}}"><i class="fas fa-question-circle mr-3"></i>About Us</a>
       </div>
     </div>
 

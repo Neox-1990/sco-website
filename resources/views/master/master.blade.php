@@ -4,7 +4,7 @@
     @include('master.head')
     @yield('additionalHeader')
   </head>
-  <body>
+  <body class="d-flex flex-column">
     @include('master.flash')
     @include('master.loginmodal')
     @include('master.newnav')
@@ -12,14 +12,15 @@
       @include('master.header')
     </div>
 
-    <div class="container p-0">
+    <div class="container p-0 mb-5">
       <main class="ml-5 ml-md-0">
         @yield('main')
       </main>
-
+    </div>
+    <div class="container-fluid px-0 footer-container mt-auto align-self-end">
       @include('master.footer')
+    </div>
       @yield('additionalFooter')
       @include('master.afterFooter')
-    </div>
   </body>
 </html>

@@ -13348,8 +13348,8 @@ var changeTeamStatus = function changeTeamStatus() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(4);
-__webpack_require__(14);
-module.exports = __webpack_require__(15);
+__webpack_require__(16);
+module.exports = __webpack_require__(17);
 
 
 /***/ }),
@@ -13365,8 +13365,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__helper_resulthelper_js__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__helper_iratingloader_js__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__helper_settinghelper_js__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helper_scoforms_js__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__helper_loginmodal_js__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helper_scoforms_js__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__helper_loginmodal_js__ = __webpack_require__(15);
 
 window.$ = window.jQuery = __webpack_require__(0);
 window.Hammer = __webpack_require__(5);
@@ -21011,23 +21011,6 @@ function contentUpdate() {
 
 /***/ }),
 /* 14 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 16 */,
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21055,7 +21038,7 @@ function fixLabel(e) {
 }
 
 /***/ }),
-/* 22 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21072,6 +21055,18 @@ function init() {
     $('#loginmodal #loginmodal_register').toggleClass('d-none');
   });
 }
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

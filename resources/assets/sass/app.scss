@@ -16,6 +16,7 @@ body{
   background-position: center top;
   background-repeat: no-repeat;
   position: relative;
+  min-height: 100vh;
 }
 @include media-breakpoint-down(sm){
   html{
@@ -100,7 +101,7 @@ nav{
         width: 2.75rem;
         min-width: 2.75rem;
         text-align: center;
-        margin-right: 0.25rem;
+        margin-right: 0.20rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -260,17 +261,6 @@ main{
 @include media-breakpoint-only(md){
   .hidden-md-only{
     display:none;
-  }
-}
-@include media-breakpoint-up(lg){
-  #nav-list{
-    width:100%;
-    display:flex;
-    flex-direction: row;
-    justify-content:space-around;
-    >li{
-
-    }
   }
 }
 
@@ -443,17 +433,98 @@ ol.rulebook-section{
   border-radius: $border-radius;
   flex-grow: 1;
 }
-footer{
-  background-color: #fff;
 
-  a.fblink:hover{
-    color: $facebookblue !important;
-  }
-  a.twlink:hover{
-    color: $twitterblue !important;
-  }
-  a.ytlink:hover{
-    color: $youtubered !important;
+div.footer-container{
+  margin-top: auto;
+  background-color: #fff;
+  color: $primary;
+  font-size: 0.75rem;
+  border-top: 1px dashed $primary;
+  footer{
+    .footer-block{
+      @include media-breakpoint-up(md){
+        border-right: 1px solid $primary;
+
+        &:last-child{
+          border-right: 0;
+        }
+      }
+    }
+
+    h3{
+      text-align: center;
+    }
+    a{
+      border: 1px solid #fff;
+      color: $primary;
+      background-color: #fff;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      text-decoration: none;
+      text-align: center;
+
+      transition: all 0.25s;
+
+      &:hover{
+        color: $link-hover-color;
+        border-color: $link-hover-color;
+        background-color: #fff;
+        transform: translateY(-0.25rem) translateX(-0.25rem);
+        -webkit-box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+        box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+      }
+    }
+
+    a.fblink:hover{
+      color: $facebookblue !important;
+      border-color: $facebookblue !important;
+    }
+    a.twlink:hover{
+      color: $twitterblue !important;
+      border-color: $twitterblue !important;
+    }
+    a.ytlink:hover{
+      color: $youtubered !important;
+      border-color: $youtubered !important;
+    }
+    a.corelink{
+      background-image: linear-gradient(0deg, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.85) 50%), url('../img/core2k19_mainlogo_black-1024x330.png');
+      background-size: 100% 10rem, contain;
+      background-position: 0 -5rem, center;
+      background-repeat: no-repeat;
+
+      &:hover{
+        color: $coreorange !important;
+        border-color: $coreorange !important;
+        background-position: 0 0, center;
+      }
+    }
+    a.racespotlink{
+      background-image: linear-gradient(0deg, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.85) 50%), url('../img/racespot-logo.png');
+      background-size: 100% 10rem, contain;
+      background-position: 0 -5rem, center;
+      background-repeat: no-repeat;
+
+      &:hover{
+        color: $racespotblack !important;
+        border-color: $racespotblack !important;
+        background-position: 0 0, center;
+      }
+    }
+    a.discordlink{
+      background-image: linear-gradient(0deg, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0.85) 50%), url('../img/discord.png');
+      background-size: 100% 10rem, contain;
+      background-position: 0 -5rem, center;
+      background-repeat: no-repeat;
+
+      &:hover{
+        color: $discordviolet !important;
+        border-color: $discordviolet !important;
+        background-position: 0 0, center;
+      }
+    }
   }
 }
 
