@@ -27,7 +27,7 @@ class NewsController extends Controller
         $newsitem->title = $request->input('title');
         $newsitem->teaser = $request->input('teaser');
         $newsitem->body = $request->input('body');
-        $newsitem->image = $request->input('treaser-img');
+        $newsitem->image = $request->input('teaser-img');
         $newsitem->active = $request->input('active', '0');
         $newsitem->published = $request->input('publish');
 
@@ -45,7 +45,7 @@ class NewsController extends Controller
         $news->title = $request->input('title');
         $news->teaser = $request->input('teaser');
         $news->body = $request->input('body');
-        $news->image = $request->input('treaser-img');
+        $news->image = $request->input('teaser-img');
         $news->active = $request->input('active', '0');
         $news->published = $request->input('publish');
 
