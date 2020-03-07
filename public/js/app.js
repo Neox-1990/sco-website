@@ -13367,11 +13367,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__helper_settinghelper_js__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helper_scoforms_js__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__helper_loginmodal_js__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__helper_newspreview_js__ = __webpack_require__(23);
 
 window.$ = window.jQuery = __webpack_require__(0);
 window.Hammer = __webpack_require__(5);
 __webpack_require__(1);
 __webpack_require__(7);
+
 
 
 
@@ -13401,6 +13403,7 @@ $(document).ready(function () {
   __WEBPACK_IMPORTED_MODULE_5__helper_iratingloader_js__["a" /* initIRloader */]();
   __WEBPACK_IMPORTED_MODULE_6__helper_settinghelper_js__["a" /* init */]();
   __WEBPACK_IMPORTED_MODULE_8__helper_loginmodal_js__["a" /* init */]();
+  __WEBPACK_IMPORTED_MODULE_9__helper_newspreview_js__["a" /* init */]();
   if (typeof numbers !== 'undefined') {
     __WEBPACK_IMPORTED_MODULE_1__helper_myteamhelper_js__["d" /* updateNumbers */]();
     $('#car').on('change', __WEBPACK_IMPORTED_MODULE_1__helper_myteamhelper_js__["d" /* updateNumbers */]);
@@ -21067,6 +21070,36 @@ function init() {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = init;
+/* unused harmony export preview */
+function init() {
+  $('#news-preview').on('click', preview);
+}
+
+function preview() {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+  var previewRequest = $.post('/ajax/newspreview', { 'text': $('textarea#body').val() });
+  previewRequest.done(function (data) {
+    var text = data[0];
+    $('#preview-section .markdown-article').first().empty();
+    $('#preview-section .markdown-article').first().html(text);
+  });
+}
 
 /***/ })
 /******/ ]);

@@ -12,6 +12,7 @@ import * as iRatingloader from './helper/iratingloader.js';
 import * as adminSettingsUpdater from './helper/settinghelper.js';
 import * as scoforms from './helper/scoforms.js';
 import * as loginmodal from './helper/loginmodal.js';
+import * as newspreview from './helper/newspreview.js';
 
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
@@ -32,6 +33,7 @@ $(document).ready(function(){
   iRatingloader.initIRloader();
   adminSettingsUpdater.init();
   loginmodal.init();
+  newspreview.init();
   if(typeof(numbers) !== 'undefined'){
     myTeamHelper.updateNumbers();
     $('#car').on('change', myTeamHelper.updateNumbers);

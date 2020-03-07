@@ -4,6 +4,7 @@
 @import "myvariables";
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "sco_forms";
+@import "sco_markdown";
 
 html{
   font-family: 'Ubuntu', sans-serif !important;
@@ -199,10 +200,7 @@ nav{
 
 main{
   margin-top: 0;
-  //padding: 1.5rem;
   background-color: #fff;
-  //border: 1px dashed $lightborder;
-  //border-top-width: 0;
 
 }
 @include media-breakpoint-down(sm){

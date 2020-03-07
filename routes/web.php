@@ -160,9 +160,10 @@ Route::prefix('admin')->middleware('isAdmin')->group(function () {
 
 Route::prefix('ajax')->group(function () {
     Route::post('formerteam/{team}', 'AjaxController@formerTeams');
-    Route::get('changeTeam/{team}', 'Admin\TeamController@updateTeamStatus');
+    Route::get('changeTeam/{team}', 'Admin\TeamController@updateTeamStatus')->middleware('isAdmin');
     Route::post('irating/team', 'AjaxController@iratingTeam');
-    Route::get('settings/{setting}', 'Admin\GeneralController@updateSetting');
+    Route::get('settings/{setting}', 'Admin\GeneralController@updateSetting')->middleware('isAdmin');
+    Route::post('newspreview', 'Admin\NewsController@newspreview')->middleware('isAdmin');
 });
 
 Route::get('/downloads', 'DownloadController@index');

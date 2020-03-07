@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\News;
 use Illuminate\Http\Request;
+use erusev\Parsedown;
 
 class NewsController extends Controller
 {
@@ -56,5 +57,13 @@ class NewsController extends Controller
     {
         $news->delete();
         return redirect('admin/news');
+    }
+
+    public function newspreview(Request $request)
+    {
+        //dd($request);
+        $text = $request->input('text', '');
+
+        return [parsedown($text)];
     }
 }
