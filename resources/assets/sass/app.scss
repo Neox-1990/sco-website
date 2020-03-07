@@ -688,6 +688,66 @@ span.clear_driver{
   cursor: pointer;
 }
 
+#news{
+  overflow: hidden;
+
+  .carousel-indicators{
+    margin-bottom: 0;
+
+  }
+
+  .news-header{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+    color: #000;
+    z-index: 15;
+    border-bottom-right-radius: 0.25rem;
+    padding: 0.25rem 1rem;
+  }
+
+  .carousel-item{
+
+    .carousel-caption{
+      background-color: rgba(255,255,255, 0.7);
+      backdrop-filter: blur(8px);
+      color: #000;
+      padding: 0.5rem;
+      left: 5%;
+      right: 5%;
+
+      -webkit-box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+      box-shadow: 0.25rem 0.25rem 0.25rem 0px rgba(0,0,0,0.75);
+
+      h2{
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      p{
+        margin: 0;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.news-detail{
+  margin-top: -1rem;
+
+  img.news-header-image{
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+
+/** Admin stuff **/
 .admin-alert{
   position: fixed;
   top: 0;

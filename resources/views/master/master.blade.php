@@ -13,7 +13,7 @@
     </div>
 
     <div class="container p-0 mb-5">
-      <main class="ml-5 ml-md-0">
+      <main class="ml-5 ml-sm-0">
         @yield('main')
       </main>
     </div>

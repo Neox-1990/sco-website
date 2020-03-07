@@ -13,6 +13,7 @@ import * as adminSettingsUpdater from './helper/settinghelper.js';
 import * as scoforms from './helper/scoforms.js';
 import * as loginmodal from './helper/loginmodal.js';
 import * as newspreview from './helper/newspreview.js';
+import * as newsslider from './helper/newsslider.js';
 
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
@@ -34,6 +35,7 @@ $(document).ready(function(){
   adminSettingsUpdater.init();
   loginmodal.init();
   newspreview.init();
+  newsslider.init();
   if(typeof(numbers) !== 'undefined'){
     myTeamHelper.updateNumbers();
     $('#car').on('change', myTeamHelper.updateNumbers);

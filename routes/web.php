@@ -76,6 +76,11 @@ Route::get('/privacy', function () {
     return view('privacy.show');
 });
 
+Route::prefix('news')->group(function () {
+    Route::get('/', 'NewsController@index');
+    Route::get('/{news}', 'NewsController@show');
+});
+
 Route::prefix('admin')->middleware('isAdmin')->group(function () {
     Route::get('/', 'Admin\GeneralController@index');
 

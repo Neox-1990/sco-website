@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Round;
 use App\Setting;
 use App\Social\FacebookHelper;
+use App\News;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -26,8 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $feedData = (new FacebookHelper())->getTextFeedElements(intval((Setting::where('key', '=', 'facebookentries')->first())->value));
-        //$testdate = '2019-11-17 22:00:00';
         $roundnumber = Round::where([['season_id',config('constants.current_season')]])->count();
         $now = new Carbon();
 
@@ -177,13 +176,14 @@ class HomeController extends Controller
         }
 
         $showPassword = false;
-        $setup = Setting::getSetup();
-        if (auth()->check() && $setup['session_password_active'] == 1) {
+        if (auth()->check() && sco_setting('session_password_active')->value) {
             if (auth()->user()->teams->where('status', 4)->count()>0 || auth()->user()->isAdmin == 1) {
                 $showPassword = true;
             }
         }
 
-        return view('index', compact('feedData', 'season', 'roundid', 'showPassword'));
+        $news = News::getNewsSet();
+
+        return view('index', compact('season', 'roundid', 'showPassword', 'news'));
     }
 }

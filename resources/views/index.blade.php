@@ -1,8 +1,39 @@
 @extends('master.master')
 
 @section('main')
-<div class="row mx-0 d-flex align-items-stretch">
-  <aside class="col-lg-3 d-flex flex-column align-items-start align-items-stretch px-0 px-md-3">
+<div class="row mx-0 w-100">
+  <a href="{{'https://'}}"></a>
+  <div class="col-12 px-0">
+    <section id="news" class="sco-news-carousel carousel slide">
+      <h1 class="news-header">News</h1>
+      <ol class="carousel-indicators">
+        @foreach($news as $i => $n)
+        <li data-target="#news" data-slide-to="{{$i}}" {{$i==0 ? 'class="active"' : ''}}></li>
+        @endforeach
+      </ol>
+      <div class="carousel-inner">
+        @foreach($news as $i => $n)
+        <a href="{{url('/news/'.$n->id)}}" class="stretched-link carousel-item {{$i==0 ? 'active' : ''}}">
+          <img src="{{$n->image.'?'.$i}}" class="d-block w-100" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h2>{{$n->title}}</h2>
+            <p>{{$n->teaser}}</p>
+          </div>
+        </a>
+        @endforeach
+      </div>
+      <a class="carousel-control-prev" href="#news" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#news" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+    </section>
+  </div>
+  <aside class="col-12 px-0 mt-3">
     <div class="card sco-status mt-3 mt-lg-0">
       <div class="card-header text-center">
         <h3>Season Status</h3>
