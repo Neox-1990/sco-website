@@ -16,7 +16,7 @@ $factory->define(News::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'teaser' => $faker->text,
         'body' => $faker->text."\r\n".'![image](https://loremflickr.com/1270/720 "Subtitle 1")'."\r\n".$faker->text."\r\n".'![image](https://loremflickr.com/1920/1080 "Subtitle 2")'."\r\n".$list,
-        'image' => 'https://loremflickr.com/1600/900',
+        'image' => 'https://loremflickr.com/1600/900?lock='.random_int(1, 1024),
         'active' => $faker->randomElement([1,1,1,1,1,1,1,0]),
         'published' => $faker->dateTimeBetween('-2 weeks', '+2 weeks'),
     ];

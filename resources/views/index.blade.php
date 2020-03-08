@@ -14,7 +14,7 @@
       <div class="carousel-inner">
         @foreach($news as $i => $n)
         <a href="{{url('/news/'.$n->id)}}" class="stretched-link carousel-item {{$i==0 ? 'active' : ''}}">
-          <img src="{{$n->image.'?'.$i}}" class="d-block w-100" alt="">
+          <img src="{{$i==0 ? $n->image : asset('img/placeholder16x9.svg')}}" data-imgsrc="{{$n->image}}" class="d-block w-100" alt="">
           <div class="carousel-caption d-none d-md-block">
             <h2>{{$n->title}}</h2>
             <p>{{$n->teaser}}</p>

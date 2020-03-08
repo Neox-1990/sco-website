@@ -13348,8 +13348,8 @@ var changeTeamStatus = function changeTeamStatus() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(4);
-__webpack_require__(17);
-module.exports = __webpack_require__(18);
+__webpack_require__(18);
+module.exports = __webpack_require__(19);
 
 
 /***/ }),
@@ -13368,7 +13368,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__helper_scoforms_js__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__helper_loginmodal_js__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__helper_newspreview_js__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__helper_newsslider_js__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__helper_newsslider_js__ = __webpack_require__(17);
 
 window.$ = window.jQuery = __webpack_require__(0);
 window.Hammer = __webpack_require__(5);
@@ -21089,9 +21089,35 @@ function preview() {
 
 /***/ }),
 /* 17 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = init;
+/* unused harmony export lazyLoad */
+function init() {
+  $('#news.sco-news-carousel').carousel({
+    interval: 15000,
+    ride: true,
+    wrap: true,
+    touch: true
+  }).on('slid.bs.carousel', lazyLoad);
+
+  lazyLoad();
+}
+
+function lazyLoad() {
+  var current = $('#news.sco-news-carousel .carousel-item.active');
+  var next = current.next().children('img').first();
+  var prev = current.prev().children('img').first();
+
+  if (prev.length == 0) {}
+
+  current = current.children('img').first();
+
+  current.attr('src', current.attr('data-imgsrc'));
+  next.attr('src', next.attr('data-imgsrc'));
+  prev.attr('src', prev.attr('data-imgsrc'));
+}
 
 /***/ }),
 /* 18 */
@@ -21100,23 +21126,10 @@ function preview() {
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */,
-/* 24 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 19 */
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = init;
-function init() {
-  $('#news.sco-news-carousel').carousel({
-    interval: false,
-    wrap: true,
-    touch: true
-  });
-}
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
