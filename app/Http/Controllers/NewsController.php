@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
+use Carbon\Carbon;
 
 class NewsController extends Controller
 {
     //
     public function index()
     {
-        dd('kommt noch');
+        $now = (new Carbon())->toDateTimeString();
+        $news = News::where([
+        ['published', '<=', $now],
+        ['active', '=', 1]
+      ])->orderby('published', 'DESC')->get();
+        return view('news.index', compact('news'));
     }
 
     public function show(News $news)

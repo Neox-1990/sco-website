@@ -6,6 +6,7 @@
   <div class="col-12 px-0">
     <section id="news" class="sco-news-carousel carousel slide">
       <h1 class="news-header">News</h1>
+      <a class="all-news-link" href="{{url('/news')}}"><i class="far fa-newspaper"></i> All News</a>
       <ol class="carousel-indicators">
         @foreach($news as $i => $n)
         <li data-target="#news" data-slide-to="{{$i}}" {{$i==0 ? 'class="active"' : ''}}></li>

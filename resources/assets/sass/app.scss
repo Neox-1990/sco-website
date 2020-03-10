@@ -709,6 +709,23 @@ span.clear_driver{
     padding: 0.25rem 1rem;
   }
 
+  .all-news-link{
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    background-color: rgba(255,255,255,0.7);
+    backdrop-filter: blur(8px);
+    color: #000;
+    z-index: 15;
+    border-bottom-left-radius: 0.25rem;
+    padding: 0.25rem 1rem;
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
   .carousel-item{
 
     .carousel-caption{
@@ -743,6 +760,13 @@ span.clear_driver{
     width: 100%;
     height: auto;
     margin-bottom: 1rem;
+  }
+}
+
+#all-news-list{
+
+  .published{
+    font-size: 0.7rem;
   }
 }
 
