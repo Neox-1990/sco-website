@@ -11273,6 +11273,58 @@ a.sco-nav-link:hover {
   color: #fff;
 }
 
+.class-btn-background-GT37 {
+  background-color: #111111;
+  color: #fff;
+}
+
+.class-btn-background-GT37:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.class-btn-background-outline-GT37 {
+  background-color: #fff;
+  color: #111111;
+  border-color: #111111;
+}
+
+.class-btn-background-outline-GT37:hover {
+  background-color: #111111;
+  color: #fff;
+}
+
+.badge-GT37 {
+  background-color: #111111;
+  color: #fff;
+}
+
+.class-btn-background-GT47 {
+  background-color: #005aab;
+  color: #fff;
+}
+
+.class-btn-background-GT47:hover {
+  background-color: #003f78;
+  color: #fff;
+}
+
+.class-btn-background-outline-GT47 {
+  background-color: #fff;
+  color: #005aab;
+  border-color: #005aab;
+}
+
+.class-btn-background-outline-GT47:hover {
+  background-color: #005aab;
+  color: #fff;
+}
+
+.badge-GT47 {
+  background-color: #005aab;
+  color: #fff;
+}
+
 .team-overview-class {
   margin: 2rem 0;
 }
