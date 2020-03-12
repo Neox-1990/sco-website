@@ -45,6 +45,9 @@
                 @if(!empty($team->facebook))
                   <a class="mr-3" href="{{$team->facebook}}"><i class="fab fa-facebook"></i></a>
                 @endif
+                @if(!empty($team->instagram))
+                  <a class="mr-3" href="{{$team->instagram}}"><i class="fab fa-instagram"></i></a>
+                @endif
               </td>
             </tr>
           </table>

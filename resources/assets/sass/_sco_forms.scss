@@ -40,4 +40,18 @@
     width: 1.5rem;
     height: 1.5rem;
   }
+
+  select{
+    border-radius: 0.25rem;
+    border-width: 0px;
+    border-bottom: 1px solid $gray-600;
+    background-color: $lightborder;
+    text-align: center;
+    padding: 0.5rem;
+    transition: all 0.25s;
+
+    option{
+      text-align: center;
+    }
+  }
 }

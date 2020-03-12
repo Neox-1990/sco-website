@@ -171,4 +171,14 @@ Route::prefix('ajax')->group(function () {
     Route::post('newspreview', 'Admin\NewsController@newspreview')->middleware('isAdmin');
 });
 
+Route::get('/hof', function () {
+    return view('comingsoon');
+});
+Route::get('/statistics', function () {
+    return view('comingsoon');
+});
+Route::get('/aboutus', function () {
+    return view('comingsoon');
+});
+
 Route::get('/downloads', 'DownloadController@index');

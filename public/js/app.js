@@ -20839,14 +20839,16 @@ var resultToggle = function resultToggle() {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = initIRloader;
 /* unused harmony export loadTeamIrating */
-/* unused harmony export loadDriverIrating */
+/* unused harmony export loadDriver */
 /* unused harmony export loadNewIrating */
 /* unused harmony export setDataTeam */
 /* unused harmony export setDataNew */
 function initIRloader() {
   $('#loadingIRteam').on('click', loadTeamIrating);
-  $('button[id^=loadingIR]').on('click', loadDriverIrating);
+  $('input[type=text].iracingid').on('change', loadDriver);
   $('button[id=newLoadingIR]').on('click', loadNewIrating);
+
+  $('input[type=text].iracingid').trigger('change');
 }
 
 function loadTeamIrating() {
@@ -20879,31 +20881,53 @@ function loadTeamIrating() {
   }, 'json');
 }
 
-function loadDriverIrating() {
-  var id = parseInt($(this).parent().find('input[id$=iracingid]').first().val());
-  var ids = [];
-  if (id !== '') {
-    ids[id] = 0;
-  }
+function loadDriver() {
+  var input = $(this);
+  var details = input.parent().next('.driver-signup-details').first();
 
-  $.ajaxSetup({
-    headers: {
-      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-  });
-  $.post('/ajax/irating/team', { 'ids': id }, function (data, status) {
-    ids = ids.map(function (el, index) {
-      if (index in data) {
-        var name = data[index].driver;
-        var irating = data[index].irating;
-        var sr = data[index].safetyrating.split(' ');
-        var sr1 = sr[0].toLowerCase();
-        var sr2 = parseFloat(sr[1]);
-        return { 'name': name, 'irating': irating, 'sr1': sr1, 'sr2': sr2 };
+  details.find('td[data-ir-field=name]').html("");
+  details.find('td[data-ir-field=irating]').html("");
+  details.find('td[data-ir-field=licence]').html("");
+
+  var id = parseInt($(this).val());
+  var ids = [];
+  console.log(id);
+  if (!isNaN(id)) {
+    ids[id] = 0;
+
+    details.find('.loader').removeClass('d-none');
+
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
     });
-    setDataTeam(ids);
-  }, 'json');
+    $.post('/ajax/irating/team', { 'ids': id }, function (data) {
+      ids = ids.map(function (el, index) {
+        if (index in data) {
+          var name = data[index].driver;
+          var irating = data[index].irating;
+          var sr = data[index].safetyrating.split(' ');
+          var sr1 = sr[0].toLowerCase();
+          var sr2 = parseFloat(sr[1]);
+          return { 'name': name, 'irating': irating, 'sr1': sr1, 'sr2': sr2 };
+        }
+      });
+      var driver = ids[id];
+      if (typeof driver === 'undefined') {
+        details.find('td[data-ir-field=name]').html('<span class="text-danger">Unknown Driver Id</span>');
+      } else {
+        details.find('td[data-ir-field=name]').html(driver.name);
+        details.find('td[data-ir-field=irating]').html(driver.irating);
+        details.find('td[data-ir-field=licence]').html(driver.sr1.toUpperCase() + driver.sr2);
+      }
+    }).fail(function () {
+      console.log('fail');
+    }).always(function () {
+      console.log('always');
+      details.find('.loader').addClass('d-none');
+    });
+  }
 }
 
 function loadNewIrating() {

@@ -6,6 +6,7 @@ use App\Team;
 use App\Round;
 use App\Invite;
 use App\Season;
+use App\Driver;
 use App\Setting;
 use App\Events\TeamDeleteEvent;
 use App\Http\Requests\EditTeam;
@@ -99,7 +100,7 @@ class MyteamController extends Controller
 
         $driverLimitReached = $team->drivers()->count() >= 6;
 
-        return view('myteams.edit', compact('legit', 'team', 'numbers', 'deadline', 'classcars', 'driverChangeLimit', 'driverLimitReached'));
+        return view('myteams.edit', compact('legit', 'team', 'numbers', 'classcars', 'driverChangeLimit', 'driverLimitReached'));
     }
     public function update(EditTeam $request, Team $team)
     {

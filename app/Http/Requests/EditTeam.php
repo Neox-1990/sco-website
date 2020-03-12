@@ -31,16 +31,12 @@ class EditTeam extends FormRequest
     public function rules()
     {
         return [
-        'teamname' => 'nullable|required_with_all:teamcar,teamnumber,iracing_teamid|required_with:updateTeamdata|max:255',
-        'teamcar' => 'nullable|required_with_all:teamname,teamnumber,iracing_teamid|integer|required_with:updateTeamdata',
-        'teamnumber' => 'nullable|required_with_all:teamname,teamcar,iracing_teamid|integer|required_with:updateTeamdata|max:999',
-        'iracing_teamid' => 'nullable|required_with_all:teamname,teamcar,teamnumber|integer|required_with:updateTeamdata|max:9999999',
+        'website' => 'nullable|max:255',
+        'twitter' => 'nullable|max:255',
+        'facebook' => 'nullable|max:255',
+        'instagram' => 'nullable|max:255',
 
-        'driver.name' => 'nullable|required_with:driver.iracingid|required_with:addDriver|max:255',
-        'driver.iracingid' => 'nullable|required_with:driver.name|numeric|required_with:addDriver|max:9999999',
-        'driver.ir' => 'nullable|required_with_all:driver.iracingid,driver.name|numeric|min:2000|required_with:addDriver|max:12000',
-        'driver.sr1' => 'nullable|required_with_all:driver.iracingid,driver.name|in:d,c,b,a,p|required_with:addDriver',
-        'driver.sr2' => 'nullable|required_with_all:driver.iracingid,driver.name|numeric|required_with:addDriver|max:128',
+        'driver.iracingid' => 'nullable|numeric|required_with:addDriver|max:9999999',
 
         'driverID' => 'nullable|numeric|required_with:removeDriver|max:9999999'
     ];
@@ -48,15 +44,12 @@ class EditTeam extends FormRequest
     public function check(Team $team)
     {
         $checkResult;
-        /*if ($this->input('updateTeamdata') !== null) {
-            //dd("Dataupdate");
-            $checkResult = $this->teamDataUpdate($team);
-        } else*/if ($this->input('removeDriver') !== null) {
-            //dd("Deletedriver");
+        if ($this->input('removeDriver') !== null) {
             $checkResult = $this->removeDriver($team);
         } elseif ($this->input('addDriver') !== null) {
-            //dd("Adddriver");
             $checkResult = $this->addDriver($team);
+        } elseif ($this->input('updateTeamdata') !== null) {
+            $checkResult = $this->updateTeamdata($team);
         } else {
             $checkResult = [
             'legit' => false,
@@ -191,15 +184,10 @@ class EditTeam extends FormRequest
           'errors' => [],
           'flash' => ''
         ];
-        $sr_limits = config('constants.sr_limits')[config('constants.cars_to_classes')[config('constants.current_season')][$team['car']]];
-        $sr_lower_limit = array_pop($sr_limits);
+
         if ($team->drivers()->count()>=config('constants.driver_limits')['max']) {
             $checkResult['legit'] = false;
             $checkResult['errors']['maxDriverLimit'] = 'There are already '.config('constants.driver_limits')['min'].' drivers in this team.';
-            $checkResult['flash'] = 'An error occurred';
-        } elseif (!(in_array($this->input('driver.sr1'), $sr_limits) || $this->input('driver.sr1') == $sr_lower_limit && $this->input('driver.sr2') >= 4)) {
-            $checkResult['legit'] = false;
-            $checkResult['errors']['driverNotLegible'] = 'The driver doesn\'t fulfil the sr-requirements.';
             $checkResult['flash'] = 'An error occurred';
         } else {
             $count = Driver::where('iracing_id', $this->input('driver.iracingid'))->count();
@@ -211,20 +199,14 @@ class EditTeam extends FormRequest
                     $checkResult['errors']['driverTakenError'] = 'The driver is already part of another team in this season.';
                     $checkResult['flash'] = 'An error occurred';
                 } else {
-                    $driver->irating = $this->input('driver.ir');
-                    $driver->safetyrating = strtoupper($this->input('driver.sr1')).'@'.number_format(floatval($this->input('driver.sr2')), 2);
+                    $driver->updateMe();
                     $driver->save();
                     $team->drivers()->attach($driver->id);
                     $checkResult['flash'] = 'You successfully added '.$driver->name.' to '.$team->name;
                     event(new TeamEditEvent($team, 'Team driver added', 'added driver: <a href="/admin/drivers/'.$driver->id.'" title="'.$driver->name.'">'.$driver->id.'</a>'));
                 }
             } else {
-                $driver = new Driver;
-                $driver->name = $this->input('driver.name');
-                $driver->iracing_id = $this->input('driver.iracingid');
-                $driver->irating = $this->input('driver.ir');
-                $driver->name = $this->input('driver.name');
-                $driver->safetyrating = strtoupper($this->input('driver.sr1')).'@'.number_format(floatval($this->input('driver.sr2')), 2);
+                $driver = Driver::createFromIRacingID($this->input('driver.iracingid'));
                 $driver->save();
                 $team->drivers()->attach($driver->id);
                 $checkResult['flash'] = 'You successfully added '.$driver->name.' to '.$team->name;
@@ -233,5 +215,38 @@ class EditTeam extends FormRequest
         }
 
         return $checkResult;
+    }
+
+    public function updateTeamdata(Team $team)
+    {
+        $checkResult = [
+        'legit' => true,
+        'errors' => [],
+        'flash' => ''
+        ];
+
+        $team->website = $this->httpLinkChecker($this->input('website', null));
+        $team->twitter = $this->httpLinkChecker($this->input('twitter', null));
+        $team->facebook = $this->httpLinkChecker($this->input('facebook', null));
+        $team->instagram = $this->httpLinkChecker($this->input('instagram', null));
+        $team->save();
+
+        $checkResult['flash'] = 'You successfully update the data of '.$team->name;
+        return $checkResult;
+    }
+
+    private function httpLinkChecker($url, $forceHttps = true)
+    {
+        if (\is_null($url)) {
+            return null;
+        }
+        if (\substr($url, 0, 7) != 'http://' && \substr($url, 0, 8) != 'https://') {
+            if ($forceHttps) {
+                $url = 'https://'.$url;
+            } else {
+                $url = 'http://'.$url;
+            }
+        }
+        return $url;
     }
 }

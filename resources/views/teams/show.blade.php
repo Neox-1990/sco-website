@@ -17,6 +17,9 @@
       @if(!empty($team['facebook']))
       <a class="mr-3" href="{{$team['facebook']}}"><i class="fab fa-facebook fa-xs"></i></a>
       @endif
+      @if(!empty($team['instagram']))
+      <a class="mr-3" href="{{$team['instagram']}}"><i class="fab fa-instagram fa-xs"></i></a>
+      @endif
     </span></h1>
     @if ($team['deleted_at'] !== null)
       <p class="text-muted">deleted team</p>

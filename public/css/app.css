@@ -10798,6 +10798,21 @@ a.text-dark:hover, a.text-dark:focus {
   height: 1.5rem;
 }
 
+.sco-forms select {
+  border-radius: 0.25rem;
+  border-width: 0px;
+  border-bottom: 1px solid #6c757d;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 0.5rem;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.sco-forms select option {
+  text-align: center;
+}
+
 .markdown-article img {
   width: 100%;
   height: auto;
@@ -11552,6 +11567,31 @@ main {
 
 .add-driver-form-active {
   display: block;
+}
+
+.driver-signup-details {
+  background-color: #e6e5e5;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0 1rem 1rem 1rem;
+  display: relative;
+}
+
+.driver-signup-details .loader {
+  text-align: right;
+  margin-bottom: -1rem;
+}
+
+.driver-signup-details table {
+  width: 100%;
+}
+
+.driver-signup-details table tr {
+  border-bottom: 1px solid #222;
+}
+
+.driver-signup-details table tr th, .driver-signup-details table tr td {
+  padding-top: 1rem;
 }
 
 .round-tabs .nav-item .nav-link {

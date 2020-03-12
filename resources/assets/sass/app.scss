@@ -348,6 +348,30 @@ main{
   display:block;
 }
 
+.driver-signup-details{
+  background-color: $paleborder;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0 1rem 1rem 1rem;
+  display: relative;
+
+  .loader{
+    text-align: right;
+    margin-bottom: -1rem;
+  }
+
+  table{
+    width: 100%;
+    tr{
+      border-bottom: 1px solid $sco-dark;
+
+      th,td{
+        padding-top: 1rem;
+      }
+    }
+  }
+}
+
 .round-tabs .nav-item .nav-link{
   border: 1px solid rgba(240,240,240,1);
 }
