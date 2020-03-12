@@ -146,12 +146,12 @@
         </li>
         <li>The entry deadline for all entrants will be on Sunday, April 5th, 2020 at 23:59 UTC.
           <ol>
-            <li>5.c.1) All teams that have entered the event by the deadline listed in 5.c must pay the entry fee of $10 per entered car by the deadline listed in 5.c.</li>
+            <li>All teams that have entered the event by the deadline listed in 5.b must pay the entry fee of $10 per entered car by the deadline listed in 5.b.</li>
           </ol>
         </li>
         <li>Every team that's created during a season will have a team status assigned to it. There are a 		total of 5 different statuses: 'Pending', 'Reviewed', 'Waiting List', 'Qualified' and 'Confirmed'.
           <ol>
-            <li>5.e.1) Newly created teams will have their status set to ‘Pending’ automatically. Once the series administration has checked everything about said newly created team, the team’s status will be changed to ‘Qualified’.</li>
+            <li>Newly created teams will have their status set to ‘Pending’ automatically. Once the series administration has checked everything about said newly created team, the team’s status will be changed to ‘Qualified’.</li>
             <li>Once any team with the 'Qualified' status has paid the entry fee of $10 in its entirety, 			their team's status will be changed to 'Confirmed'.</li>
             <li>The 'Waiting List' status will be reserved for teams on the waiting list for their 				respective class.</li>
           </ol>
