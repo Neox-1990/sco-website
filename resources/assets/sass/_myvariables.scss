@@ -11,12 +11,16 @@ $link-color: $primary;
 $link-hover-color: darken($link-color, 15%);
 $sco-red: #d00505;
 $darkborder: #222;
-$lightborder: #ddd;
+$lightborder: darken(#fff, 5%);
 $sco-dark: #222;
+$paleborder: darken(#fff, 10%);
 
 $facebookblue: #3b5998;
 $twitterblue: #4099FF;
 $youtubered: #ff0000;
+$coreorange: #f23c0c;
+$racespotblack: #000;
+$discordviolet: #7289da;
 
 $sco-class-colors:(
 "Prototype1": #d52b1e,
@@ -33,7 +37,9 @@ $sco-class-colors:(
 "P16": #E62B1E,
 "P26": #3954B8,
 "GT6": #00AF2F,
-"cleanx6": #111
+"cleanx6": #111,
+"GT37": #111111,
+"GT47": #005aab
 );
 
 $car_manufacturer:(

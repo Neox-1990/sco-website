@@ -9,57 +9,64 @@
   <div class="col-12" style="padding-bottom:2rem;">
     <h1>Create New Team</h1>
     @include('master.formerrors')
-    <form class="" action="{{url('/myteams/create')}}" method="post">
+    <form class="sco-forms row" action="{{url('/myteams/create')}}" method="post">
       {{csrf_field()}}
-      <div class="form-group">
-        <label for="teamname">Teamname</label>
-        <input id="teamname" class="form-control" type="text" name="teamname" value="{{old('teamname')}}" placeholder="Teamname">
-      </div>
-      <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="yes" id="useinvite" name="useinvite" {{$has_invite?'':'disabled'}} {{!is_null(old('useinvite'))?'checked':''}}>
-          <label class="form-check-label" for="useinvite">
-            Use Invite<i class="fas fa-question-circle ml-3" data-container="body" data-toggle="popover" data-placement="top" data-content="You have {{auth()->user()->invites()->where('used', null)->count()}} invite(s) left" data-trigger="hover"></i>
-          </label>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="car">Car</label>
-        <select id="car" class="form-control" name="teamcar">
-          @foreach (config('constants.classes')[config('constants.current_season')] as $class)
-            @foreach ($class as $id)
+      <div class="col-12 col-md-6 p-0 p-md-1">
+        <div class="p-2 border rounded">
+          <h2 class="mb-4">Teamdata</h2>
+          <div class="mt-3 d-flex flex-column justify-content-between align-items-stretch">
+            <input id="teamname" type="text" name="teamname" value="{{old('teamname')}}">
+            <label for="teamname">Teamname</label>
+          </div>
+          <div class="d-flex flex-row justify-content-start align-items-center">
+            <input type="checkbox" value="yes" id="useinvite" name="useinvite" {{$has_invite?'':'disabled'}} {{!is_null(old('useinvite'))?'checked':''}}>
+            <label class="ml-3 form-check-label" for="useinvite">
+              Use Invite<i class="fas fa-question-circle ml-3" data-container="body" data-toggle="popover" data-placement="top" data-content="You have {{auth()->user()->invites()->where('used', null)->count()}} invite(s) left" data-trigger="hover"></i>
+            </label>
+          </div>
+          <div class="mt-3 d-flex flex-column justify-content-between align-items-stretch">
+            <label for="car">Car</label>
+            <select id="car" name="teamcar">
+              @foreach (config('constants.classes')[config('constants.current_season')] as $class)
+              @foreach ($class as $id)
               <option value="{{$id}}" {{old('teamcar') == $id?'selected':''}}>{{config('constants.car_names')[$id]}}</option>
-            @endforeach
-          @endforeach
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="number">Number</label>
-        <select id="number" class="form-control" name="teamnumber">
-          @for ($i=1; $i < 1000; $i++)
-            <option value="{{$i}}" {{old('teamnumber') == $i ? 'selected' : ''}}>{{$i}}</option>
-          @endfor
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="ir_teamid">iRacing Team ID</label>
-        <input type="text" id="ir_teamid" class="form-control" name="iracing_teamid" value="{{old('iracing_teamid')}}" placeholder="iRacing Team ID">
-      </div>
-      <button class="btn btn-primary mt-5 mb-3" type="button" data-toggle="collapse" data-target="#socialmedia-input" aria-expanded="false" aria-controls="socialmedia-input">
-        add website and socialmedia info
-      </button>
-      <div class="collapse{{!(empty(old('website')) AND empty(old('twitter')) AND empty(old('facebook'))) ? 'show' : ''}}" id="socialmedia-input">
-        <div class="form-group">
-          <label for="website">Website</label>
-          <input type="text" id="website" class="form-control" name="website" value="{{old('website')}}" placeholder="Website URL (including https://)">
+              @endforeach
+              @endforeach
+            </select>
+          </div>
+          <div class="my-3 d-flex flex-column justify-content-between align-items-stretch">
+            <label for="number">Number</label>
+            <select id="number" name="teamnumber">
+              @for ($i=1; $i < 1000; $i++)
+              <option value="{{$i}}" {{old('teamnumber') == $i ? 'selected' : ''}}>{{$i}}</option>
+              @endfor
+            </select>
+          </div>
+          <div class="mt-5 d-flex flex-column justify-content-between align-items-stretch">
+            <input type="text" id="ir_teamid" name="iracing_teamid" value="{{old('iracing_teamid')}}">
+            <label for="ir_teamid">iRacing Team ID</label>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="twitter">Twitter</label>
-          <input type="text" id="twitter" class="form-control" name="twitter" value="{{old('twitter')}}" placeholder="Twitter URL (including https://)">
-        </div>
-        <div class="form-group">
-          <label for="facebook">Facebook</label>
-          <input type="text" id="facebook" class="form-control" name="facebook" value="{{old('facebook')}}" placeholder="Facebook URL (including https://)">
+      </div>
+      <div class="col-12 col-md-6 p-0 p-md-1 mt-3 mt-md-0">
+        <div class="border rounded p-2">
+          <h2 class="mb-4">Social media links (optional)</h2>
+          <div class="mt-3 d-flex flex-column justify-content-between align-items-stretch">
+            <input type="text" id="website" name="website" value="{{old('website')}}">
+            <label for="website">Website</label>
+          </div>
+          <div class="mt-3 d-flex flex-column justify-content-between align-items-stretch">
+            <input type="text" id="twitter" name="twitter" value="{{old('twitter')}}">
+            <label for="twitter">Twitter</label>
+          </div>
+          <div class="mt-3 d-flex flex-column justify-content-between align-items-stretch">
+            <input type="text" id="facebook" name="facebook" value="{{old('facebook')}}">
+            <label for="facebook">Facebook</label>
+          </div>
+          <div class="mt-3 d-flex flex-column justify-content-between align-items-stretch">
+            <input type="text" id="instagram" name="instagram" value="{{old('instagram')}}">
+            <label for="instagram">Instagram</label>
+          </div>
         </div>
       </div>
       <hr>
@@ -83,40 +90,34 @@
             </div>
 
           </div>
-          <p><button class="btn btn-outline-secondary my-3" type="button" id="loadingIRteam">Load data from iRacing for all drivers (via ID)
-            <i class="ml-3 far fa-question-circle" data-toggle="tooltip" data-placement="top" title="loads drivers name, irating and safety rating directly from iracing, using the provided iracing driver ids"></i></button></p>
         </div>
         @for ($n=1; $n <= config('constants.driver_limits')['max']; $n++)
-          <div class="col-lg-6 col-sm-12 mt-5 add-driver-form {{$n<=config('constants.driver_limits')['min']||old('driver'.$n.'.name')!==null||old('driver'.$n.'.iracingid')!==null?'add-driver-form-active add-driver-form-mandatory':''}}" data-driver="{{$n}}">
+          <div class="col-lg-6 col-sm-12 mt-5 add-driver-form {{$n<=config('constants.driver_limits')['min']||old('driver'.$n.'.iracingid')!==null ? 'add-driver-form-active add-driver-form-mandatory':''}}" data-driver="{{$n}}">
             <fieldset class="d-relative" id="driver{{$n}}" style="border: 1px solid #aaa; padding: 1rem;">
               <span class="clear_driver" title="clear driver"><i class="fas fa-ban"></i></span>
               <legend style="padding: 0 5px; width: inherit;">Driver {{$n}}{{$n<=config('constants.driver_limits')['min']?'*':''}}</legend>
-              <div class="form-group">
-                <label for="driver{{$n}}name">Name</label>
-                <input class="form-control" type="text" name="driver{{$n}}[name]" id="driver{{$n}}name" value="{{old('driver'.$n.'.name')}}" placeholder="Name of Driver {{$n}}">
+              <div class="mt-3 d-flex flex-column justify-content-between align-items-stretch">
+                <input class="iracingid" type="text" name="driver{{$n}}[iracingid]" id="driver{{$n}}iracingid" value="{{old('driver'.$n.'.iracingid')}}">
+                <label for="driver{{$n}}iracingid">iRacing Id</label>
               </div>
-              <div class="form-group my-5">
-                <label for="driver{{$n}}iracingid">iRacing ID </label><button class="btn btn-sm btn-outline-secondary my-1 ml-3" type="button" id="loadingIR{{$n}}">Load driverdata from iracing
-                <i class="ml-3 far fa-question-circle" data-toggle="tooltip" data-placement="top" title="loads driver name, irating and safety rating directly from iracing, using the provided iracing driver id"></i></button>
-                <input class="form-control" type="text" name="driver{{$n}}[iracingid]" id="driver{{$n}}iracingid" value="{{old('driver'.$n.'.iracingid')}}" placeholder="iRacing ID of Driver {{$n}}">
-              </div>
-              <div class="form-group my-5">
-                <label for="driver{{$n}}irating">iRating</label>
-                <input class="form-control" type="number" min="2000" max="12000" step="1" value="{{old('driver'.$n.'.ir',$min_ir)}}" name="driver{{$n}}[ir]" id="driver{{$n}}irating">
-              </div>
-              <div class="form-group my-5">
-                <label for="driver{{$n}}sr1">License & SR</label>
-                <div class="form-group input-group">
-                  <select class="form-control" name="driver{{$n}}[sr1]" id="driver{{$n}}sr1" title="License">
-                    <option value="d" {{old('driver'.$n.'.sr1') == 'd' ? 'selected' : ''}}>D</option>
-                    <option value="c" {{old('driver'.$n.'.sr1') == 'c' ? 'selected' : ''}}>C</option>
-                    <option value="b" {{old('driver'.$n.'.sr1') == 'b' ? 'selected' : ''}}>B</option>
-                    <option value="a" {{old('driver'.$n.'.sr1') == 'a' ? 'selected' : ''}}>A</option>
-                    <option value="p" {{old('driver'.$n.'.sr1') == 'p' ? 'selected' : ''}}>P</option>
-                  </select>
-                  <span class="input-group-addon">@</span>
-                  <input class="form-control" type="number" min="0.00" max="5.00" step="0.01" value="{{old('driver'.$n.'.sr2',3.00)}}" name="driver{{$n}}[sr2]" id="driver{{$n}}sr2" title="Safetyrating">
+              <div class="driver-signup-details">
+                <div class="loader d-none">
+                  <i class="fas fa-spinner fa-pulse"></i>
                 </div>
+                <table>
+                  <tr>
+                    <th scope="row">Name</th>
+                    <td data-ir-field="name"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">iRating</th>
+                    <td data-ir-field="irating"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Licence</th>
+                    <td data-ir-field="licence"></td>
+                  </tr>
+                </table>
               </div>
             </fieldset>
           </div>

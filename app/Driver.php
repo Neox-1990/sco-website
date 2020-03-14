@@ -29,15 +29,12 @@ class Driver extends Model
                     return $d->iracing_id;
                 }, $driverpack);
 
-                //dd($driverIds);
                 $ch = curl_init("https://irt.rnld.io/road/?irt_key=".(config('services.irtracker')['token'])."&action=multi&filter=&id=".\implode(',', $driverIds));
-                //dd($ch);
+
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 $data = json_decode(curl_exec($ch), true);
                 curl_close($ch);
-                //dd($driverpack, $driverIds, $data);
-
 
                 foreach ($driverpack as $packdriver) {
                     isset($data[$packdriver->iracing_id]['location']) ? $packdriver->setLocation($data[$packdriver->iracing_id]['location']) : $packdriver->setLocation(null);
@@ -46,7 +43,6 @@ class Driver extends Model
                     $packdriver->save();
                 }
 
-                //dd($driverpack);
                 $driverpack = [];
             }
             array_push($driverpack, $driver);
@@ -58,13 +54,11 @@ class Driver extends Model
                 return $d->iracing_id;
             }, $driverpack);
 
-            //dd($driverIds);
             $ch = curl_init("http://irt.rnld.io/road/?irt_key=".(config('services.irtracker')['token'])."&action=multi&filter=&id=".\implode(',', $driverIds));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             $data = json_decode(curl_exec($ch), true);
             curl_close($ch);
-            //dd($driverpack, $driverIds, $data);
 
             foreach ($driverpack as $packdriver) {
                 isset($data[$packdriver->iracing_id]['location']) ? $packdriver->setLocation($data[$packdriver->iracing_id]['location']) : $packdriver->setLocation(null);
@@ -73,7 +67,6 @@ class Driver extends Model
                 $packdriver->save();
             }
 
-            //dd($driverpack);
             $driverpack = [];
         }
 
@@ -86,5 +79,47 @@ class Driver extends Model
             $this->location = $locationcode;
             $this->save();
         }
+    }
+
+    public static function createFromIRacingID(int $irid)
+    {
+        $ch = curl_init("https://irt.rnld.io/road/?irt_key=".(config('services.irtracker')['token'])."&action=single&filter=&id=".$irid);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        $data = json_decode(curl_exec($ch), true);
+        curl_close($ch);
+
+        $driver = false;
+
+        if (!empty($data)) {
+            $driver = new Driver;
+            $driver->name = $data['driver'];
+            $driver->iracing_id = $data['id'];
+            $driver->safetyrating = \str_replace(' ', '@', $data['safetyrating']);
+            $driver->irating = $data['irating'];
+            $driver->location = $data['location'];
+        }
+
+        return $driver;
+    }
+
+    public function updateMe()
+    {
+        $irid = $this->iracing_id;
+
+        $ch = curl_init("https://irt.rnld.io/road/?irt_key=".(config('services.irtracker')['token'])."&action=single&filter=&id=".$irid);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        $data = json_decode(curl_exec($ch), true);
+        curl_close($ch);
+
+        $this->name = $data['driver'];
+        $this->safetyrating = \str_replace(' ', '@', $data['safetyrating']);
+        $this->irating = $data['irating'];
+        if (!$this->overwrite_location) {
+            $this->location = $data['location'];
+        }
+
+        return $this->save();
     }
 }

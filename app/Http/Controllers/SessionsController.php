@@ -22,14 +22,14 @@ class SessionsController extends Controller
         if (!auth()->attempt([
             'email' => request('email'),
             'password' => request('password')
-          ])) {
+          ], 'yes' == request('rememberme', 'no'))) {
             session()->flash('flash_message_alert', 'An error occured');
             return redirect('/login')->withErrors([
             'message' => 'Please check your credentials and try again'
           ])->withInput();
         }
         session()->flash('flash_message_success', 'You successfully logged in. Welcome back');
-        return redirect('/');
+        return redirect('/login');
     }
     public function destroy()
     {

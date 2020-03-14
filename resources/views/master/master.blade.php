@@ -4,20 +4,23 @@
     @include('master.head')
     @yield('additionalHeader')
   </head>
-  <body>
+  <body class="d-flex flex-column">
     @include('master.flash')
-    <div class="container">
-      @include('user.bar')
+    @include('master.loginmodal')
+    @include('master.newnav')
+    <div class="container-fluid px-0 mb-3 header-container">
       @include('master.header')
-      @include('master.nav')
+    </div>
 
-      <main>
+    <div class="container p-0 mb-5">
+      <main class="ml-5 ml-sm-0">
         @yield('main')
       </main>
-
+    </div>
+    <div class="container-fluid px-0 footer-container mt-auto align-self-end">
       @include('master.footer')
+    </div>
       @yield('additionalFooter')
       @include('master.afterFooter')
-    </div>
   </body>
 </html>

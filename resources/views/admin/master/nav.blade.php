@@ -1,4 +1,4 @@
-<nav>
+<div>
   <div class="list-group">
     <a href="{{url('admin')}}" class="list-group-item list-group-item-action">Dashbord</a>
     <a href="{{url('admin/manager')}}" class="list-group-item list-group-item-action">Manager</a>
@@ -14,4 +14,4 @@
     <a href="{{url('/')}}" class="list-group-item list-group-item-action bg-info">Page</a>
     <a href="{{url('admin/tools')}}" class="list-group-item list-group-item-action">Toolbox</a>
   </div>
-</nav>
+</div>

@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use App;
 use App\Team;
 use App\Invite;
+use App\Driver;
 use Carbon\Carbon;
 
 use App\Events\TeamCreateEvent;
@@ -29,27 +30,21 @@ class CreateTeam extends FormRequest
      */
     public function rules()
     {
-        $ir_limit = config('constants.ir_limits')[config('constants.cars_to_classes')[config('constants.current_season')][$this->input('teamcar')]];
-
         $rules = [
         'teamname' => 'required|max:255',
         'teamcar' => 'required|integer',
         'teamnumber' => 'required|integer|max:999',
-        'iracing_teamid' => 'required|integer|max:9999999'
+        'iracing_teamid' => 'required|integer|max:9999999',
+        'website' => 'nullable|max:255',
+        'twitter' => 'nullable|max:255',
+        'facebook' => 'nullable|max:255',
+        'instagram' => 'nullable|max:255',
       ];
         for ($i = 1; $i <= config('constants.driver_limits')['max']; $i++) {
             if ($i <= config('constants.driver_limits')['min']) {
-                $rules["driver$i.name"]     = "required|max:255";
                 $rules["driver$i.iracingid"]= "required|numeric|max:9999999";
-                $rules["driver$i.ir"]       = "required|numeric|min:$ir_limit|max:12000";
-                $rules["driver$i.sr1"]      = "required|in:d,c,b,a,p";
-                $rules["driver$i.sr2"]      = "required|numeric|max:128";
             } else {
-                $rules["driver$i.name"]       = "nullable|required_with:driver$i.iracingid|max:255";
                 $rules["driver$i.iracingid"]  = "nullable|required_with:driver$i.name|numeric|max:9999999";
-                $rules["driver$i.ir"]         = "nullable|required_with_all:driver$i.iracingid,driver$i.name|numeric|min:$ir_limit|max:12000";
-                $rules["driver$i.sr1"]        = "nullable|required_with_all:driver$i.iracingid,driver$i.name|in:d,c,b,a,p";
-                $rules["driver$i.sr2"]        = "nullable|required_with_all:driver$i.iracingid,driver$i.name|numeric|max:128";
             }
         }
         $rules['*.iracingid'] = 'distinct';
@@ -61,8 +56,6 @@ class CreateTeam extends FormRequest
 
     public function messages()
     {
-        $ir_limit = config('constants.ir_limits')[config('constants.cars_to_classes')[config('constants.current_season')][$this->input('teamcar')]];
-
         $messages = [
         'teamname.required' => 'A teamname is required',
         'teamname.max' => 'Teamname is to long (max 255)',
@@ -77,26 +70,9 @@ class CreateTeam extends FormRequest
       ];
 
         for ($i = 1; $i <= config('constants.driver_limits')['max']; $i++) {
-            $messages["driver$i.name.required"] = "Driver $i name required";
-            $messages["driver$i.name.max"] = "Driver $i name to long";
-
             $messages["driver$i.iracingid.required"] = "Driver $i iRacing ID required";
             $messages["driver$i.iracingid.numeric"] = "Driver $i iRacing ID must be a number";
             $messages["driver$i.iracingid.max"] = "Driver $i iRacing ID to long";
-
-            $messages["driver$i.ir.required"] = "Driver $i iRating is required";
-            $messages["driver$i.ir.numeric"] = "Driver $i iRating must be a number";
-            $messages["driver$i.ir.min"] = "Driver $i iRating must be at least $ir_limit";
-
-            $messages["driver$i.sr1.required"] = "Driver $i license required";
-            $messages["driver$i.sr1.in"] = "Driver $i license must be valid";
-
-            $messages["driver$i.sr2.required"] = "Driver $i safety rating is required";
-            $messages["driver$i.sr2.numeric"] = "Driver $i safety rating must be a number";
-            $messages["driver$i.sr2.max"] = "Driver $i safety rating to high";
-
-            $messages["driver$i.*.required_with_all"] = "Information missing for driver $i";
-            $messages["driver$i.*.required_with"] = "Information missing for driver $i";
         }
 
         return $messages;
@@ -109,24 +85,21 @@ class CreateTeam extends FormRequest
     {
         $error_list = [];
         //Check if Drivers are already in a team
-        $sr_limits = config('constants.sr_limits')[config('constants.cars_to_classes')[config('constants.current_season')][$this->input('teamcar')]];
-        $sr_lower_limit = array_pop($sr_limits);
-        //dd($sr_limits, $sr_lower_limit);
         for ($i = 1; $i <= config('constants.driver_limits')['max']; $i++) {
             $iracingid = $this->input('driver'.$i.'.iracingid');
             if ($iracingid != '' || $iracingid != null) {
-                if (!(in_array($this->input('driver'.$i.'.sr1'), $sr_limits) || $this->input('driver'.$i.'.sr1') == $sr_lower_limit && $this->input('driver'.$i.'.sr2') >= 4)) {
-                    $error_list ['driver'.$i] = "Driver $i does not fulfil the SR-requirements";
-                }
-
-                $count = App\Driver::where('iracing_id', intval($iracingid))->count();
+                $count = Driver::where('iracing_id', intval($iracingid))->count();
                 if ($count>0) {
-                    $driver = App\Driver::where('iracing_id', intval($iracingid))->with('teams')->first();
+                    $driver = Driver::where('iracing_id', intval($iracingid))->with('teams')->first();
                     foreach ($driver->teams as $team) {
                         if ($team['season_id'] == config('constants.current_season')) {
                             $error_list ['driver'.$i] = "Driver $i is already registered with another team.";
                         }
                     };
+                } else {
+                    if (Driver::createFromIRacingID($iracingid) === false) {
+                        $error_list ['driver'.$i] = "The ID of Driver $i doesnt exist";
+                    }
                 }
             }
         }
@@ -207,20 +180,14 @@ class CreateTeam extends FormRequest
 
         //Add Drivers in DB and store in Array
         for ($i=1; $i < 7; $i++) {
-            if ($this->input('driver'.$i.'.iracingid') != null || $this->input('driver'.$i.'.iracingid') != '') {
-                $count = App\Driver::where('iracing_id', intval($this->input('driver'.$i.'.iracingid')))->count();
+            if ($this->input('driver'.$i.'.iracingid') != null && $this->input('driver'.$i.'.iracingid') != '') {
+                $count = Driver::where('iracing_id', intval($this->input('driver'.$i.'.iracingid')))->count();
                 if ($count > 0) {
-                    $driver = App\Driver::where('iracing_id', intval($this->input('driver'.$i.'.iracingid')))->first();
-                    $driver->irating = intval($this->input('driver'.$i.'.ir'));
-                    $driver->safetyrating = strtoupper($this->input('driver'.$i.'.sr1')).'@'.number_format(floatval($this->input('driver'.$i.'.sr2')), 2);
-                    $driver->save();
+                    $driver = Driver::where('iracing_id', intval($this->input('driver'.$i.'.iracingid')))->first();
+                    $driver->updateMe();
                     array_push($driverIds, $driver->id);
                 } else {
-                    $driver = new App\Driver;
-                    $driver->name = $this->input('driver'.$i.'.name');
-                    $driver->iracing_id = $this->input('driver'.$i.'.iracingid');
-                    $driver->irating = $this->input('driver'.$i.'.ir');
-                    $driver->safetyrating = strtoupper($this->input('driver'.$i.'.sr1')).'@'.number_format(floatval($this->input('driver'.$i.'.sr2')), 2);
+                    $driver = Driver::createFromIRacingID($this->input('driver'.$i.'.iracingid'));
                     $driver->save();
                     array_push($driverIds, $driver->id);
                 }
@@ -236,12 +203,28 @@ class CreateTeam extends FormRequest
         $team->status = 0;
         $team->ir_teamid = $this->input('iracing_teamid');
         $team->preqtime = 0;
-        $team->website = $this->input('website', null);
-        $team->twitter = $this->input('twitter', null);
-        $team->facebook = $this->input('facebook', null);
+        $team->website = $this->httpLinkChecker($this->input('website', null), false);
+        $team->twitter = $this->httpLinkChecker($this->input('twitter', null));
+        $team->facebook = $this->httpLinkChecker($this->input('facebook', null));
+        $team->instagram = $this->httpLinkChecker($this->input('instagram', null));
         $team->save();
         $team->drivers()->attach($driverIds); //Add drivers
 
         event(new TeamCreateEvent($team));
+    }
+
+    private function httpLinkChecker($url, $forceHttps = true)
+    {
+        if (\is_null($url)) {
+            return null;
+        }
+        if (\substr($url, 0, 7) != 'http://' && \substr($url, 0, 8) != 'https://') {
+            if ($forceHttps) {
+                $url = 'https://'.$url;
+            } else {
+                $url = 'http://'.$url;
+            }
+        }
+        return $url;
     }
 }
