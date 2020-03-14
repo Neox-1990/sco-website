@@ -8,7 +8,7 @@
     <h1>{{$news->title}}</h1>
     <p class="text-muted">Published: {{(new Carbon\Carbon($news->published))->toCookieString()}}</p>
     <article class="markdown-article">
-      {!!parsedown($news->body)!!}
+      {!!sco_parsing($news->body)!!}
     </article>
   </div>
 </div>
