@@ -12018,6 +12018,7 @@ span.clear_driver {
 
 #news {
   overflow: hidden;
+  margin-top: -1rem;
 }
 
 #news .carousel-indicators {

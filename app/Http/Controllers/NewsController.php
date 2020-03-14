@@ -21,6 +21,10 @@ class NewsController extends Controller
 
     public function show(News $news)
     {
-        return view('news.show', compact('news'));
+        if ((auth()->check() && auth()->user()->isAdmin) || ((new Carbon()) >= (new Carbon($news->published)) && $news->active)) {
+            return view('news.show', compact('news'));
+        } else {
+            return redirect('/news');
+        }
     }
 }

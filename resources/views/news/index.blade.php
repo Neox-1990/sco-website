@@ -7,7 +7,7 @@
     @foreach($news as $n)
     <div class="row border-top py-3">
       <div class="col-12 col-md-6">
-        <img class="img-fluid" src="{{$n->image}}" alt="">
+        <img class="img-fluid border" src="{{$n->image}}" alt="">
       </div>
       <div class="col-12 col-md-6 p-3">
         <h2>{{$n->title}}</h2>

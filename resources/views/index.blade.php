@@ -4,7 +4,7 @@
 <div class="row mx-0 w-100">
   <a href="{{'https://'}}"></a>
   <div class="col-12 px-0">
-    <section id="news" class="sco-news-carousel carousel slide">
+    <section id="news" class="sco-news-carousel carousel slide border">
       <h1 class="news-header">News</h1>
       <a class="all-news-link" href="{{url('/news')}}"><i class="far fa-newspaper"></i> All News</a>
       <ol class="carousel-indicators">
