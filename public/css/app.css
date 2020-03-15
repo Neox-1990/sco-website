@@ -12203,7 +12203,8 @@ table#cleanx-result th:nth-child(3) {
 
 .manufactur-img-10,
 .manufactur-img-13,
-.manufactur-img-14 {
+.manufactur-img-14,
+.manufactur-img-18 {
   background-image: url("img/porsche.svg");
 }
 
@@ -12211,6 +12212,11 @@ table#cleanx-result th:nth-child(3) {
   background-image: url("img/hpd.svg");
 }
 
-.manufactur-img-3 {
+.manufactur-img-3,
+.manufactur-img-16 {
   background-image: url("img/ford.svg");
+}
+
+.manufactur-img-17 {
+  background-image: url("img/mclaren.svg");
 }
