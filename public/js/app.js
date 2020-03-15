@@ -20736,24 +20736,18 @@ var loadOldTeam = function loadOldTeam() {
     }
   });
   $.post('/ajax/formerteam/' + $('#old_team').val(), {}, function (data, status) {
-    //console.log(data);
-    //$('#driver1name').val(data[0].name);
     $('.add-driver-form').each(function (i) {
       var driver = data[i];
       i++;
       if (typeof driver === 'undefined') {
-        if ($('#driver' + i + 'name').val() == '') {
+        if ($('#driver' + i + 'iracingid').val() == '') {
           $(this).removeClass('add-driver-form-active');
         }
       } else {
         $(this).addClass('add-driver-form-active');
-        $('#driver' + i + 'name').val(driver.name);
         $('#driver' + i + 'iracingid').val(driver.iracing_id);
-        $('#driver' + i + 'irating').val(driver.irating);
-        var sr = driver.safetyrating.split('@');
-        $('#driver' + i + 'sr1').val(sr[0].toLowerCase());
-        $('#driver' + i + 'sr2').val(sr[1]);
       }
+      $(this).find('input.iracingid').trigger('change');
     });
   });
 };
