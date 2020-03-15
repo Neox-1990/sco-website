@@ -23,4 +23,8 @@
   </div>
 </footer>
 
+<<<<<<< HEAD
 <script type="text/javascript" src="{{asset('/js/app.js')}}?date=20200314"></script>
+=======
+<script type="text/javascript" src="{{asset('/js/app.js').'?'.File::lastModified('js/app.js')}}"></script>
+>>>>>>> sco-vanilla-dev
