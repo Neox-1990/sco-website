@@ -23,4 +23,4 @@
   </div>
 </footer>
 
-<script type="text/javascript" src="{{asset('/js/app.js')}}?date=20190722"></script>
+<script type="text/javascript" src="{{asset('/js/app.js').'?'.File::lastModified('js/app.js')}}"></script>
