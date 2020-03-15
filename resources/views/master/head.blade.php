@@ -10,10 +10,5 @@
 <meta name="msapplication-TileImage" content="/favicon_ms.png">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>Sports Car Open</title>
-
-<<<<<<< HEAD
-<link rel="stylesheet" href="{{asset('css/app.css')}}?date=20200314">
-=======
 <link rel="stylesheet" href="{{asset('css/app.css').'?'.File::lastModified('css/app.css')}}">
->>>>>>> sco-vanilla-dev
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
