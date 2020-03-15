@@ -11,7 +11,7 @@
         </div>
         <div class="card-body">
           <p class="text-center">The page you were looking for doesn't exist.</p>
-          <p class="text-center">If you keep getting this error, feel free to contact us: <a href="mailto:info@sco.coresimracing.com">info@sco.coresimracing.com</a></p>
+          <p class="text-center">If you keep getting this error, feel free to contact us: <a href="mailto:info@sportscaropen.eu">info@sportscaropen.eu</a></p>
         </div>
       </div>
     </div>
