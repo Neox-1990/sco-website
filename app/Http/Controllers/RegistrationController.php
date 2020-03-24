@@ -55,6 +55,11 @@ class RegistrationController extends Controller
           'password' => 'required|string|min:8|max:255|confirmed|not_in:'.implode(',', $forbiddenPW)
         ]);
 
+        if (!$this->checkUsername(request('name'))) {
+            session()->flash('flash_message_alert', 'Spamaccountprotection');
+            \redirect('/');
+        }
+
         $settings = \App\Setting::getSetup();
         if ($settings['registration']=='0') {
             $error = 'Registration is closed!';
@@ -73,5 +78,15 @@ class RegistrationController extends Controller
         session()->flash('flash_message_success', 'Thank you for signing up. You are now logged in.<br><b>Please check your emails including the spam folder and see if you received our email!</b>');
         event(new SignUpEvent($user));
         return redirect('/');
+    }
+
+    private function checkUsername(String $name)
+    {
+        $totalLength = \strlen($name);
+        $uppercases = \strlen(preg_replace('![^A-Z]+!', '', $name));
+
+        $result = $uppercases < 0.3 * $totalLength;
+
+        return $result;
     }
 }
