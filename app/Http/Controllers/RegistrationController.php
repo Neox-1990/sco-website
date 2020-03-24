@@ -55,9 +55,9 @@ class RegistrationController extends Controller
           'password' => 'required|string|min:8|max:255|confirmed|not_in:'.implode(',', $forbiddenPW)
         ]);
 
-        if ($this->checkUsername(request('name'))) {
+        if (!$this->checkUsername(request('name'))) {
             session()->flash('flash_message_alert', 'Spamaccountprotection');
-            \redirect('/');
+            return \redirect('/');
         }
 
         $settings = \App\Setting::getSetup();
@@ -86,7 +86,7 @@ class RegistrationController extends Controller
         $uppercases = \strlen(preg_replace('![^A-Z]+!', '', $name));
 
         $result = $uppercases < 0.3 * $totalLength || $totalLength == $uppercases;
-
+        //dd($totalLength, $uppercases, $result);
         return $result;
     }
 }
