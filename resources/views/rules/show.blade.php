@@ -6,15 +6,15 @@
   <div class="col-12">
     <div class="p-2" id="rulebook">
       <h1>Rulebook</h1>
-      <p><em>Last update: 12th March 2020</em></p>
+      <p><em>Last update: 28th April 2020</em></p>
       <a data-status="closed" class="btn btn-outline-dark m-1" id="openAllRules"><i class="fas fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
       <hr>
       <h3>1. Introduction</h3>
       <ol class="rulebook-section">
-        <li>The Sports Car Open 1000 Miles of Interlagos is a racing event, which is organised and run by CoRe SimRacing on the iRacing.com Motorsports Simulation service. The event will utilise a selection of grand touring cars in a team-based, multi-class endurance race, held on the the Grand Prix layout of the Autodromo Jose Carlos Pace.</li>
-        <li>While racing is obviously about competition and trying to achieve the best possible results, 		we would like to not lose the fun factor, since at the end of the day, it’s still the top priority.</li>
-        <li>We also expect all drivers and team representatives to treat each other as well as members of 		the series administration with respect at all times.</li>
-        <li>We are open to suggestions and constructive criticism as well as ideas and other things that 		contribute to improving the series as a whole.</li>
+        <li>The Sports Car Open 6 hours of the Glen (or SCO 6 hours of the Glen) is a racing event, which is organised and run by CoRe SimRacing on the iRacing.com Motorsports Simulation service. The event utilises a selection of prototype and grand touring cars in a team-based, multi-class endurance race, held on the Boot layout of the Watkins Glen International circuit.</li>
+        <li>These regulations will apply to all test, practice, warm-up, qualifying and race sessions that are hosted by the event administration. By entering the event, all teams and drivers automatically agree to all rules in this document.</li>
+        <li>The document may be edited to add, remove, modify or replace rules whenever the event administration deems it to be necessary. All changes made will be in effect immediately unless otherwise specified.</li>
+        <li>Participants as well as event administration members and general attentive readers are encouraged to point out loopholes, spelling errors and other mistakes so that they can be closed and corrected respectively. Feedback and improvement suggestions are also welcome.</li>
       </ol>
       <h3>2. Cars and Class Structure</h3>
       <ol class="rulebook-section">
@@ -30,21 +30,21 @@
             </thead>
             <tbody>
               <tr>
-                <td>Grand Touring 3</td>
-                <td class="badge-GT37">GT3</td>
-                <td>Audi R8 LMS<br>BMW Z4 GT3<br>Ferrari 488 GT3<br>Ford GT GT3<br>McLaren MP4-12C GT3<br>Mercedes-AMG GT3	</td>
-                <td>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%</td>
+                <td>Prototype</td>
+                <td class="badge-P8">P</td>
+                <td>HPD ARX-01c</td>
+                <td>0 kg / 100%</td>
               </tr>
               <tr>
-                <td>Grand Touring 4</td>
-                <td class="badge-GT47">GT4</td>
-                <td>Porsche 718 Cayman GT4 CS MR</td>
-                <td>0 kg / 100%</td>
+                <td>Grand Touring </td>
+                <td class="badge-GT8">GT</td>
+                <td>BMW M8 GTE<br>Ferrari 488 GTE<br>Ford GT 2017<br>Porsche 911 RSR</td>
+                <td>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%</td>
               </tr>
             </tbody>
           </table>
         </li>
-        <li>The series administration reserves itself the right to add ballast or limit the fuel capacity of 		any car or car class to balance the cars within a class or to modify the balance between the 		car classes. Such car adjustments will never be made any later than 3 days before the start of 		warm-up. Generally, no adjustments will be made, unless the series administration feels that 		there are overly dominant car models within a class or too small or large performance gaps 		between car classes.</li>
+        <li>The series administration reserves itself to add ballast, change the power output or limit the fuel capacity of any car or car class to balance the cars within a class or to modify the balance between the car classes. Such car adjustments will never be made any later than 3 days before the start of warm-up. Generally, no adjustments will be made, unless the series administration feels that there are overly dominant car models within a class or too small or large performance gaps between car classes.</li>
         <li>Should an iRacing update affect the performance of one or multiple of the cars in the 			championship, the series administration can alter or reset any of the previously allocated 		weight handicaps or fuel capacity restrictions.</li>
       </ol>
       <h3>3. Timetable and Season Schedule</h3>
@@ -102,7 +102,7 @@
       </ol>
       <h3>4. Entry Conditions and Requirements</h3>
       <ol class="rulebook-section">
-        <li>To be able to enter, every team must have a team manager as well as a driver line-up consisting of at least 3 but no more than 6 drivers. Team managers as well as other non-driving team representatives don’t have to fulfil any of the driver requirements.</li>
+        <li>To be able to enter, every team must have a team manager as well as a driver line-up consisting of at least 2 but no more than 6 drivers. Team managers as well as other non-driving team representatives don’t have to fulfil any of the driver requirements.</li>
         <li>All driving team members, meaning everyone listed on a team's driver line-up, must meet the 		minimum requirements for their team's car class at the point of sign-up. The Road Safety 		Rating and Road iRating requirements for each car class are listed below.
           <table class="table table-bordered">
             <tr>
@@ -111,12 +111,12 @@
               <th>Minimum Road iRating</th>
             </tr>
             <tr>
-              <td>Grand Touring 3</td>
-              <td>D 4.00 or higher</td>
+              <td>Prototype</td>
+              <td>C 4.00 or higher</td>
               <td>2500 or higher</td>
             </tr>
             <tr>
-              <td>Grand Touring 4</td>
+              <td>Grand Touring</td>
               <td>D 4.00 or higher</td>
               <td>2500 or higher</td>
             </tr>
@@ -132,38 +132,38 @@
       </ol>
       <h3>5. Entry Procedure</h3>
       <ol class="rulebook-section">
-        <li>The sign-ups for all teams will open on Sunday, March 15th, 2020 at 17:00 UTC. From this point onwards, managers will be able to create teams on the series website.
+        <li>The sign-ups for all teams will open on Friday, May 1st, 2020 at 16:00 UTC. From this point onwards, managers will be able to create teams on the series website.
           <ol>
             <li>Please note that no team will be allowed to enter more than 2 cars into any of the 			classes. The maximum number of available spaces per car class can be seen below:
               <ul>
-                <li>Grand Touring 3 (GT3): 28 cars maximum</li>
-                <li>Grand Touring 4 (GT4): 28 cars maximum</li>
+                <li>Prototype (P): 20 cars maximum</li>
+                <li>Grand Touring (GT): 30 cars maximum</li>
                 <li>Total Car Count: 48 cars (regardless of class limits)</li>
               </ul>
             </li>
             <li>The series administration can grant exceptions to the 2 car limit per class per team 			upon receiving a request from the team manager(s) of the affected entries. These 			requests will be assessed on a case-by-case basis.</li>
             </ol>
         </li>
-        <li>The entry deadline for all entrants will be on Sunday, April 5th, 2020 at 23:59 UTC.
+        <li>The entry deadline for all entrants will be on Sunday, May 24th, 2020 at 23:59 UTC.
           <ol>
-            <li>All teams that have entered the event by the deadline listed in 5.b must pay the entry fee of $10 per entered car by the deadline listed in 5.b.</li>
+            <li>All teams that have entered the event by the deadline listed in 5.b must pay the entry fee of $9 per entered car by the deadline listed in 5.b.</li>
           </ol>
         </li>
         <li>Every team that's created during a season will have a team status assigned to it. There are a 		total of 5 different statuses: 'Pending', 'Reviewed', 'Waiting List', 'Qualified' and 'Confirmed'.
           <ol>
             <li>Newly created teams will have their status set to ‘Pending’ automatically. Once the series administration has checked everything about said newly created team, the team’s status will be changed to ‘Qualified’.</li>
-            <li>Once any team with the 'Qualified' status has paid the entry fee of $10 in its entirety, 			their team's status will be changed to 'Confirmed'.</li>
+            <li>Once any team with the 'Qualified' status has paid the entry fee of $9 in its entirety, 			their team's status will be changed to 'Confirmed'.</li>
             <li>The 'Waiting List' status will be reserved for teams on the waiting list for their 				respective class.</li>
           </ol>
         </li>
         <li>After a team has been created, a team manager will only be allowed to edit the driver line-up 		of his teams. Should he wish to edit further details, he must contact the series 				administration.
           <ol>
             <li>Driver line-ups may not be edited any later than 24 hours before the start of FP1 ahead of each round.</li>
-            <li>Should a driver, who was added to a team's line-up after the deadline actually compete 			in the race, the team in question will receive a 60 second stop and hold penalty once 			said driver has taken over the car.</li>
+            <li>Should a driver, who was added to a team's line-up after the deadline actually compete 			in the race, the team in question will receive a 30 second stop and hold penalty once 			said driver has taken over the car.</li>
           </ol>
         </li>
-        <li>All teams, that have entered a car class with multiple car models, must declare their final car selection no later than 24 hours before the start of FP1.
-        </li>
+        <li>All teams, that have entered a car class with multiple car models, must declare their final car selection no later than 24 hours before the start of FP1.</li>
+        <li>Any team, that withdraws from the event, will not be refunded their entry fee.</li>
       </ol>
       <h3>6. Paint Schemes</h3>
       <ol class="rulebook-section">
@@ -204,36 +204,42 @@
       </ol>
       <h3>9. Qualifying</h3>
       <ol class="rulebook-section">
-        <li>All qualifying sessions will be 20 minute long single car sessions with a maximum of 4 timed 		laps available to each car.</li>
-        <li>As per iRacing lone qualifier rules, any member registered for the team will be allowed to 		qualify the car.</li>
-        <li>The qualifying driver is not required to start the race, but they will be required to drive the 		car for at least 1 full lap (meaning it can’t be an out or in lap) during the race.</li>
-        <li>Every car will be required to set a qualifying time. Teams who do not set a qualifying time or 		are slower than the fastest car of the class behind them will have to start from pit lane.</li>
-        <li>The series administration may not allow a team to take the start, if they’re deemed to be a 		potential danger to other cars on-track during the race or if they haven’t set a fast enough 		lap time in qualifying (see 9.d).</li>
+        <li>Qualifying will be held in a 45 minute long open qualifying session, which will be split into two 20 minute long segments with a 5 minute long break between both of these segments.
+          <ol>
+            <li>During the first 20 minute long segment, starting at the start of the qualifying session and ending at the 20 minute mark, only Grand Touring (GT) teams may go on-track and qualify.</li>
+            <li>During the second 20 minute long segment, starting at the 25 minute mark and running until the end of the qualifying session, only Prototype (P) teams may go on-track and qualify.</li>
+          </ol>
+        </li>
+        <li>Prototype (P) teams may not leave the pit lane before the start of their class' qualifying segment. The signal that teams may leave the pit lane to go on-track and qualify will be given by the event administration via the in-game chat.</li>
+        <li>Grand Touring (GT) teams may not start new laps after the end of their class' qualifying segment. The signal that teams may not start new laps and must return to the pit lane will be given by the event administration via the in-game chat.</li>
+        <li>Any member of a team's driver roster will be allowed to drive the car during their car class' qualifying segment.</li>
+        <li>During qualifying, all drivers on-track must be aware of their surroundings at all times. Any team found to be interfering with another team's qualifying laps in any way, may be penalised if the incident is reported to the series administration.</li>
+        <li>The driver, who sets a team's fastest time during qualifying, is not required to start the car, but must complete at least 1 full lap during the race. This lap cannot start or end in the pit lane.</li>
+        <li>Teams, who are observed to have left the pit lane outside their car class' qualifying segment by another team or the series administration, will receive a drive-through penalty after the start of the race.</li>
+        <li>Teams, who do not set a time during qualifying must also start the race from the back of their car class. Should this be the case for multiple teams, they will be gridded in order of their fastest warm-up session times.</li>
+        <li>The series administration may not allow a team or driver to take the start, if they’re deemed to be a potential danger to other cars on-track during the race.</li>
       </ol>
       <h3>10. Race</h3>
       <ol class="rulebook-section">
         <li>All races will utilise the standard rolling start procedure the iRacing software provides with 		the following alterations:
           <ol>
-            <li>The class leader of the supporting GT4 class should keep a gap of about 5 seconds to the last GT3 class car ahead of them on the pace lap.</li>
-            <li>All cars and classes, meaning GT3 and GT4 must ignore the "green flag" as displayed 			by iRacing and must remain in their grid formation while also keeping to the pace car 			speed. Frequent accelerating and braking as well as deviating too far from the pace car 			speed may be penalised.</li>
+            <li>The class leader of the supporting GT class should keep a gap of about 5 seconds to the last P class car ahead of them on the pace lap.</li>
+            <li> All cars and classes, meaning P and GT must ignore the "green flag" as displayed by iRacing and must remain in their grid formation while also keeping to the pace car speed. Frequent accelerating and braking as well as deviating too far from the pace car speed may be penalised.</li>
             <li>Only the leader of each class will be allowed to initiate the start of their categories’ 			race by starting to accelerate away from the field in the “starting zone”. Once he has 			done so, all cars of that class will be free to race. All classes will be subject to this 			procedure.</li>
             <li>Images of the exact beginning and end points of this “starting zone” will be part of the 			drivers’ briefing, which will be published before the first free practice session.</li>
-            <li>Teams that start from pit lane must line up at pit exit in a line. They will not be 				allowed to leave the lane until the race administration declares the pit exit open once 			the last GT4 car has passed the first turn. Leaving the pit lane early will result in a 30 			second stop & hold penalty.</li>
+            <li>Teams that start from pit lane must line up at pit exit in a line. They will not be allowed to leave the lane until the race administration declares the pit exit open once the last GT car has passed the first turn. Leaving the pit lane early will result in a 15 second stop & hold penalty.</li>
           </ol>
         </li>
-        <li>During the race itself, no driver will be allowed to complete more than 45% of a team’s total number of completed laps.
+        <li>During the race itself, no driver will be allowed to complete more than 70% of a team’s total number of completed laps.
           <ol>
             <li>Fractional amounts of laps will always be rounded to the closest full number.
             </li>
-            <li>All laps beyond the 45% limit will be deducted from a team’s total number of completed laps.</li>
+            <li>All laps beyond the 70% limit will be deducted from a team’s total number of completed laps.</li>
           </ol>
         </li>
         <li>Additionally, to make sure people don’t take too many liberties with the track limits, an incident limit will be enforced.
           <ol>
-            <li>The incident limit will be calculated using the formula below.
-              <pre class="text-left">h * 15 - 1 = x<br>-- h = race duration in hours<br>-- x = incident limit</pre>
-            </li>
-            <li>Using this formula, a 10 hour long race will have an incident limit of 149 incidents.</li>
+            <li>The incident limit will be set at 79 incident points.</li>
             <li>A team will be given a drive-through penalty once they’ve exceeded the incident limit by 1 incident point.</li>
             <li>A team will be given a 15 second stop and hold penalty once they’ve exceeded the incident limit by 31 incident points.</li>
             <li>The duration of the stop and hold penalty given will double at every 30 incident point milestone after that, meaning that a team will receive a 30 second stop and hold penalty once they’ve exceeded the incident limit by 61 points, a 60 second stop and hold penalty once they’ve exceeded the incident limit by 91 points and so on.</li>
@@ -253,17 +259,11 @@
         <li>Should someone go off the track, they have to make sure that the track is clear before 			rejoining the racing surface. Dangerous track re-entries or even causing an incident while you 		try to rejoin will result in penalties when reported to the series administration.</li>
         <li>Under a waved yellow flag, please make sure to pay attention to the road ahead as well as 		any potentially stationary or slowly moving cars next to or on the race track itself.</li>
       </ol>
-      <h3>12. Red Flags</h3>
+      <h3>12. Race Stoppages</h3>
       <ol class="rulebook-section">
-        <li>If the iRacing service fails during a race resulting in drivers being unable to join or stay 			connected to the server or if the server becomes unstable enough to potentially cause 			problems for drivers, the event may be stopped or even postponed or cancelled. When this 		happens the series administration will announce the “red flag” status of the session both in-		game (if the session is still accessible) and on the SCO Discord.</li>
-        <li>The full red flag procedure can be found in Section 19 of this document.</li>
-        <li>For races that have been red flagged, the race administration will decide on how races are 		scored on an individual basis.
-          <ol>
-            <li>For example, if a race was interrupted at about the half-way mark of that race and a 			new session was required, the race administration may score both halves separately 			from each other, awarding half points for each.</li>
-          </ol>
-        </li>
-        <li>Should the iRacing service as a whole be affected by server issues, meaning that a new 			session or a restarted race would also run into trouble after a while, the event will be called 		off.</li>
-        <li>It will be down the series administration to decide, whether the event will be rescheduled, 		replaced or cancelled.</li>
+        <li>If the iRacing service fails during the race resulting in drivers being unable to join or stay connected to the racing server of if the server becomes unstable enough to potentially cause problems for drivers, the race will be stopped. Should this happen, the event administration will announce the race stoppage by announcing the "red flag" status via the in-game chat (if the session is still accessible) and on the series Discord server.</li>
+        <li>The event administration will decide on how to treat the race stoppage, depending on how much of the scheduled race time passed since the start of the race and also on whether there's still usable timing data left over to create a race result.</li>
+        <li>Whether an abandoned race that didn't run for at least 50% of its advertised duration is rescheduled, will be decided by the event administration based on the feedback from all teams competing in the current SCO event.</li>
       </ol>
       <h3>13. Protests</h3>
       <ol class="rulebook-section">
@@ -284,39 +284,28 @@
       <ol class="rulebook-section">
         <li>There are several types of penalties that can be assigned following an investigation by the 		series administration. The list of possible penalties can be found below.
           <ul class="list-group my-3">
-            <li class="list-group-item mt-0">Warning (may be assigned to a team or driver)</li>
+            <li class="list-group-item mt-0">Warning</li>
+            <li class="list-group-item mt-0">Time Penalty (minimum of 5 seconds)</li>
             <li class="list-group-item mt-0">Drive-Through Penalty</li>
-            <li class="list-group-item mt-0">Stop & Hold Penalty of 15 seconds</li>
-            <li class="list-group-item mt-0">Stop & Hold Penalty of 30 seconds</li>
-            <li class="list-group-item mt-0">Stop & Hold Penalty of 45 seconds</li>
-            <li class="list-group-item mt-0">Stop & Hold Penalty of 60 seconds</li>
-            <li class="list-group-item mt-0">Stop & Hold Penalty of 120 seconds</li>
-            <li class="list-group-item mt-0">Stop & Hold Penalty of 240 seconds</li>
-            <li class="list-group-item mt-0">Post-Race Time Penalty (severity is down to the series administration)</li>
+            <li class="list-group-item mt-0">Stop & Hold Penalty (minimum of 5 seconds)</li>
             <li class="list-group-item mt-0">Lap Deductions</li>
             <li class="list-group-item mt-0">Disqualifications</li>
             <li class="list-group-item mt-0">Exclusions from Multiple Events (may be assigned to a team or driver)</li>
           </ul>
           <ol>
             <li>When serving a drive-through penalty, the affected team must drive through the pit 			lane without making a pit stop. Violating this rule will result in the team being given 			another drive-through penalty.</li>
-            <li>Once a team has received a drive-through penalty, they must not cross the timing line 			on the pit straight more than 3 times before entering the pit lane to serve their 				penalty. Failure to serve a drive-through penalty within the prescribed amount of laps 			will result in the team receiving a 30 second stop & hold penalty.</li>
-            <li>Teams who received a back of grid penalty are required to set the slowest qualifying 			time for their respective class. They also mustn't set a time that's slower than the pole 			sitter of a class below that. Failure to set a time within this time window will result in 			the team being forced to start from the pit lane.</li>
+            <li>Any team receiving a drive-through penalty must serve said drive-through penalty within 10 minutes of it being issued. Failure to serve a drive-through penalty within the prescribed amount of time will result in the affected team being awarded a 15 second stop & hold penalty.</li>
+            <li>Teams may combine stop & hold penalties with regular pit stops. If they choose to do so, iRacing will automatically add 25 seconds to the penalty time assigned to them by the series administration.</li>
           </ol>
         </li>
         <li>Repeat offenders will receive harsher penalties, should they be penalised for the same type 		of misbehaviour multiple times.</li>
         <li>Penalties can affect teams as well as drivers individually, meaning a team can just as easily be 		excluded from competition as individual drivers, depending on the severity of the rule 			violations they committed. </li>
-        <li>All warnings and penalties that are assigned during or after the race will be posted in the in-		game chat and in the list of submitted protests. Decisions made post-race will also be announced in the #race-control channel on the SCO Discord.</li>
+        <li>The series administration also reserves itself the right to issue a team with a further penalty for the next event of the season, if a team does not serve a penalty they've been given during the race.</li>
+        <li>All warnings and penalties that are issued during or after an event will be posted in the in-game chat and the list of submitted protests which will be linked in the #race-control channel of the series Discord and in the event briefing.</li>
       </ol>
       <h3>15. Classification</h3>
       <ol class="rulebook-section">
-        <li>All teams, who start a race, fulfil the maximum lap share per driver requirements and cover at least 50% of their respective class leader’s driven distance, will be classified in their achieved race position in the official results.</li>
-
-        <li>The top teams from each car class will receive 			automatic invites for the 2020-2021 Sports Car Open season. Invites will be awarded to the 		following teams:
-          <ul class="list-group my-3">
-            <li class="list-group-item mt-0">Top 3 Grand Touring 3 (GT3) teams</li>
-            <li class="list-group-item mt-0">Top 3 Grand Touring 4 (GT4) teams</li>
-          </ul>
-        </li>
+        <li>All teams, who start a race, fulfil the maximum driver lap share requirements and cover at least 75% of their respective class leader's driven distance, will be classified in their achieved overall race position in the official results.</li>
       </ol>
       <h3>16. In-Game Session Settings</h3>
       <ol class="rulebook-section">
@@ -329,17 +318,19 @@
             <li>All driving aids with the exceptions of clutch assists will be disallowed.</li>
             <li>The sim date and time of day will be carried over from session to session on race day. 			Roughly 5 minutes of in-game time will pass on each session transition.</li>
             <li>The Sun Acceleration Multiplier will be to set '1x' at all times.</li>
+            <li>All cars in a class will be gridded together, meaning that cars from faster classes, that do not have a qualifying time, will receive a grid slot at the end of their class' field instead of the whole field.</li>
+            <li>The Qualifying Conduct Scrutiny will be set to "Off" for all race day sessions.</li>
           </ol>
         </li>
       </ol>
       <h3>17. Contact Details and Communication</h3>
       <ol class="rulebook-section">
-        <li>Should any questions arise, team managers, vice managers, drivers and other persons can 		contact the series administration using the e-mail address below. Responses to any questions 		about the regulations, team line-up changes or other inquiries will be sent within 24 hours of 		us receiving the original message.
+        <li>Should any questions arise, team managers, drivers and other persons can contact the series administration using the e-mail address below. Responses to any questions about the regulations, team line-up changes or other inquiries will be sent within 24 hours of us receiving the original message.
           <pre>Contact E-Mail Address: <a href="mailto:info@sportscaropen.eu">info@sportscaropen.eu</a></pre>
         </li>
         <li>The series administration will also use a Discord server during events, but can also be 			contacted there at all other points. The permanent invite link to the Sports Car Open Discord 		can be found below:  <a href="https://discord.gg/ShfkyTe" class="text-center d-block">https://discord.gg/ShfkyTe</a>
           <ol>
-            <li>The series administration advises all team managers of team mates that are in contact 			with drivers on-track to be online on the SCO Discord during races. In general, 				instructions will be given both in-game as well as on Discord, but there's always a 			chance that in the case of server issues, race control will be affected too, meaning 			they'll no longer be able to give instructions in-game and must resort to Discord only.</li>
+            <li>The series administration advises all team managers or team members that are in contact with drivers on-track to be online on the SCO Discord during races. Generally, instructions will be given both in-game as well as on Discord, but there's always a chance that in the case of server issues, series administration members will be affected too, meaning they'll no longer be able to give instructions in-game and must resort to Discord only.</li>
           </ol>
         </li>
         <li>Some members of the series administration can also be contacted via private messages on the 		iRacing forum. A list of these series administration members can be found below.
@@ -351,46 +342,6 @@
         </li>
         <li>The use of the text and voice chat during qualifying and race sessions is forbidden. While 		occasional and accidental violations will not have any negative consequences, repeated 		offences will lead to penalties, especially if the message is intended to call out or insult 		another participant or series administration member.</li>
       </ol>
-      <h3>18. About This Document</h3>
-      <ol class="rulebook-section">
-        <li>The series regulations will apply to all test, practice, warm-up, qualifying and race sessions 		which are hosted by the series administration. By entering the event, all teams and drivers 		automatically agree to all rules and regulations in this document.</li>
-        <li>This document may be edited to add, remove, modify or replace rules whenever the series 		administration deems it necessary. All changes made will be in effect immediately unless 		otherwise specified.</li>
-        <li>Participants as well as series administration members and general attentive readers are 		encouraged to point out loopholes, spelling errors and general mistakes so that they can be 		closed and corrected respectively.</li>
-      </ol>
-      <h3>19. Red Flag Restart Procedure</h3>
-      <ol class="rulebook-section">
-        <li>Scenario 1: A mass disconnect occurs, but the session is stable enough to continue the race 		and the timing data is intact.
-          <ol>
-            <li>All cars left out on-track must slowly return to the pit lane and park in their pit stalls. 			No overtaking is allowed to occur during this in-lap and teams will be allowed to work 			on their cars.</li>
-            <li>After all teams have reconnected and completed their pit work, the restart procedure 			begins.</li>
-            <li>Race control will instruct the overall leader to leave the pit lane, do a lap and stop just 			shy of the timing line to not start a new lap.</li>
-            <li>One by one, all cars will be called out in order of their overall position. They must also 			go around the track and park up their car behind the car in front of them in the queue 			that's been started by the overall race leader.</li>
-            <li>Drivers should not park their cars bumper to bumper when forming the queue. It's 			advised to leave a gap of two car lengths to the car ahead.</li>
-            <li>Cars that have lost laps due to the mass disconnect will be instructed to do an extra lap 			before parking up at the end of the queue.</li>
-            <li>The procedure described in 19.a.4 to 19.a.6 will happen with all classes: First GT3, then 		GT4.</li>
-            <li>Once all cars are back out on-track and formed up in the queue, all drivers must enable 			their pit speed limiters before slowly driving away from their parked positions. When 			driving away, they must remain in single file formation and in to one another.</li>
-            <li>The leader of the GT4 class should leave a gap of about 5 				seconds to the last car of the class ahead of them.</li>
-            <li>Once all queued up cars are back rolling, the '10 seconds to green' warning will be given 			through the race control text chat.</li>
-            <li>Once those 10 seconds have passed, the 'GREEN FLAG' message will appear in text chat, 			meaning that the race is back underway and that all cars are allowed to race each 			other again.</li>
-          </ol>
-        </li>
-        <li>Scenario 2: A new session is required because the current session is no longer accessible or 		the timing data is incomplete or missing.
-          <ol>
-            <li>A new session will be put up with a short 15 minute practice, 5 minutes of qualifying 			and the race time that the race originally had, minus the time already passed, minus 			the time it took to set up the new session and minus another 30 minutes to account for 			the restart procedure.</li>
-            <li>All teams will be instructed to join the new session once it's up. The session will 				attempt to replicate the weather settings of the previous session.</li>
-            <li>Once the new session switches over to qualifying, nobody will be allowed to set a time.  			When qualifying transitions into the race session, only the overall leader of the race 			will be allowed to grid their car.</li>
-            <li>Once the race starts, race control will instruct the overall leader to do a lap and stop 			just shy of the timing line to not start a new lap.</li>
-            <li>One by one, all cars will be called out in order of their overall position. They must also 			go around the track and park up their car behind the car in front of them in the queue 			that's been started by the overall race leader.</li>
-            <li>Drivers should not park their cars bumper to bumper when forming the queue. It's 			advised to leave a gap of two car lengths to the car ahead.</li>
-            <li>The procedure described in 19.b.5 and 19.b.6 will happen with all classes: First GT3, then GT4.</li>
-            <li>Once all cars are back out on-track and formed up in the queue, all drivers must enable 			their pit speed limiters before slowly driving away from their parked positions. When 			driving away, they must remain in single file formation and in to one another.</li>
-            <li>The leader of the GT4 class should leave a gap of about 5 				seconds to the last car of the class ahead of them.</li>
-            <li>Once all queued up cars are back rolling, the '10 seconds to green' warning will be given 			through the race control text chat.</li>
-            <li>Once those 10 seconds have passed, the 'GREEN FLAG' message will appear in text chat, 			meaning that the race is back underway and that all cars are allowed to race each 			other again.</li>
-          </ol>
-        </li>
-      </ol>
-
     </div>
   </div>
 </div>
