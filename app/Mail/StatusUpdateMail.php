@@ -51,10 +51,10 @@ class StatusUpdateMail extends Mailable
           $info['text'] = 'As soon as a confirmed team withdraws or gets withdrawn from the event, the next team on the waiting list (for that class) gets confirmed. The order of the waiting list depends on the sign-up date of the team.';
           break;
         case 3:
-          $info['html'] = '<p>Your team is qualified for the event. To get confirmed you now have to pay the season entry fee of $10 until Sunday, April 5th, 2020 at 23:59 UTC. You can use the following paypal.me link to pay the fee:<br><br><a href="https://paypal.me/sportscaropen/10usd">https://paypal.me/sportscaropen/10usd</a><br><br><b>Make sure to send a note with your payment, so we know what team/car/entry that payment is meant for!</b></p>';
-          $info['text'] = 'Your team is qualified for the event. To get confirmed you now have to pay the season entry fee of $10 until Sunday, April 5th, 2020 at 23:59 UTC. You can use the following paypal.me link to pay the fee:
+          $info['html'] = '<p>Your team is qualified for the event. To get confirmed you now have to pay the season entry fee of $9 until Sunday, May 24th, 2020 at 23:59 UTC. You can use the following paypal.me link to pay the fee:<br><br><a href="https://paypal.me/sportscaropen/9usd">https://paypal.me/sportscaropen/9usd</a><br><br><b>Make sure to send a note with your payment, so we know what team/car/entry that payment is meant for!</b></p>';
+          $info['text'] = 'Your team is qualified for the event. To get confirmed you now have to pay the season entry fee of $9 until Sunday, May 24th, 2020 at 23:59 UTC. You can use the following paypal.me link to pay the fee:
 
-https://paypal.me/sportscaropen/10usd
+https://paypal.me/sportscaropen/9usd
 
 # Make sure to send a note with your payment, so we know what team/car/entry that payment is meant for! #';
           break;
