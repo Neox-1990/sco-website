@@ -5,10 +5,10 @@
   <div class="col-12" style="padding-bottom:2rem;">
     <h1>{{$season['name']}}</h1>
     <hr>
-    <a href="{{url('/archive/'.$season['id'])}}" class="btn btn-primary m-2">Championship</a>
+    <a href="{{url('/archive/'.$season['id'])}}" class="btn btn-primary m-2">{{$rounds->count()>1 ? 'Championship' : 'Event'}}</a>
     <div class="mb-3 d-flex flex-wrap justify-content-start align-items-stretch" id="results_controlbox_rounds">
       @foreach ($rounds as $round)
-        <a href="{{url('/archive/'.$season['id'].'/'.$round->id)}}" class="btn btn-outline-primary m-2">Round {{$round->number}}</a>
+        <a href="{{url('/archive/'.$season['id'].'/'.$round->id)}}" class="btn btn-outline-primary m-2">{{$rounds->count()>1 ? 'Round '.$round->number : 'Race'}}</a>
       @endforeach
     </div>
     <div class="mb-3 d-flex flex-wrap" id="results_controlbox_class">

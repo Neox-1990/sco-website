@@ -15,13 +15,17 @@ use Carbon\Carbon;
     </div>
     <ul class="nav nav-tabs round-tabs nav-justified">
       @foreach ($all as $roundElement)
+        @if($all->count()>1)
         <li class="nav-item nav-item-fullwidth">
           <a class="nav-link {{$roundElement->id==$round->id?'active':''}}" href="{{url('/rounds/'.$roundElement->id)}}">R<span class="d-none d-md-inline">ound</span> {{$roundElement->number}}</a>
         </li>
+        @endif
       @endforeach
     </ul>
     <div class="jumbotron round-frame">
+      @if($all->count()>1)
       <h2>{{$title[0]}}</h2>
+      @endif
       @if (is_null($times['r_i']))
         <h5 class="ml-0 ml-md-3 ml-lg-5">{{$title[1][0]}} <small class="text-muted ml-2">{{$title[1][1]}}</small></h5>
         <h6 class="ml-0 ml-md-3 ml-lg-5 text-muted">Time: {{$title[2]}}</h6>

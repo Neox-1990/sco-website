@@ -11,7 +11,10 @@ class RoundController extends Controller
 {
     public function show(Round $round)
     {
-        //dd($round);
+        if ($round->season_id != config('constants.current_season')) {
+            return redirect('/season/');
+        }
+        
         $all = Round::where('season_id', config('constants.current_season'))->get();
         $title = explode('#', $round->combo);
         $title[1] = explode(' - ', $title[1]);
