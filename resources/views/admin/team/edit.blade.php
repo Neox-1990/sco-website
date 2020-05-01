@@ -15,6 +15,14 @@
       <input type="text" class="form-control" name="teamiracingid" value="{{$team['ir_teamid']}}" id="team_irid">
     </div>
     <div class="form-group">
+      <label for="team_manager">Manager</label>
+      <select class="form-control" name="teammanager" id="team_manager">
+        @foreach ($managers as $manager)
+        <option value="{{$manager->id}}" {{$manager->id == $team->user_id ? 'selected' : ''}}>{{$manager->name}} ({{$manager->id}}) - {{$manager->email}}</option>
+        @endforeach
+      </select>
+    </div>
+    <div class="form-group">
       <label for="team_number">Number</label>
       <input type="text" class="form-control" name="teamnumber" value="{{$team['number']}}" id="team_number">
     </div>
@@ -67,6 +75,21 @@
           </form></td>
         </tr>
       @endforeach
+        <tr>
+          <td colspan="5">
+            <form class="form-inline" action="{{url('/admin/teams/'.$team['id'])}}" method="post">
+              {{csrf_field()}}
+              <div class="form-group">
+                <select class="form-control" name="driverid_add">
+                  @foreach ($alldrivers as $driver)
+                  <option value="{{$driver->id}}">{{$driver->name}} ({{$driver->iracing_id}})</option>
+                  @endforeach
+                </select>
+                <input class="btn btn-primary" type="submit" name="driveradd" value="add">                
+              </div>
+            </form>
+          </td>
+        </tr>
     </tbody>
   </table>
 @endsection

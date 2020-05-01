@@ -46,4 +46,14 @@
       </form>
     </div>
   </div>
+  <div class="card dashbord-modul">
+    <div class="card-body">
+      <form class="" action="{{url('admin/manager/'.$user->id)}}" method="post">
+        {{csrf_field()}}
+        <div class="form-group">
+          <input class="btn btn-danger" type="submit" name="managerDelete" value="Delete Manager">
+        </div>
+      </form>
+    </div>
+  </div>
 @endsection

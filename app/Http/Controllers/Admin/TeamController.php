@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Team;
+use App\User;
 use App\Events\TeamEditEvent;
 use App\Events\TeamDeleteEvent;
 use App\Events\TeamStatusChangeEvent;
 use App\Driver;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
 
 class TeamController extends Controller
 {
@@ -29,8 +31,12 @@ class TeamController extends Controller
     public function edit(Team $team)
     {
         $drivers = $team->drivers()->get();
+        $alldrivers = Driver::all()->filter(function ($driver, $key) {
+            return $driver->teams->where('season_id', config('constants.current_season'))->count() == 0;
+        })->sortBy('name');
         $cars = config('constants.car_names');
-        return view('admin.team.edit', compact('team', 'cars', 'drivers'));
+        $managers = User::all()->sortBy('name');
+        return view('admin.team.edit', compact('team', 'cars', 'drivers', 'managers', 'alldrivers'));
     }
 
     public function update(Request $request, Team $team)
@@ -73,6 +79,7 @@ class TeamController extends Controller
         } elseif ($request->has('teamdataupdate')) {
             $team->name = $request->input('teamname');
             $team->number = $request->input('teamnumber');
+            $team->user_id = $request->input('teammanager');
             $team->car = $request->input('teamcar');
             $team->ir_teamid = $request->input('teamiracingid');
             $team->website = $request->input('website', null);
@@ -88,6 +95,13 @@ class TeamController extends Controller
             $driver = Driver::where('id', $request->input('driverid'))->first();
             session()->flash('flash_message_success', 'You removed the driver from '.$team->name);
             event(new TeamEditEvent($team, 'Team driver removed', 'removed driver: <a href="admin/drivers/'.$request->input('driverid').'" title="'.$driver->name.'">'.$request->input('driverid').'</a>'));
+            return redirect('admin/teams/'.$team['id']);
+        } elseif ($request->has('driveradd')) {
+            $team->drivers()->attach($request->input('driverid_add'));
+            $team->save();
+            $driver = Driver::where('id', $request->input('driverid_add'))->first();
+            session()->flash('flash_message_success', 'You added the driver to '.$team->name);
+            event(new TeamEditEvent($team, 'Team driver added', 'added driver: <a href="admin/drivers/'.$request->input('driverid_add').'" title="'.$driver->name.'">'.$request->input('driverid').'</a>'));
             return redirect('admin/teams/'.$team['id']);
         } else {
             session()->flash('flash_message_alert', 'Unknown Error');

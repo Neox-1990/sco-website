@@ -183,10 +183,10 @@
         <li>To submit a custom paint file, it must be sent to <a href="mailto:info@sportscaropen.eu">info@sportscaropen.eu</a> at least 24 hours 		before the start of first practice for it to be included in the paints pack for the event.
           <ol><li>Please make sure to include your team’s car number, team name and car class in the 			subject line of the e-mail when sending the paint file. You may also send multiple paint 			files in a single mail, but please make it clear which paint is for which car in the mail 			itself.</li></ol>
         </li>
-        <li>Custom number panels and sunstrip overlays will be used and must be included on the paint 		file that is sent to the series administration.
+        <li>Custom number panels and class stickers will be used and must be included on the paint 		file that is sent to the series administration.
           <ol>
             <li>All of these paints should be saved as TARGA (.tga) files with a 24 bits/pixel resolution 			and RLE compression enabled.</li>
-            <li>Teams, who also wish to make use of custom spec maps, must ensure that none of the custom number panels, the sunstrip overlays or other mandatory paint elements are made overly reflective or have their appearance changed in other ways that makes them harder to read.</li>
+            <li>Teams, who also wish to make use of custom spec maps, must ensure that none of the custom number panels, the class stickers or other mandatory paint elements are made overly reflective or have their appearance changed in other ways that makes them harder to read.</li>
           </ol>
         </li>
         <li>The series administration will check whether every team's paint is in compliance with rules 		6.c.1 to 6.c.5 and will also check for the car and class appropriate number panels and 			sunstrip overlay. If there are issues with any submitted paint, the series administration will 		respond via e-mail.</li>
@@ -332,13 +332,6 @@
           <ol>
             <li>The series administration advises all team managers or team members that are in contact with drivers on-track to be online on the SCO Discord during races. Generally, instructions will be given both in-game as well as on Discord, but there's always a chance that in the case of server issues, series administration members will be affected too, meaning they'll no longer be able to give instructions in-game and must resort to Discord only.</li>
           </ol>
-        </li>
-        <li>Some members of the series administration can also be contacted via private messages on the 		iRacing forum. A list of these series administration members can be found below.
-          <ul class="list-group my-3">
-            <li class="list-group-item mt-0">Dominik Engel</li>
-    				<li class="list-group-item mt-0">Maik Paluch</li>
-    				<li class="list-group-item mt-0">Ronald Großmann</li>
-          </ul>
         </li>
         <li>The use of the text and voice chat during qualifying and race sessions is forbidden. While 		occasional and accidental violations will not have any negative consequences, repeated 		offences will lead to penalties, especially if the message is intended to call out or insult 		another participant or series administration member.</li>
       </ol>

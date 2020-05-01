@@ -46,6 +46,16 @@ class ManagerController extends Controller
             session()->flash('flash_message_success', 'Manager password changed.');
             event(new UserUpdateEvent($user, 'Password changed'));
             return redirect('admin/manager/'.$user->id);
+        } elseif ($request->has('managerDelete')) {
+            if ($user->teams->count() > 0) {
+                session()->flash('flash_message_alert', 'Manager still has teams.');
+                return redirect('admin/manager/'.$user->id);
+            } else {
+                $user->delete();
+                session()->flash('flash_message_success', 'manager deleted.');
+                event(new UserUpdateEvent($user, 'Manager deleted'));
+                return redirect('admin/manager/');
+            }
         } else {
             session()->flash('flash_message_alert', 'Unknown error.');
             return redirect('admin/manager/'.$user->id);
