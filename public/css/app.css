@@ -11134,7 +11134,7 @@ main {
 .header-container header.sco-header {
   width: 100%;
   height: 12rem;
-  background-image: url("img/sco_2020_6h_glen_banner.png");
+  background-image: url("img/sco-oaktree300-banner.png");
   background-repeat: repeat-x;
   background-position: center 0rem;
   background-size: cover;
@@ -11700,6 +11700,58 @@ main {
 .badge-GT8 {
   background-color: #00AF2F;
   color: #fff;
+}
+
+.class-btn-background-GT49 {
+  background-color: #005aab;
+  color: #fff;
+}
+
+.class-btn-background-GT49:hover {
+  background-color: #003f78;
+  color: #fff;
+}
+
+.class-btn-background-outline-GT49 {
+  background-color: #fff;
+  color: #005aab;
+  border-color: #005aab;
+}
+
+.class-btn-background-outline-GT49:hover {
+  background-color: #005aab;
+  color: #fff;
+}
+
+.badge-GT49 {
+  background-color: #005aab;
+  color: #fff;
+}
+
+.class-btn-background-TCR9 {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.class-btn-background-TCR9:hover {
+  background-color: #dcdbdb;
+  color: #000;
+}
+
+.class-btn-background-outline-TCR9 {
+  background-color: #fff;
+  color: #f5f5f5;
+  border-color: #f5f5f5;
+}
+
+.class-btn-background-outline-TCR9:hover {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.badge-TCR9 {
+  background-color: #f5f5f5;
+  color: #000;
 }
 
 .team-overview-class {

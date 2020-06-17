@@ -10943,6 +10943,16 @@ h1::after {
   color: #fff;
 }
 
+.class-GT49 {
+  background-color: #005aab;
+  color: #fff;
+}
+
+.class-TCR9 {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
 .spotterguide-tile {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
@@ -11024,6 +11034,14 @@ h1::after {
 
 .spotterguide-tile .car-image.car-man-18 {
   background-image: url("img/porsche.svg");
+}
+
+.spotterguide-tile .car-image.car-man-19 {
+  background-image: url("img/audi-rings.svg");
+}
+
+.spotterguide-tile .car-image.car-man-20 {
+  background-image: urld("img/bmw.svg");
 }
 
 .spotterguide-tile .car-info {

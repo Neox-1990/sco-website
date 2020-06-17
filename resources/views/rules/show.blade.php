@@ -6,12 +6,12 @@
   <div class="col-12">
     <div class="p-2" id="rulebook">
       <h1>Rulebook</h1>
-      <p><em>Last update: 28th April 2020</em></p>
+      <p><em>Last update: 17th June 2020</em></p>
       <a data-status="closed" class="btn btn-outline-dark m-1" id="openAllRules"><i class="fas fa-list-ol mr-2" aria-hidden="true"></i><span>Open all rules</span></a>
       <hr>
       <h3>1. Introduction</h3>
       <ol class="rulebook-section">
-        <li>The Sports Car Open 6 hours of the Glen (or SCO 6 hours of the Glen) is a racing event, which is organised and run by CoRe SimRacing on the iRacing.com Motorsports Simulation service. The event utilises a selection of prototype and grand touring cars in a team-based, multi-class endurance race, held on the Boot layout of the Watkins Glen International circuit.</li>
+        <li>The Sports Car Open Oak Tree 300 at VIR (or SCO Oak Tree 300 at VIR) is a racing event, which is organised and run by CoRe SimRacing on the iRacing.com Motorsports Simulation service. The event utilises a selection of grand touring and touring cars in a team-based, multi-class endurance race, held on the Full Course layout of Virginia International Raceway.</li>
         <li>These regulations will apply to all test, practice, warm-up, qualifying and race sessions that are hosted by the event administration. By entering the event, all teams and drivers automatically agree to all rules in this document.</li>
         <li>The document may be edited to add, remove, modify or replace rules whenever the event administration deems it to be necessary. All changes made will be in effect immediately unless otherwise specified.</li>
         <li>Participants as well as event administration members and general attentive readers are encouraged to point out loopholes, spelling errors and other mistakes so that they can be closed and corrected respectively. Feedback and improvement suggestions are also welcome.</li>
@@ -30,16 +30,16 @@
             </thead>
             <tbody>
               <tr>
-                <td>Prototype</td>
+                <td>GT4 (Grand Touring 4)</td>
                 <td class="badge-P8">P</td>
-                <td>HPD ARX-01c</td>
-                <td>0 kg / 100%</td>
+                <td>BMW M4 GT4<br>Porsche 718 Cayman GT4 CS</td>
+                <td>0 kg / 80 % fuel (~ 101 l)<br>0 kg / 80 % fuel (~ 92 l)</td>
               </tr>
               <tr>
-                <td>Grand Touring </td>
+                <td>TCR (Touring Car Racer)</td>
                 <td class="badge-GT8">GT</td>
-                <td>BMW M8 GTE<br>Ferrari 488 GTE<br>Ford GT 2017<br>Porsche 911 RSR</td>
-                <td>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%<br>0 kg / 100%</td>
+                <td>Audi RS3 LMS</td>
+                <td>0 kg / 70 % fuel (~ 70 l)</td>
               </tr>
             </tbody>
           </table>
@@ -111,12 +111,12 @@
               <th>Minimum Road iRating</th>
             </tr>
             <tr>
-              <td>Prototype</td>
+              <td>GT4 (Grand Touring 4)</td>
               <td>C 4.00 or higher</td>
               <td>2500 or higher</td>
             </tr>
             <tr>
-              <td>Grand Touring</td>
+              <td>TCR (Touring Car Racer)</td>
               <td>D 4.00 or higher</td>
               <td>2500 or higher</td>
             </tr>
@@ -132,27 +132,27 @@
       </ol>
       <h3>5. Entry Procedure</h3>
       <ol class="rulebook-section">
-        <li>The sign-ups for all teams will open on Friday, May 1st, 2020 at 16:00 UTC. From this point onwards, managers will be able to create teams on the series website.
+        <li>The sign-ups for all teams will open on Monday, June 22nd, 2020 at 16:00 UTC. From this point onwards, managers will be able to create teams on the series website.
           <ol>
             <li>Please note that no team will be allowed to enter more than 2 cars into any of the 			classes. The maximum number of available spaces per car class can be seen below:
               <ul>
-                <li>Prototype (P): 20 cars maximum</li>
-                <li>Grand Touring (GT): 30 cars maximum</li>
+                <li>GT4 (Grand Touring 4): 28 cars maximum</li>
+                <li>TCR (Touring Car Racer): 28 cars maximum</li>
                 <li>Total Car Count: 48 cars (regardless of class limits)</li>
               </ul>
             </li>
             <li>The series administration can grant exceptions to the 2 car limit per class per team 			upon receiving a request from the team manager(s) of the affected entries. These 			requests will be assessed on a case-by-case basis.</li>
             </ol>
         </li>
-        <li>The entry deadline for all entrants will be on Sunday, May 24th, 2020 at 23:59 UTC.
+        <li>The entry deadline for all entrants will be on Sunday, July 12th, 2020 at 23:59 UTC.
           <ol>
-            <li>All teams that have entered the event by the deadline listed in 5.b must pay the entry fee of $9 per entered car by the deadline listed in 5.b.</li>
+            <li>All teams that have entered the event by the deadline listed in 5.b must pay the entry fee of $6 per entered car by the deadline listed in 5.b.</li>
           </ol>
         </li>
         <li>Every team that's created during a season will have a team status assigned to it. There are a 		total of 5 different statuses: 'Pending', 'Reviewed', 'Waiting List', 'Qualified' and 'Confirmed'.
           <ol>
             <li>Newly created teams will have their status set to ‘Pending’ automatically. Once the series administration has checked everything about said newly created team, the team’s status will be changed to ‘Qualified’.</li>
-            <li>Once any team with the 'Qualified' status has paid the entry fee of $9 in its entirety, 			their team's status will be changed to 'Confirmed'.</li>
+            <li>Once any team with the 'Qualified' status has paid the entry fee of $6 in its entirety, 			their team's status will be changed to 'Confirmed'.</li>
             <li>The 'Waiting List' status will be reserved for teams on the waiting list for their 				respective class.</li>
           </ol>
         </li>
@@ -163,7 +163,7 @@
           </ol>
         </li>
         <li>All teams, that have entered a car class with multiple car models, must declare their final car selection no later than 24 hours before the start of FP1.</li>
-        <li>Any team, that withdraws from the event, will not be refunded their entry fee.</li>
+        <li>Any team, that withdraws from the event after the entry deadline, will not be refunded their entry fee.</li>
       </ol>
       <h3>6. Paint Schemes</h3>
       <ol class="rulebook-section">
@@ -206,12 +206,12 @@
       <ol class="rulebook-section">
         <li>Qualifying will be held in a 45 minute long open qualifying session, which will be split into two 20 minute long segments with a 5 minute long break between both of these segments.
           <ol>
-            <li>During the first 20 minute long segment, starting at the start of the qualifying session and ending at the 20 minute mark, only Grand Touring (GT) teams may go on-track and qualify.</li>
-            <li>During the second 20 minute long segment, starting at the 25 minute mark and running until the end of the qualifying session, only Prototype (P) teams may go on-track and qualify.</li>
+            <li>During the first 20 minute long segment, starting at the start of the qualifying session and ending at the 20 minute mark, only TCR (Touring Car Racer) teams may go on-track and qualify.</li>
+            <li>During the second 20 minute long segment, starting at the 25 minute mark and running until the end of the qualifying session, only GT4 (Grand Touring 4) teams may go on-track and qualify.</li>
           </ol>
         </li>
-        <li>Prototype (P) teams may not leave the pit lane before the start of their class' qualifying segment. The signal that teams may leave the pit lane to go on-track and qualify will be given by the event administration via the in-game chat.</li>
-        <li>Grand Touring (GT) teams may not start new laps after the end of their class' qualifying segment. The signal that teams may not start new laps and must return to the pit lane will be given by the event administration via the in-game chat.</li>
+        <li>GT4 (Grand Touring 4) team may not leave the pit lane before the start of their class' qualifying segment. The signal that teams may leave the pit lane to go on-track and qualify will be given by the event administration via the in-game chat.</li>
+        <li>TCR (Touring Car Racer) teams may not start new laps after the end of their class' qualifying segment. The signal that teams may not start new laps and must return to the pit lane will be given by the event administration via the in-game chat.</li>
         <li>Any member of a team's driver roster will be allowed to drive the car during their car class' qualifying segment.</li>
         <li>During qualifying, all drivers on-track must be aware of their surroundings at all times. Any team found to be interfering with another team's qualifying laps in any way, may be penalised if the incident is reported to the series administration.</li>
         <li>The driver, who sets a team's fastest time during qualifying, is not required to start the car, but must complete at least 1 full lap during the race. This lap cannot start or end in the pit lane.</li>
@@ -223,11 +223,11 @@
       <ol class="rulebook-section">
         <li>All races will utilise the standard rolling start procedure the iRacing software provides with 		the following alterations:
           <ol>
-            <li>The class leader of the supporting GT class should keep a gap of about 5 seconds to the last P class car ahead of them on the pace lap.</li>
-            <li> All cars and classes, meaning P and GT must ignore the "green flag" as displayed by iRacing and must remain in their grid formation while also keeping to the pace car speed. Frequent accelerating and braking as well as deviating too far from the pace car speed may be penalised.</li>
+            <li>The class leader of the supporting TCR class should keep a gap of about 5 to 10 seconds to the last GT4 class car ahead of them on the pace lap.</li>
+            <li> All cars and classes, meaning GT4 and TCR must ignore the "green flag" as displayed by iRacing and must remain in their grid formation while also keeping to the pace car speed. Frequent accelerating and braking as well as deviating too far from the pace car speed may be penalised.</li>
             <li>Only the leader of each class will be allowed to initiate the start of their categories’ 			race by starting to accelerate away from the field in the “starting zone”. Once he has 			done so, all cars of that class will be free to race. All classes will be subject to this 			procedure.</li>
             <li>Images of the exact beginning and end points of this “starting zone” will be part of the 			drivers’ briefing, which will be published before the first free practice session.</li>
-            <li>Teams that start from pit lane must line up at pit exit in a line. They will not be allowed to leave the lane until the race administration declares the pit exit open once the last GT car has passed the first turn. Leaving the pit lane early will result in a 15 second stop & hold penalty.</li>
+            <li>Teams that start from pit lane must line up at pit exit in a line. They will not be allowed to leave the lane until the race administration declares the pit exit open once the last TCR car has passed the first turn. Leaving the pit lane early will result in a 15 second stop & hold penalty.</li>
           </ol>
         </li>
         <li>During the race itself, no driver will be allowed to complete more than 70% of a team’s total number of completed laps.
@@ -239,7 +239,7 @@
         </li>
         <li>Additionally, to make sure people don’t take too many liberties with the track limits, an incident limit will be enforced.
           <ol>
-            <li>The incident limit will be set at 79 incident points.</li>
+            <li>The incident limit will be set at 70 incident points.</li>
             <li>A team will be given a drive-through penalty once they’ve exceeded the incident limit by 1 incident point.</li>
             <li>A team will be given a 15 second stop and hold penalty once they’ve exceeded the incident limit by 31 incident points.</li>
             <li>The duration of the stop and hold penalty given will double at every 30 incident point milestone after that, meaning that a team will receive a 30 second stop and hold penalty once they’ve exceeded the incident limit by 61 points, a 60 second stop and hold penalty once they’ve exceeded the incident limit by 91 points and so on.</li>
@@ -293,8 +293,8 @@
             <li class="list-group-item mt-0">Exclusions from Multiple Events (may be assigned to a team or driver)</li>
           </ul>
           <ol>
-            <li>When serving a drive-through penalty, the affected team must drive through the pit 			lane without making a pit stop. Violating this rule will result in the team being given 			another drive-through penalty.</li>
-            <li>Any team receiving a drive-through penalty must serve said drive-through penalty within 10 minutes of it being issued. Failure to serve a drive-through penalty within the prescribed amount of time will result in the affected team being awarded a 15 second stop & hold penalty.</li>
+            <li>When serving a drive-through penalty, the affected team must drive through the pit lane without making a pit stop. Should a team have to make a pit stop after being given a drive-through penalty, they may do so, but they’ll be required to return to the pit lane after their stop to serve the penalty.</li>
+            <li>Any team receiving a drive-through or stop & go penalty must serve said penalty within 3 laps of it being issued. Failure to serve a drive-through penalty within the prescribed amount of time will result in the affected team being no longer scored and disqualified from the session.</li>
             <li>Teams may combine stop & hold penalties with regular pit stops. If they choose to do so, iRacing will automatically add 25 seconds to the penalty time assigned to them by the series administration.</li>
           </ol>
         </li>
