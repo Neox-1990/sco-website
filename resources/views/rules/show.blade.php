@@ -30,14 +30,14 @@
             </thead>
             <tbody>
               <tr>
-                <td>GT4 (Grand Touring 4)</td>
-                <td class="badge-P8">P</td>
+                <td>Grand Touring 4</td>
+                <td class="badge-GT49">GT4</td>
                 <td>BMW M4 GT4<br>Porsche 718 Cayman GT4 CS</td>
                 <td>0 kg / 80 % fuel (~ 101 l)<br>0 kg / 80 % fuel (~ 92 l)</td>
               </tr>
               <tr>
-                <td>TCR (Touring Car Racer)</td>
-                <td class="badge-GT8">GT</td>
+                <td>Touring Car Racer</td>
+                <td class="badge-TCR9">TCR</td>
                 <td>Audi RS3 LMS</td>
                 <td>0 kg / 70 % fuel (~ 70 l)</td>
               </tr>
