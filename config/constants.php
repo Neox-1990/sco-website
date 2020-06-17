@@ -19,9 +19,11 @@ return [
     15=> 'BMW M8 GTE',
     16=> 'Ford GT GT3',
     17=> 'McLaren MP4-12C GT3',
-    18=> 'Porsche 718 Cayman GT4 Clubsport MR'
+    18=> 'Porsche 718 Cayman GT4 Clubsport MR',
+    19=> 'Audi R3 RS TCR',
+    20=> 'BMW M4 GT4'
   ],
-  'current_season' => '8',
+  'current_season' => '9',
   'driver_limits' => [
     'min' => 2,
     'max' => 6,
@@ -66,6 +68,10 @@ return [
     8 => [
       'P' => [1],
       'GT' => [2,3,14,15]
+    ],
+    9 => [
+      'GT4' => [18,20],
+      'TCR' => [19]
     ]
   ],
   'class_limits' => [
@@ -100,6 +106,10 @@ return [
     8 => [
       'P' => '18-20',
       'GT' => '28-30'
+    ],
+    9 => [
+      'GT4' => '20-28',
+      'TCR' => '20-28'
     ]
   ],
   'cars_to_classes' => [
@@ -159,6 +169,11 @@ return [
       3 => 'GT',
       14 => 'GT',
       15 => 'GT'
+    ],
+    9 => [
+      18 => 'GT4',
+      20 => 'GT4',
+      19 => 'TCR'
     ]
   ],
   'classNumbers' => [
@@ -247,6 +262,16 @@ return [
         'min' => 100,
         'max' => 199
       ]
+    ],
+    9 => [
+      'GT4' => [
+        'min' => 1,
+        'max' => 50,
+      ],
+      'TCR' => [
+        'min' => 51,
+        'max' => 99
+      ]
     ]
   ],
   'status_names' => [
@@ -314,7 +339,9 @@ return [
     102 => 14,
     109 => 15,
     43=>17,
-    119=>18
+    119=>18,
+    112=>19,
+    122=>20
   ],
   'out_status' => [
     0 => 'running',

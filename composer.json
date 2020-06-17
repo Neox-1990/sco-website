@@ -9,14 +9,16 @@
         "erusev/parsedown": "^1.7",
         "facebook/graph-sdk": "^5.6",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "^6.0",
-        "laravel/tinker": "~1.0",
-        "parsedown/laravel": "^1.2"
+        "laravel/framework": "^7.0",
+        "laravel/tinker": "^2.0",
+        "parsedown/laravel": "^1.2",
+        "nunomaduro/collision": "^4.1",
+        "facade/ignition": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "^7.0",
+        "phpunit/phpunit": "^8.5",
         "filp/whoops" : "~2.0"
     },
     "autoload": {
