@@ -20,7 +20,7 @@ return [
     16=> 'Ford GT GT3',
     17=> 'McLaren MP4-12C GT3',
     18=> 'Porsche 718 Cayman GT4 Clubsport MR',
-    19=> 'Audi R3 RS TCR',
+    19=> 'Audi RS3 LMS',
     20=> 'BMW M4 GT4'
   ],
   'current_season' => '9',
