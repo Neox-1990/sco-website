@@ -11041,7 +11041,7 @@ h1::after {
 }
 
 .spotterguide-tile .car-image.car-man-20 {
-  background-image: urld("img/bmw.svg");
+  background-image: url("img/bmw.svg");
 }
 
 .spotterguide-tile .car-info {
