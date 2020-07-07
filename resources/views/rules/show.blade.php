@@ -33,7 +33,7 @@
                 <td>Grand Touring 4</td>
                 <td class="badge-GT49">GT4</td>
                 <td>BMW M4 GT4<br>Porsche 718 Cayman GT4 CS</td>
-                <td>0 kg / 80 % fuel (~ 101 l)<br>15 kg / 80 % fuel (~ 92 l)</td>
+                <td>0 kg / 80 % fuel (~ 101 l)<br>0 kg / 80 % fuel (~ 92 l)</td>
               </tr>
               <tr>
                 <td>Touring Car Racer</td>
