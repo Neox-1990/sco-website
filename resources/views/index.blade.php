@@ -3,7 +3,7 @@
 @section('main')
 <div class="row mx-0 w-100">
   <a href="{{'https://'}}"></a>
-  <div class="col-12 px-0">
+  <div class="col-12 col-md-9 px-0 pr-md-2">
     <section id="news" class="sco-news-carousel carousel slide border">
       <h1 class="news-header">News</h1>
       <a class="all-news-link" href="{{url('/news')}}"><i class="far fa-newspaper"></i> All News</a>
@@ -34,8 +34,8 @@
 
     </section>
   </div>
-  <aside class="col-12 px-0 mt-3">
-    <div class="card sco-status mt-3 mt-lg-0">
+  <aside class="col-12 col-md-3 px-0 pl-md-2">
+    <div class="card sco-status mt-3 mt-md-0">
       <div class="card-header text-center">
         <h3>Season Status</h3>
       </div>
