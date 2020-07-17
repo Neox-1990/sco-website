@@ -311,7 +311,7 @@
         <li>During pre-qualifying, all drivers on-track must be aware of their surroundings at all times. Any team found to be interfering with another team's pre-qualifying laps in any way, may be penalised if the incident is reported to the series administration.</li>
         <li>The 2 drivers, who prequalified a team's car into the field, will be locked into that car's driver line-up for the first 2 events of the season. This limitation does not apply, if an entry not make it through pre-qualifying and ends up on the waiting list. For transparency reasons, this limitation is also mentioned in rule 5.f.3.</li>
       </ol>
-      <h3>Warm-Up Sessions</h3>
+      <h3>8. Warm-Up Sessions</h3>
       <ol class="rulebook-section">
         <li>Warm-up is the session in which all teams and drivers will be able to connect to the race server to prepare and drive practice laps ahead of qualifying and the race session itself.</li>
         <li>Teams will be required to register with the correct team and car, meaning that the team ID, team name, car number and car model have to match the information listed on the series’ entry list.</li>

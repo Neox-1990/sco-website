@@ -14,8 +14,8 @@ class RoundController extends Controller
         if ($round->season_id != config('constants.current_season')) {
             return redirect('/season/');
         }
-        
-        $all = Round::where('season_id', config('constants.current_season'))->get();
+
+        $all = Round::where('season_id', config('constants.current_season'))->orderBy('number')->get();
         $title = explode('#', $round->combo);
         $title[1] = explode(' - ', $title[1]);
         $times = [
