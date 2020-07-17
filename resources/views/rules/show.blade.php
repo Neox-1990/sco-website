@@ -43,7 +43,7 @@
               </tr>
               <tr>
                 <td>Grand Touring Challenge</td>
-                <td class="badge-GT10">GTC</td>
+                <td class="badge-GTC10">GTC</td>
                 <td>Audi R8 LMS<br>Mercedes-AMG GT3</td>
                 <td>0 kg / 95% power / 84% fuel (= 100 l)<br>0 kg / 95% power / 84% fuel (= 100 l)</td>
               </tr>
