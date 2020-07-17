@@ -11754,6 +11754,110 @@ main {
   color: #000;
 }
 
+.class-btn-background-P10 {
+  background-color: #3954B8;
+  color: #fff;
+}
+
+.class-btn-background-P10:hover {
+  background-color: #2d4291;
+  color: #fff;
+}
+
+.class-btn-background-outline-P10 {
+  background-color: #fff;
+  color: #3954B8;
+  border-color: #3954B8;
+}
+
+.class-btn-background-outline-P10:hover {
+  background-color: #3954B8;
+  color: #fff;
+}
+
+.badge-P10 {
+  background-color: #3954B8;
+  color: #fff;
+}
+
+.class-btn-background-GT10 {
+  background-color: #00AF2F;
+  color: #fff;
+}
+
+.class-btn-background-GT10:hover {
+  background-color: #007c21;
+  color: #fff;
+}
+
+.class-btn-background-outline-GT10 {
+  background-color: #fff;
+  color: #00AF2F;
+  border-color: #00AF2F;
+}
+
+.class-btn-background-outline-GT10:hover {
+  background-color: #00AF2F;
+  color: #fff;
+}
+
+.badge-GT10 {
+  background-color: #00AF2F;
+  color: #fff;
+}
+
+.class-btn-background-GTC10 {
+  background-color: #111111;
+  color: #fff;
+}
+
+.class-btn-background-GTC10:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.class-btn-background-outline-GTC10 {
+  background-color: #fff;
+  color: #111111;
+  border-color: #111111;
+}
+
+.class-btn-background-outline-GTC10:hover {
+  background-color: #111111;
+  color: #fff;
+}
+
+.badge-GTC10 {
+  background-color: #111111;
+  color: #fff;
+}
+
+.class-btn-background-cleanx10 {
+  background-color: #aaaaaa;
+  color: #000;
+}
+
+.class-btn-background-cleanx10:hover {
+  background-color: #919090;
+  color: #000;
+}
+
+.class-btn-background-outline-cleanx10 {
+  background-color: #fff;
+  color: #aaaaaa;
+  border-color: #aaaaaa;
+}
+
+.class-btn-background-outline-cleanx10:hover {
+  background-color: #aaaaaa;
+  color: #000;
+}
+
+.badge-cleanx10 {
+  background-color: #aaaaaa;
+  color: #000;
+}
+
 .team-overview-class {
   margin: 2rem 0;
 }

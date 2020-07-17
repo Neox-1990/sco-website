@@ -10953,6 +10953,26 @@ h1::after {
   color: #000;
 }
 
+.class-P10 {
+  background-color: #3954B8;
+  color: #fff;
+}
+
+.class-GT10 {
+  background-color: #00AF2F;
+  color: #fff;
+}
+
+.class-GTC10 {
+  background-color: #111111;
+  color: #fff;
+}
+
+.class-cleanx10 {
+  background-color: #aaaaaa;
+  color: #000;
+}
+
 .spotterguide-tile {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
