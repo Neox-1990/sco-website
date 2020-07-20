@@ -37,13 +37,17 @@ class Team extends Model
     {
         $classNumbers = [];
 
+        //Limits pro Klasse für Season
         foreach (config('constants.classNumbers')[config('constants.current_season')] as $className => $value) {
             $classNumbers[$className] = [];
             for ($i=$value['min']; $i <= $value['max'] ; $i++) {
                 $classNumbers[$className][$i] = $i;
             }
         }
-        $teams = Team::where('season_id', config('constants.current_season'))->get();
+
+        $teams = Team::where('season_id', config('constants.current_season'))->get(); //alle Teams der aktuellen Season
+
+        //LookUpTable für Zuordnung Car -> Class
         $classCarLUT = [];
         foreach (config('constants.classes')[config('constants.current_season')] as $className => $cars) {
             foreach ($cars as $value) {
@@ -53,10 +57,11 @@ class Team extends Model
 
         foreach ($teams as $team) {
             $number = $team->number;
-            $car = $classCarLUT[$team->car];
-            $id = array_search($number, $classNumbers[$car]);
-            if ($id) {
-                unset($classNumbers[$classCarLUT[$team->car]][$id]);
+            foreach ($classNumbers as $class => $numbers) {
+                $id = array_search($number, $classNumbers[$class]);
+                if ($id) {
+                    unset($classNumbers[$class][$id]);
+                }
             }
         }
 

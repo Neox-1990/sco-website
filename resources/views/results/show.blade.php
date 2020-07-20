@@ -6,7 +6,7 @@
     <a href="{{url('/results')}}" class="btn btn-outline-primary m-2">{{$rounds->count()>1 ? 'Championship' : 'Event'}}</a>
     <div class="mb-3 d-flex flex-wrap justify-content-start align-items-stretch" id="results_controlbox_rounds">
       @foreach ($rounds as $roundX)
-        <a href="{{url('/results/'.$roundX->id)}}" class="btn btn-{{$roundX->id==$round->id?'primary':'outline-primary'}} m-2">{{$rounds->count()>1 ? 'Round '.$round->number : 'Race'}}</a>
+        <a href="{{url('/results/'.$roundX->id)}}" class="btn btn-{{$roundX->id==$round->id?'primary':'outline-primary'}} m-2">{{$rounds->count()>1 ? 'Round '.$roundX->number : 'Race'}}</a>
       @endforeach
     </div>
     <div class="mb-3 d-flex flex-wrap" id="results_controlbox_class">
